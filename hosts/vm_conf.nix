@@ -16,8 +16,10 @@
 
       ../packages/common.nix
       ../packages/dev.nix
+      ../packages/networking.nix
 
       ../packages/office.nix
+      ../packages/utilities.nix
       ../packages/vim.nix
       ../packages/vnc.nix
 
