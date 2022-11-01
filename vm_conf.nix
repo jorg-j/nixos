@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      (import "${builtins.fetchUrl https://gitlab.com/jorgensen-j/nixos/-/raw/main/vm-hardware-configuration.nix}")
+      (import "${builtins.fetchurl https://gitlab.com/jorgensen-j/nixos/-/raw/main/vm-hardware-configuration.nix}")
     ];
 
   # Bootloader.
