@@ -4,6 +4,12 @@
 
 { config, pkgs, ... }:
 
+let
+  sync = pkgs.writeScriptBin "sync" ''
+    #!${pkgs.stdenv.shell}
+    curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/vm_conf.nix | sudo tee /etc/nixos/configuration.nix
+  '';
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -88,28 +94,33 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    firefox
-    htop
-    todoist-electron # ToDoIst
-    tdesktop         # Telegram
-    obsidian         # Obsidian
-    vscode           # Visual Studio Code
+    wget                 # wget
+    firefox              # Firefox
+    htop                 # Htop
+    todoist-electron     # ToDoIst
+    tdesktop             # Telegram
+    obsidian             # Obsidian
+    vscode               # Visual Studio Code
+    git                  # Git
     # docker           # docker
     # virtualbox
-    vlc              # VLC media
-    libreoffice-qt   # Libre office
-    hunspell         # Spell Check for Libre
-    bitwarden        # Password Manager
-    bitwarden-cli    # Password Manager
-    zsh              # ZSH Shell
-    vorta            # Vorta Backups
-    python39Full     # Python 3.9
-    poetry           # Poetry
-    unzip            # Unzip
-    realvnc-vnc-viewer
-    sqlitebrowser
-    discord
+    vlc                  # VLC media
+    libreoffice-qt       # Libre office
+    hunspell             # Spell Check for Libre
+    bitwarden            # Password Manager
+    bitwarden-cli        # Password Manager
+    zsh                  # ZSH Shell
+    vorta                # Vorta Backups
+    python39Full         # Python 3.9
+    poetry               # Poetry
+    unzip                # Unzip
+    realvnc-vnc-viewer   # VNC viewer
+    sqlitebrowser        # SQLite3
+    discord              # Discord
+
+    libnotify            # notify send 
+
+
     
     (
       with import <nixpkgs> {};
