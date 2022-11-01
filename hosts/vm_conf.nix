@@ -8,10 +8,11 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      (import "${builtins.fetchurl https://gitlab.com/jorgensen-j/nixos/-/raw/main/hardware/vm-hardware-configuration.nix}")
-      (import "${builtins.fetchurl https://gitlab.com/jorgensen-j/nixos/-/raw/main/sys/aliases.nix}")
-      (import "${builtins.fetchurl https://gitlab.com/jorgensen-j/nixos/-/raw/main/sys/scripts.nix}")
+      <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
+      ../hardware/vm-hardware-configuration.nix
+      ../sys/aliases.nix
+      ../sys/scripts.nix
     ];
 
   # Bootloader.
