@@ -21,7 +21,7 @@
       ../packages/vim.nix
       ../packages/vnc.nix
 
-      ../packages/vscode.nix
+      # ../packages/vscode.nix
     ];
 
   # Bootloader.
