@@ -19,8 +19,6 @@
     wpa_supplicant
   ];
 
-
-
   # === Optimise storage ===
   documentation.nixos.enable = false;
   nix.gc.automatic = true;
