@@ -8,7 +8,6 @@
         ms-azuretools.vscode-docker
         redhat.vscode-yaml
         vscodevim.vim
-        miguelsolorio.min-theme
         shakram02.bash-beautify
         ms-vscode-remote.remote-containers
         eamodio.gitlens
