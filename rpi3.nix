@@ -76,8 +76,8 @@
   environment.interactiveShellInit = ''
     alias config='sudo vim /etc/nixos/configuration.nix'
     alias update='sudo nixos-rebuild switch'
-    alias sync='curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/rpi3.nix | tee /home/pi/configuration.nix'
-    alias upgrade='sudo cp /home/pi/configuration.nix /etc/nixos/configuration.nix'
+    alias sync='curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/rpi3.nix | tee /home/nixos/configuration.nix'
+    alias upgrade='sudo cp /home/nixos/configuration.nix /etc/nixos/configuration.nix'
     alias clean='sudo nix-collect-garbage -d'
   '';
 
