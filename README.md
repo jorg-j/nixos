@@ -1,4 +1,14 @@
 # NixOS
+```
+git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos
+ln -sF /etc/nixos/hosts/<config>.nix /etc/nixos/configuration.nix
+```
+
+# If you've not installed yet
+`root $ nixos-install`
+
+# If you've already installed, but are switching to this config
+`root $ nixos-rebuild switch --keep-going --install-bootloader`
 
 ## RPi 3B
 
