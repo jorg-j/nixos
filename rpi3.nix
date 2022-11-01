@@ -72,6 +72,12 @@
     };
   };
 
+  # === Setup Alias ===
+  environment.interactiveShellInit = ''
+    alias config='sudo vim /etc/nixos/vonfiguration.nix'
+    alias update='sudo nixos-rebuild switch`
+    alias sync='curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/rpi3.nix | sudo tee /etc/nixos/configuration.nix'
+  '';
 
   # === Setup Wifi ===
 
