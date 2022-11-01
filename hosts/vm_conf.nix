@@ -13,6 +13,12 @@
       ../hardware/vm-hardware-configuration.nix
       ../sys/aliases.nix
       ../sys/scripts.nix
+
+      ../packages/common.nix
+      ../packages/vscode.nix
+      ../packages/vim.nix
+      ../packages/dev.nix
+
     ];
 
   # Bootloader.
@@ -91,64 +97,26 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget                 # wget
+
     firefox              # Firefox
-    htop                 # Htop
+
     todoist-electron     # ToDoIst
     tdesktop             # Telegram
     obsidian             # Obsidian
-    vscode               # Visual Studio Code
-    git                  # Git
+
     # docker           # docker
     # virtualbox
     vlc                  # VLC media
     libreoffice-qt       # Libre office
     hunspell             # Spell Check for Libre
-    bitwarden            # Password Manager
-    bitwarden-cli        # Password Manager
+
     zsh                  # ZSH Shell
     vorta                # Vorta Backups
-    python39Full         # Python 3.9
-    poetry               # Poetry
-    unzip                # Unzip
+
     realvnc-vnc-viewer   # VNC viewer
     sqlitebrowser        # SQLite3
     discord              # Discord
 
-    libnotify            # notify send 
-
-
-    
-    (
-      with import <nixpkgs> {};
-
-      vim_configurable.customize {
-        # Specifies the vim binary name
-        # E.g. set this to "my-vim" and you need to type "my-vim" to open this vim
-        # This allows to have multiple vim packages installed (e.g. with a different set of plugins)
-        name = "vim";
-        vimrcConfig.customRC = ''
-          syntax on
-          syntax enable
-          set backupdir=/tmp      " save backup files (~) to /tmp
-          set tabstop=4           " number of visual spaces per TAB
-          set softtabstop=4       " number of spaces in tab when editing
-          set expandtab           " tabs are spaces
-          filetype indent on      " load filetype-specific indent files
-          filetype on             " Enable file type detection
-          set number              " show line numbers
-          set showcmd             " show command in bottom bar
-          set cursorline          " highlight current line
-          set wildmenu            " visual autocomplete for command menu
-          set lazyredraw          " redraw only when we need to.
-          set showmatch           " highlight matching [{()}]
-          set incsearch           " search as characters are entered
-          set hlsearch            " highlight matches
-          colorscheme industry
-          set backspace=indent,eol,start " backspace over everything in insert mode
-        '';
-      }
-    )
  ];
 
 

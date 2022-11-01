@@ -8,7 +8,7 @@ ln -sF /etc/nixos/hosts/<config>.nix /etc/nixos/configuration.nix
 `root $ nixos-install`
 
 # If you've already installed, but are switching to this config
-`root $ nixos-rebuild switch --keep-going --install-bootloader`
+`root $ nixos-rebuild switch --keep-going`
 
 ## RPi 3B
 
