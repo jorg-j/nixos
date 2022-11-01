@@ -1,20 +1,15 @@
-{ config, lib, pkgs, vars, ... }:
-let
-  unstable = import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master)
-    # reuse the current configuration
-    { config = config.nixpkgs.config; };
-in
+{ config, lib, pkgs, ... }:
+
 {
   home-manager = {
     useGlobalPkgs = true;
-    users.${vars.user} = {
+    users.jack = {
       programs.vscode.enable = true;
 
-      programs.vscode.package = unstable.vscode;
+      programs.vscode.package = vscode;
 
       programs.vscode.userSettings = {
-        "editor.tabSize" = 2;
+        "editor.tabSize" = 4;
         "editor.lineNumbers" = "relative";
         "[php]"."editor.tabSize" = 4;
         "workbench.colorTheme" = "GitHub Dark";
