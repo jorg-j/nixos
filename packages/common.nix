@@ -32,7 +32,7 @@
 
     # Secure
       bitwarden            # Password Manager
-     bitwarden-cli        # Password Manager
+      bitwarden-cli        # Password Manager
     ];
 
     services.udev.packages = [ pkgs.libu2f-host ];
