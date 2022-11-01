@@ -4,23 +4,13 @@
 
 { config, pkgs, ... }:
 
-let
-  sync = pkgs.writeScriptBin "sync" ''
-    #!${pkgs.stdenv.shell}
-    curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/vm_conf.nix | sudo tee /etc/nixos/configuration.nix
-  '';
-in
-{
-  environment.systemPackages = [
-    sync
-  ];
-}
 
 {
   imports =
     [ # Include the results of the hardware scan.
       (import "${builtins.fetchurl https://gitlab.com/jorgensen-j/nixos/-/raw/main/hardware/vm-hardware-configuration.nix}")
       (import "${builtins.fetchurl https://gitlab.com/jorgensen-j/nixos/-/raw/main/sys/aliases.nix}")
+      (import "${builtins.fetchurl https://gitlab.com/jorgensen-j/nixos/-/raw/main/sys/scripts.nix}")
 
     ];
 
