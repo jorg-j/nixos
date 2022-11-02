@@ -42,13 +42,22 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "modesetting" ];
 
-  # Enable xfce
-  # services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.desktopManager.lxqt.enable = true;
-  
+  # Enable Desktop Environment
+
+  services.xserver.desktopManager.xfce.enable = true;
+ 
+
   # Enable slim autologin
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.lightdm.autoLogin.enable = true;
   services.xserver.displayManager.lightdm.autoLogin.user = "pi";
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Materia-dark";
+      package = pkgs.materia.theme;
+    };
+  };
 
 }
