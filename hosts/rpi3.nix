@@ -5,7 +5,6 @@
       ../hardware/3b-hardware-configuration.nix
 
       ../sys/aliases.nix
-      ../sys/users.nix
       ../sys/wifi.nix
 
       ../users/pi.nix
@@ -44,8 +43,9 @@
   services.xserver.videoDrivers = [ "modesetting" ];
 
   # Enable xfce
-  services.xserver.desktopManager.xfce.enable = true;
-
+  # services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.desktopManager.lxqt.enable = true;
+  
   # Enable slim autologin
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.lightdm.autoLogin.enable = true;
