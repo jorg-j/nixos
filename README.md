@@ -1,16 +1,23 @@
 # NixOS
+
+
+To run manually
 ```
 git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos
 ln -sF /etc/nixos/hosts/<config>.nix /etc/nixos/configuration.nix
 ```
 
+OR
+
+`curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh`
+
 # If you've not installed yet
-`root $ nixos-install`
+`nixos-install`
 
 # If you've already installed, but are switching to this config
-`root $ nixos-rebuild switch --keep-going`
+`nixos-rebuild switch --keep-going`
 
-## RPi 3B
+# RPi 3B
 
 Flash the image to sd card
 
@@ -37,8 +44,9 @@ Run this to standup the wifi
 
 Copy the Config
 
-`curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/rpi3.nix | sudo tee /etc/nixos/configuration.nix`
+`curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh`
 
+`bash link.sh`
 
 rebuild
 
@@ -54,10 +62,7 @@ To Enable HDMIless boot
   
 Open the FIRMWARE partition config.txt
 
-add
-
-
-I have resolved by adding the below to FIRMWARE/config.txt
+add the below to FIRMWARE/config.txt
 
 ```
 

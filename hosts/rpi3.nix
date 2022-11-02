@@ -7,6 +7,8 @@
       ../sys/aliases.nix
       ../sys/users.nix
       ../sys/wifi.nix
+
+      ../users/pi.nix
     ];
 
   # === Package Management ===
