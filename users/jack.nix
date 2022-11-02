@@ -5,6 +5,7 @@ in
 {
   imports = [
     (import ./shared.nix (args // { user = user; }))
+    (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
   ];
 
   home-manager = {
