@@ -24,6 +24,8 @@
       ../packages/vnc.nix
 
       ../packages/vscode.nix
+
+      ../users/jack.nix
     ];
 
   # Bootloader.
@@ -79,17 +81,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.jack = {
-    isNormalUser = true;
-    description = "jack";
-    hashedPassword = "$6$MAri.IIplRr.ipPQ$F4iKBI4WTv3Bie2zsUO2g7UabOKJFNk8Dnf1rrqkcE7jc/0Crn.TXaoywOjVMCiJAj1khrGAlmDC2baNt3exq1";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
