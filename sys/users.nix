@@ -3,7 +3,7 @@
   # === Setup Users ===
   users.users = {
     root = {};
-    pi = {
+    jack = {
       isNormalUser = true;
       home = "/home/nixos";
       extraGroups = [ "wheel" "networkmanager" ];

@@ -1,7 +1,7 @@
 
 
 # In Order to run link.sh
-# curl - L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh
+# curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh
 
 printf "%s\n" "Select number for system:"
 
