@@ -4,6 +4,6 @@ let
 in
 {
   imports = [
-    (import ./shared.nix (args // { user = user; }))
+    ./shared.nix (args // { user = user; })
   ];
 }
