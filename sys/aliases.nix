@@ -1,11 +1,15 @@
 {
   environment.shellAliases = {
+    config = "sudo vim /etc/nixos/configuration.nix";
+    build = "sudo nixos-rebuild switch --keep-going";
+    sync = "cd /etc/nixos && sudo git stash && sudo git pull --rebase";
+    clean = "sudo nix-collect-garbage --delete-older-than 30d";
+
     s = "sudo";
     
     log = "sudo journalctl --output cat -u";
     log-previous-boot = "sudo journalctl --boot=-1";
 
-    
     pgrep = "pgrep --full";
     pkill = "pkill --full";
     l = "ls -lahXF --group-directories-first";
@@ -34,15 +38,9 @@
 
     grab-display = "export DISPLAY = ':0.0'";
 
-    config = "sudo vim /etc/nixos/configuration.nix";
-
-    build = "sudo nixos-rebuild switch --keep-going";
-
     hd-wipe-user-packages = "nix-env -e '*'";
 
     hd-gc = "sudo nix-collect-garbage --delete-older-than 30d";
     hd-inspect-store = "nix path-info -rSh /run/current-system | sort -k2h ";
-    hd-sync = "cd /etc/nixos && sudo git stash && sudo git pull --rebase";
-
   };
 }
