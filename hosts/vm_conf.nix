@@ -12,7 +12,7 @@
 
       ../hardware/vm-hardware-configuration.nix
       ../sys/aliases.nix
-      ../sys/scripts.nix
+      # ../sys/scripts.nix
 
       ../packages/common.nix
       ../packages/dev.nix
