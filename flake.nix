@@ -10,7 +10,13 @@
     };
   };
 
-     hosts = map (pkgs.lib.removeSuffix ".nix") (
+  outputs = { self, home-manager, nixpkgs }:
+    let
+      pkgs = (import nixpkgs) {
+        system = "x86_64-linux";
+      };
+
+      hosts = map (pkgs.lib.removeSuffix ".nix") (
         pkgs.lib.attrNames (
           pkgs.lib.filterAttrs
             (_: entryType: entryType == "regular")
@@ -45,4 +51,30 @@
         };
       };
 
+      live-usb-min = {
+        name = "live-usb-min";
+        value = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+            nixpkgs.nixosModules.notDetected
+            home-manager.nixosModules.home-manager
+            (import ./live-usb/min.nix)
+          ];
+        };
+      };
+    in
+      {
+        nixosConfigurations = builtins.listToAttrs (
+          pkgs.lib.flatten (
+            map
+              (
+                host: [
+                  (build-target host)
+                ]
+              )
+              hosts ++ [ live-usb live-usb-min ]
+          )
+        );
+      };
 }
