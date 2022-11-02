@@ -52,12 +52,4 @@
   services.xserver.displayManager.lightdm.autoLogin.enable = true;
   services.xserver.displayManager.lightdm.autoLogin.user = "pi";
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Materia-dark";
-      package = pkgs.materia.theme;
-    };
-  };
-
 }
