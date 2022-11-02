@@ -1,9 +1,9 @@
-args@{ pkgs, lib, ... }:
+args@{ config, pkgs, lib, ... }:
 let
     user = "pi";
 in
 {
   imports = [
-    ./shared.nix (args // { user = user; })
+    (import ./shared.nix (args // { user = user; }))
   ];
 }
