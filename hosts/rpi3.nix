@@ -42,6 +42,8 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "modesetting" ];
 
+  networking.hostname = "tenant"
+
   # Enable Desktop Environment
 
   services.xserver.desktopManager.xfce.enable = true;
