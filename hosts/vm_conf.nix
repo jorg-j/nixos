@@ -11,6 +11,7 @@
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
       ../hardware/vm-hardware-configuration.nix
+      ../desktops/xfce.nix
       ../sys/aliases.nix
       # ../sys/scripts.nix
 
@@ -52,14 +53,7 @@
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
-  # Enable XFCE
-  services.xserver = {
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
-    displayManager.defaultSession = "xfce";
-  };
+  
 
   # Configure keymap in X11
   services.xserver = {
