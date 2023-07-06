@@ -16,10 +16,10 @@ programs.zsh = {
 
 
 programs.zsh = {
-  ... # Your zsh config
- oh-my-zsh = {
+
+ ohMyZsh = {
     enable = true;
-    plugins = [ "git" "thefuck" ];
+    plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
     theme = "robbyrussell";
   };
 };
