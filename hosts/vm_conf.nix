@@ -13,13 +13,13 @@
       ../hardware/vm-hardware-configuration.nix
       ../desktops/xfce.nix
       ../sys/aliases.nix
-      ../sys/zsh.nix
+
       # ../sys/scripts.nix
 
       ../packages/common.nix
       ../packages/dev.nix
       ../packages/networking.nix
-
+      ../packages/media.nix
       ../packages/office.nix
       ../packages/utilities.nix
       ../packages/vim.nix
@@ -100,7 +100,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     firefox              # Firefox
-    vlc                  # VLC media
+
     # vorta                # Vorta Backups
 
     sqlitebrowser        # SQLite3

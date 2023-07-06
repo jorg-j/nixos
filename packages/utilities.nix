@@ -4,6 +4,7 @@
     [
      rpi-imager
      lightburn
+     vorta
     ];
 
 }
