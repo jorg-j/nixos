@@ -85,6 +85,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # allow insecure
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-21.4.0"
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
