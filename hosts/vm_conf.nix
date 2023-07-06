@@ -90,6 +90,11 @@
     "electron-21.4.0"
   ];
 
+  # allow insecure
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elm (libgetName pkg) [
+    "lightburn"
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
