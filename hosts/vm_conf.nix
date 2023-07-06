@@ -13,6 +13,7 @@
       ../hardware/vm-hardware-configuration.nix
       ../desktops/xfce.nix
       ../sys/aliases.nix
+      ../sys/zsh.nix
       # ../sys/scripts.nix
 
       ../packages/common.nix
