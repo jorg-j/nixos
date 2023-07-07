@@ -5,6 +5,7 @@
      rpi-imager
      lightburn
      vorta
+     caffeine-ng
     ];
 
 }

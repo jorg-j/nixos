@@ -9,5 +9,7 @@
 
         poetry               # Poetry
 
+        vagrant
+
     ];
 }
