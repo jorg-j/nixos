@@ -1,11 +1,22 @@
 { pkgs, ... }:
 
 
-pkgs.runCommand "structure" {} ''
-chmod +x /etc/nixos/desktops/Structure.sh
-./etc/nixos/desktops/Structure.sh
 
-''
+let
+
+  sync = pkgs.writeScriptBin "structure" ''
+    #!${pkgs.stdenv.shell}
+    ./etc/nixos/desktops/Structure.sh
+  '';
+
+in
+{
+  environment.systemPackages = [
+    structure
+  ];
+}
+
+
 
 # let
 
