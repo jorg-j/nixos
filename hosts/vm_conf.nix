@@ -14,7 +14,7 @@
       ../desktops/xfce.nix
       ../sys/aliases.nix
 
-      # ../sys/scripts.nix
+      ../sys/scripts.nix
 
       ../packages/common.nix
       ../packages/dev.nix
@@ -109,7 +109,8 @@
 
   virtualisation.docker.enable = true;
 
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
+
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

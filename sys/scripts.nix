@@ -4,9 +4,10 @@
 
 let
 
-  sync = pkgs.writeScriptBin "structure" ''
+  structure = pkgs.writeScriptBin "structure" ''
     #!${pkgs.stdenv.shell}
-    ./etc/nixos/desktops/Structure.sh
+    sudo chmod +x /etc/nixos/desktops/Structure.sh
+    /etc/nixos/desktops/Structure.sh
   '';
 
 in

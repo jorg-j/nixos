@@ -6,6 +6,7 @@
      lightburn
      vorta
      caffeine-ng
+     tree
     ];
 
 }
