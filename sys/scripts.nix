@@ -1,5 +1,12 @@
 { pkgs, ... }:
 
+
+pkgs.runCommand "structure" {} ''
+chmod +x /etc/nixos/desktops/Structure.sh
+./etc/nixos/desktops/Structure.sh
+
+''
+
 # let
 
 #   sync = pkgs.writeScriptBin "sync" ''

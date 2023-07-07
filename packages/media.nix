@@ -6,7 +6,7 @@
      deluge
      simplescreenrecorder
      imagemagick
-     steam
+    #  steam
 
     ];
 
