@@ -10,7 +10,7 @@ in
   users.users.jack.extraGroups = [ "docker" ];
 
 security.sudo.extraRules = [
-  { users = [ "myusername" ];
+  { users = [ "jack" ];
     options = [ "NOPASSWD" ];
   }
 ];
