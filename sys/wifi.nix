@@ -2,6 +2,8 @@
 {
 
   # === Setup Wifi ===
+  # to generate passphrase
+  # wpa_passphrase exampleSSID examplePassword
 
   networking.wireless = {
     enable = true;

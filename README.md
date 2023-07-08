@@ -13,6 +13,10 @@ exit.
 `sudo nixos-rebuild switch --keep-going`
 
 
+OR
+
+`sudo nixos-env --install git`
+`sudo nixos-rebuild switch --keep-going`
 #
 
 To run manually
