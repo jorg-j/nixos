@@ -9,7 +9,7 @@
       #!/bin/bash
       source ${config.system.build.setEnvironment}
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      flatpak update
+      flatpak update -y
       flatpak install vaults -y
       # flatpak install flathub com.valvesoftware.Steam -y
       '';
