@@ -2,6 +2,11 @@
 
 {# Enable XFCE
 
+imports =
+    [ 
+      ../desktops/xfce_theme.nix
+    ];
+
   services.xserver = {
     desktopManager = {
       xterm.enable = false;

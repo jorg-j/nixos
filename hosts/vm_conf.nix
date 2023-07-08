@@ -12,7 +12,7 @@
 
       ../hardware-configuration.nix
       ../desktops/xfce.nix
-      ../desktops/xfce_theme.nix
+
       ../sys/aliases.nix
 
       ../sys/scripts.nix
