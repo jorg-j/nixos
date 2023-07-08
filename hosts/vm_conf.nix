@@ -10,7 +10,7 @@
     [ # Include the results of the hardware scan.
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-      /etc/nixos/hardware-configuration.nix
+      ../hardware-configuration.nix
       ../desktops/xfce.nix
       ../desktops/xfce_theme.nix
       ../sys/aliases.nix
