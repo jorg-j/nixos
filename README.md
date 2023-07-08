@@ -1,5 +1,19 @@
 # NixOS
 
+# Initial Install
+
+After install run.
+
+`sudo nano /etc/nixos/configuration.nix`
+
+add git to the packages list
+
+exit.
+
+`sudo nixos-rebuild switch --keep-going`
+
+
+#
 
 To run manually
 ```

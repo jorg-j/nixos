@@ -26,7 +26,7 @@
       ../packages/vim.nix
       ../packages/vnc.nix
       ../packages/vscode.nix
-      ../packages/flatpak.nix
+      # ../packages/flatpak.nix
 
       ../users/jack.nix
     ];

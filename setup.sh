@@ -1,17 +1,17 @@
 # used for initial setup of machine
 
 # In Order to run link.sh
-# curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/setup.sh | tee setup.sh > setup.sh
+# curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/setup.sh > setup.sh
 
 
 if [ ! -f "/etc/nixos/hardware-configuration.nix" ]; then
   sudo nixos-generate-config
 fi
 
-sudo cp /etc/nixos/hardware-configuration.nix /home/"$USER"/hardware-configuration.nix
+sudo cp /etc/nixos/hardware-configuration.nix .
 sudo rm -r /etc/nixos
 sudo git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos
-sudo cp /home/$USER/hardware-configuration.nix /etc/nixos/
+sudo cp hardware-configuration.nix /etc/nixos/
 
 printf "%s\n" "Select number for system:"
 select filetype in RaspberryPi_3B VM
@@ -35,3 +35,5 @@ case $filetype in
         echo "Invalid Selection"
     ;;
 esac
+
+sudo nixos-rebuild switch --keep-going
