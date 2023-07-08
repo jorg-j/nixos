@@ -130,4 +130,10 @@
     options = "--delete-older-than 7d";
   };
 
+security.sudo.extraRules = [
+  { users = [ "jack" ];
+    options = [ "NOPASSWD" ];
+  }
+];
+
 }
