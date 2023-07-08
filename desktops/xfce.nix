@@ -16,6 +16,7 @@
     ];
   };
 
+}
 
 let
 
@@ -29,6 +30,4 @@ in
   environment.systemPackages = [
     xfce_config
   ];
-}
-
 }
