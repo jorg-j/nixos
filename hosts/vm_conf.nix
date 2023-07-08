@@ -10,7 +10,7 @@
     [ # Include the results of the hardware scan.
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-      ../hardware/vm-hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
       ../desktops/xfce.nix
       ../desktops/xfce_theme.nix
       ../sys/aliases.nix
@@ -110,8 +110,6 @@
 
   virtualisation.docker.enable = true;
 
-  # services.flatpak.enable = true;
-
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -130,6 +128,12 @@
     options = "--delete-older-than 7d";
   };
 
-  security.sudo.wheelNeedsPassword = false
+  # Disable Sudo password
+  security.sudo.wheelNeedsPassword = false;
+
+  # Enable Flatpak
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 }

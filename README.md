@@ -71,3 +71,8 @@ hdmi_force_hotplug=1
 hdmi_drive=2
 
 ```
+
+
+## XFCE
+
+If using XFCE after build run the `xfce_config` command to update the theme
