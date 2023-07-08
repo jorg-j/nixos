@@ -25,8 +25,8 @@
       ../packages/utilities.nix
       ../packages/vim.nix
       ../packages/vnc.nix
-
       ../packages/vscode.nix
+      ../packages/flatpak.nix
 
       ../users/jack.nix
     ];
@@ -124,16 +124,13 @@
 
   nix.gc = {
     automatic = true;
-    dates = "weekly";
+    dates = "daily";
     options = "--delete-older-than 7d";
   };
 
   # Disable Sudo password
   security.sudo.wheelNeedsPassword = false;
 
-  # Enable Flatpak
-  services.flatpak.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
 
 }
