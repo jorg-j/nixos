@@ -135,4 +135,7 @@
   # Add Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.x11 = true;
+
 }
