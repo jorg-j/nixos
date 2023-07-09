@@ -15,7 +15,7 @@ exit.
 
 OR
 
-`sudo nixos-env --install git`
+`sudo nix-env --install git`
 `sudo nixos-rebuild switch --keep-going`
 
 reboot the system

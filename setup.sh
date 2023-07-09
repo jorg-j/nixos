@@ -3,6 +3,7 @@
 # In Order to run link.sh
 # curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/setup.sh > setup.sh
 
+sudo nix-env --install git
 
 if [ ! -f "/etc/nixos/hardware-configuration.nix" ]; then
   sudo nixos-generate-config

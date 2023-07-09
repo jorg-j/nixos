@@ -4,7 +4,7 @@
     build = "sudo nixos-rebuild switch --keep-going";
     sync = "cd /etc/nixos && sudo git stash && sudo git pull --rebase";
     clean = "sudo nix-collect-garbage --delete-older-than 30d";
-    autoclean = "sudo nix-env --delete-generations old"
+    autoclean = "sudo nix-env --delete-generations old";
 
 
     s = "sudo";

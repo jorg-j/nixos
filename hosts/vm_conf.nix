@@ -11,7 +11,8 @@
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
       ../hardware-configuration.nix
-      ../desktops/xfce.nix
+      # ../desktops/xfce.nix
+      ../desktops/budgie.nix
 
       ../sys/aliases.nix
 
