@@ -137,22 +137,5 @@
 
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.x11 = true;
-  fonts = {
-    FontDir.enable = true;
-    enableGhostscriptFonts = true;
-    fonts = with pkgs; [
-      anonymousPro
-      corefonts
-      dejavu_fonts
-      freefont_ttf
-      google-fonts
-      inconsolata
-      liberation_ttf
-      powerline-fonts
-      source-code-pro
-      terminus_font
-      ttf_bitstream_vera
-      ubuntu_font_family
-    ];
-  };
+  
 }
