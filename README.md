@@ -17,6 +17,13 @@ OR
 
 `sudo nixos-env --install git`
 `sudo nixos-rebuild switch --keep-going`
+
+reboot the system
+
+then after login run
+`fpak` to install flatpaks
+`xfce_config` to setup XFCE theming
+
 #
 
 To run manually

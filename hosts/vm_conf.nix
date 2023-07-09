@@ -26,7 +26,7 @@
       ../packages/vim.nix
       ../packages/vnc.nix
       ../packages/vscode.nix
-      # ../packages/flatpak.nix
+      ../packages/flatpak.nix
 
       ../users/jack.nix
     ];
@@ -131,6 +131,7 @@
   # Disable Sudo password
   security.sudo.wheelNeedsPassword = false;
 
-
+  # Add Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 }
