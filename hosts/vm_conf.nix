@@ -36,6 +36,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
+  boot.cleanTmpDir = true;
 
   networking.hostName = "nixosvm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -137,5 +138,23 @@
 
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.x11 = true;
-
+  fonts = {
+    enableFontDir = true;
+    enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+      anonymousPro
+      corefonts
+      dejavu_fonts
+      font-droid
+      freefont_ttf
+      google-fonts
+      inconsolata
+      liberation_ttf
+      powerline-fonts
+      source-code-pro
+      terminus_font
+      ttf_bitstream_vera
+      ubuntu_font_family
+    ];
+  };
 }
