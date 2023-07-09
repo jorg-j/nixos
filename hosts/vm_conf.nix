@@ -36,7 +36,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
-  boot.cleanTmpDir = true;
+  boot.tmp.cleanOnBoot = true;
 
   networking.hostName = "nixosvm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -145,7 +145,6 @@
       anonymousPro
       corefonts
       dejavu_fonts
-      font-droid
       freefont_ttf
       google-fonts
       inconsolata
