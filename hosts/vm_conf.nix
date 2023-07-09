@@ -11,8 +11,7 @@
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
       ../hardware-configuration.nix
-      # ../desktops/xfce.nix
-      ../desktops/budgie.nix
+      ../desktops/xfce.nix
 
       ../sys/aliases.nix
 
@@ -139,7 +138,7 @@
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.x11 = true;
   fonts = {
-    enableFontDir = true;
+    FontDir.enable = true;
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
       anonymousPro
