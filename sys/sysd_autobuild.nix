@@ -16,7 +16,7 @@ config.systemd.services."autobuild" = {
   description = "autobuild";
   serviceConfig = {
     Type = "simple";
-    ExecStart = "sudo ${pkgs.stdenv.shell} -c \"/etc/nixos/sys/autobuild.sh\"";
+    ExecStart = "${pkgs.stdenv.shell} -c \"sudo bash /etc/nixos/sys/autobuild.sh\"";
     User = "root";
   };
 };
