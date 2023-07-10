@@ -52,11 +52,15 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable auto randr
+  services.autorandr.enable = true;
+
   # Enable the Plasma Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
-  
+  # For SSD's
+  # services.fstrim.enable = true;
 
   # Configure keymap in X11
   services.xserver = {

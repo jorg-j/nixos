@@ -21,7 +21,7 @@ with builtins;
 
     programs = {
     #   vscode = import ./vscode.nix args;
-
+    autorandr.enable = true;
       git = {
         enable = true;
         userName = "jorg-j";
