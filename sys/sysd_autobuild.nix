@@ -1,6 +1,17 @@
 { config, pkgs, ... }:
 {
 
+
+environment.systemPackages = with pkgs; [
+  (writeTextFile {
+    name = "autobuild.sh";
+    text = "cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && sudo nixos-rebuild switch --keep-going && ns 'Build Complete'";
+    executable = true;
+    destination = "/etc/autobuild.sh";
+
+  })
+];
+
 config.systemd.timers."autobuild" = {
   wantedBy = [ "multi-user.target" ];
   timerConfig = {
@@ -16,7 +27,7 @@ config.systemd.services."autobuild" = {
   description = "autobuild";
   serviceConfig = {
     Type = "simple";
-    ExecStart = "${pkgs.stdenv.shell} -c \"sudo bash /etc/nixos/sys/autobuild.sh\"";
+    ExecStart = "${pkgs.stdenv.shell} -c \" /etc/autobuild.sh\"";
     User = "root";
   };
 };
