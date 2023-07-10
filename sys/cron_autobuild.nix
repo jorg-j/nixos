@@ -8,5 +8,5 @@
         systemCronJobs = [
             "* * * * * root rebuild"
         ];
-    }
+    };
 }
