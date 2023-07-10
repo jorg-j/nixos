@@ -16,17 +16,18 @@
       ../sys/aliases.nix
 
       ../sys/scripts.nix
+      ../packages/vm_packages.nix
 
-      ../packages/common.nix
-      ../packages/dev.nix
-      ../packages/networking.nix
-      ../packages/media.nix
-      ../packages/office.nix
-      ../packages/utilities.nix
-      ../packages/vim.nix
-      ../packages/vnc.nix
-      ../packages/vscode.nix
-      ../packages/flatpak.nix
+      # ../packages/common.nix
+      # ../packages/dev.nix
+      # ../packages/networking.nix
+      # ../packages/media.nix
+      # ../packages/office.nix
+      # ../packages/utilities.nix
+      # ../packages/vim.nix
+      # ../packages/vnc.nix
+      # ../packages/vscode.nix
+      # ../packages/flatpak.nix
 
       ../users/jack.nix
       # ../sys/sysd_autobuild.nix
