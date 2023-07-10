@@ -12,11 +12,13 @@ config.systemd.timers."autobuild" = {
 
 
 config.systemd.services."autobuild" = {
+  script = ''
+  ${pkgs.stdenv.shell} cd /etc/nixos && ns 'cd to nixos' && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && ns 'branch behind' && sudo git stash && sudo git pull --rebase && build && ns 'Build Complete'
+  '';
   enable = true;
   description = "autobuild";
   serviceConfig = {
     Type = "simple";
-    ExecStart = "${pkgs.stdenv.shell} -c \"/etc/nixos/sys/autobuild.sh\"";
     User = "root";
   };
 };
