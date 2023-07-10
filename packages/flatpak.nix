@@ -7,6 +7,7 @@ let
     flatpak update -y
     flatpak install vaults -y
     flatpak install flathub com.valvesoftware.Steam -y
+    flatpak install flathub org.telegram.desktop -y
   '';
 
 in
