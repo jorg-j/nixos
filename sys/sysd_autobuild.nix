@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
-services.systemd.services.my-script = {
+config.systemd.services.autobuild = {
+  enable = true;
   description = "autobuild";
   serviceConfig = {
     Type = "simple";
