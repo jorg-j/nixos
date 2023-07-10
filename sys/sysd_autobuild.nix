@@ -28,7 +28,7 @@ config.systemd.services."autobuild" = {
   description = "autobuild";
   serviceConfig = {
     Type = "simple";
-    ExecStart = "${pkgs.stdenv.shell} -c \" /etc/autobuild.sh\"";
+    ExecStart = "${pkgs.stdenv.shell} -c \" /etc/autobuild\"";
     User = "root";
   };
 };
