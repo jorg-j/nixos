@@ -9,6 +9,7 @@
       gitAndTools.delta
       home-manager
       git
+      gedit
       file
       jq
       nmap
