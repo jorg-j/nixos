@@ -2,7 +2,7 @@
 {
 
 
-environment.etc = {
+config.environment.etc = {
   autobuild = {
     text = ''
     cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && sudo nixos-rebuild switch --keep-going && ns 'Build Complete'
