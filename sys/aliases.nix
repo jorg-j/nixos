@@ -8,7 +8,6 @@
 
     rebuild = "cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && build && ns 'Build Complete'";
 
-
     s = "sudo";
     
     log = "sudo journalctl --output cat -u";
