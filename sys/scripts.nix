@@ -17,8 +17,6 @@ in
   ];
 }
 
-
-
 # let
 
 #   sync = pkgs.writeScriptBin "sync" ''
