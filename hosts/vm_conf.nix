@@ -29,7 +29,7 @@
       ../packages/flatpak.nix
 
       ../users/jack.nix
-      ../sys/sysd_autobuild.nix
+      # ../sys/sysd_autobuild.nix
 
     ];
 
