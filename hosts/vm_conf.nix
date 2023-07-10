@@ -29,6 +29,8 @@
       ../packages/flatpak.nix
 
       ../users/jack.nix
+
+      ../sys/cron_autobuild.nix
     ];
 
   # Bootloader.
