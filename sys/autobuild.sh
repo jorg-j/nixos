@@ -1,0 +1,2 @@
+#!${pkgs.stdenv.shell}
+cd /etc/nixos && ns 'cd to nixos' && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && ns 'branch behind' && sudo git stash && sudo git pull --rebase && build && ns 'Build Complete'
