@@ -1,12 +1,12 @@
 { config, lib, pkgs, ... }:
-
+#
 let
 
-workingDirectory = "/var/lib/autobuild";
+workingDirectory = "/etc/nixos";
 repositoryDirectory = "${workingDirectory}";
 repository = "https://gitlab.com/jorgensen-j/nixos.git";
 gitWithRepo = "git -C ${repositoryDirectory}";
-nixFile = "hosts/vm_conf.nix";
+nixFile = "${repositoryDirectory}/hosts/vm_conf.nix";
 in
 
 {
@@ -31,23 +31,8 @@ config.systemd.services."autobuild" = {
     ];
 
     script = ''
-      if [ ! -e ${workingDirectory} ]; then
-        mkdir --parents ${workingDirectory}
-      fi
-
-      if [ ! -e ${repositoryDirectory} ]; then
-        git clone ${repository} ${repositoryDirectory}
-      fi
-
-      # Ensure that if cfg.repository is changed, origin is updated
-      ${gitWithRepo} remote set-url origin ${repository}
-
-      ${gitWithRepo} fetch origin main
-
-      ${gitWithRepo} checkout FETCH_HEAD
-
-      nix-build ${nixFile}
-
+      ${gitWithRepo} remote update
+      ${gitWithRepo} status -uno | grep -q 'Your branch is behind' && ${gitWithRepo} stash && ${gitWithRepo} pull --rebase && nixos-rebuild switch --keep-going
 
       ${gitWithRepo} gc --prune=all
       '';
