@@ -18,11 +18,10 @@ config.systemd.services."autobuild" = {
         git
         nix
         systemd
-        dunst
       ];
 
       script = ''
-        cd /etc/nixos && notify-send 'cd to nixos' && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && sudo nixos-rebuild switch --keep-going && notify-send 'Build Complete'";
+        cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && sudo nixos-rebuild switch --keep-going";
       '';
 
     serviceConfig = {
