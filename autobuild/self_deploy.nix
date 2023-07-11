@@ -11,7 +11,7 @@ services.self-deploy = {
     startAt = "minutely";
     repository = "https://gitlab.com/jorgensen-j/nixos.git";
     # nixFile = "/nix/${config.system.name}.nix";
-    nixFile = "/hosts/vm_conf.nix";
+    nixFile = "/vm_binary.nix";
     switchCommand = "switch";
     
 };
