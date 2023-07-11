@@ -2,11 +2,11 @@
 {
   environment.systemPackages = with pkgs;
     [
-     rpi-imager
-     lightburn
-     vorta
-     caffeine-ng
-     tree
+      caffeine-ng
+      lightburn
+      rpi-imager
+      tree
+      vorta
     ];
 
 }

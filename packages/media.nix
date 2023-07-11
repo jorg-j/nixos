@@ -4,10 +4,8 @@
     [
      celluloid
      deluge
-     simplescreenrecorder
      imagemagick
-    #  steam
-
+     simplescreenrecorder
     ];
 
     services.udev.packages = [ pkgs.libu2f-host ];
