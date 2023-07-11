@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 {
 
-
+programs.ssh.knownHosts = [
+  "/etc/ssh/ssh_known_hosts"
+  "/home/jack/.ssh/known_hosts"
+];
 
 services.self-deploy = {
     enable = true;

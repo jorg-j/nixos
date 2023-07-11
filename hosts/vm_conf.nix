@@ -19,7 +19,7 @@
       ../packages/desktop.nix
 
       ../users/jack.nix
-      # ../autobuild/self_deploy.nix
+      ../autobuild/self_deploy.nix
 
     ];
 
