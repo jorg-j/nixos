@@ -3,7 +3,7 @@
 let
 
 workingDirectory = "/var/lib/autobuild";
-repositoryDirectory = "${workingDirectory}/repo";
+repositoryDirectory = "${workingDirectory}";
 repository = "https://gitlab.com/jorgensen-j/nixos.git";
 gitWithRepo = "git -C ${repositoryDirectory}";
 nixFile = "hosts/vm_conf.nix";
@@ -32,7 +32,7 @@ config.systemd.services."autobuild" = {
 
     script = ''
       if [ ! -e ${workingDirectory} ]; then
-        mkdir --parents ${workingDirectory}/repo
+        mkdir --parents ${workingDirectory}
       fi
 
       if [ ! -e ${repositoryDirectory} ]; then
