@@ -11,6 +11,7 @@ services.self-deploy = {
     # nixFile = "/nix/${config.system.name}.nix";
     nixFile = "/nix/hosts/vm_conf.nix";
     nixAttribute = "system";
+    branch="main";
 };
 
 }
