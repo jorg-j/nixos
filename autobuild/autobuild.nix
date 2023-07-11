@@ -30,4 +30,5 @@ config.systemd.services."autobuild" = {
         User = "root";
     };
 
+};
 }
