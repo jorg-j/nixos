@@ -36,7 +36,7 @@ config.systemd.services."autobuild" = {
       fi
 
       if [ ! -e ${repositoryDirectory} ]; then
-        git clone ${repositoryDirectory}
+        git clone ${repository} ${repositoryDirectory}
       fi
 
       # Ensure that if cfg.repository is changed, origin is updated
