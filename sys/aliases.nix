@@ -7,7 +7,10 @@
     autoclean = "sudo nix-env --delete-generations old";
 
     rebuild = "cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && build && ns 'Build Complete'";
-    ab = "sudo systemctl start autobuild && sleep 2 && sudo systemctl status autobuild";
+    
+    closure_build = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1";
+    closure_deploy = "cd /etc/nixos/closure_files && sudo ./result/bin/switch-to-configuration switch";
+    closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";
 
 
     s = "sudo";
