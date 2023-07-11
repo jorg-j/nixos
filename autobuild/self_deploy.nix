@@ -9,8 +9,7 @@ services.self-deploy = {
     startAt = "minutely";
     repository = "git@gitlab.com:jorgensen-j/nixos.git";
     # nixFile = "/nix/${config.system.name}.nix";
-    nixFile = "/nix/hosts/vm_conf.nix";
-    nixAttribute = "system";
+    nixFile = "/hosts/vm_conf.nix";
     branch="main";
 };
 
