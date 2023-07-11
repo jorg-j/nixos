@@ -36,19 +36,17 @@ config.systemd.services."autobuild" = {
       fi
 
       if [ ! -e ${repositoryDirectory} ]; then
-        git clone ${lib.cli.toGNUCommandLineShell {} {
-          local = (isPathType cfg.repository);
-        }} ${lib.escapeShellArg cfg.repository} ${repositoryDirectory}
+        git clone ${repositoryDirectory}
       fi
 
       # Ensure that if cfg.repository is changed, origin is updated
-      ${gitWithRepo} remote set-url origin ${lib.escapeShellArg cfg.repository}
+      ${gitWithRepo} remote set-url origin ${repository}
 
-      ${gitWithRepo} fetch origin ${lib.escapeShellArg cfg.branch}
+      ${gitWithRepo} fetch origin main
 
       ${gitWithRepo} checkout FETCH_HEAD
 
-      nix-build ${lib.escapeShellArg "${repositoryDirectory}${cfg.nixFile}"}
+      nix-build ${nixFile}
 
 
       ${gitWithRepo} gc --prune=all
