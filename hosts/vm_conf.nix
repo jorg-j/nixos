@@ -19,7 +19,7 @@
       ../packages/desktop.nix
 
       ../users/jack.nix
-      ../sys/sysd_autobuild.nix
+      ../sys/autobuild.nix
 
     ];
 
