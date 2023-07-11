@@ -12,7 +12,8 @@
 
       # ../hardware-configuration.nix
       ../hardware/vm-hardware-configuration.nix
-      ../desktops/xfce.nix
+      ../desktops/plasma.nix
+      # ../desktops/xfce.nix
 
       ../sys/aliases.nix
       ../sys/scripts.nix
