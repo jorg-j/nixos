@@ -21,14 +21,14 @@ config.systemd.timers."autobuild" = {
 };
 
 config.systemd.services."autobuild" = {
-      wantedBy = [ "multi-user.target" ];
-      enable = true;
+    wantedBy = [ "multi-user.target" ];
+    enable = true;
 
-      path = with pkgs; [
-        git
-        nix
-        systemd
-      ];
+    path = with pkgs; [
+      git
+      nix
+      systemd
+    ];
 
     script = ''
       if [ ! -e ${workingDirectory} ]; then
@@ -55,5 +55,4 @@ config.systemd.services."autobuild" = {
       '';
     };
 
-};
 }
