@@ -10,7 +10,8 @@
     [ # Include the results of the hardware scan.
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-      ../hardware-configuration.nix
+      # ../hardware-configuration.nix
+      ../hardware/vm-hardware-configuration.nix
       ../desktops/xfce.nix
 
       ../sys/aliases.nix
@@ -19,7 +20,7 @@
       ../packages/desktop.nix
 
       ../users/jack.nix
-      ../autobuild/autobuild.nix
+      # ../autobuild/autobuild.nix
 
     ];
 
