@@ -7,7 +7,7 @@
         ms-vscode-remote.remote-ssh
         ms-azuretools.vscode-docker
         redhat.vscode-yaml
-        vscodevim.vim
+        # vscodevim.vim
         eamodio.gitlens
         ms-toolsai.jupyter
         esbenp.prettier-vscode
