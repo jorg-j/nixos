@@ -32,7 +32,7 @@ config.systemd.services."autobuild" = {
 
     script = ''
       if [ ! -e ${workingDirectory} ]; then
-        mkdir --parents ${workingDirectory}
+        mkdir --parents ${workingDirectory}/repo
       fi
 
       if [ ! -e ${repositoryDirectory} ]; then
