@@ -5,7 +5,11 @@
 config.environment.etc = {
   autobuild = {
     text = ''
-    cd /etc/nixos && git remote update && git status -uno | grep -q 'Your branch is behind' && git stash && git pull --rebase && nixos-rebuild switch --keep-going
+    cd /etc/nixos
+    echo "cd is good" >> /home/jack/log.log
+    git remote update
+    echo "remote update is good" >> /home/jack/log.log
+    git status -uno | grep -q 'Your branch is behind' && git stash && git pull --rebase && nixos-rebuild switch --keep-going
     '';
     mode = "0777";
   };
