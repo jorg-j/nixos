@@ -18,7 +18,7 @@ config.systemd.services."autobuild" = {
         git
         nix
         systemd
-        notify-send
+        dunst
       ];
 
       script = ''
