@@ -4,35 +4,32 @@
 
 { config, pkgs, ... }:
 
-
 {
   imports =
     [ # Include the results of the hardware scan.
-      <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-
-      # ../hardware-configuration.nix
-      ../hardware/vm-hardware-configuration.nix
-      # ../desktops/plasma.nix
-      ../desktops/xfce.nix
+      ../surface/hardware-configuration.nix
+      ../surface/nixos-hardware/microsoft/surface/surface-pro-intel
 
       ../sys/aliases.nix
       ../sys/scripts.nix
 
       ../packages/desktop.nix
 
+      ../desktops/gnome.nix
       ../users/jack.nix
-      # ../autobuild/autobuild.nix
 
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-  boot.tmp.cleanOnBoot = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixosvm"; # Define your hostname.
+  networking.hostName = "surface"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -41,7 +38,7 @@
   time.timeZone = "Australia/Melbourne";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_AU.utf8";
+  i18n.defaultLocale = "en_AU.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_AU.UTF-8";
@@ -58,12 +55,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable auto randr
-  services.autorandr.enable = true;
-
-
-  # For SSD's
-  # services.fstrim.enable = true;
+  # helps with ssd storage
+  services.fstrim.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -94,33 +87,51 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # # Define a user account. Don't forget to set a password with ‘passwd’.
+  # users.users.jack = {
+  #   isNormalUser = true;
+  #   description = "jack";
+  #   extraGroups = [ "networkmanager" "wheel" ];
+  #   packages = with pkgs; [
+  #     firefox
+  #   #  thunderbird
+  #   ];
+  # };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # allow insecure
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-21.4.0"
-  ];
-
-
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    firefox              # Firefox
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+  ];
 
-    # vorta                # Vorta Backups
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
 
-    sqlitebrowser        # SQLite3
-
- ];
+  # Disable Sudo password
+  security.sudo.wheelNeedsPassword = false;
 
   virtualisation.docker.enable = true;
 
+  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+   services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -128,21 +139,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 7d";
-  };
-
-  # Disable Sudo password
-  security.sudo.wheelNeedsPassword = false;
-
-  # Add Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
-  
 }
