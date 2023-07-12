@@ -15,6 +15,7 @@ imports =
       tree
       vorta
       xterm
+      xfce.xfce4-terminal
     ];
 
 }

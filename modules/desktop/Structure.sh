@@ -30,7 +30,7 @@ mkdir -p 10-19_Books_Documentation/11_Documentation/11.01_Manuals
 
 mkdir -p 10-19_Books_Documentation/12_Magazines/12.01_Popular_Mechanics
 
-
+mkdir -p 10-19_Books_Documentation/13_Obsidian_Vaults/
 
 
 # 20-29 Programming
@@ -106,7 +106,7 @@ mkdir -p 30-39_House/32_Family/32.02_Dogs
 mkdir -p 30-39_House/32_Family/32.03_Caleb_Logan
 mkdir -p 30-39_House/32_Family/32.04_Leanne_Mark_Teri
 mkdir -p 30-39_House/32_Family/32.05_Tash_Family
-
+mkdir -p 30-39_House/32_Family/32.06_Pop
 
 mkdir -p 30-39_House/33_Finances/33.01_Budget
 mkdir -p 30-39_House/33_Finances/33.02_Equifax

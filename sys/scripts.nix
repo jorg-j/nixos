@@ -6,7 +6,7 @@ let
 
   structure = pkgs.writeScriptBin "structure" ''
     #!${pkgs.stdenv.shell}
-    sudo chmod +x /etc/nixos/desktops/Structure.sh
+    sudo chmod +x /etc/nixos/modules/desktop/Structure.sh
     /etc/nixos/desktops/Structure.sh
   '';
 
