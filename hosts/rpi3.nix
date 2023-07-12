@@ -2,7 +2,7 @@
 {
   imports =
     [ 
-      ../hardware/3b-hardware-configuration.nix
+      ../modules/hardware/3b-hardware-configuration.nix
 
       ../sys/aliases.nix
       ../sys/wifi.nix

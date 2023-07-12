@@ -5,7 +5,6 @@
 
       ./common.nix
       ./dev.nix
-      ./flatpak.nix
       ./media.nix
       ./networking.nix
       ./office.nix
@@ -13,7 +12,5 @@
       ./vim.nix
       ./vnc.nix
       ./vscode.nix
-      
-
     ];
 }

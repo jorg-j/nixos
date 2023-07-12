@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
 {
+
+imports =
+    [ 
+      ./xfce_theme.nix
+    ];
+
+
   environment.systemPackages = with pkgs;
     [
       caffeine-ng
@@ -7,6 +14,7 @@
       rpi-imager
       tree
       vorta
+      xterm
     ];
 
 }

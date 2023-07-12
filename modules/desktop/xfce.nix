@@ -4,7 +4,7 @@
 
 imports =
     [ 
-      ../desktops/xfce_theme.nix
+      ./xfce_theme.nix
     ];
 
   services.xserver = {

@@ -16,7 +16,7 @@
       wget
       curl
       aria2
-      imagemagick
+
       bat
       tmux
       libnotify

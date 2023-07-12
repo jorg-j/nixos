@@ -11,14 +11,15 @@
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
       # ../hardware-configuration.nix
-      ../hardware/vm-hardware-configuration.nix
-      # ../desktops/plasma.nix
-      ../desktops/xfce.nix
+      ../modules/hardware/vm-hardware-configuration.nix
+
+      ../modules/desktop/xfce.nix
 
       ../sys/aliases.nix
       ../sys/scripts.nix
 
       ../packages/desktop.nix
+      ../packages/flatpak.nix
 
       ../users/jack.nix
       # ../autobuild/autobuild.nix
