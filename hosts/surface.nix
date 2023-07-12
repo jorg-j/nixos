@@ -109,6 +109,14 @@
     git
   ];
 
+  # allow insecure
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-21.4.0"
+  ];
+
+
+
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
