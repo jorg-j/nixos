@@ -11,8 +11,8 @@ in
   users.users.jack = {
     extraGroups = [ "docker" ];
 
-    openssh.configFile = ''
-    Host tenant
+    extraConfig = ''
+    echo "Host tenant
         HostName tenant.local
         User pi
 
@@ -46,7 +46,7 @@ in
 
     Host clara
         Hostname 192.168.1.152
-        User pi
+        User pi" > /home/jack/.ssh/config
     '';
   };
 
