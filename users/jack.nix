@@ -11,7 +11,7 @@ in
   users.users.jack = {
     extraGroups = [ "docker" ];
 
-    home.file.".ssh/config".text = ''
+    home.fileContents.".ssh/config".source = ''
           Host tenant
               HostName tenant.local
               User pi
