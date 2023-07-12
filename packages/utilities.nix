@@ -3,7 +3,7 @@
 
 imports =
     [ 
-      ./xfce_theme.nix
+      ../modules/desktop/xfce_theme.nix
     ];
 
 
