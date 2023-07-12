@@ -10,7 +10,7 @@ in
 
   users.users.jack = {
     extraGroups = [ "docker" ];
-    
+
     openssh.configFile = ''
     Host tenant
         HostName tenant.local
@@ -48,6 +48,6 @@ in
         Hostname 192.168.1.152
         User pi
     '';
-  }
+  };
 
  }
