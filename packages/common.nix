@@ -21,6 +21,9 @@
       tmux
       libnotify
 
+    # Web
+      firefox
+
     # Monitoring
       htop
       neofetch

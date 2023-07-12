@@ -2,10 +2,10 @@
 
 {
 
-imports =
-    [ 
-      ./gnome_extensions.nix
-    ];
+# imports =
+    # [ 
+    #   ./gnome_extensions.nix
+    # ];
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
