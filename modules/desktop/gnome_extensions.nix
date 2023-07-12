@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
 {
-  # ...
+  environment.systemPackages = with pkgs;
+    [
+      dconf
+    ];
+    
   dconf.settings = {
     # ...
     "org/gnome/shell" = {
@@ -19,10 +23,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs;
-    [
-      dconf
-    ];
+
 
 
   home.packages = with pkgs; [
