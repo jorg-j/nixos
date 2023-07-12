@@ -19,6 +19,12 @@
     };
   };
 
+  environment.systemPackages = with pkgs;
+    [
+      dconf
+    ];
+
+
   home.packages = with pkgs; [
     # ...
     gnomeExtensions.user-themes
