@@ -23,14 +23,11 @@
 
         };
 
-      versioning = {
-        type = "staggered";
-        params = {
-          cleanInterval = "3600"; # 1 hour in seconds
-          maxAge = "2592000"; # 30 days in seconds
-          };
-        };
-
       };
     };
+
+    services.syncthing.extraOptions.gui = {
+    user = "jack";
+    password = "syncthing";
+};
 }
