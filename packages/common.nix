@@ -20,6 +20,8 @@
       bat
       tmux
       libnotify
+    # Screen Recording
+      kooha
 
     # Web
       firefox

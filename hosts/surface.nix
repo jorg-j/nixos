@@ -109,7 +109,8 @@
 
     environment.systemPackages = with pkgs;
     [
-      libwacom-surface
+            libwacom-surface
+            libcamera
     ];
 
 

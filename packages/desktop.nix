@@ -12,5 +12,6 @@
       ./vim.nix
       ./vnc.nix
       ./vscode.nix
+      ./zsh.nix
     ];
 }
