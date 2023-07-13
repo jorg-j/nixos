@@ -12,6 +12,7 @@
       ./vim.nix
       ./vnc.nix
       ./vscode.nix
-      ./zsh.nix
+      ./shells/fish.nix
+      ./shells/zsh.nix
     ];
 }
