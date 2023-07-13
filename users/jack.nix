@@ -10,7 +10,7 @@ in
 
   users.users.jack = {
     extraGroups = [ "docker" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
 
   };
 
