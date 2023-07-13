@@ -16,8 +16,8 @@
       ../packages/desktop.nix
 
       ../modules/desktop/gnome.nix
-
       ../users/jack.nix
+
 
     ];
 
@@ -53,8 +53,7 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+
 
   # helps with ssd storage
   services.fstrim.enable = true;
@@ -108,7 +107,10 @@
     "electron-21.4.0"
   ];
 
-
+    environment.systemPackages = with pkgs;
+    [
+      libwacom-surface
+    ];
 
 
   # Some programs need SUID wrappers, can be configured further or are

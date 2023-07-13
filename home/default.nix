@@ -77,10 +77,8 @@ with builtins;
         gnome.dconf-editor
 
         # Electron evil apps
-        atom
         bitwarden
         spotify
-        unstable.pkgs.discord
       ];
     };
   };
