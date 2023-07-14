@@ -3,8 +3,10 @@
     config = "sudo vim /etc/nixos/configuration.nix";
     build = "sudo nixos-rebuild switch --keep-going";
     sync = "cd /etc/nixos && sudo git stash && sudo git pull --rebase";
+    rollback = "sudo nixos-rebuild switch --rollback";
     clean = "sudo nix-collect-garbage --delete-older-than 30d";
     autoclean = "sudo nix-env --delete-generations old";
+    restart = "sudo restart -h now";
 
     rebuild = "cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && build && ns 'Build Complete'";
     

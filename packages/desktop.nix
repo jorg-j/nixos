@@ -15,4 +15,8 @@
       ./shells/fish.nix
       ./shells/zsh.nix
     ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-21.4.0"
+  ];
 }
