@@ -12,17 +12,14 @@
 
       # ../hardware-configuration.nix
       ../modules/hardware/vm-hardware-configuration.nix
-
-      ../modules/desktop/xfce.nix
-
-      ../sys/aliases.nix
-      ../sys/scripts.nix
+      ../sys
 
       ../packages/desktop.nix
-      ../packages/flatpak.nix
 
+      ../modules/desktop/gnome.nix
       ../users/jack.nix
-      # ../autobuild/autobuild.nix
+
+      # ../modules/services/syncthing_surface.nix
 
     ];
 
@@ -38,23 +35,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Australia/Melbourne";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_AU.utf8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_AU.UTF-8";
-    LC_IDENTIFICATION = "en_AU.UTF-8";
-    LC_MEASUREMENT = "en_AU.UTF-8";
-    LC_MONETARY = "en_AU.UTF-8";
-    LC_NAME = "en_AU.UTF-8";
-    LC_NUMERIC = "en_AU.UTF-8";
-    LC_PAPER = "en_AU.UTF-8";
-    LC_TELEPHONE = "en_AU.UTF-8";
-    LC_TIME = "en_AU.UTF-8";
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
