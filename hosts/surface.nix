@@ -7,18 +7,15 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ../surface/hardware-configuration.nix
-      ../surface/nixos-hardware/microsoft/surface/surface-pro-intel
-
-      ../sys/aliases.nix
-      ../sys/scripts.nix
+      ../surface
+      ../sys
 
       ../packages/desktop.nix
 
       ../modules/desktop/gnome.nix
       ../users/jack.nix
 
-      ../modules/services/syncthing_surface.nix
+      # ../modules/services/syncthing_surface.nix
 
     ];
 
@@ -37,25 +34,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Australia/Melbourne";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_AU.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_AU.UTF-8";
-    LC_IDENTIFICATION = "en_AU.UTF-8";
-    LC_MEASUREMENT = "en_AU.UTF-8";
-    LC_MONETARY = "en_AU.UTF-8";
-    LC_NAME = "en_AU.UTF-8";
-    LC_NUMERIC = "en_AU.UTF-8";
-    LC_PAPER = "en_AU.UTF-8";
-    LC_TELEPHONE = "en_AU.UTF-8";
-    LC_TIME = "en_AU.UTF-8";
-  };
-
 
 
   # helps with ssd storage
@@ -90,16 +68,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.jack = {
-  #   isNormalUser = true;
-  #   description = "jack";
-  #   extraGroups = [ "networkmanager" "wheel" ];
-  #   packages = with pkgs; [
-  #     firefox
-  #   #  thunderbird
-  #   ];
-  # };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -116,22 +84,11 @@
     xournal      
   ];
 
-  
-  upower.enable = true;
-  
+
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "powersave";
-  }
-
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  };
 
   # Disable Sudo password
   security.sudo.wheelNeedsPassword = false;
