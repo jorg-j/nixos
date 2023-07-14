@@ -110,14 +110,19 @@
     "electron-21.4.0"
   ];
 
-    environment.systemPackages = with pkgs;
-    [
-            libwacom-surface
-            libcamera
-            powertop
-            power-profiles-daemon
-            thermald
-    ];
+  environment.systemPackages = with pkgs;
+  [
+    libwacom-surface
+    xournal      
+  ];
+
+  
+  upower.enable = true;
+  
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "powersave";
+  }
 
 
   # Some programs need SUID wrappers, can be configured further or are

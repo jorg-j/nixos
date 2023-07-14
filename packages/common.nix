@@ -5,6 +5,7 @@
      # system tools
       fzf
       ripgrep
+      gnupg
       sd
       gitAndTools.delta
       home-manager
