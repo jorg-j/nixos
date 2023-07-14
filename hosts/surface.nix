@@ -12,7 +12,7 @@
 
       ../packages/surface_pro.nix
 
-      ../modules/desktop/kde.nix
+      ../modules/desktop/gnome.nix
       ../users/jack.nix
 
       # ../modules/services/syncthing_surface.nix
