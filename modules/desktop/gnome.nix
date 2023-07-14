@@ -13,7 +13,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  gnome = {
+  services.gnome = {
     gnome-keyring.enable = true;
     gnome-online-accounts.enable = true;
   };
