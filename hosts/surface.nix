@@ -18,7 +18,7 @@
       ../modules/desktop/gnome.nix
       ../users/jack.nix
 
-      ../modules/services/syncthing.nix
+      ../modules/services/syncthing_surface.nix
 
     ];
 

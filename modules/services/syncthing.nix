@@ -5,22 +5,22 @@
     syncthing = {
       enable = true;
       openDefaultPorts = true;
-      user = "jack";
+      user = "${user}";
       group = "users";
       guiAddress = "0.0.0.0:8384";
 
-      dataDir = "/home/jack/Documents";
-      configDir = "/home/jack/.config/syncthing";
+      dataDir = "/home/${user}/Documents";
+      configDir = "/home/${user}/.config/syncthing";
       overrideDevices = true;     # overrides any devices added or deleted through the WebUI
       overrideFolders = true;     # overrides any folders added or deleted through the WebUI
       devices = {
-        "pop-os" = { id = "RLA44QX-QSJCR7D-FEJ562P-A443ZN5-TETSA3X-VY6SVUO-RHLRXWS-PLNPLAV"; };
-        "nas" = { id = "TOHCWTZ-SP64XIM-V4CZ537-YQTDRC2-6D6JOVT-QHQQQ5J-H6HZK3G-JMHEPAN"; };
+        ${machine1_name} = { id = "${machine1_id}"; };
+        ${machine2_name} = { id = "${machine2_id}"; };
         };
       folders = {
         "Documents" = {        # Name of folder in Syncthing, also the folder ID
-          path = "/home/jack/Documents";    # Which folder to add to Syncthing
-          devices = [ "pop-os" "nas" ];      # Which devices to share the folder with
+          path = "/home/${user}/Documents";    # Which folder to add to Syncthing
+          devices = [ "${machine1_name}" "${machine2_name}" ];      # Which devices to share the folder with
           };
         };
 
@@ -28,7 +28,7 @@
     };
 
   services.syncthing.extraOptions.gui = {
-    user = "jack";
+    user = "${user}";
     password = "syncthing";
 };
 
