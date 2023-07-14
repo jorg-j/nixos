@@ -20,7 +20,7 @@
       folders = {
         "Documents" = {        # Name of folder in Syncthing, also the folder ID
           path = "/home/jack/Documents";    # Which folder to add to Syncthing
-          devices = [ "pop-os", "nas" ];      # Which devices to share the folder with
+          devices = [ "pop-os" "nas" ];      # Which devices to share the folder with
           };
         };
 
