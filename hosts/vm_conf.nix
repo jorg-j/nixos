@@ -18,7 +18,7 @@
 
       ../packages/desktop.nix
 
-      ../modules/desktop/gnome.nix
+      ../modules/desktop/kde.nix
       ../users/jack.nix
 
       # ../modules/services/syncthing_surface.nix
