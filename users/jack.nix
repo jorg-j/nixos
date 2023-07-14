@@ -1,7 +1,7 @@
 args@{ config, pkgs, lib, ... }:
 let
     user = "jack";
-    home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+    # home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
 in
 {
   imports = [
