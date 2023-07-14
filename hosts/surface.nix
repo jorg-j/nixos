@@ -130,6 +130,8 @@
 
   virtualisation.docker.enable = true;
 
+  nix.settings.experimental-features = [ "flakes" "nix-command" ];
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
