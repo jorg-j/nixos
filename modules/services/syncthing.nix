@@ -1,5 +1,5 @@
 
-{ config, pkgs, ... }:
+{ config, pkgs, user, machine1_name, machine1_id, machine2_id, machine2_name, ... }:
 {
   services = {
     syncthing = {

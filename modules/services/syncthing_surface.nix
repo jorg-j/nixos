@@ -1,4 +1,4 @@
-args@{ config, pkgs, lib, user, machine1_name, machine1_id, machine2_id, machine2_name, ... }:
+args@{ config, pkgs, lib, ... }:
 let
     user = "jack";
 
