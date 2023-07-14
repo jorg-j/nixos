@@ -114,6 +114,9 @@
     [
             libwacom-surface
             libcamera
+            powertop
+            power-profiles-daemon
+            thermald
     ];
 
 
