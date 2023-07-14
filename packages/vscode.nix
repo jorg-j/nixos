@@ -12,7 +12,7 @@
         esbenp.prettier-vscode
         ms-python.python
         ms-vscode-remote.remote-ssh
-        DavidAnson.vscode-markdownlint
+        davidanson.vscode-markdownlint
     ];
   })
 ];
