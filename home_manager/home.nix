@@ -13,7 +13,8 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "docker-compose" "docker" "git" ];
-      theme = "dst";
+      theme = "afowler";
+      # theme = "dst";
     };
     initExtra = ''
       bindkey '^f' autosuggest-accept
