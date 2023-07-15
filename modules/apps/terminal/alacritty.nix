@@ -26,25 +26,6 @@
 
       live_config_reload = true;
 
-      colors = with pkgs.my.thmHash; {
-        primary = {
-          background = base00;
-          foreground = base05;
-        };
-        cursor = {
-          text = base00;
-          cursor = base0E;
-        };
-        normal = {
-          black = base00;
-          red = base08;
-          green = base0B;
-          yellow = base0A;
-          blue = base0D;
-          magenta = base0E;
-          white = base07;
-        };
-      };
     };
   };
 
