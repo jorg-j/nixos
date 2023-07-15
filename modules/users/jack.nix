@@ -5,7 +5,7 @@
 
   users.users.jack = {
     isNormalUser = true;
-    uuid = 1000;
+    uid = 1000;
     description = "Jack";
     home = "/home/jack";
     extraGroups = [ 
