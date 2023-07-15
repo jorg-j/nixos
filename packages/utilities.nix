@@ -11,11 +11,8 @@ imports =
     [
       caffeine-ng
       lightburn
-      rpi-imager
-      tree
-      vorta
-      xterm
-      xfce.xfce4-terminal
+
+
     ];
 
 }

@@ -2,6 +2,12 @@
 { config, lib, pkgs, ... }:
 
 {
+
+  imports =
+    [
+      ./vagrant.nix
+    ];
+
   virtualisation = {
     docker = {
       autoPrune = {

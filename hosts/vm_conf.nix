@@ -12,16 +12,7 @@
 
       # ../hardware-configuration.nix
       ../modules/hardware/vm-hardware-configuration.nix
-
-      ../modules/virtualisation
-      ../sys
-
-      ../packages/desktop.nix
-
-      ../modules/desktop/xfce.nix
-      ../users/jack.nix
-
-      # ../modules/services/syncthing_surface.nix
+      ../profiles/desktop.nix
 
     ];
 
