@@ -21,5 +21,10 @@
     '';
   };
 
+  home.file = {
+    ".ssh/config" = { source = "./files/ssh_config"; };
+  };
+
+
 
 }
