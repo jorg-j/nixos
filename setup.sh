@@ -13,7 +13,7 @@ sudo cp /etc/nixos/hardware-configuration.nix .
 sudo rm -r /etc/nixos
 sudo git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos
 sudo cp hardware-configuration.nix /etc/nixos/
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
 sudo nix-channel --update
 
 

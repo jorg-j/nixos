@@ -8,7 +8,7 @@
       gnupg
       sd
       gitAndTools.delta
-      home-manager
+
       git
 
       file
