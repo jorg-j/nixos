@@ -22,7 +22,7 @@
   };
 
   home.file = {
-    ".ssh/config" = { source = "./files/ssh_config"; };
+    ".ssh/config" = { source = "/etc/nixos/home_manager/files/ssh_config"; };
   };
 
 
