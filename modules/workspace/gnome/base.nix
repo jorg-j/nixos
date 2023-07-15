@@ -20,9 +20,9 @@
     # "where am # I" view, for example
     geoclue2.enable = false;
 
-    services.xserver.enable = true;
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
+    xserver.enable = true;
+    xserver.displayManager.gdm.enable = true;
+    xserver.desktopManager.gnome.enable = true;
     gnome = {
       core-os-services.enable = true;
       core-utilities.enable = true;
@@ -41,9 +41,9 @@
   environment.sessionVariables.XDG_CURRENT_DESKTOP = "X-Generic";
 
   home-manager.users.jack = {
-    home.activation.gnome = ''
-      $DRY_RUN_CMD mkdir -p "$XDG_DATA_HOME/.npm-packages"
-    '';
+    # home.activation.gnome = ''
+    #   $DRY_RUN_CMD mkdir -p "$XDG_DATA_HOME/.npm-packages"
+    # '';
 
     dconf.settings = {
       "org/gnome/nautilus/icon-view" = {
@@ -86,6 +86,38 @@
         night-mode = true;
         transportation-type = "car";
       };
+      gtk = {
+        enable = true;
+
+        iconTheme = {
+          name = "Papirus-Dark";
+          package = pkgs.papirus-icon-theme;
+        };
+
+        theme = {
+          name = "palenight";
+          package = pkgs.palenight-theme;
+        };
+
+        cursorTheme = {
+          name = "Numix-Cursor";
+          package = pkgs.numix-cursor-theme;
+        };
+
+        gtk3.extraConfig = {
+          Settings = ''
+            gtk-application-prefer-dark-theme=1
+          '';
+        };
+
+        gtk4.extraConfig = {
+          Settings = ''
+            gtk-application-prefer-dark-theme=1
+          '';
+        };
+      };
+
+      home.sessionVariables.GTK_THEME = "palenight";
     };
   };
 }
