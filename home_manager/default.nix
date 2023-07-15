@@ -1,14 +1,19 @@
-{ inputs, ... }: {
+{ config, pkgs, ... }:
+
+
+
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
+{
   imports = [
-    # Import home-manager's NixOS module
-    inputs.home-manager.nixosModules.home-manager
+    (import "${home-manager}/nixos")
   ];
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      # Import your home-manager configuration
-      your-username = import ../home-manager;
-    };
+  home-manager.users.jack = {
+    
+    home.stateVersion = "18.09";
+    /* Here goes the rest of your home-manager config, e.g. home.packages = [ pkgs.foo ]; */
+
   };
 }
