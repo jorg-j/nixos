@@ -86,7 +86,8 @@
         night-mode = true;
         transportation-type = "car";
       };
-      gtk = {
+    };
+    gtk = {
         enable = true;
 
         iconTheme = {
@@ -116,8 +117,6 @@
           '';
         };
       };
-
       home.sessionVariables.GTK_THEME = "palenight";
-    };
   };
 }
