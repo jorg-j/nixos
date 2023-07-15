@@ -5,11 +5,6 @@
     enable = true;
     settings = {
 
-      font = rec {
-        normal.family = config.themes.fonts.mono.family;
-        size = 10;
-        bold = { style = "Bold"; };
-      };
 
       window = {
         opacity = 0.9;
