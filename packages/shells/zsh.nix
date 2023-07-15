@@ -7,12 +7,15 @@
       zsh-autosuggestions
       zsh-syntax-highlighting
     ];
-  programs.zsh.enable = true;
-  programs.zsh.ohMyZsh = {
+  programs.zsh = {
     enable = true;
-    plugins = [ "git" "python" "man" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
-    theme = "afowler";
-
+  
+    zplug = {
+      enable = true;
+      plugins = [
+        { name = "zsh-users/zsh-autosuggestions"; }
+      ];
+    };
   };
 
 }
