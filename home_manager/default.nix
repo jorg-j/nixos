@@ -5,10 +5,10 @@
     <home-manager/nixos>
   ];
 
-  home-manager.users.jack = { pkgs, ... }: {
-    home.packages = [  ];
-    home.stateVersion = "23.05";
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.jack = import ./home.nix;
   };
-
 
 }

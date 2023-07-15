@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ../surface
-      <home-manager/nixos>
       ../home_manager
       ../sys
 
