@@ -13,9 +13,12 @@ sudo cp /etc/nixos/hardware-configuration.nix .
 sudo rm -r /etc/nixos
 sudo git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos
 sudo cp hardware-configuration.nix /etc/nixos/
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+sudo nix-channel --update
+
 
 printf "%s\n" "Select number for system:"
-select filetype in RaspberryPi_3B VM
+select filetype in RaspberryPi_3B VM Surface
 do
     echo "Selected: $filetype"
     break
@@ -31,6 +34,12 @@ case $filetype in
         echo "Linking Virtual Machine"
         sudo ln -sF /etc/nixos/hosts/vm_conf.nix /etc/nixos/configuration.nix
     ;;
+
+    Surface)
+        echo "Linking Virtual Machine"
+        sudo ln -sF /etc/nixos/hosts/surface.nix /etc/nixos/configuration.nix
+    ;;
+
 
     *)
         echo "Invalid Selection"

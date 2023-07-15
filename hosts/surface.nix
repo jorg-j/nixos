@@ -8,13 +8,15 @@
   imports =
     [ # Include the results of the hardware scan.
       ../surface
+      <home-manager/nixos>
+      ../home_manager
       ../sys
 
       ../packages/surface_pro.nix
 
       ../modules/desktop/gnome.nix
 
-      ../home_manager
+
       ../users/jack.nix
 
       # ../modules/services/syncthing_surface.nix
