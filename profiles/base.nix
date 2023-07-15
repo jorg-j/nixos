@@ -5,7 +5,6 @@
   imports = [
     ../home_manager
     ../sys
-    ../users/jack.nix
     ../modules
     ../modules/users/jack.nix
   ];
