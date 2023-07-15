@@ -2,5 +2,15 @@
 { config, lib, pkgs, ... }:
 
 {
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker = {
+      autoPrune = {
+        dates = "daily";
+        flags = ["--all" "--volumes"];
+      };
+      enable = true;
+    };
+    virtualbox.host.enable = true;
+  };
+
 }

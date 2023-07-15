@@ -23,16 +23,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot = {
-    extraModprobeConfig = ''
-      	options i915 enable_fbc=1 enable_rc6=1 modeset=1
-      	options snd_hda_intel power_save=1
-       	options snd_ac97_codec power_save=1
-      	options iwlwifi power_save=Y
-        options iwldvm force_cam=N
-      '';
-  };
-
   nix.settings.auto-optimise-store = true;
 
   networking.hostName = "surface"; # Define your hostname.

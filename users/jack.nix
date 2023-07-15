@@ -11,7 +11,7 @@ in
 
   users.users.jack = {
     extraGroups = [ "docker" "syncthing" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
 
   # Activate gpg
