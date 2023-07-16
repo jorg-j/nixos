@@ -7,6 +7,7 @@
       ../sys/aliases.nix
       ../sys/wifi.nix
 
+      ../modules/users/jack.nix
       ../users/pi.nix
     ];
 
@@ -46,12 +47,12 @@
 
   # Enable Desktop Environment
 
-  services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
  
 
   # Enable slim autologin
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.lightdm.autoLogin.enable = true;
-  services.xserver.displayManager.lightdm.autoLogin.user = "pi";
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.displayManager.lightdm.autoLogin.enable = true;
+  # services.xserver.displayManager.lightdm.autoLogin.user = "jack";
 
 }
