@@ -1,0 +1,197 @@
+{
+    "id": 2,
+    "name": "wd_portable",
+    "added_at": "2023-07-16 07:41:28.303643",
+    "repo": {
+        "url": "/media/jack/Elements SE/Vorta_Borg",
+        "added_at": "2023-07-16 07:42:40.099006",
+        "encryption": "repokey-blake2",
+        "unique_size": 56012588450,
+        "unique_csize": 51981696245,
+        "total_size": 165907952909,
+        "total_unique_chunks": 128669,
+        "create_backup_cmd": "",
+        "extra_borg_arguments": ""
+    },
+    "ssh_key": null,
+    "compression": "lz4",
+    "exclude_patterns": "**/.cache\n**/env\n**/.env\n**/lib\n**/*.box\n**.venv\n**/ddg_*\n*.iso",
+    "exclude_if_present": ".nobackup",
+    "schedule_mode": "off",
+    "schedule_interval_count": 3,
+    "schedule_interval_unit": "hours",
+    "schedule_fixed_hour": 3,
+    "schedule_fixed_minute": 42,
+    "schedule_interval_hours": 3,
+    "schedule_interval_minutes": 42,
+    "schedule_make_up_missed": true,
+    "validation_on": true,
+    "validation_weeks": 3,
+    "prune_on": true,
+    "prune_hour": 2,
+    "prune_day": 7,
+    "prune_week": 4,
+    "prune_month": 6,
+    "prune_year": 2,
+    "prune_keep_within": "10H",
+    "new_archive_name": "{hostname}-{now:%Y-%m-%d-%H%M%S}",
+    "prune_prefix": "{hostname}-",
+    "pre_backup_cmd": "",
+    "post_backup_cmd": "",
+    "dont_run_on_metered_networks": true,
+    "SourceFileModel": [
+        {
+            "dir": "/home/jack/Documents",
+            "dir_size": 30124414408,
+            "dir_files_count": 134746,
+            "path_isdir": true,
+            "profile": 2,
+            "added_at": "2023-07-15 21:42:48.145987"
+        },
+        {
+            "dir": "/home/jack/Downloads",
+            "dir_size": 13254919452,
+            "dir_files_count": 1349,
+            "path_isdir": true,
+            "profile": 2,
+            "added_at": "2023-07-15 21:42:52.791808"
+        },
+        {
+            "dir": "/home/jack/Pictures",
+            "dir_size": 4839070290,
+            "dir_files_count": 1802,
+            "path_isdir": true,
+            "profile": 2,
+            "added_at": "2023-07-15 21:42:56.805525"
+        },
+        {
+            "dir": "/home/jack/Videos",
+            "dir_size": 17710478871,
+            "dir_files_count": 127,
+            "path_isdir": true,
+            "profile": 2,
+            "added_at": "2023-07-15 21:43:03.277317"
+        }
+    ],
+    "SchemaVersion": {
+        "id": 1,
+        "version": 18,
+        "changed_at": "2022-04-26 09:00:51.012149"
+    },
+    "WifiSettingModel": [
+        {
+            "id": 5,
+            "ssid": "zelda",
+            "last_connected": "2023-07-15 22:45:05",
+            "allowed": true,
+            "profile": 2
+        },
+        {
+            "id": 6,
+            "ssid": "Jack\u2019s iPhone",
+            "last_connected": "2021-12-13 08:00:40",
+            "allowed": true,
+            "profile": 2
+        },
+        {
+            "id": 7,
+            "ssid": "Poop Emoji",
+            "last_connected": "2023-07-10 06:56:41",
+            "allowed": true,
+            "profile": 2
+        },
+        {
+            "id": 8,
+            "ssid": "Internet in a Box",
+            "last_connected": "2022-07-23 02:10:54",
+            "allowed": true,
+            "profile": 2
+        }
+    ],
+    "SettingsModel": [
+        {
+            "key": "enable_notifications",
+            "value": true,
+            "str_value": "",
+            "label": "Display notifications when background tasks fail",
+            "type": "checkbox"
+        },
+        {
+            "key": "enable_notifications_success",
+            "value": true,
+            "str_value": "",
+            "label": "Also notify about successful background tasks",
+            "type": "checkbox"
+        },
+        {
+            "key": "autostart",
+            "value": true,
+            "str_value": "",
+            "label": "Automatically start Vorta at login",
+            "type": "checkbox"
+        },
+        {
+            "key": "foreground",
+            "value": true,
+            "str_value": "",
+            "label": "Open main window on startup",
+            "type": "checkbox"
+        },
+        {
+            "key": "get_srcpath_datasize",
+            "value": true,
+            "str_value": "",
+            "label": "Get statistics of file/folder when added",
+            "type": "checkbox"
+        },
+        {
+            "key": "use_system_keyring",
+            "value": true,
+            "str_value": "",
+            "label": "Store repository passwords in system keychain, if available.",
+            "type": "checkbox"
+        },
+        {
+            "key": "override_mount_permissions",
+            "value": false,
+            "str_value": "",
+            "label": "Try to replace existing permissions when mounting an archive.",
+            "type": "checkbox"
+        },
+        {
+            "key": "previous_profile_id",
+            "value": false,
+            "str_value": "2",
+            "label": "Previously selected profile",
+            "type": "internal"
+        },
+        {
+            "key": "previous_window_width",
+            "value": false,
+            "str_value": "1229",
+            "label": "Previous window width",
+            "type": "internal"
+        },
+        {
+            "key": "previous_window_height",
+            "value": false,
+            "str_value": "691",
+            "label": "Previous window height",
+            "type": "internal"
+        },
+        {
+            "key": "enable_background_question",
+            "value": true,
+            "str_value": "",
+            "label": "Display background exit dialog",
+            "type": "checkbox"
+        },
+        {
+            "key": "disable_background_state",
+            "value": false,
+            "str_value": "",
+            "label": "Previous background exit button state",
+            "type": "internal"
+        }
+    ]
+}
