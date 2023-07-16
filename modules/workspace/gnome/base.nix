@@ -89,7 +89,7 @@
     };
     gtk = {
         enable = true;
-
+      
         #iconTheme = {
         #  name = "Papirus-Dark";
         #  package = pkgs.papirus-icon-theme;
@@ -109,7 +109,7 @@
         #  Settings = ''
         #    gtk-application-prefer-dark-theme=1
         #  '';
-        };
+        # };
 
         #gtk4.extraConfig = {
         #  Settings = ''
@@ -118,5 +118,5 @@
         };
       };
       #home.sessionVariables.GTK_THEME = "palenight";
-  };
-}
+  }
+
