@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs;
   [
     libwacom-surface
+    libwacom
     xournal      
   ];
 }
