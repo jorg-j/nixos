@@ -10,7 +10,7 @@
       ./surface
       ../profiles/surface.nix
 
-      # ../modules/services/syncthing_surface.nix
+      ../modules/services/syncthing_surface.nix
 
     ];
 

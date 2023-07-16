@@ -48,7 +48,9 @@
     dconf.settings = {
       "org/gnome/nautilus/icon-view" = {
         captions = [ "size" "date_modified" "none" ];
-      };
+};
+
+"org/gnome/desktop/wm/preferences".button-layout = "minimize,maximize,close";
 
       "org/gnome/nautilus/list-view" = {
         default-column-order = [
