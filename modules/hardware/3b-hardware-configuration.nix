@@ -7,7 +7,9 @@
   boot.loader.grub.enable = false;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.kernelParams = ["cma=256M"];
-  boot.loader.generic-extlinux-compatible.enable = true;
+
+  # If RPI boot not working enable this and disable uboot and try again
+  # boot.loader.generic-extlinux-compatible.enable = true;
   boot.loader.raspberryPi.enable = true;
   boot.loader.raspberryPi.version = 3;
   boot.loader.raspberryPi.uboot.enable = true;
