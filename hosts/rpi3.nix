@@ -7,6 +7,8 @@
       ../sys/aliases.nix
       ../sys/wifi.nix
 
+      ../modules/apps/shell/zsh.nix
+
       ../modules/users/jack.nix
       ../users/pi.nix
     ];
@@ -17,7 +19,8 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    raspberrypi-tools
+    # raspberrypi-tools
+    libraspberrypi
     vim
     git
     htop
@@ -43,7 +46,7 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "modesetting" ];
 
-  networking.hostname = "tenant"
+  networking.hostName = "tenant";
 
   # Enable Desktop Environment
 
@@ -54,5 +57,5 @@
   # services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.displayManager.lightdm.autoLogin.enable = true;
   # services.xserver.displayManager.lightdm.autoLogin.user = "jack";
-
+  system.stateVersion = "19.09";
 }
