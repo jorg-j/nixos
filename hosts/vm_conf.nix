@@ -22,6 +22,8 @@
   boot.loader.grub.useOSProber = true;
   boot.tmp.cleanOnBoot = true;
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   networking.hostName = "nixosvm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
