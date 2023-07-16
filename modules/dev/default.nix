@@ -1,5 +1,12 @@
+{ pkgs, ... }:
+
 {
-  imports = [
+    imports = [
     ./python
+  ];
+
+environment.systemPackages = with pkgs;
+  [
+    gnumake
   ];
 }

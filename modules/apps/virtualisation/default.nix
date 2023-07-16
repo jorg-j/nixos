@@ -7,7 +7,10 @@
     [
       ./vagrant.nix
     ];
-
+    
+  environment.systemPackages = with pkgs; [
+    docker-compose
+  ];
   virtualisation = {
     docker = {
       autoPrune = {
