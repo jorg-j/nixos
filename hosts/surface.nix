@@ -6,12 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./surface
       ../profiles/surface.nix
-
       ../modules/services/syncthing_surface.nix
-
     ];
 
   # Bootloader.
@@ -29,8 +27,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

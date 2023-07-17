@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   environment = {
-    systemPackages = with pkgs; [
+    systemPackages = with pkgs;
+    [
       htop
       neofetch
     ];

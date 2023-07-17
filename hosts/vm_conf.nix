@@ -10,10 +10,8 @@
     [ # Include the results of the hardware scan.
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-      # ../hardware-configuration.nix
       ../modules/hardware/vm-hardware-configuration.nix
       ../profiles/desktop.nix
-
     ];
 
   # Bootloader.
@@ -22,6 +20,7 @@
   boot.loader.grub.useOSProber = true;
   boot.tmp.cleanOnBoot = true;
 
+  # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "nixosvm"; # Define your hostname.
@@ -30,13 +29,11 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable auto randr
   services.autorandr.enable = true;
-
 
   # For SSD's
   # services.fstrim.enable = true;
@@ -57,9 +54,10 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    sqlitebrowser        # SQLite3
- ];
+  environment.systemPackages = with pkgs;
+  [
+    sqlitebrowser
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

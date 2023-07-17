@@ -8,11 +8,10 @@
       gnumeric
       obsidian
       todoist-electron
-
+      # === libreoffice ===
       hunspell
       hunspellDicts.en_US-large
       libreoffice-fresh
-
     ];
   };
 }

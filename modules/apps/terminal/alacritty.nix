@@ -4,8 +4,6 @@
   home-manager.users.jack.programs.alacritty = {
     enable = true;
     settings = {
-
-
       window = {
         opacity = 0.9;
         padding = {
@@ -20,8 +18,6 @@
       cursor.style = "Underline";
 
       live_config_reload = true;
-
     };
   };
-
 }
