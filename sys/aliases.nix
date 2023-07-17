@@ -7,6 +7,7 @@
     clean = "sudo nix-collect-garbage --delete-older-than 30d";
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
+    pen = "sudo systemctl restart iptsd.service";
 
     rebuild = "cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && build && ns 'Build Complete'";
     
