@@ -10,7 +10,7 @@
       ../modules/apps/shell/zsh.nix
 
       ../modules/users/jack.nix
-      ../users/pi.nix
+      # ../users/pi.nix
     ];
 
   # === Package Management ===
@@ -30,8 +30,8 @@
 
   # === Optimise storage ===
   documentation.nixos.enable = false;
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 30d";
+  # nix.gc.automatic = true;
+  # nix.gc.options = "--delete-older-than 30d";
   boot.cleanTmpDir = true;
   time.timeZone = "Australia/Melbourne";
   
