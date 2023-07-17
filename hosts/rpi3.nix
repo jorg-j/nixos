@@ -4,10 +4,7 @@
     [ 
       ../modules/hardware/3b-hardware-configuration.nix
 
-      ../sys/aliases.nix
-      ../sys/wifi.nix
-
-      ../modules/apps/shell/zsh.nix
+      ../profiles/server.nix
 
       ../modules/users/jack.nix
       # ../users/pi.nix
@@ -19,8 +16,8 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    # raspberrypi-tools
-    libraspberrypi
+    raspberrypi-tools
+    #libraspberrypi
     vim
     git
     htop
