@@ -63,13 +63,17 @@ Run the below to create a supplicant file for the wifi
 `wpa_passphrase $SSID $PASS | tee wpa_supplicant.conf`
 
 Run this to standup the wifi
-`sudo wpa_supplicant -B -i wlan0 wpa_supplicant.conf &`
+`sudo wpa_supplicant -B -i wlan0 -c wpa_supplicant.conf &`
 
 
 
 Copy the Config
 
 `curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh`
+
+`sudo nix-env -f '<nixpkgs>' -iA git`
+
+`sudo rm -r /etc/nixos`
 
 `bash link.sh`
 
