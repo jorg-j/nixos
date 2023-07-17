@@ -13,7 +13,8 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "docker-compose" "docker" "git" ];
-      theme = "afowler";
+      # theme = "afowler";
+      theme = "agnoster";
       # theme = "dst";
     };
     initExtra = ''
