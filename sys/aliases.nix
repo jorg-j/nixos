@@ -17,6 +17,7 @@
 
 
     s = "sudo";
+    ss = "sudo systemctl";
     
     log = "sudo journalctl --output cat -u";
     log-previous-boot = "sudo journalctl --boot=-1";
