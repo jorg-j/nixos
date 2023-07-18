@@ -2,15 +2,14 @@
 
 {
   home-manager.users.jack.programs.kitty = {
-    enable = false;
+    enable = true;
 
-    font = {
-      package = pkgs.jetbrains-mono;
-      name = "JetBrains Mono";
-    };
+   # font = {
+   #   package = pkgs.jetbrains-mono;
+   #   name = "JetBrains Mono";
+   # };
 
     extraConfig = ''
-      include ${inputs.kitty-themes}/themes/Ayu.conf
 
       font_size 12.0
       cursor #EEEEEE
