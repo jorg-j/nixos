@@ -69,9 +69,9 @@ Run this to standup the wifi
 
 Copy the Config
 
-`curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh`
-
 `sudo nix-env -f '<nixpkgs>' -iA git`
+
+`curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh`
 
 `sudo rm -r /etc/nixos`
 

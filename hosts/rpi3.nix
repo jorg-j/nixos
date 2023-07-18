@@ -6,6 +6,9 @@
 
       ../profiles/server.nix
 
+      # DO NOT REMOVE
+      ../sys/wifi.nix
+
       ../modules/users/jack.nix
       # ../users/pi.nix
     ];
@@ -28,8 +31,8 @@
   # === Optimise storage ===
   documentation.nixos.enable = false;
   # nix.gc.automatic = true;
-  # nix.gc.options = "--delete-older-than 30d";
-  boot.cleanTmpDir = true;
+  nix.gc.options = "--delete-older-than 30d";
+  # boot.cleanTmpDir = true;
   time.timeZone = "Australia/Melbourne";
   
   

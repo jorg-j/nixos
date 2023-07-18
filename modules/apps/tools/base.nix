@@ -8,11 +8,11 @@
     usbutils
     elfutils
     patchelf
-    util-linux
+    # util-linux
     bat
     # khal
     screenfetch
     tree
-    dig
+    # dig
   ];
 }
