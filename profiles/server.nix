@@ -1,7 +1,6 @@
 
 {
   imports = [
-    ../home_manager
     ../sys/server.nix
     ../modules/networking.nix
     ../modules/apps/tools/search.nix
@@ -11,10 +10,7 @@
     ../modules/apps/tools/json.nix
     ../modules/apps/tools/network.nix
     ../modules/apps/tools/search.nix
-    ../modules/apps/scm
     ../modules/dev
     ../modules/apps/editor/vim.nix
-    ../modules/apps/shell/zsh.nix
   ];
-
 }
