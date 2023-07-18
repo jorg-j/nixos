@@ -1,13 +1,7 @@
-{ config, pkgs, ... }:
-
-let
-  hostnamePackages =
-    if config.networking.hostName != "tenant" then
-      [ pkgs.vorta pkgs.borgbackup ]
-    else
-      [ pkgs.borgbackup ];
-in
+{ pkgs, ... }:
 
 {
-  environment.systemPackages = config.environment.systemPackages // hostnamePackages;
+  environment.systemPackages = with pkgs; [
+    vorta
+  ];
 }

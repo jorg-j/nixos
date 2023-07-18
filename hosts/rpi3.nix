@@ -10,7 +10,6 @@
       ../sys/wifi.nix
 
       ../modules/users/jack.nix
-      ../modules/apps/tools/backup.nix
       # ../users/pi.nix
     ];
 
@@ -27,6 +26,7 @@
     htop
     dhcpcd
     wpa_supplicant
+    borgbackup
   ];
 
   # === Optimise storage ===
