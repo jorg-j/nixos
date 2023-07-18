@@ -10,6 +10,7 @@
       ../sys/wifi.nix
 
       ../modules/users/jack.nix
+      ../modules/services/syncthing_rpi.nix
       # ../users/pi.nix
     ];
 
