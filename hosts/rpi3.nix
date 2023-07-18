@@ -10,6 +10,7 @@
       ../sys/wifi.nix
 
       ../modules/users/jack.nix
+      ../modules/apps/tools/backup.nix
       # ../users/pi.nix
     ];
 
