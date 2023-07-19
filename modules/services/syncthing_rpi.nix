@@ -1,6 +1,7 @@
 
 { config, pkgs, user, machine1_name, machine1_id, machine2_id, machine2_name, ... }:
 {
+  # YQEWDFD-7X5FALF-JJ7IWYJ-IDON2X6-NOO4VMI-EFCHTHV-EVP2ZQK-RUR25A2
   services = {
     syncthing = {
       enable = true;
@@ -20,7 +21,7 @@
       folders = {
         "Documents" = {        # Name of folder in Syncthing, also the folder ID
           path = "/home/jack/Documents";    # Which folder to add to Syncthing
-          devices = [ "popos" ];      # Which devices to share the folder with
+          devices = [ "popos", "surface" ];      # Which devices to share the folder with
           };
         };
 

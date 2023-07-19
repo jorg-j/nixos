@@ -11,6 +11,6 @@
   [
     libwacom-surface
     libwacom
-    xournal      
+    xournalpp      
   ];
 }
