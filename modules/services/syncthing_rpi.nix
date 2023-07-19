@@ -15,6 +15,7 @@
       overrideFolders = true;     # overrides any folders added or deleted through the WebUI
       devices = {
         "popos" = { id = "RLA44QX-QSJCR7D-FEJ562P-A443ZN5-TETSA3X-VY6SVUO-RHLRXWS-PLNPLAV"; };
+        "surface" = { id = "Y4P2CVY-3FWXCAC-P4SY4XD-NJTTMLH-6N43E35-MR4YZKG-3LMJJJX-EVJVMQT"; };
         };
       folders = {
         "Documents" = {        # Name of folder in Syncthing, also the folder ID
