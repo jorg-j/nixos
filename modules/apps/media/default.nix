@@ -6,6 +6,7 @@
      deluge
      imagemagick
      simplescreenrecorder
+     labelImg
     ];
 
     services.udev.packages = [ pkgs.libu2f-host ];
