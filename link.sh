@@ -19,6 +19,9 @@ case $filetype in
     RaspberryPi_3B)
         echo "Linking Raspberry Pi"
         sudo ln -sF /etc/nixos/hosts/rpi3.nix /etc/nixos/configuration.nix
+        sudo nix-channel --add https://nixos.org/channels/nixos-22.05 nixos
+        sudo nix-channel --update
+        sudo nixos-rebuild switch --upgrade
     ;;
 
     VM)

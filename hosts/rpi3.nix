@@ -20,8 +20,8 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    raspberrypi-tools
-    #libraspberrypi
+    #raspberrypi-tools
+    libraspberrypi
     vim
     git
     htop
