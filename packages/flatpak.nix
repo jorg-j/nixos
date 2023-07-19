@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 let
+
   fpak = pkgs.writeScriptBin "fpak" ''
     #!${pkgs.stdenv.shell}
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

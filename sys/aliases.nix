@@ -7,11 +7,7 @@
     clean = "sudo nix-collect-garbage --delete-older-than 30d";
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
-    pen = "sudo systemctl restart iptsd.service";
-
-    # Here to fix surface /boot when /boot goes read only
-    surface-boot = "sudo umount /boot && sudo fsck /dev/nvme0n1p1 && sudo mount /dev/nvme0n1p1 /boot";
-
+    
     rebuild = "cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && build && ns 'Build Complete'";
     
     closure_build = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1";
@@ -60,5 +56,9 @@
 
     container="curl -s https://raw.githubusercontent.com/jorg-j/Docker_Dev_Env/main/setup.sh | bash";
 
+    # Surface Based Alias's
+    # Here to fix surface /boot when /boot goes read only
+    surface-boot = "sudo umount /boot && sudo fsck /dev/nvme0n1p1 && sudo mount /dev/nvme0n1p1 /boot";
+    pen = "sudo systemctl restart iptsd.service";
   };
 }

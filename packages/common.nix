@@ -8,7 +8,7 @@
       file
 
       tmux
-      libnotify
+
     # Screen Recording
       kooha
 
@@ -23,9 +23,5 @@
 
     services.udev.packages = [ pkgs.libu2f-host ];
 
-    environment.etc."gitconfig".text = ''
-    [user]
-        name = jorg-j
-        email = jorgensen.server@gmail.com
-    '';
+
 }
