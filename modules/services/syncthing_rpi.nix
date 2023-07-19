@@ -21,7 +21,7 @@
       folders = {
         "Documents" = {        # Name of folder in Syncthing, also the folder ID
           path = "/home/jack/Documents";    # Which folder to add to Syncthing
-          devices = [ "popos", "surface" ];      # Which devices to share the folder with
+          devices = [ "popos" "surface" ];      # Which devices to share the folder with
           };
         };
 

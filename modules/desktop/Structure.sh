@@ -32,6 +32,7 @@ mkdir -p 10-19_Books_Documentation/12_Magazines/12.01_Popular_Mechanics
 
 mkdir -p 10-19_Books_Documentation/13_Obsidian_Vaults/
 
+mkdir -p 10-19_Books_Documentation/14_Xournal_Notes/
 
 # 20-29 Programming
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.01_Ansible
