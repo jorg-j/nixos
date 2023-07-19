@@ -58,5 +58,7 @@
     hd-gc = "sudo nix-collect-garbage --delete-older-than 30d";
     hd-inspect-store = "nix path-info -rSh /run/current-system | sort -k2h ";
 
+    container="curl -s https://raw.githubusercontent.com/jorg-j/Docker_Dev_Env/main/setup.sh | bash"
+
   };
 }
