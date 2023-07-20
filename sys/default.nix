@@ -27,6 +27,11 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  environment.systemPackages = with pkgs;
-    [ libnotify ];
+environment = {
+    systemPackages = with pkgs;
+    [
+      libnotify
+      unison
+    ];
+  };
 }
