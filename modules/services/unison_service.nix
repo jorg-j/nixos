@@ -1,12 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  systemd.services.unisonSync = {
+  systemd.services."unisonSync"= {
     description = "Unison Sync Service";
-    type = "simple";
-    workingDirectory = "/home/jack/.unison";
-    execStart = "${pkgs.unison}/bin/unison tenant.prf";
-    restart = "on-failure";
+    seviceConfig = {
+      type = "simple";
+      workingDirectory = "/home/jack/.unison";
+      execStart = "${pkgs.unison}/bin/unison tenant.prf";
+      restart = "on-failure";
+      };
   };
 
   systemd.timers.unisonSyncTimer = {
