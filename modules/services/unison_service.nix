@@ -2,14 +2,11 @@
 
 {
   systemd.services."unisonSync"= {
+    # enable = true;
     description = "Unison Sync Service";
-    path = with pkgs; [ bash ];
-    script = ''
-      cd /home/jack/.unison
-      bash unison tenant.prf
-    '';
     serviceConfig = {
-      type = "simple";
+      Type = "simple";
+      ExecStart = "${pkgs.unison}/bin/unison tenant.prf";
       restart = "on-failure";
       };
   };
