@@ -3,10 +3,13 @@
 {
   systemd.services."unisonSync"= {
     description = "Unison Sync Service";
+    path = with pkgs; [ bash ];
+    script = ''
+      cd /home/jack/.unison
+      bash unison tenant.prf
+    '';
     serviceConfig = {
       type = "simple";
-      workingDirectory = "/home/jack/.unison";
-      execStart = "${pkgs.unison}/bin/unison tenant.prf";
       restart = "on-failure";
       };
   };
