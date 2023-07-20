@@ -1,0 +1,4 @@
+# Unison preferences
+root = /home/jack/Downloads
+toot = /ssh://jack@192.168.1.137//home/jack/Downloads
+sshargs = -C

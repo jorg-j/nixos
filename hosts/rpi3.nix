@@ -28,6 +28,7 @@
     dhcpcd
     wpa_supplicant
     borgbackup
+    unison
   ];
 
   # === Optimise storage ===
