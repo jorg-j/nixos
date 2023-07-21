@@ -2,3 +2,10 @@
 root = /home/jack/Downloads
 root = ssh://jack@192.168.1.137//home/jack/Downloads
 sshargs = -C
+ignore = Name */lib/*
+ignore = Name */env/*
+ignore = Name */venv/*
+ignore = Name */.git/*
+ignore = Name */yeet/*
+ignore = Name *.vagrant*
+ignore = Name *pytest*

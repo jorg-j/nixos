@@ -105,3 +105,10 @@ hdmi_drive=2
 ## XFCE
 
 If using XFCE after build run the `xfce_config` command to update the theme
+
+
+
+
+## Steps after install
+
+- [] create ssh keys and share them with tenant, this will allow file sync to occur
