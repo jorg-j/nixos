@@ -25,6 +25,11 @@
   # helps with ssd storage
   services.fstrim.enable = true;
 
+  # Set limit on how many generations remain
+  boot.loader.grub.configurationLimit = 5;
+  
+  nix.gc.automatic = true;
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
