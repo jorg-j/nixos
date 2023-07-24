@@ -7,11 +7,16 @@ let
     /etc/nixos/modules/desktop/Structure.sh
   '';
 
-
 in
 {
   environment.systemPackages = [
     structure
   ];
+
+  environment.shellInit = ''
+    cdj() {
+       pushd ~/Documents/*/*/*''${1}*
+      }
+  '';
 }
 
