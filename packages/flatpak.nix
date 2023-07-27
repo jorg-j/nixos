@@ -25,8 +25,6 @@ in
   # Add fpak command to the system
   environment.systemPackages = [ 
     fpak
-    gocryptfs
-    cryfs
      ];
 
 }

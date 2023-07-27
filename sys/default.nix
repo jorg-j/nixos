@@ -32,6 +32,8 @@ environment = {
     [
       libnotify
       unison
+      gocryptfs
+      cryfs
     ];
   };
 }
