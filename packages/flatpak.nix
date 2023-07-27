@@ -23,6 +23,10 @@ in
   # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Add fpak command to the system
-  environment.systemPackages = [ fpak ];
+  environment.systemPackages = [ 
+    fpak
+    gocryptfs
+    cryfs
+     ];
 
 }
