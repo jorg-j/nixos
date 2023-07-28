@@ -9,8 +9,10 @@
     [ # Include the results of the hardware scan.
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-      ../modules/hardware/vm-hardware-configuration.nix
+      # ../modules/hardware/vm-hardware-configuration.nix
+      ../hardware-configuration.nix
       ../profiles/desktop.nix
+      ../packages/flatpak.nix
     ];
 
   # Bootloader.

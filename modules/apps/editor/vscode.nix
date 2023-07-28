@@ -13,9 +13,14 @@
           ms-toolsai.jupyter
           esbenp.prettier-vscode
           ms-python.python
-          ms-vscode-remote.remote-ssh
           davidanson.vscode-markdownlint
-      ];
+      ]++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "document";
+        publisher = "mintlify";
+        version = "2.2.1";
+        sha256 = "2kV8shVxd56nvdORwPqoZ881IR8wQ19iHkNI9FUkoj8=";
+      }];
      }
     )
   ];
