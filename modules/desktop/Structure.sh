@@ -185,3 +185,30 @@ mkdir -p 70-79_Backups_Archives/71_Archives/71.04_ShellHistory
 
 tree -d -L 3 > index.txt
 tree > deep_index.txt
+
+
+
+
+# Pictures
+cd ~/Pictures
+
+mkdir -p 10-19_Family
+mkdir -p 20-29_Holidays_Trips
+mkdir -p 30-39_Screenshots
+mkdir -p 40-49_Inforgraphs
+mkdir -p 50-59_Wallpapers
+
+# 10-19_Family
+mkdir -p 10-19_Family/10_Tash/10.01_Wedding
+mkdir -p 10-19_Family/10_Tash/10.02_Tash
+mkdir -p 10-19_Family/10_Tash/10.03_Private
+mkdir -p 10-19_Family/11_Tash_and_Kids
+mkdir -p 10-19_Family/12_Dogs
+mkdir -p 10-19_Family/13_Dad
+mkdir -p 10-19_Family/14_Mum_Mark_Teri
+
+# 20-29_Holidays_Trips
+mkdir -p 20-29_Holidays_Trips/20_Japan/20.01_2019
+mkdir -p 20-29_Holidays_Trips/21_USA/21.01_2019
+mkdir -p 20-29_Holidays_Trips/22_Australia
+

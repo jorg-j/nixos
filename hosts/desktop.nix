@@ -54,6 +54,14 @@
   environment.systemPackages = with pkgs;
   [
     sqlitebrowser
+    megasync
+    drawio
+    podman
+    podman-desktop
+    podman-compose
+
+    simplenote
+    lightburn
   ];
 
   # This value determines the NixOS release from which the default
