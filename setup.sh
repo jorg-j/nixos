@@ -54,7 +54,7 @@ case $filetype in
         sudo ln -sF /etc/nixos/hosts/surface.nix /etc/nixos/configuration.nix
     ;;
 
-    Surface)
+    Desktop)
         echo "Linking Desktop"
         sudo ln -sF /etc/nixos/hosts/desktop.nix /etc/nixos/configuration.nix
         echo "Go Edit the /etc/nixos/hosts/desktop.nix and link in the hardware-configuration.nix file"
