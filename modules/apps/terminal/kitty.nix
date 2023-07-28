@@ -12,6 +12,8 @@
     extraConfig = ''
 
       font_size 12.0
+      foreground #E3E3EA
+      background #08052B
       cursor #EEEEEE
       cursor_text_color #DDDDDD
       cursor_blink_interval 0.5
