@@ -13,6 +13,7 @@
   [
     libwacom-surface
     libwacom
-    xournalpp      
+    xournalpp
+    gettext # needed for cinnamon
   ];
 }
