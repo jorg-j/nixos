@@ -44,6 +44,15 @@ treemake $books 10.26 "DIY"
 treemake $books 10.27 "Design"
 treemake $books 10.28 "Mindfullness"
 treemake $books 10.29 "Business"
+treemake $books 10.30 "Arduino"
+treemake $books 10.31 "Docker"
+
+treemake $books 10.32 "Ruby"
+treemake $books 10.33 "Rust"
+treemake $books 10.34 "Tableau"
+treemake $books 10.35 "Networking"
+treemake $books 10.36 "Powershell"
+treemake $books 10.37 "Gardening"
 
 treemake $books 10.99 "Other"
 
