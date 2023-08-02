@@ -9,26 +9,50 @@ mkdir -p 50-59_Work
 mkdir -p 60-69_Major_Projects
 mkdir -p 70-79_Backups_Archives
 
+function treemake() {
+    mkdir -p $1/$2_$3
+}
 
 # 10-19 Books
-mkdir -p 10-19_Books_Documentation/10_Books/10.01_Python
-mkdir -p 10-19_Books_Documentation/10_Books/10.02_Linux
-mkdir -p 10-19_Books_Documentation/10_Books/10.03_DevOps
-mkdir -p 10-19_Books_Documentation/10_Books/10.04_Machine_Learning
-mkdir -p 10-19_Books_Documentation/10_Books/10.05_Database
-mkdir -p 10-19_Books_Documentation/10_Books/10.06_MagPi
-mkdir -p 10-19_Books_Documentation/10_Books/10.07_Mindfullness
-mkdir -p 10-19_Books_Documentation/10_Books/10.08_Project_Management
-mkdir -p 10-19_Books_Documentation/10_Books/10.09_Series
-mkdir -p 10-19_Books_Documentation/10_Books/10.10_Life_Productivity
-mkdir -p 10-19_Books_Documentation/10_Books/10.11_For_Dummies
-mkdir -p 10-19_Books_Documentation/10_Books/10.99_Other
+books="10-19_Books_Documentation/10_Books"
+treemake $books 10.01 "Python"
+treemake $books 10.02 "Linux"
+treemake $books 10.03 "DevOps"
+treemake $books 10.04 "Machine_Learning"
+treemake $books 10.05 "Database"
+treemake $books 10.06 "MagPi"
+treemake $books 10.07 "Mindfullness"
+treemake $books 10.08 "Project_Management"
+treemake $books 10.09 "Series"
+treemake $books 10.10 "Life_Productivity"
+treemake $books 10.11 "For_Dummies"
+treemake $books 10.12 "C"
+treemake $books 10.13 "Git"
+treemake $books 10.14 "Windows"
+treemake $books 10.15 "VB"
+treemake $books 10.16 "DataScience"
+treemake $books 10.17 "Vim"
+treemake $books 10.18 "Assembly"
+treemake $books 10.19 "Software_Design"
+treemake $books 10.20 "Algorithms"
+treemake $books 10.21 "Excel"
+treemake $books 10.22 "Java"
+treemake $books 10.23 "Game_Design"
+treemake $books 10.24 "CyberSecurity"
+treemake $books 10.25 "Handwriting"
+treemake $books 10.26 "DIY"
+treemake $books 10.27 "Design"
+treemake $books 10.28 "Mindfullness"
+treemake $books 10.29 "Business"
+
+treemake $books 10.99 "Other"
 
 
 
 mkdir -p 10-19_Books_Documentation/11_Documentation/11.01_Manuals
 
 mkdir -p 10-19_Books_Documentation/12_Magazines/12.01_Popular_Mechanics
+mkdir -p 10-19_Books_Documentation/12_Magazines/12.02_Coding
 
 mkdir -p 10-19_Books_Documentation/13_Obsidian_Vaults/
 
