@@ -46,7 +46,6 @@ mkdir -p 20-29_Programming_Software/20_Infrastructure/20.06_K8s
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.07_VirtualBox
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.08_Packer
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.09_Webhooks
-mkdir -p 20-29_Programming_Software/20_Infrastructure/20.10_POCs
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.99_Docker_Storage
 
 # Code
@@ -63,6 +62,7 @@ mkdir -p 20-29_Programming_Software/21_Code/21.10_Decision
 mkdir -p 20-29_Programming_Software/21_Code/21.11_Google_Coral
 mkdir -p 20-29_Programming_Software/21_Code/21.12_Mac_Automation
 mkdir -p 20-29_Programming_Software/21_Code/21.13_Photogrammetry
+mkdir -p 20-29_Programming_Software/21_Code/21.14_POCs
 mkdir -p 20-29_Programming_Software/21_Code/21.99_Personal_Project_Code
 
 # templates
