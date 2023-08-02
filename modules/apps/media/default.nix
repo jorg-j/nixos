@@ -7,6 +7,7 @@
      imagemagick
      simplescreenrecorder
      labelImg
+     okular
     ];
 
     services.udev.packages = [ pkgs.libu2f-host ];
