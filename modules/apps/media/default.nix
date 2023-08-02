@@ -6,7 +6,7 @@
      deluge
      imagemagick
      simplescreenrecorder
-     labelImg
+     #labelImg
      okular
     ];
 
