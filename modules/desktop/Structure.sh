@@ -153,6 +153,8 @@ EOF
 
 
 mkdir -p 50-59_Work/51_Clients/51.01_Westpac
+mkdir -p 50-59_Work/51_Clients/51.02_LegalAid_NSW
+
 mkdir -p 50-59_Work/52_Tools/52.01_HyperScience
 mkdir -p 50-59_Work/52_Tools/52.02_UiPath
 
