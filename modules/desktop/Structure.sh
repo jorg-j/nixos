@@ -46,6 +46,7 @@ mkdir -p 20-29_Programming_Software/20_Infrastructure/20.06_K8s
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.07_VirtualBox
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.08_Packer
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.09_Webhooks
+mkdir -p 20-29_Programming_Software/20_Infrastructure/20.10_POCs
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.99_Docker_Storage
 
 # Code
