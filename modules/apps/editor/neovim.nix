@@ -1,20 +1,13 @@
 { config, pkgs, vars, ... }:
-{
-  environment.systemPackages = with pkgs;
-    [
-        (
-        with import <nixpkgs> {};
-
-        vim_configurable.customize {
-            # Specifies the vim binary name
-            # E.g. set this to "my-vim" and you need to type "my-vim" to open this vim
-            # This allows to have multiple vim packages installed (e.g. with a different set of plugins)
-            name = "vim";
-            vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-                    start = [ vim-nix ];
-                    opt = [];
-            };
-            vimrcConfig.customRC = ''
+  {
+    environment.variables.EDITOR = "nvim";
+    programs.neovim = {
+                enable = true;
+                defaultEditor = true;
+                viAlias = true;
+                vimAlias = true;
+                configure = {
+                  customRC = ''
 
             :set nocompatible
             :set number
@@ -70,10 +63,8 @@
             set showmatch           " highlight matching [{()}]
             set incsearch           " search as characters are entered
             set hlsearch            " highlight matches
-            colorscheme industry
             set backspace=indent,eol,start " backspace over everything in insert mode
             '';
-        }
-        )
-    ];
+        };
+};
 }
