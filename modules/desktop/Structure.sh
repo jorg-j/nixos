@@ -10,64 +10,96 @@ mkdir -p 60-69_Major_Projects
 mkdir -p 70-79_Backups_Archives
 
 function treemake() {
-    mkdir -p $1/$2_$3
+        printf -v pos "%02d" $counter
+    #mkdir -p $1/$2_$3
+    mkdir -p $1/"$index1.$pos"_$2
+    echo $1/"$index1.$pos"_$2
+    counter=$((counter+1))
 }
 
 # 10-19 Books
-books="10-19_Books_Documentation/10_Books"
-treemake $books 10.01 "Python"
-treemake $books 10.02 "Linux"
-treemake $books 10.03 "DevOps"
-treemake $books 10.04 "Machine_Learning"
-treemake $books 10.05 "Database"
-treemake $books 10.06 "MagPi"
-treemake $books 10.07 "Mindfullness"
-treemake $books 10.08 "Project_Management"
-treemake $books 10.09 "Series"
-treemake $books 10.10 "Life_Productivity"
-treemake $books 10.11 "For_Dummies"
-treemake $books 10.12 "C"
-treemake $books 10.13 "Git"
-treemake $books 10.14 "Windows"
-treemake $books 10.15 "VB"
-treemake $books 10.16 "DataScience"
-treemake $books 10.17 "Vim"
-treemake $books 10.18 "Assembly"
-treemake $books 10.19 "Software_Design"
-treemake $books 10.20 "Algorithms"
-treemake $books 10.21 "Excel"
-treemake $books 10.22 "Java"
-treemake $books 10.23 "Game_Design"
-treemake $books 10.24 "CyberSecurity"
-treemake $books 10.25 "Handwriting"
-treemake $books 10.26 "DIY"
-treemake $books 10.27 "Design"
-treemake $books 10.28 "Mindfullness"
-treemake $books 10.29 "Business"
-treemake $books 10.30 "Arduino"
-treemake $books 10.31 "Docker"
+counter=01
+books="10-19_Books_Documentation/10_Books_Programming"
+index1=10
+treemake $books "Python"
+treemake $books "Linux"
+treemake $books "Docker"
+treemake $books "DevOps"
+treemake $books "Machine_Learning"
+treemake $books "Database"
+treemake $books "MagPi"
+treemake $books "Project_Management"
+treemake $books "Agile"
+treemake $books "OOP"
+treemake $books "Virtualisation"
+treemake $books "Git"
+treemake $books "IOT_Edge"
+treemake $books "DataScience"
+treemake $books "WebAssembly"
+treemake $books "WebSites"
+treemake $books "C"
+treemake $books "Windows"
+treemake $books "VB"
+treemake $books "Vim"
+treemake $books "Software_Design"
+treemake $books "Algorithms"
+treemake $books "Excel"
+treemake $books "CyberSecurity"
+treemake $books "Arduino"
+treemake $books "Game_Design"
+treemake $books "Cloud_Computing"
+treemake $books "Javascript"
+treemake $books "Java"
+treemake $books "Ruby"
+treemake $books "Powershell"
+treemake $books "Networking"
+treemake $books "Assembly"
+treemake $books "Rust"
+treemake $books "Tableau"
+treemake $books "GUI"
+treemake $books "SSL"
+treemake $books "XML"
+treemake $books "TOR"
+treemake $books "Big_Data"
+treemake $books "Series"
 
-treemake $books 10.32 "Ruby"
-treemake $books 10.33 "Rust"
-treemake $books 10.34 "Tableau"
-treemake $books 10.35 "Networking"
-treemake $books 10.36 "Powershell"
-treemake $books 10.37 "Gardening"
 
-treemake $books 10.99 "Other"
+mkdir -p $books"/10.99_Other"
 
 
+# 11 Non Programming
+counter=01
+books="10-19_Books_Documentation/11_Books_Home_Lifestyle_Other"
+index1=11
+treemake $books "Life_Productivity"
+treemake $books "Gardening"
+treemake $books "Mindfullness"
+treemake $books "Design"
 
-mkdir -p 10-19_Books_Documentation/11_Documentation/11.01_Manuals
+treemake $books "For_Dummies"
+treemake $books "Business"
+treemake $books "Handwriting"
+treemake $books "DIY"
+treemake $books "Travel"
+treemake $books "Art"
+treemake $books "Finance"
+
+
+
+
+
 
 mkdir -p 10-19_Books_Documentation/12_Magazines/12.01_Popular_Mechanics
 mkdir -p 10-19_Books_Documentation/12_Magazines/12.02_Coding
+mkdir -p 10-19_Books_Documentation/12_Magazines/12.03_Popular_Science
 
 mkdir -p 10-19_Books_Documentation/13_Obsidian_Vaults/
 
 mkdir -p 10-19_Books_Documentation/14_Xournal_Notes/
 mkdir -p 10-19_Books_Documentation/14_Xournal_Notes/14.01_Notes
 mkdir -p 10-19_Books_Documentation/14_Xournal_Notes/14.02_Recording
+
+mkdir -p 10-19_Books_Documentation/15_Documentation/15.01_Manuals
 
 # 20-29 Programming
 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.01_Ansible
