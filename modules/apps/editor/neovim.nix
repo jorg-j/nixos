@@ -10,12 +10,17 @@
                   customRC = ''
 
             :set nocompatible
-            :set number
+            :set number relativenumber
+
+            " folding
+            nnoremap <space> za
+            :set foldmethod=indent
+
 
             " generate backups dir and set backups to on
             " silent !mkdir ~/.vim/backups > /dev/null 2>&1
-            set backup
-            set backupdir=/tmp      " save backup files (~) to /tmp
+            " set backup
+            " set backupdir=/tmp      " save backup files (~) to /tmp
 
             " Programming
             :set tabstop=4

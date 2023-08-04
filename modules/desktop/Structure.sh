@@ -11,9 +11,8 @@ mkdir -p 70-79_Backups_Archives
 
 function treemake() {
         printf -v pos "%02d" $counter
-    #mkdir -p $1/$2_$3
     mkdir -p $1/"$index1.$pos"_$2
-    echo $1/"$index1.$pos"_$2
+    #echo $1/"$index1.$pos"_$2
     counter=$((counter+1))
 }
 
@@ -81,8 +80,12 @@ treemake $books "Business"
 treemake $books "Handwriting"
 treemake $books "DIY"
 treemake $books "Travel"
-treemake $books "Art"
+treemake $books "Art_Craft"
 treemake $books "Finance"
+treemake $books "Solar"
+treemake $books "Management"
+treemake $books "Cooking"
+treemake $books "Cleaning"
 
 
 
