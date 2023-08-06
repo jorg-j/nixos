@@ -13,5 +13,6 @@
   [
     xournalpp
     gettext # needed for cinnamon
+    caffeine-ng
   ];
 }
