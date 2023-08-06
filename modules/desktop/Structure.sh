@@ -289,8 +289,9 @@ pictures() {
         mkdir -p 10-19_Family
         mkdir -p 20-29_Holidays_Trips
         mkdir -p 30-39_Screenshots
-        mkdir -p 40-49_Inforgraphs
+        mkdir -p 40-49_Infographs
         mkdir -p 50-59_Wallpapers
+        mkdir -p 60-69_Proof_Receipts
 
         # 10-19_Family
         mkdir -p 10-19_Family/10_Tash/10.01_Wedding
