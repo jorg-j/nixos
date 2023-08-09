@@ -30,10 +30,11 @@
 environment = {
     systemPackages = with pkgs;
     [
+      cryfs
+      gocryptfs
+      just
       libnotify
       unison
-      gocryptfs
-      cryfs
     ];
   };
 }
