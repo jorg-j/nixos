@@ -224,6 +224,7 @@ treemake() {
         mkdir -p 40-49_Hobbies/41_LaserCutting/41.01_BurnFiles
         mkdir -p 40-49_Hobbies/41_LaserCutting/41.02_Software
         mkdir -p 40-49_Hobbies/41_LaserCutting/41.03_Documentation
+        mkdir -p 40-49_Hobbies/41_LaserCutting/41.04_Assets
 
         mkdir -p 40-49_Hobbies/42_Games/42.01_Nintendo
         mkdir -p 40-49_Hobbies/42_Games/42.02_Factorio
