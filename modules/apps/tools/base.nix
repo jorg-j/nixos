@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    sqlite
     binutils
     coreutils
     pciutils
