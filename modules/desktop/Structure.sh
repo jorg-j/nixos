@@ -280,8 +280,22 @@ treemake() {
         }
 70_79
 
+
+
+# Clients
+cat << EOF > 50-59_Work/51_Clients/new_client_structure.sh
+mkdir -p 01_Documentation
+mkdir -p 02_Projects
+mkdir -p 03_Resources
+mkdir -p 04_Meetings
+mkdir -p 98_Sandbox
+mkdir -p 99_Backups
+EOF
+
+
 tree -d -L 3 > index.txt
 tree > deep_index.txt
+
 
 # Pictures
 pictures() {
@@ -310,51 +324,25 @@ pictures() {
         }
 pictures
 
+# videos
+videos() {
+        cd ~/Videos
+
+        mkdir -p 10-19_ScreenRecordings
 
 
-mkdir -p 50-59_Work/51_Clients/51.01_Westpac
-mkdir -p 50-59_Work/51_Clients/51.02_LegalAid_NSW
 
-# Clients
-cat << EOF > 50-59_Work/51_Clients/new_client_structure.sh
-mkdir -p 01_Documentation
-mkdir -p 02_Projects
-mkdir -p 03_Resources
-mkdir -p 04_Meetings
-mkdir -p 98_Sandbox
-mkdir -p 99_Backups
-EOF
+        mkdir -p 10-19_ScreenRecordings/10_Demos/10.01_Khan
+        mkdir -p 10-19_ScreenRecordings/10_Demos/10.02_Decision
+        mkdir -p 10-19_ScreenRecordings/10_Demos/10.03_ImageHash
+        mkdir -p 10-19_ScreenRecordings/10_Demos/10.04_BarcodeReader
 
+        mkdir -p 10-19_ScreenRecordings/11_Training/11.01_Software
+        mkdir -p 10-19_ScreenRecordings/11_Training/11.02_Doug
 
-mkdir -p 50-59_Work/52_Tools/52.01_HyperScience
-mkdir -p 50-59_Work/52_Tools/52.02_UiPath
+        mkdir -p 10-19_ScreenRecordings/12_Information/12.01_Ansible
+        mkdir -p 10-19_ScreenRecordings/12_Information/12.02_Vagrant
+        mkdir -p 10-19_ScreenRecordings/12_Information/12.03_Todoist
 
-mkdir -p 50-59_Work/53_Accounting/53.01_Tax_Pre2023
-mkdir -p 50-59_Work/53_Accounting/53.02_Tax_2023
-
-
-mkdir -p 50-59_Work/59_Archives/59.01_Kao
-mkdir -p 50-59_Work/59_Archives/59.02_Kogan
-mkdir -p 50-59_Work/59_Archives/59.03_RevealGroup
-mkdir -p 50-59_Work/59_Archives/59.04_Target
-
-# 60-69 Major Projects
-mkdir -p 60-69_Major_Projects/60_FEG/60.01_Pictures
-mkdir -p 60-69_Major_Projects/60_FEG/60.02_Submitted
-mkdir -p 60-69_Major_Projects/60_FEG/60.03_Proof
-mkdir -p 60-69_Major_Projects/60_FEG/60.04_Emails
-
-
-# 70-79 Backups Archives
-mkdir -p 70-79_Backups_Archives/70_Backups/70.01_RPi4B
-mkdir -p 70-79_Backups_Archives/70_Backups/70.02_RPiZero
-mkdir -p 70-79_Backups_Archives/70_Backups/70.03_DotFiles
-
-
-mkdir -p 70-79_Backups_Archives/71_Archives/71.01_Zip
-mkdir -p 70-79_Backups_Archives/71_Archives/71.02_PyCharm
-mkdir -p 70-79_Backups_Archives/71_Archives/71.03_NoLongerMaintained
-mkdir -p 70-79_Backups_Archives/71_Archives/71.04_ShellHistory
-
-tree -d -L 3 > index.txt
-tree > deep_index.txt
+        }
+videos
