@@ -9,5 +9,6 @@ ignore = Name */yeet/*
 ignore = Name *.vagrant*
 ignore = Name *pytest*
 ignroe = Name *.pyc
+ignroe = Name */arduino-1.8.13/*
 
 # Desktop to Surface
