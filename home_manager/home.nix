@@ -24,7 +24,8 @@
 
   home.file = {
     ".ssh/config" = { source = "/etc/nixos/home_manager/files/ssh_config"; };
-    ".unison/tenant.prf" = { source = "/etc/nixos/home_manager/files/unison.prf"; };
+    ".unison/tenant.prf" = { source = "/etc/nixos/home_manager/files/tenant.prf"; };
+    ".unison/Surface.prf" = { source = "/etc/nixos/home_manager/files/surface.prf"; };
   };
 
   # Your existing configuration options go here...

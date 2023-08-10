@@ -1,0 +1,13 @@
+# Unison preferences
+root = /home/jack/Documents
+root = ssh://jack@192.168.1.148//home/jack/Documents
+sshargs = -C
+ignore = Name */lib/*
+ignore = Name */env/*
+ignore = Name */venv/*
+ignore = Name */yeet/*
+ignore = Name *.vagrant*
+ignore = Name *pytest*
+ignroe = Name *.pyc
+
+# Desktop to Surface
