@@ -3,6 +3,7 @@
 {
     # Activate for non gtk desktop environments
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  programs.dconf.enable = true;
 
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
   services.xserver = {
@@ -29,6 +30,7 @@
     environment.systemPackages = with pkgs;
     [
      xfce.thunar
+     lxappearance
 
     ];
 
