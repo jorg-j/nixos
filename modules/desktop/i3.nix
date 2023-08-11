@@ -29,8 +29,7 @@
     environment.systemPackages = with pkgs;
     [
      xfce.thunar
-     conky
-     
+
     ];
 
 }

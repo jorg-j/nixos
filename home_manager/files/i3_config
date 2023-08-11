@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-exec conky
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -88,6 +88,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
+workspace_layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -109,7 +110,7 @@ bindsym $mod+a focus parent
 set $ws1 "Term"
 set $ws2 "Web"
 set $ws3 "FS"
-set $ws4 "4"
+set $ws4 "VS"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -143,6 +144,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="firefox" instance="Navigator"] $ws2
 assign [class="Thunar" instance="thunar"] $ws3
+assign [class="Code" instance="code"] $ws4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
