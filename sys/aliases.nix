@@ -60,5 +60,7 @@
     # Here to fix surface /boot when /boot goes read only
     surface-boot = "sudo umount /boot && sudo fsck /dev/nvme0n1p1 && sudo mount /dev/nvme0n1p1 /boot";
     pen = "sudo systemctl restart iptsd.service";
+
+    mon = "xrandr --output DP-2 --auto --right-of HDMI-1";
   };
 }

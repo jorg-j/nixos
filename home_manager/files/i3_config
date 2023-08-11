@@ -18,7 +18,7 @@ set $mod Mod4
 font pango:Ubuntu regular 11
 
 exec --no-startup-id nm-applet
-
+exec --no-startup-id xrandr --output DP-2 --auto --right-of HDMI-1 &
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -105,6 +105,17 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Set multiple monitors
+set $fm HDMI-1
+set $sm DP-2
+
+workspace "1:Term" output $fm
+workspace "2:Web" output $fm
+workspace "3:Files" output $fm
+workspace "4:VS" output $sm
+workspace "5:Obs" output $sm
+workspace 6 output $sm
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:Term"
@@ -146,6 +157,8 @@ assign [class="firefox" instance="Navigator"] $ws2
 assign [class="Thunar" instance="thunar"] $ws3
 assign [class="Code" instance="code"] $ws4
 assign [class="obsidian" instance="obsidian"] $ws5
+
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
