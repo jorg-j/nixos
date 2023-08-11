@@ -35,6 +35,8 @@ environment = {
       just
       libnotify
       unison
+      ntfs3g
+      exfat-utils
     ];
   };
 }
