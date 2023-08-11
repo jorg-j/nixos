@@ -159,6 +159,7 @@ assign [class="Code" instance="code"] $ws4
 assign [class="obsidian" instance="obsidian"] $ws5
 
 
+for_window [class="simplescreenrecorder" instance="SimpleScreenRecorder"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

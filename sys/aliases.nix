@@ -61,6 +61,10 @@
     surface-boot = "sudo umount /boot && sudo fsck /dev/nvme0n1p1 && sudo mount /dev/nvme0n1p1 /boot";
     pen = "sudo systemctl restart iptsd.service";
 
+    # Set monitors on desktop
     mon = "xrandr --output DP-2 --auto --right-of HDMI-1";
+
+    # Check the content of an app i3
+    xwin = "xprop | grep WM_CLASS";
   };
 }
