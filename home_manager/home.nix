@@ -27,6 +27,7 @@
     ".unison/tenant.prf" = { source = "/etc/nixos/home_manager/files/tenant.prf"; };
     ".unison/Surface.prf" = { source = "/etc/nixos/home_manager/files/surface.prf"; };
     ".config/i3/config" = { source = "/etc/nixos/home_manager/files/i3_config"; };
+    ".config/i3/i3status.conf" = { source = "/etc/nixos/home_manager/files/i3status.conf"; };
   };
 
   # Your existing configuration options go here...
