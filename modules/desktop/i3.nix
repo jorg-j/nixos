@@ -31,6 +31,9 @@
     [
      xfce.thunar
      lxappearance
+     pcmanfm-qt
+    
+     
 
     ];
 

@@ -36,7 +36,9 @@ environment = {
       libnotify
       unison
       ntfs3g
-      exfat-utils
+      exfat
+      gvfs
+      polkit_gnome
     ];
   };
 }
