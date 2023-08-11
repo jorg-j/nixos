@@ -20,7 +20,7 @@ in
   xdg.portal.enable = true;
 
   # Activate for non gtk desktop environments
-  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Add fpak command to the system
   environment.systemPackages = [ 
