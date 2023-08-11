@@ -1,6 +1,9 @@
 { config, pkgs, callPackage, ... }: 
 
 {
+    # Activate for non gtk desktop environments
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
   services.xserver = {
     enable = true;
@@ -26,6 +29,8 @@
     environment.systemPackages = with pkgs;
     [
      xfce.thunar
+     conky
+     
     ];
 
 }
