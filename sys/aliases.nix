@@ -66,5 +66,10 @@
 
     # Check the content of an app i3
     xwin = "xprop | grep WM_CLASS";
+
+    # Mount drives i3
+    # Note if removing also remove from home_manager home.nix
+    mounter = "bash ~/.mnti3/mounter";
+    unmounter = "bash ~/.mnti3/unmounter";
   };
 }

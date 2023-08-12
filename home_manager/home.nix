@@ -28,6 +28,8 @@
     ".unison/Surface.prf" = { source = "/etc/nixos/home_manager/files/surface.prf"; };
     ".config/i3/config" = { source = "/etc/nixos/home_manager/files/i3_config"; };
     ".config/i3status/config" = { source = "/etc/nixos/home_manager/files/i3status.conf"; };
+    ".mnti3/mounter" = { source = "/etc/nixos/home_manager/files/mounter"; };
+    ".mnti3/unmounter" = { source = "/etc/nixos/home_manager/files/unmounter"; };
   };
 
   # Your existing configuration options go here...

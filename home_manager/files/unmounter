@@ -1,5 +1,4 @@
 ''
-#!${pkgs.stdenv.shell}
 
 # Unmount USB drives or Android phones. Replaces the older `dmenuumount`. Fewer
 # prompt and also de-decrypts LUKS drives that are unmounted.
