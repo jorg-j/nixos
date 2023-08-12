@@ -32,7 +32,7 @@
      xfce.thunar
      lxappearance
      pcmanfm-qt
-    
+    dunst # notifications
      
 
     ];
