@@ -7,10 +7,15 @@ let
     /etc/nixos/modules/desktop/Structure.sh
   '';
 
+  mounter = pkgs.writeScriptBin "mounter" (import ./files/mounter);
+  unmounter = pkgs.writeScriptBin "mounter" (import ./files/unmounter);
+
 in
 {
   environment.systemPackages = [
     structure
+    mounter
+    unmounter
   ];
 
   environment.shellInit = ''
