@@ -1,4 +1,3 @@
-''
 
 # Unmount USB drives or Android phones. Replaces the older `dmenuumount`. Fewer
 # prompt and also de-decrypts LUKS drives that are unmounted.
@@ -26,4 +25,3 @@ cryptid="${cryptid%% *}"
 test -b /dev/mapper/"${cryptid##*/}"
 sudo -A cryptsetup close "$cryptid"
 notify-send "🔒Device dencryption closed." "Drive is now securely locked again."
-''
