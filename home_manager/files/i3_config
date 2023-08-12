@@ -19,6 +19,7 @@ font pango:JetBrains Mono 13
 
 exec --no-startup-id nm-applet
 exec --no-startup-id xrandr --output DP-2 --auto --right-of HDMI-1 &
+exec pcmanfm-qt -d
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
