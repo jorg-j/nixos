@@ -83,5 +83,5 @@ in {
             onUnitActiveSec = "60min";
         };
     };
-    }
+    };
 }
