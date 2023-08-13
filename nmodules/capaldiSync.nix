@@ -10,6 +10,7 @@ let
         SYNCLOC=capaldi:/home/pi/Downloads/rdl/storage/
         FileSourceDir="/run/media/jack/Backup/WMM/rdlyeti/"
         CLEANUPLOC=/home/pi/Downloads/rdl/storage
+        ssh capaldi "cd /home/pi/Downloads/rdl && sudo chown -R pi:pi ./"
         rsync -av --remove-source-files $SYNCLOC $FileSourceDir
     }
 
