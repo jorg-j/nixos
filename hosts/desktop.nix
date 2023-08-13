@@ -14,6 +14,7 @@
       ../profiles/desktop.nix
       ../packages/flatpak.nix
       ../modules/services/capaldi_sync.nix
+      ../nmodules
     ];
 
   # Bootloader.
@@ -21,6 +22,11 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
   boot.tmp.cleanOnBoot = true;
+
+  services.hello = {
+    enable = true;
+    greeter = "Bob";
+  }
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
