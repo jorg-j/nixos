@@ -13,7 +13,6 @@
       ../hardware-configuration.nix
       ../profiles/desktop.nix
       ../packages/flatpak.nix
-      ../modules/services/capaldi_sync.nix
       ../nmodules
     ];
 
@@ -23,9 +22,13 @@
   boot.loader.grub.useOSProber = true;
   boot.tmp.cleanOnBoot = true;
 
-  services.hello = {
+  #services.hello = {
+  #  enable = true;
+  #  greeter = "Bob";
+  #}
+
+  services.capaldiSync = {
     enable = true;
-    greeter = "Bob";
   }
 
   # Enables closure file builds for arm

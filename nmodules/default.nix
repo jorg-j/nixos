@@ -1,3 +1,6 @@
-[
-    ./hello.nix
-]
+{
+    imports = [
+        ./hello.nix
+        ./capaldiSync.nix
+    ]
+}
