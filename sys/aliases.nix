@@ -2,6 +2,7 @@
   environment.shellAliases = {
     config = "sudo vim /etc/nixos/configuration.nix";
     build = "sudo nixos-rebuild switch --keep-going";
+    bootbuild = "sudo nixos-rebuild boot --keep-going";
     sync = "cd /etc/nixos && sudo git stash && sudo git pull --rebase";
     rollback = "sudo nixos-rebuild switch --rollback";
     clean = "sudo nix-collect-garbage --delete-older-than 30d";
