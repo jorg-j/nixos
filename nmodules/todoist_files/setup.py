@@ -3,8 +3,8 @@
 from setuptools import setup, find_packages
 
 
-setup(name='test1',
+setup(name='todoist_load',
     version='1.0',
     packages=find_packages(),
-    scripts=["test.py"]
+    scripts=["todoist_load.py"]
 )

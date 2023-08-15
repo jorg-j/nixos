@@ -40,7 +40,7 @@ in {
         description = "Todoist Load Service";
         serviceConfig.Type = "oneshot";
         serviceConfig.ExecStart = "${pkgs.python3}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
-
+        #serviceConfig.ExecStart = "${pkgs.todoist_load}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
         };
     };
 
