@@ -1,4 +1,4 @@
-source ./config.sh
+source /etc/nixos/modules/services/todoist/scripts/config.sh
 
 # Humble Bundle
 echo "{\"project_name\": \"Personal\", \"content\": \"Humble Bundle Check Website [15m]\", \"due_string\": \"Saturday 10am\", \"labels\": [\"cron\", \"action\"], \"priority\": 3}" | tee $DESTINATION/$(uuid).txt > /dev/null

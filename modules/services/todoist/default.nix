@@ -26,6 +26,7 @@ in {
     #    description = "Todoist Load Service";
     #    serviceConfig.Type = "oneshot";
     #    serviceConfig.ExecStart = "${pkgs.todoist_load}/bin/todoist_load /home/jack";
+        # serviceConfig.User = "jack";
     #};
 
     #systemd.timers.todoist_load_runnerTimer = {
@@ -45,6 +46,7 @@ in {
         description = "Todoist Weekdays";
         serviceConfig.Type = "oneshot";
         serviceConfig.ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/modules/services/todoist/scripts/weekdays.sh";
+        serviceConfig.User = "jack";
     };
 
     systemd.timers.todoist_weekdaysTimer = {
@@ -62,6 +64,7 @@ in {
         description = "Todoist Weekly";
         serviceConfig.Type = "oneshot";
         serviceConfig.ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/modules/services/todoist/scripts/weekly.sh";
+        serviceConfig.User = "jack";
     };
 
     systemd.timers.todoist_weeklyTimer = {
@@ -79,6 +82,7 @@ in {
         description = "Todoist Monthly";
         serviceConfig.Type = "oneshot";
         serviceConfig.ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/modules/services/todoist/scripts/monthly.sh";
+        serviceConfig.User = "jack";
     };
 
     systemd.timers.todoist_monthlyTimer = {

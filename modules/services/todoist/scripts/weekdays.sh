@@ -1,4 +1,4 @@
-source ./config.sh
+source /etc/nixos/modules/services/todoist/scripts/config.sh
 
 # Morning Walk
 echo "{\"project_name\": \"Personal\", \"content\": \"Morning Walk [45m]\", \"due_string\": \"7am\", \"labels\": [\"45mins\", \"cron\", \"excersize\", \"action\"], \"priority\": 1}" | tee $DESTINATION/$(uuid).txt > /dev/null

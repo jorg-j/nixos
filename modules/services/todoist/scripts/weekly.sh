@@ -1,4 +1,4 @@
-source ./config.sh
+source /etc/nixos/modules/services/todoist/scripts/config.sh
 
 # Bins
 echo "{\"project_name\": \"House\", \"content\": \"Bins have been taken out [15m]\", \"due_string\": \"Friday 7am\", \"labels\": [\"cron\", \"action\"], \"priority\": 2}" | tee $DESTINATION/$(uuid).txt > /dev/null
