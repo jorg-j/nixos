@@ -15,6 +15,7 @@
     # khal
     screenfetch
     tree
+    libossp_uuid
     # dig
     wally-cli
   ];
