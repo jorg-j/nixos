@@ -11,6 +11,9 @@
 
       ../modules/users/jack.nix
 
+      # Todoist loader
+      ../modules/services/todoist
+
       # ../users/pi.nix
     ];
 
@@ -27,8 +30,6 @@
     htop
     dhcpcd
     wpa_supplicant
-    borgbackup
-    unison
   ];
 
   # === Optimise storage ===
