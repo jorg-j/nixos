@@ -21,21 +21,21 @@ in {
     ];
 
     # Setup Todoist Runner and Timer
-    systemd.services."todoist_load_runner"= {
-        # enable = true;
-        description = "Todoist Load Service";
-        serviceConfig.Type = "oneshot";
-        serviceConfig.ExecStart = "${pkgs.todoist_load}/bin/todoist_load /home/jack";
-    };
+    #systemd.services."todoist_load_runner"= {
+    #    # enable = true;
+    #    description = "Todoist Load Service";
+    #    serviceConfig.Type = "oneshot";
+    #    serviceConfig.ExecStart = "${pkgs.todoist_load}/bin/todoist_load /home/jack";
+    #};
 
-    systemd.timers.todoist_load_runnerTimer = {
-        description = "Run Todoist Load Runner Every Day";
-        wantedBy = [ "timers.target" ];
-            timerConfig = {
-                Unit = "todoist_load_runner.service";
-                OnCalendar = "*-*-* 4:00:00";
-        };
-    };
+    #systemd.timers.todoist_load_runnerTimer = {
+    #    description = "Run Todoist Load Runner Every Day";
+    #    wantedBy = [ "timers.target" ];
+    #        timerConfig = {
+    #            Unit = "todoist_load_runner.service";
+    #            OnCalendar = "*-*-* 4:00:00";
+    #    };
+    #};
 
 
     # Setup Job Runners and Timer

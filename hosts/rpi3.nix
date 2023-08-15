@@ -52,6 +52,8 @@
 
   networking.hostName = "tenant";
 
+  programs.zsh.enable = true;
+
   # Enable Desktop Environment
 
   # services.xserver.desktopManager.xfce.enable = true;
