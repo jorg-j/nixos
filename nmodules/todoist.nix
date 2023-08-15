@@ -11,6 +11,13 @@ let
 
   '';
 
+
+  my-python-packages = ps: with ps; [
+    todoist-api-python
+    loguru
+    requests
+  ];
+
 in {
 
     # Declare what settings a user of this "hello.nix" module CAN SET.
@@ -19,19 +26,22 @@ in {
     };
 
 
-    # by setting "services.capaldiSync.enable = true;"
-
     config = mkIf cfg.enable {
 
     environment.systemPackages = [
         todoistload
     ];
 
+    environment.systemPackages = [
+    (pkgs.python3.withPackages my-python-packages)
+    ];
+
     systemd.services."todoist_load"= {
         # enable = true;
         description = "Todoist Load Service";
         serviceConfig.Type = "oneshot";
-        serviceConfig.ExecStart = "${pkgs.nix}/bin/nix-shell -I /etc/nixos/nmodules/todoist_files/shell.nix";
+        serviceConfig.ExecStart = "${pkgs.python3}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
+
         };
     };
 
