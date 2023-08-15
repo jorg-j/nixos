@@ -1,2 +1,7 @@
-with open('/home/jack/t.t', 'w+')as f:
-    f.write('aasd')
+#!/usr/bin/env python
+
+import os
+
+cwd = os.getcwd()
+
+print(cwd)
