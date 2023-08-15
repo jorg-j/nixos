@@ -1,7 +1,4 @@
 #!/usr/bin/env python
 
-import os
-
-cwd = os.getcwd()
-
-print(cwd)
+with open('/home/jack/a.txt', 'w+')as f:
+    f.write('asdf')

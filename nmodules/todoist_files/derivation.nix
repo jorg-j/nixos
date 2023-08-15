@@ -2,7 +2,7 @@
 
 with python3Packages;
 buildPythonApplication {
-    pname = "test";
+    pname = "test1";
     version = "1.0";
     propagatedBuiltInputs = [ ];
     src = ./.;

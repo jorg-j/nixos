@@ -1,4 +1,9 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ config, pkgs, ... }:
+
+let
+mytest = pkgs.callPackage ./derivation.nix {};
+
+in
 
 {
 
@@ -6,6 +11,5 @@
         mytest
     ];
 
-    mytest = pkgs.callPackage ./derivation.nix {};
 
 }
