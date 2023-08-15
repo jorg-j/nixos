@@ -11,6 +11,7 @@
       ../profiles/surface.nix
       #../modules/services/syncthing_surface.nix
       ../packages/flatpak.nix
+      ../nmodules
     ];
 
   # Bootloader.

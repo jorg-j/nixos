@@ -1,4 +1,6 @@
 { lib, pkgs, config, ... }:
+
+
 with lib;                      
 let
 
@@ -10,6 +12,17 @@ let
   '';
 
 in {
+    imports = [
+    <home-manager/nixos>
+    ];
+
+    home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.jack = import ./home.nix;
+    };
+
+
     # Declare what settings a user of this "hello.nix" module CAN SET.
     options.services.todoist_load = {
         enable = mkEnableOption "Todoist Load Service";
@@ -49,5 +62,5 @@ in {
     #         onUnitActiveSec = "60min";
     #     };
     # };
-    };
+
 }
