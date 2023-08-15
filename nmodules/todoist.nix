@@ -12,16 +12,6 @@ let
   '';
 
 in {
-    imports = [
-    <home-manager/nixos>
-    ];
-
-    home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.jack = import ./home.nix;
-    };
-
 
     # Declare what settings a user of this "hello.nix" module CAN SET.
     options.services.todoist_load = {
@@ -41,15 +31,10 @@ in {
         # enable = true;
         description = "Todoist Load Service";
         serviceConfig.Type = "oneshot";
-        script = ''
-        ${pkgs.bash}/bin/bash /home/jack/test.sh
-      '';
+        ExecStart = "cd /etc/nixos/nmodules/todoist_files && ${pkgs.nix}/bin/nix-shell";
         };
     };
 
-    home.file = {
-        "shell.nix" = { source = "/etc/nixos/nmodules/todoist_files/shell.nix"; };
-    };
 
     # systemd.timers.capaldiSyncTimer = {
     #     description = "Run Capaldi Sync every 60 minutes";
