@@ -16,7 +16,7 @@ in {
 
     environment.systemPackages = [
       todoist_load
-      libossp_uuid
+      pkgs.libossp_uuid
       (pkgs.python3.withPackages my-python-packages)
     ];
 
