@@ -2,7 +2,7 @@
 with lib;                      
 let
 
-  cfg = config.services.capaldiSync;
+  cfg = config.services.todoist_load;
 
   todoistload = pkgs.writeScriptBin "todoistload" ''
     #!${pkgs.stdenv.shell}
