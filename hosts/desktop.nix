@@ -59,7 +59,8 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
 
-
+  # Enable ZSA Moonlander hardware flashing
+  hardware.keyboard.zsa.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

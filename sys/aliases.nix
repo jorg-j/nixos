@@ -72,5 +72,7 @@
     # Note if removing also remove from home_manager home.nix
     mounter = "bash ~/.mnti3/mounter";
     unmounter = "bash ~/.mnti3/unmounter";
+
+    flash_keyboard = "wget https://oryx.zsa.io/3ya9r/latest/binary -O binary.bin && wally-cli binary.bin && rm binary.bin";
   };
 }

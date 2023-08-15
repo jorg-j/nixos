@@ -16,5 +16,6 @@
     screenfetch
     tree
     # dig
+    wally-cli
   ];
 }
