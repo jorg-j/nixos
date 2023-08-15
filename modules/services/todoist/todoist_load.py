@@ -6,6 +6,7 @@ from loguru import logger
 from glob import glob
 import json
 import argparse
+import requests
 
 from todoist_api_python.api import TodoistAPI
 
@@ -27,6 +28,15 @@ logger.remove(0)
 logger.add(sys.stderr, level="INFO")
 logger.add(f"{input_dir}/log.log", retention="1 month")
 
+def notify(msg, priority="2"):
+    requests.post("https://ntfy.sh/jorg_1512_todo",
+        data=msg,
+        headers={
+            "Title": "Todoist",
+            "Priority": priority,
+            "Tags": "closed_book"
+        }
+    )
 
 def reader(file):
     """
@@ -118,6 +128,7 @@ def run():
     This function checks for .txt files in a specific directory, adds the tasks in those files to a
     Todoist inbox project using the Todoist API, and then deletes the files.
     """
+    notify('Starting Todoist Load')
     files = glob(f"{input_dir}/*.txt")
     if files:
         api_key = get_api_key(input_dir)
@@ -130,8 +141,10 @@ def run():
             add_task(file, projects, api, inbox)
             os.remove(file)
         logger.info("Complete")
+        notify(f'Finished Todoist load: {len(files)}')
     else:
         logger.info("No tasks to add. Exiting...")
+        notify('No tasks loaded', priority="4")
 
 if __name__ == "__main__":
     run()
