@@ -30,16 +30,9 @@ in {
 
     config = mkIf cfg.enable {
 
-    imports = [
-    ./todoist_files
-    ];
-
     environment.systemPackages = [
-        todoistload
-    ];
-
-    environment.systemPackages = [
-    (pkgs.python3.withPackages my-python-packages)
+      todoistload
+      (pkgs.python3.withPackages my-python-packages)
     ];
 
     systemd.services."todoist_load"= {
