@@ -31,7 +31,7 @@ in {
         # enable = true;
         description = "Todoist Load Service";
         serviceConfig.Type = "oneshot";
-        ExecStart = "cd /etc/nixos/nmodules/todoist_files && ${pkgs.nix}/bin/nix-shell";
+        serviceConfig.ExecStart = "${pkgs.nix}/bin/nix-shell -I /etc/nixos/nmodules/todoist_files/shell.nix";
         };
     };
 
