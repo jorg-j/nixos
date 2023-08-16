@@ -14,7 +14,7 @@
           esbenp.prettier-vscode
           ms-python.python
           davidanson.vscode-markdownlint
-          bbenoist.Nix
+          bbenoist.nix
       ]++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "document";
