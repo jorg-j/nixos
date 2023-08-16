@@ -9,9 +9,9 @@
     [
       ./surface
       ../profiles/surface.nix
-      #../modules/services/syncthing_surface.nix
+
       ../packages/flatpak.nix
-      ../modules/services/todoist
+      # ../modules/services/todoist
     ];
 
   # Bootloader.
