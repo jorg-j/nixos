@@ -30,5 +30,7 @@
     [user]
         name = jorg-j
         email = jorgensen.server@gmail.com
+    [credential]
+        helper = cache --timeout=900
     '';
 }
