@@ -44,6 +44,7 @@ in {
     systemd.services."todoist_weekdays"= {
         # enable = true;
         description = "Todoist Weekdays";
+        path = [ pkgs.libossp_uuid ];
         serviceConfig.Type = "oneshot";
         serviceConfig.ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/modules/services/todoist/scripts/weekdays.sh";
         serviceConfig.User = "jack";
@@ -62,6 +63,7 @@ in {
     systemd.services."todoist_weekly"= {
         # enable = true;
         description = "Todoist Weekly";
+        path = [ pkgs.libossp_uuid ];
         serviceConfig.Type = "oneshot";
         serviceConfig.ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/modules/services/todoist/scripts/weekly.sh";
         serviceConfig.User = "jack";
@@ -80,6 +82,7 @@ in {
     systemd.services."todoist_monthly"= {
         # enable = true;
         description = "Todoist Monthly";
+        path = [ pkgs.libossp_uuid ];
         serviceConfig.Type = "oneshot";
         serviceConfig.ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/modules/services/todoist/scripts/monthly.sh";
         serviceConfig.User = "jack";
