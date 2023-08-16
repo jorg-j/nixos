@@ -121,7 +121,7 @@ def add_task(file, projects, api, inbox):
 def get_api_key(input_dir):
     with open(f"{input_dir}/todoist.ini", 'r')as f:
         api_key = f.read()
-    return api_key
+    return api_key.replace('\n', '')
 
 def run():
     """
