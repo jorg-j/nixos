@@ -19,7 +19,9 @@
     };
     initExtra = ''
       bindkey '^f' autosuggest-accept
-      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+    '';
+    envExtra = ''
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
     '';
   };
 
