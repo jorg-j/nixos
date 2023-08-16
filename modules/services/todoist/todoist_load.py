@@ -119,7 +119,7 @@ def add_task(file, projects, api, inbox):
         logger.error(error)
 
 def get_api_key(input_dir):
-    with open(f"{input_dir}/*.ini", 'r')as f:
+    with open(f"{input_dir}/todoist.ini", 'r')as f:
         api_key = f.read()
     return api_key
 
