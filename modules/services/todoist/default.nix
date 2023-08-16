@@ -25,7 +25,7 @@ in {
        # enable = true;
        description = "Todoist Load Service";
        serviceConfig.Type = "oneshot";
-       serviceConfig.ExecStart = "${todoist_load}/bin/todoist_load /home/jack";
+       serviceConfig.ExecStart = "${todoist_load}/bin/todoist_load -i /home/jack";
         serviceConfig.User = "jack";
     };
 
