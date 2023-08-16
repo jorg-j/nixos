@@ -27,6 +27,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  systemd.user.extraConfig = ''
+  DefaultEnvironment="PATH=/run/current-system/sw/bin"
+  '';
+
 environment = {
     systemPackages = with pkgs;
     [

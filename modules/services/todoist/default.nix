@@ -13,9 +13,6 @@ let
     ];
 
 in {
-    systemd.user.extraConfig = ''
-    DefaultEnvironment="PATH=/run/current-system/sw/bin"
-    '';
 
     environment.systemPackages = [
       todoist_load
