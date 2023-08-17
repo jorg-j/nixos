@@ -33,6 +33,7 @@
     ".config/i3status/config" = { source = "/etc/nixos/home_manager/files/i3status.conf"; };
     ".mnti3/mounter" = { source = "/etc/nixos/home_manager/files/mounter"; };
     ".mnti3/unmounter" = { source = "/etc/nixos/home_manager/files/unmounter"; };
+    ".config/nixpkgs/config.nix" = { source = "/etc/nixos/home_manager/files/nixpkgs_config.nix"; };
   };
 
   # Your existing configuration options go here...
