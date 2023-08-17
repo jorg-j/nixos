@@ -1,3 +1,4 @@
+{ config, lib, ... }:
 {
   network.description = "NixOps deployment";
   network.enableRollback = true;
@@ -6,8 +7,11 @@
     databasefile = "~/.nixops/deployments.nixops";
   };
 
+  network.hosts = {
   surface =
-    { config, pkgs, ... }:
-    { deployment.targetHost = "192.168.1.148";
+    {
+    deployment.targetHost = "192.168.1.148";
+    system = config.system.build.toplevel;
+    };
     };
 }

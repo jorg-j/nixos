@@ -9,6 +9,6 @@ environment.systemPackages = with pkgs;
   [
     gnumake
     nixos-generators
-    nixops_unstable
+    nixops
   ];
 }
