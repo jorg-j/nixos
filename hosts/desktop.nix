@@ -49,6 +49,7 @@
   # For SSD's
   services.fstrim.enable = true;
 
+
   # Configure keymap in X11
   services.xserver = {
     layout = "au";
@@ -77,6 +78,14 @@
     lightburn
   ];
 
+  
+  nixpkgs.config.permittedInsecurePackages = [
+    "python-2.7.18.6" # For nixops to work
+    "python2.7-certifi-2021.10.8" # For nixops to work
+    "python2.7-pyjwt-1.7.1" # For nixops to work
+    "openssl-1.1.1u" # For nixops to work
+  ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -90,5 +99,7 @@
     dates = "daily";
     options = "--delete-older-than 7d";
   };
+
+  nix.settings.auto-optimise-store = true;
 
 }
