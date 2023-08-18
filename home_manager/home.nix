@@ -36,5 +36,4 @@
     ".config/nixpkgs/config.nix" = { source = "/etc/nixos/home_manager/files/nixpkgs_config.nix"; };
   };
 
-  # Your existing configuration options go here...
 }

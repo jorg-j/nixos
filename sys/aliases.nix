@@ -15,6 +15,8 @@
     closure_deploy = "cd /etc/nixos/closure_files && sudo ./result/bin/switch-to-configuration switch";
     closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";
 
+    build_surface = "nixos-rebuild --target-host jack@192.168.1.148 --use-remote-sudo switch -I nixos-config=/etc/nixos/hosts/surface.nix";
+    build_rpi3 = "nixos-rebuild --target-host jack@192.168.1.2 --use-remote-sudo switch -I nixos-config=/etc/nixos/hosts/rpi3.nix";
 
     s = "sudo";
     ss = "sudo systemctl";

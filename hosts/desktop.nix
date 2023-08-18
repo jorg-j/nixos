@@ -50,18 +50,9 @@
   services.fstrim.enable = true;
 
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "au";
-    xkbVariant = "";
-  };
-
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
-
-  # Enable ZSA Moonlander hardware flashing
-  hardware.keyboard.zsa.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -78,13 +69,6 @@
     lightburn
   ];
 
-  
-  nixpkgs.config.permittedInsecurePackages = [
-    "python-2.7.18.6" # For nixops to work
-    "python2.7-certifi-2021.10.8" # For nixops to work
-    "python2.7-pyjwt-1.7.1" # For nixops to work
-    "openssl-1.1.1u" # For nixops to work
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
