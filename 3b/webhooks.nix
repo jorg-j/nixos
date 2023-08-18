@@ -15,6 +15,7 @@
         after = [ "network-online.target" ];
         wantedBy = [ "network-online.target" ];
 
+        # This path has to be here so systemd can see the packages
         path = with pkgs; [ config.nix.package.out ];
         serviceConfig.User = "webhook";
         serviceConfig.ExecStart = "${pkgs.webhook}/bin/webhook -hooks /etc/webhook.conf -verbose";
@@ -34,6 +35,11 @@
         {
             "id": "alert",
             "execute-command": "${pkgs.alert}/bin/alert",
+            "command-working-directory": "/tmp"
+        },
+        {
+            "id": "alert2",
+            "execute-command": "${pkgs.curl}/bin/curl -H 'Title: 3b' -H 'Priority: default' -d '3b second hellp' ntfy.sh/jorg_1512",
             "command-working-directory": "/tmp"
         }
     ]
