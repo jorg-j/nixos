@@ -17,6 +17,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.version = 2;
+  # boot.loader.grub.device = "/dev/nvme0n1"; # or "nodev" for efi only
+
   # nix.settings.auto-optimise-store = true;
 
   networking.hostName = "surface"; # Define your hostname.
@@ -28,15 +32,7 @@
   # Set limit on how many generations remain
   boot.loader.grub.configurationLimit = 5;
 
-  # Enable ZSA Moonlander hardware flashing
-  hardware.keyboard.zsa.enable = true;
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "python-2.7.18.6" # For nixops to work
-    "python2.7-certifi-2021.10.8" # For nixops to work
-    "python2.7-pyjwt-1.7.1" # For nixops to work
-    "openssl-1.1.1u" # For nixops to work
-  ];
   
   nix.gc.automatic = true;
 

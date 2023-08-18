@@ -3,6 +3,7 @@
 {
   imports = [
       ./aliases.nix
+      ./insecure_packages.nix
       ./scripts.nix
       ./time_local.nix
       ./keymap.nix
@@ -26,6 +27,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Set Trusted Users
+  nix.settings.trusted-users = [ "jack" "root" "@wheel" ];
 
   systemd.user.extraConfig = ''
   DefaultEnvironment="PATH=/run/current-system/sw/bin"
