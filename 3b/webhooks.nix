@@ -20,7 +20,7 @@ in
         after = [ "network-online.target" ];
         wantedBy = [ "network-online.target" ];
 
-        path = with pkgs; [ webhook ];
+        path = with pkgs; [ bash curl webhook ];
         serviceConfig.ExecStart = "${pkgs.webhook}/bin/webhook -hooks /etc/webhook.conf -verbose";
     };
 
