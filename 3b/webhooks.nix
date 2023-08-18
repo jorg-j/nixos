@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-    environment.systemPackages = [
+    environment.systemPackages = with pkgs; [
       webhook
     ];
 
