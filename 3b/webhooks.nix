@@ -33,7 +33,7 @@
     [
         {
             "id": "alert",
-            "execute-command": "${pkgs.alert}/bin/alert,
+            "execute-command": "${pkgs.alert}/bin/alert",
             "command-working-directory": "/tmp"
         }
     ]
