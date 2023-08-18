@@ -1,7 +1,15 @@
 { config, pkgs, lib, ... }:
 
+let
+
+  alert = pkgs.writeScriptBin "alert" ''
+        #!${pkgs.stdenv.shell}
+        curl -H 'Title: 3b' -H 'Priority: default' -d '3b hello' ntfy.sh/jorg_1512
+    '';
+
+in
 {
-    environment.systemPackages[
+    environment.systemPackages = [
       pkgs.webhook
       alert
     ];
@@ -27,9 +35,6 @@
     '';
 
 
-    alert = pkgs.writeScriptBin "alert" ''
-        #!${pkgs.stdenv.shell}
-        curl -H 'Title: 3b' -H 'Priority: default' -d '3b hello' ntfy.sh/jorg_1512
-    '';
+  
 
 }
