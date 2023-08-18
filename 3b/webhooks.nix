@@ -28,7 +28,7 @@ in
     [
         {
             "id": "alert",
-            "execute-command": "${pkgs.bash}/bin/bash alert",
+            "execute-command": "${pkgs.curl}/bin/curl -H 'Title: 3b' -H 'Priority: default' -d '3b hello' ntfy.sh/jorg_1512",
             "command-working-directory": "/"
         }
     ]
