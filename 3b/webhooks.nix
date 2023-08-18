@@ -58,7 +58,7 @@
             "pass-arguments-to-command":
             [
                 {
-                    "source": "headers",
+                    "source": "url",
                     "name": "message"
                 }
             ]
