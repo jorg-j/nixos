@@ -36,12 +36,8 @@
         (self: super: {
         alert2 = pkgs.writeScriptBin "alert2" ''
         #!${pkgs.stdenv.shell}
-        echo "in"
-        echo $1
-        echo "msg"
-        echo $message
 
-        ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$message" ntfy.sh/jorg_1512
+        ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$1" ntfy.sh/jorg_1512
         '';
         })
         ];
