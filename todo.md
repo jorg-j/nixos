@@ -5,3 +5,6 @@ nix-build --attr system ./nixos.nix
 
 # Deploy Binary
 sudo ./result/bin/switch-to-configuration switch
+
+# Create
+pre-commit hook to run `nix eval` against the changed files
