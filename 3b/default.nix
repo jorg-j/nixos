@@ -3,7 +3,7 @@
 {
     imports = [
         ./3b-hardware-configuration.nix
-        ./on_start.nix
+        ./jobs.nix
         ./sys
         ./user.nix
     ];
