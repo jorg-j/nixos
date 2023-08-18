@@ -1,9 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-    imports = [
-        ./webhook_scripts/alert2.nix
-    ];
 
     environment.systemPackages = [
       pkgs.webhook
@@ -35,7 +32,15 @@
 
         ${pkgs.curl}/bin/curl -H 'Title: 3b' -H 'Priority: default' -d '3b hello' ntfy.sh/jorg_1512
         '';
-        })];
+        })
+        (self: super: {
+        alert2 = pkgs.writeScriptBin "alert2" ''
+        #!${pkgs.stdenv.shell}
+
+        ${pkgs.curl}/bin/curl -H 'Title: 3b' -H 'Priority: default' -d '$1' ntfy.sh/jorg_1512
+        '';
+        })
+        ];
 
     environment.etc."webhook.conf".text = ''
     [
@@ -47,7 +52,7 @@
         },
         {
             "id": "alert2",
-            "execute-command": "${pkgs.alert}/bin/alert2",
+            "execute-command": "${pkgs.alert2}/bin/alert2",
             "command-working-directory": "/tmp",
             "response-message": "Received",
             "pass-arguments-to-command":
