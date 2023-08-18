@@ -1,8 +1,9 @@
 { config, pkgs, lib, ... }:
 
 {
-    environment.systemPackages = with pkgs; [
-      webhook
+    environment.systemPackages[
+      pkgs.webhook
+      alert
     ];
 
     systemd.services.webhooks = {
@@ -19,10 +20,16 @@
     [
         {
             "id": "alert",
-            "execute-command": "${pkgs.curl}/bin/curl -H 'Title: 3b' -H 'Priority: default' -d '3b hello' ntfy.sh/jorg_1512",
-            "command-working-directory": "/tmp"
+            "execute-command": "${pkgs.stdenv.shell} /bin/alert",
+            "command-working-directory": "/"
         }
     ]
-
     '';
+
+
+    alert = pkgs.writeScriptBin "alert" ''
+        #!${pkgs.stdenv.shell}
+        curl -H 'Title: 3b' -H 'Priority: default' -d '3b hello' ntfy.sh/jorg_1512
+    '';
+
 }
