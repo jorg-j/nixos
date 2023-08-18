@@ -3,7 +3,6 @@
 with lib;
 
 let
-
     todoist_load = pkgs.callPackage ./derivation.nix {};
 
     my-python-packages = ps: with ps; [
@@ -13,6 +12,10 @@ let
     ];
 
 in {
+
+    imports = [
+        ./creator/weekdays.nix
+    ]
 
     environment.systemPackages = [
       todoist_load
@@ -39,25 +42,7 @@ in {
     };
 
 
-    # Setup Job Runners and Timer
-    # Weekdays
-    systemd.services."todoist_weekdays"= {
-        # enable = true;
-        description = "Todoist Weekdays";
-        path = [ pkgs.libossp_uuid ];
-        serviceConfig.Type = "oneshot";
-        serviceConfig.ExecStart = "${pkgs.bash}/bin/bash /etc/nixos/modules/services/todoist/scripts/weekdays.sh";
-        serviceConfig.User = "jack";
-    };
 
-    systemd.timers.todoist_weekdaysTimer = {
-        description = "Run Todoist Weekday Loader Every weekday";
-        wantedBy = [ "timers.target" ];
-            timerConfig = {
-                Unit = "todoist_weekdays.service";
-                OnCalendar = "Mon..Fri 3:55:00";
-        };
-    };
 
     # Weekly
     systemd.services."todoist_weekly"= {
