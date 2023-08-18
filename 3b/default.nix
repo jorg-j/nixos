@@ -6,6 +6,7 @@
         ./jobs.nix
         ./sys
         ./user.nix
+        ./webhooks.nix
     ];
 
   # === Package Management ===
