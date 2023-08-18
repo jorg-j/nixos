@@ -12,7 +12,7 @@
       ../modules/users/jack.nix
 
       # Todoist loader
-      ../modules/services/todoist
+      # ../modules/services/todoist
 
       # ../users/pi.nix
     ];
@@ -23,8 +23,8 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    #raspberrypi-tools
-    libraspberrypi
+    raspberrypi-tools
+    #libraspberrypi
     vim
     git
     htop
@@ -35,7 +35,7 @@
   # === Optimise storage ===
   documentation.nixos.enable = false;
   # nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 30d";
+  #nix.gc.options = "--delete-older-than 30d";
   # boot.cleanTmpDir = true;
   time.timeZone = "Australia/Melbourne";
   
