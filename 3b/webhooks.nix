@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-
     environment.systemPackages = [
       pkgs.webhook
     ];
@@ -24,7 +23,6 @@
         serviceConfig.ExecStart = "${pkgs.webhook}/bin/webhook -hooks /etc/webhook.conf -verbose";
     };
 
-
     nixpkgs.overlays = [
         (self: super: {
         alert = pkgs.writeScriptBin "alert" ''
@@ -42,6 +40,12 @@
         })
         ];
 
+    environment.etc."alert_hook.sh".text = ''
+        #!${pkgs.stdenv.shell}
+
+        ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$message" ntfy.sh/jorg_1512
+    '';
+
     environment.etc."webhook.conf".text = ''
     [
         {
@@ -53,6 +57,19 @@
         {
             "id": "alert2",
             "execute-command": "${pkgs.alert2}/bin/alert2",
+            "command-working-directory": "/tmp",
+            "response-message": "Received",
+            "pass-arguments-to-command":
+            [
+                {
+                    "source": "url",
+                    "name": "message"
+                }
+            ]
+        },
+        {
+            "id": "alert3",
+            "execute-command": "${pkgs.bash}/bin/bash /etc/alert_hook.sh",
             "command-working-directory": "/tmp",
             "response-message": "Received",
             "pass-arguments-to-command":
