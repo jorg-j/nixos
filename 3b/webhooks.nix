@@ -37,7 +37,7 @@
         alert2 = pkgs.writeScriptBin "alert2" ''
         #!${pkgs.stdenv.shell}
 
-        ${pkgs.curl}/bin/curl -H 'Title: 3b' -H 'Priority: default' -d '$message' ntfy.sh/jorg_1512
+        ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$message" ntfy.sh/jorg_1512
         '';
         })
         ];
