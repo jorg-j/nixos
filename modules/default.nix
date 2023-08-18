@@ -3,7 +3,7 @@
     ./apps
     ./dev
     ./security.nix
-    ./networking.nix
+    # ./networking.nix
     ./services/unison_service.nix
   ];
 }
