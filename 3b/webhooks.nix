@@ -28,7 +28,7 @@ in
     [
         {
             "id": "alert",
-            "execute-command": "${pkgs.stdenv.shell} /bin/alert",
+            "execute-command": "${pkgs.bash}/bin/bash /bin/alert",
             "command-working-directory": "/"
         }
     ]
