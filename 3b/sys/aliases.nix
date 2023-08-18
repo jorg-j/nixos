@@ -8,6 +8,8 @@
     clean = "sudo nix-collect-garbage --delete-older-than 30d";
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
+
+    test = "sudo systemctl restart webhook && sleep 1 && curl 0.0.0.0:9000/hooks/alert && sleep 1 && sudo systemctl status webhook";
     
     s = "sudo";
     ss = "sudo systemctl";
