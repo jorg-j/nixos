@@ -18,7 +18,7 @@
         wantedBy = [ "network-online.target" ];
 
         # This path has to be here so systemd can see the packages
-        path = with pkgs; [ config.nix.package.out ];
+        path = with pkgs; [ config.nix.package.out git ];
         serviceConfig.User = "webhook";
         serviceConfig.ExecStart = "${pkgs.webhook}/bin/webhook -hooks /etc/webhook.conf -verbose";
     };
@@ -51,9 +51,9 @@
 
         notify "Starting Sync Build"
 
-        cd /etc/nixos && git stash && git pull --rebase || notify "Sync Failed"
+        cd /etc/nixos && ${pkgs.git}/bin/git stash && ${pkgs.git}/bin/git pull --rebase || notify "Sync Failed"
 
-        nixos-rebuild switch --keep-going || notify "Build Failed"
+        ${config.system.build.nixos-rebuild}/bin/nixos-rebuild switch --keep-going || notify "Build Failed"
 
         '';
         }) 
