@@ -3,15 +3,15 @@
 {
   fonts = {
     fontconfig = {
-        enable = lib.mkForce true;
+      enable = lib.mkForce true;
 
-        # System-wide default fonts
-        defaultFonts = {
-          monospace = [ "JetBrains Mono" "12"];
-          sansSerif = [ "JetBrains Mono" ];
-          serif = [ "JetBrains Mono" ];
-        };
+      # System-wide default fonts
+      defaultFonts = {
+        monospace = [ "JetBrains Mono" "12" ];
+        sansSerif = [ "JetBrains Mono" ];
+        serif = [ "JetBrains Mono" ];
       };
+    };
 
     # Enable a basic set of fonts providing font styles and
     # families and reasonable coverage of Unicode
