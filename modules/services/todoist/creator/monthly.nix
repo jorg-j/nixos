@@ -2,9 +2,9 @@ args@{ lib, pkgs, config, ... }:
 
 let
 
-  script = "/etc/nixos/modules/services/todoist/scripts/weekdays.sh";
-  serviceName = "todoistCreatorWeekdays";
-  calendar = "Mon..Fri 3:55:00";
+  script = "/etc/nixos/modules/services/todoist/scripts/monthly.sh";
+  serviceName = "todoistCreatorMonthly";
+  calendar = "*-*-1 3:56:00";
 
 in
 {

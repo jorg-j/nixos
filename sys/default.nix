@@ -47,6 +47,7 @@ environment = {
       exfat
       gvfs
       polkit_gnome
+      nixpkgs-fmt
     ];
   };
 }
