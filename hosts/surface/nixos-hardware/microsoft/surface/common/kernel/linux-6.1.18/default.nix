@@ -25,7 +25,8 @@ let
   };
 
 
-in {
+in
+{
   options.microsoft-surface.kernelVersion = mkOption {
     type = types.enum [ "6.1.18" ];
   };

@@ -16,16 +16,16 @@
   boot.loader.raspberryPi.firmwareConfig = ''
     gpu_mem=256
   '';
-  
-  
+
+
   # === Firmware Modifications ===
   # Prevent Wifi from roasting
   hardware.enableRedistributableFirmware = false;
   hardware.firmware = [ pkgs.raspberrypiWirelessFirmware ];
- 
+
 
   # === Increase Swap to prevent crashing ===
-  swapDevices = [ { device = "/swapfile"; size = 1024; } ];
+  swapDevices = [{ device = "/swapfile"; size = 1024; }];
 
   # === Configure File System ===
   fileSystems = {

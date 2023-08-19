@@ -2,7 +2,7 @@
 
 
 {
-  
+
 
   environment.systemPackages = with pkgs;
     [
@@ -12,5 +12,5 @@
     enable = true;
   };
 
-  
+
 }

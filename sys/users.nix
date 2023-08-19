@@ -2,7 +2,7 @@
 {
   # === Setup Users ===
   users.users = {
-    root = {};
+    root = { };
     jack = {
       isNormalUser = true;
       home = "/home/nixos";

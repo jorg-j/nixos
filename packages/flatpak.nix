@@ -15,13 +15,13 @@ let
 in
 
 {
-   # Enable Flatpak
+  # Enable Flatpak
   services.flatpak.enable = true;
   xdg.portal.enable = true;
 
   # Add fpak command to the system
-  environment.systemPackages = [ 
+  environment.systemPackages = [
     fpak
-     ];
+  ];
 
 }

@@ -5,7 +5,8 @@ let
 
   cfg = config.microsoft-surface.ipts;
 
-in {
+in
+{
   options.microsoft-surface.ipts = {
     enable = mkEnableOption "Enable IPTSd for Microsoft Surface";
   };

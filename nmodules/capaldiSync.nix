@@ -1,5 +1,5 @@
 { lib, pkgs, config, ... }:
-with lib;                      
+with lib;
 let
 
   cfg = config.services.capaldiSync;
@@ -49,40 +49,41 @@ let
     check_drive
   '';
 
-in {
-    # Declare what settings a user of this "hello.nix" module CAN SET.
-    options.services.capaldiSync = {
-        enable = mkEnableOption "capaldi Sync Service";
-    };
+in
+{
+  # Declare what settings a user of this "hello.nix" module CAN SET.
+  options.services.capaldiSync = {
+    enable = mkEnableOption "capaldi Sync Service";
+  };
 
 
-    # by setting "services.capaldiSync.enable = true;"
+  # by setting "services.capaldiSync.enable = true;"
 
-    config = mkIf cfg.enable {
+  config = mkIf cfg.enable {
 
     environment.systemPackages = [
-        capaldisync
+      capaldisync
     ];
 
-    systemd.services."capaldiSync"= {
-        # enable = true;
-        description = "Capaldi Sync Service";
-        serviceConfig = {
-            Type = "simple";
-            ExecStart = "/run/current-system/sw/bin/capaldisync";
-        };
+    systemd.services."capaldiSync" = {
+      # enable = true;
+      description = "Capaldi Sync Service";
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "/run/current-system/sw/bin/capaldisync";
+      };
     };
 
     systemd.timers.capaldiSyncTimer = {
-        description = "Run Capaldi Sync every 60 minutes";
-        wantedBy = [ "multi-user.target" ];
-        partOf = [ "unionSync.service" ];
-        
-        timerConfig = {
-            unit = "capaldiSync.service";
-            onBootSec = "5min";
-            onUnitActiveSec = "60min";
-        };
+      description = "Run Capaldi Sync every 60 minutes";
+      wantedBy = [ "multi-user.target" ];
+      partOf = [ "unionSync.service" ];
+
+      timerConfig = {
+        unit = "capaldiSync.service";
+        onBootSec = "5min";
+        onUnitActiveSec = "60min";
+      };
     };
-    };
+  };
 }

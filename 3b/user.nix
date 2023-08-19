@@ -6,7 +6,7 @@
     uid = 1000;
     description = "Jack";
     home = "/home/jack";
-    extraGroups = [ 
+    extraGroups = [
       "wheel"
       "networkmanager"
       "vboxusers"

@@ -7,7 +7,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
       # ../hardware-configuration.nix
@@ -109,13 +110,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    firefox              # Firefox
+    firefox # Firefox
 
     # vorta                # Vorta Backups
 
-    sqlitebrowser        # SQLite3
+    sqlitebrowser # SQLite3
 
- ];
+  ];
 
   virtualisation.docker.enable = true;
 
@@ -145,5 +146,5 @@
 
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.x11 = true;
-  
+
 }

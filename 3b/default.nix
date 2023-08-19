@@ -1,13 +1,13 @@
 { config, pkgs, lib, ... }:
 
 {
-    imports = [
-        ./3b-hardware-configuration.nix
-        ./jobs.nix
-        ./sys
-        ./user.nix
-        ./webhooks.nix
-    ];
+  imports = [
+    ./3b-hardware-configuration.nix
+    ./jobs.nix
+    ./sys
+    ./user.nix
+    ./webhooks.nix
+  ];
 
   # === Package Management ===
   # Allow unfree packages
@@ -30,8 +30,8 @@
   #nix.gc.options = "--delete-older-than 30d";
   # boot.cleanTmpDir = true;
   time.timeZone = "Australia/Melbourne";
-  
-  
+
+
   # === Config ssh ===
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
@@ -47,7 +47,7 @@
   # Enable Desktop Environment
 
   # services.xserver.desktopManager.xfce.enable = true;
- 
+
 
   # Enable slim autologin
   # services.xserver.displayManager.lightdm.enable = true;

@@ -12,8 +12,8 @@
           monospace = [ "${fonts.mono.family} ${toString fonts.mono.size}" ];
           sansSerif = [ "${fonts.main.family} ${toString fonts.main.size}" ];
           serif = [ "${fonts.serif.family} ${toString fonts.serif.size}" ];
+        };
       };
-    };
 
     # Enable a basic set of fonts providing font styles and
     # families and reasonable coverage of Unicode

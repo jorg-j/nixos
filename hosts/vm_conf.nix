@@ -7,7 +7,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
       ../modules/hardware/vm-hardware-configuration.nix
@@ -44,9 +45,9 @@
     xkbVariant = "";
   };
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+  # use the example session manager (no others are packaged yet so this is enabled by default,
+  # no need to redefine it in your config for now)
+  #media-session.enable = true;
 
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -55,9 +56,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs;
-  [
-    sqlitebrowser
-  ];
+    [
+      sqlitebrowser
+    ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -75,5 +76,5 @@
 
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.x11 = true;
-  
+
 }

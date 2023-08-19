@@ -25,12 +25,12 @@
     #   ".gitmessage" = { source = "${inputs.git-config}/gitmessage"; };
     # };
   };
-  
+
   environment.etc."gitconfig".text = ''
     [user]
         name = jorg-j
         email = jorgensen.server@gmail.com
     [credential]
         helper = cache --timeout=3600
-    '';
+  '';
 }

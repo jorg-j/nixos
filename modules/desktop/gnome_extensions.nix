@@ -5,7 +5,7 @@
     [
       dconf
     ];
-    
+
   dconf.settings = {
     # ...
     "org/gnome/shell" = {

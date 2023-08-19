@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let 
+let
 
   ntfy_channel = "jorg_1512";
 

@@ -1,7 +1,7 @@
-{ config, pkgs, callPackage, ... }: 
+{ config, pkgs, callPackage, ... }:
 
 {
-    # Activate for non gtk desktop environments
+  # Activate for non gtk desktop environments
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   programs.dconf.enable = true;
 
@@ -12,9 +12,9 @@
     desktopManager = {
       xterm.enable = false;
     };
-   
+
     displayManager = {
-        defaultSession = "none+i3";
+      defaultSession = "none+i3";
     };
 
     windowManager.i3 = {
@@ -24,16 +24,16 @@
         i3status # gives you the default i3 status bar
         i3lock #default i3 screen locker
         i3blocks #if you are planning on using i3blocks over i3status
-     ];
+      ];
     };
   };
-    environment.systemPackages = with pkgs;
+  environment.systemPackages = with pkgs;
     [
-     xfce.thunar
-     lxappearance
-     pcmanfm-qt
-    dunst # notifications
-     
+      xfce.thunar
+      lxappearance
+      pcmanfm-qt
+      dunst # notifications
+
 
     ];
 

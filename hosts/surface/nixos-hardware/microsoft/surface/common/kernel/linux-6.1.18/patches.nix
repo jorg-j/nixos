@@ -1,6 +1,7 @@
-{ kernel,
-  patchDir,
-  version,
+{ kernel
+, patchDir
+, version
+,
 }:
 
 [

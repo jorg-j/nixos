@@ -1,9 +1,10 @@
 { config, pkgs, lib, ... }:
 
-{# Enable XFCE
+{
+  # Enable XFCE
 
-imports =
-    [ 
+  imports =
+    [
       ./xfce_theme.nix
     ];
 

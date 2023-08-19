@@ -24,7 +24,8 @@ let
     };
   };
 
-in {
+in
+{
   options.microsoft-surface.kernelVersion = mkOption {
     type = types.enum [ "5.19.17" ];
   };

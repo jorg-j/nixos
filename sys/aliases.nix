@@ -8,9 +8,9 @@
     clean = "sudo nix-collect-garbage --delete-older-than 30d";
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
-    
+
     rebuild = "cd /etc/nixos && sudo git remote update && sudo git status -uno | grep -q 'Your branch is behind' && sudo git stash && sudo git pull --rebase && build && ns 'Build Complete'";
-    
+
     closure_build = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1";
     closure_deploy = "cd /etc/nixos/closure_files && sudo ./result/bin/switch-to-configuration switch";
     closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";
@@ -22,7 +22,7 @@
 
     s = "sudo";
     ss = "sudo systemctl";
-    
+
     log = "sudo journalctl --output cat -u";
     log-previous-boot = "sudo journalctl --boot=-1";
 
@@ -49,7 +49,7 @@
     gfr = "git pull --rebase";
     gp = "git push";
     gso = "git log -p --all --source -S ";
-    
+
     fd = "fd --hidden --exclude .git";
 
     grab-display = "export DISPLAY = ':0.0'";
@@ -59,7 +59,7 @@
     hd-gc = "sudo nix-collect-garbage --delete-older-than 30d";
     hd-inspect-store = "nix path-info -rSh /run/current-system | sort -k2h ";
 
-    container="curl -s https://raw.githubusercontent.com/jorg-j/Docker_Dev_Env/main/setup.sh | bash";
+    container = "curl -s https://raw.githubusercontent.com/jorg-j/Docker_Dev_Env/main/setup.sh | bash";
 
     # Surface Based Alias's
     # Here to fix surface /boot when /boot goes read only

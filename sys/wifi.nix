@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
 {
-
   # === Setup Wifi ===
   # to generate passphrase
   # wpa_passphrase exampleSSID examplePassword

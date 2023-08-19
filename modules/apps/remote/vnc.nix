@@ -2,11 +2,11 @@
 {
   environment = {
     systemPackages = with pkgs;
-    [
-      x11vnc
-      realvnc-vnc-viewer   # VNC viewer
-      tigervnc
-      xorg.xinit
-    ];
+      [
+        x11vnc
+        realvnc-vnc-viewer # VNC viewer
+        tigervnc
+        xorg.xinit
+      ];
   };
 }

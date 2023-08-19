@@ -8,10 +8,10 @@
     clean = "sudo nix-collect-garbage --delete-older-than 30d";
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
- 
+
     s = "sudo";
     ss = "sudo systemctl";
-    
+
     log = "sudo journalctl --output cat -u";
     log-previous-boot = "sudo journalctl --boot=-1";
 
@@ -37,7 +37,7 @@
     gfr = "git pull --rebase";
     gp = "git push";
     gso = "git log -p --all --source -S ";
-    
+
     fd = "fd --hidden --exclude .git";
 
     grab-display = "export DISPLAY = ':0.0'";

@@ -1,7 +1,6 @@
 { lib, pkgs, config, ... }:
 
-
-with lib;                      
+with lib;
 let
 
   cfg = config.services.todoist_load;
@@ -18,43 +17,41 @@ let
     requests
   ];
 
-in {
-
-  
-
-    # Declare what settings a user of this "hello.nix" module CAN SET.
-    options.services.todoist_load = {
-        enable = mkEnableOption "Todoist Load Service";
-    };
+in
+{
+  # Declare what settings a user of this "hello.nix" module CAN SET.
+  options.services.todoist_load = {
+    enable = mkEnableOption "Todoist Load Service";
+  };
 
 
-    config = mkIf cfg.enable {
+  config = mkIf cfg.enable {
 
     environment.systemPackages = [
       todoistload
       (pkgs.python3.withPackages my-python-packages)
     ];
 
-    systemd.services."todoist_load"= {
-        # enable = true;
-        description = "Todoist Load Service";
-        serviceConfig.Type = "oneshot";
-        serviceConfig.ExecStart = "${pkgs.python3}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
-        #serviceConfig.ExecStart = "${pkgs.todoist_load}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
-        };
+    systemd.services."todoist_load" = {
+      # enable = true;
+      description = "Todoist Load Service";
+      serviceConfig.Type = "oneshot";
+      serviceConfig.ExecStart = "${pkgs.python3}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
+      #serviceConfig.ExecStart = "${pkgs.todoist_load}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
     };
+  };
 
 
-    # systemd.timers.capaldiSyncTimer = {
-    #     description = "Run Capaldi Sync every 60 minutes";
-    #     wantedBy = [ "multi-user.target" ];
-    #     partOf = [ "unionSync.service" ];
-        
-    #     timerConfig = {
-    #         unit = "capaldiSync.service";
-    #         onBootSec = "5min";
-    #         onUnitActiveSec = "60min";
-    #     };
-    # };
+  # systemd.timers.capaldiSyncTimer = {
+  #     description = "Run Capaldi Sync every 60 minutes";
+  #     wantedBy = [ "multi-user.target" ];
+  #     partOf = [ "unionSync.service" ];
+
+  #     timerConfig = {
+  #         unit = "capaldiSync.service";
+  #         onBootSec = "5min";
+  #         onUnitActiveSec = "60min";
+  #     };
+  # };
 
 }

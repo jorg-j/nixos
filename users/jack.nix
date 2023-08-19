@@ -1,6 +1,6 @@
 args@{ config, pkgs, lib, ... }:
 let
-    user = "jack";
+  user = "jack";
 
 in
 {
@@ -12,10 +12,11 @@ in
   users.users.jack = {
     isNormalUser = true;
     extraGroups = [ "docker" "syncthing" ];
-    shell = if config.networking.hostName == "tenant" then
-      pkgs.bash
-    else
-      pkgs.zsh;
+    shell =
+      if config.networking.hostName == "tenant" then
+        pkgs.bash
+      else
+        pkgs.zsh;
   };
 
   # Activate gpg

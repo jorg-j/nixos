@@ -2,13 +2,13 @@
 
 {
   imports = [
-      ./aliases.nix
-      ./insecure_packages.nix
-      ./scripts.nix
-      ./time_local.nix
-      ./keymap.nix
-      ./sound.nix
-      ./power_manage.nix
+    ./aliases.nix
+    ./insecure_packages.nix
+    ./scripts.nix
+    ./time_local.nix
+    ./keymap.nix
+    ./sound.nix
+    ./power_manage.nix
   ];
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -32,22 +32,22 @@
   nix.settings.trusted-users = [ "jack" "root" "@wheel" ];
 
   systemd.user.extraConfig = ''
-  DefaultEnvironment="PATH=/run/current-system/sw/bin"
+    DefaultEnvironment="PATH=/run/current-system/sw/bin"
   '';
 
-environment = {
+  environment = {
     systemPackages = with pkgs;
-    [
-      cryfs
-      gocryptfs
-      just
-      libnotify
-      unison
-      ntfs3g
-      exfat
-      gvfs
-      polkit_gnome
-      nixpkgs-fmt
-    ];
+      [
+        cryfs
+        gocryptfs
+        just
+        libnotify
+        unison
+        ntfs3g
+        exfat
+        gvfs
+        polkit_gnome
+        nixpkgs-fmt
+      ];
   };
 }

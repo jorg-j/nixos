@@ -1,4 +1,3 @@
-
 { config, lib, pkgs, ... }:
 
 {
@@ -7,7 +6,7 @@
     [
       ./vagrant.nix
     ];
-    
+
   environment.systemPackages = with pkgs; [
     docker-compose
   ];
@@ -15,11 +14,11 @@
     docker = {
       autoPrune = {
         dates = "daily";
-        flags = ["--all" "--volumes"];
+        flags = [ "--all" "--volumes" ];
       };
       enable = true;
       extraOptions = ''
-      --insecure-registry "http://192.168.1.122:5000"
+        --insecure-registry "http://192.168.1.122:5000"
       '';
     };
     virtualbox.host.enable = true;

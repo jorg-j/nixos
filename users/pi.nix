@@ -1,6 +1,6 @@
 args@{ config, pkgs, lib, ... }:
 let
-    user = "pi";
+  user = "pi";
 in
 {
   imports = [

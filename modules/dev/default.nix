@@ -1,15 +1,15 @@
 { config, pkgs, ... }:
 
 {
-    imports = [
+  imports = [
     ./python
   ];
 
 
-environment.systemPackages = with pkgs;
-  [
-    gnumake
-    nixos-generators
-    # nixops
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      gnumake
+      nixos-generators
+      # nixops
+    ];
 }

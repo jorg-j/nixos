@@ -21,7 +21,7 @@
       bindkey '^f' autosuggest-accept
     '';
     envExtra = ''
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
     '';
   };
 

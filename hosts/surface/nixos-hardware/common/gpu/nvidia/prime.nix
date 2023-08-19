@@ -10,7 +10,8 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec "$@"
   '';
-in {
+in
+{
   imports = [ ./. ];
 
   environment.systemPackages = [ nvidia-offload ];

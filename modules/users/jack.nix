@@ -8,7 +8,7 @@
     uid = 1000;
     description = "Jack";
     home = "/home/jack";
-    extraGroups = [ 
+    extraGroups = [
       "docker"
       "syncthing"
       "wheel"

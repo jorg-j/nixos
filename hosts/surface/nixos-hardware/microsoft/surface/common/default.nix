@@ -3,7 +3,8 @@
 let
   inherit (lib) mkDefault;
 
-in {
+in
+{
   imports = [
     ./kernel
     ./ipts

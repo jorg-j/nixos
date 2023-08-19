@@ -1,6 +1,6 @@
 {
-    imports = [
-        ./hello.nix
-        ./capaldiSync.nix
-    ];
+  imports = [
+    ./hello.nix
+    ./capaldiSync.nix
+  ];
 }

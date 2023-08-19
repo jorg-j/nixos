@@ -11,10 +11,10 @@
     #desktopManager.cinnamon.enable = true;
   };
   environment.systemPackages = with pkgs;
-  [
-    libwacom-surface
-    libwacom
-    xournalpp
-    gettext # needed for cinnamon
-  ];
+    [
+      libwacom-surface
+      libwacom
+      xournalpp
+      gettext # needed for cinnamon
+    ];
 }

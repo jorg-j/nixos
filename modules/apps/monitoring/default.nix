@@ -2,9 +2,9 @@
 {
   environment = {
     systemPackages = with pkgs;
-    [
-      htop
-      neofetch
-    ];
+      [
+        htop
+        neofetch
+      ];
   };
 }

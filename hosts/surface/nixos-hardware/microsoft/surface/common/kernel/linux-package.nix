@@ -1,22 +1,25 @@
-{ lib,
-  buildLinux,
-  callPackage,
-  linuxPackagesFor,
+{ lib
+, buildLinux
+, callPackage
+, linuxPackagesFor
+,
 }:
 
 let
   inherit (lib) recurseIntoAttrs;
 
-in {
-  repos = callPackage ../repos.nix {};
+in
+{
+  repos = callPackage ../repos.nix { };
 
   linuxPackage =
-    { version,
-      modDirVersion ? version,
-      ...
+    { version
+    , modDirVersion ? version
+    , ...
     } @ args:
     let
       buildLinux' = buildLinux (args // { inherit modDirVersion; });
       linuxPackagesFor' = linuxPackagesFor buildLinux';
-    in recurseIntoAttrs linuxPackagesFor';
+    in
+    recurseIntoAttrs linuxPackagesFor';
 }

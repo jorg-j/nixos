@@ -1,13 +1,13 @@
 { config, pkgs, vars, ... }:
-  {
-    environment.variables.EDITOR = "nvim";
-    programs.neovim = {
-                enable = true;
-                defaultEditor = true;
-                viAlias = true;
-                vimAlias = true;
-                configure = {
-                  customRC = ''
+{
+  environment.variables.EDITOR = "nvim";
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    configure = {
+      customRC = ''
 
             :set nocompatible
             :set number relativenumber
@@ -70,6 +70,6 @@
             set hlsearch            " highlight matches
             set backspace=indent,eol,start " backspace over everything in insert mode
             '';
-        };
-};
+    };
+  };
 }
