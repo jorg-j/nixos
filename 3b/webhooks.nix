@@ -40,34 +40,13 @@
         ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$1" ntfy.sh/jorg_1512
         '';
         })
-
-        (self: super: {
-        syncbuild = pkgs.writeScriptBin "syncbuild" ''
-        #!${pkgs.stdenv.shell}
-
-        notify() {
-            ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$1" ntfy.sh/jorg_1512
-        }
-
-        notify "Starting Sync Build"
-
-        cd /etc/nixos && ${pkgs.git}/bin/git stash && ${pkgs.git}/bin/git pull --rebase || notify "Sync Failed"
-
-        ${config.system.build.nixos-rebuild}/bin/nixos-rebuild switch --keep-going || notify "Build Failed"
-
-        '';
-        }) 
+        
         ];
 
 
     environment.etc."webhook.conf".text = ''
     [
-        {
-            "id": "build",
-            "execute-command": "${pkgs.syncbuild}/bin/syncbuild",
-            "response-message": "Received",
-            "command-working-directory": "/tmp"
-        },
+
         {
             "id": "alert",
             "execute-command": "${pkgs.alert}/bin/alert",
