@@ -5,5 +5,6 @@
     ./security.nix
     # ./networking.nix
     ./services/unison_service.nix
+    ./workspace/fonts.nix
   ];
 }

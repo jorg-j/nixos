@@ -2,16 +2,14 @@
 
 {
   fonts = {
-    fontconfig =
-      let fonts = config.themes.fonts;
-      in {
+    fontconfig = {
         enable = lib.mkForce true;
 
         # System-wide default fonts
         defaultFonts = {
-          monospace = [ "${fonts.mono.family} ${toString fonts.mono.size}" ];
-          sansSerif = [ "${fonts.main.family} ${toString fonts.main.size}" ];
-          serif = [ "${fonts.serif.family} ${toString fonts.serif.size}" ];
+          monospace = [ "JetBrains Mono" "12"];
+          sansSerif = [ "JetBrains Mono" ];
+          serif = [ "JetBrains Mono" ];
         };
       };
 
@@ -56,18 +54,4 @@
     ];
   };
 
-  themes.fonts = {
-    main = {
-      family = "IBM Plex Sans";
-      size = 12;
-    };
-    serif = {
-      family = "IBM Plex Serif";
-      size = 12;
-    };
-    mono = {
-      family = "IBM Plex Mono";
-      size = 12;
-    };
-  };
 }
