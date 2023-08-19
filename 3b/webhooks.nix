@@ -51,9 +51,9 @@
 
         notify "Starting Sync Build"
 
-        cd /etc/nixos && sudo git stash && sudo git pull --rebase || notify "Sync Failed"
+        cd /etc/nixos && git stash && git pull --rebase || notify "Sync Failed"
 
-        sudo nixos-rebuild switch --keep-going || notify "Build Failed"
+        nixos-rebuild switch --keep-going || notify "Build Failed"
 
         '';
         }) 
