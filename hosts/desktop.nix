@@ -67,6 +67,7 @@
       podman
       podman-desktop
       podman-compose
+      chromium
 
       simplenote
       lightburn
