@@ -23,6 +23,7 @@
         serviceConfig.ExecStart = "${pkgs.webhook}/bin/webhook -hooks /etc/webhook.conf -verbose";
     };
 
+    # Create the Scripts here
     nixpkgs.overlays = [
         (self: super: {
         alert = pkgs.writeScriptBin "alert" ''
@@ -31,6 +32,7 @@
         ${pkgs.curl}/bin/curl -H 'Title: 3b' -H 'Priority: default' -d '3b hello' ntfy.sh/jorg_1512
         '';
         })
+
         (self: super: {
         alert2 = pkgs.writeScriptBin "alert2" ''
         #!${pkgs.stdenv.shell}
@@ -38,16 +40,34 @@
         ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$1" ntfy.sh/jorg_1512
         '';
         })
-        ];
 
-    environment.etc."alert_hook.sh".text = ''
+        (self: super: {
+        syncbuild = pkgs.writeScriptBin "syncbuild" ''
         #!${pkgs.stdenv.shell}
 
-        ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$message" ntfy.sh/jorg_1512
-    '';
+        notify() {
+            ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$1" ntfy.sh/jorg_1512
+        }
+
+        notify "Starting Sync Build"
+
+        cd /etc/nixos && sudo git stash && sudo git pull --rebase || notify "Sync Failed"
+
+        sudo nixos-rebuild switch --keep-going || notify "Build Failed"
+
+        '';
+        }) 
+        ];
+
 
     environment.etc."webhook.conf".text = ''
     [
+        {
+            "id": "build",
+            "execute-command": "${pkgs.syncbuild}/bin/syncbuild",
+            "response-message": "Received",
+            "command-working-directory": "/tmp"
+        },
         {
             "id": "alert",
             "execute-command": "${pkgs.alert}/bin/alert",
@@ -57,19 +77,6 @@
         {
             "id": "alert2",
             "execute-command": "${pkgs.alert2}/bin/alert2",
-            "command-working-directory": "/tmp",
-            "response-message": "Received",
-            "pass-arguments-to-command":
-            [
-                {
-                    "source": "url",
-                    "name": "message"
-                }
-            ]
-        },
-        {
-            "id": "alert3",
-            "execute-command": "/etc/alert_hook.sh",
             "command-working-directory": "/tmp",
             "response-message": "Received",
             "pass-arguments-to-command":
