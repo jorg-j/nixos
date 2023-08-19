@@ -3,7 +3,7 @@
 {
     imports = [
         ./3b-hardware-configuration.nix
-        #./jobs.nix
+        ./jobs.nix
         ./sys
         ./user.nix
         ./webhooks.nix
