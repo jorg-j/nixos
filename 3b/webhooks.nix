@@ -69,7 +69,7 @@
         },
         {
             "id": "alert3",
-            "execute-command": "${pkgs.bash}/bin/bash /etc/alert_hook.sh",
+            "execute-command": "/etc/alert_hook.sh",
             "command-working-directory": "/tmp",
             "response-message": "Received",
             "pass-arguments-to-command":
