@@ -9,7 +9,7 @@
   home-manager.users.jack = {
     programs.browserpass = {
       enable = true;
-      browsers = [ "firefox" "chromium" ];
+      browsers = [ "firefox" ];
     };
 
     programs.firefox = {
