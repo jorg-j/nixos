@@ -1,14 +1,14 @@
 { config, pkgs, lib, ... }:
 
 {
-    imports = [
-        ./3b-hardware-configuration.nix
-        ./jobs.nix
-        ./sys
-        ./user.nix
-        ./webhooks.nix
-        ./mqtt.nix
-    ];
+  imports = [
+    ./3b-hardware-configuration.nix
+    ./jobs.nix
+    ./sys
+    ./user.nix
+    ./webhooks.nix
+    ./mqtt.nix
+  ];
 
   # === Package Management ===
   # Allow unfree packages
