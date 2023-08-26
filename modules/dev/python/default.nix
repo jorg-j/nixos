@@ -7,6 +7,7 @@
       python39Packages.pip
       python39Packages.virtualenv
       python39Packages.black
+      python39Packages.pytest
 
 
       poetry
