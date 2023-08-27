@@ -79,7 +79,7 @@ with lib.hm.gvariant;
 
     "net/launchpad/plank/docks/dock1" = {
       alignment = "center";
-      hide-mode = "window-dodge";
+      hide-mode = "none";
       icon-size = 48;
       pinned-only = false;
       position = "bottom";
