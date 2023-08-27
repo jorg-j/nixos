@@ -95,7 +95,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/interface" = {
-      clock-format = "24h";
+      clock-format = "12h";
       color-scheme = "prefer-dark";
       cursor-size = 24;
       cursor-theme = "elementary";
@@ -191,7 +191,7 @@ with lib.hm.gvariant;
     cursorTheme = {
       name = "elementary";
       package = pkgs.pantheon.elementary-icon-theme;
-      size = 32;
+      size = 24;
     };
 
     font = {
