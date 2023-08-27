@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"editor.formatOnSaveMode": "file",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+		"python.formatting.provider": "black",
+		"python.linting.pylintEnabled": true,
+		"python.linting.enabled": true,
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#8800ff"
+		}
+	}
+}
