@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Edge Dark (Aura)",
+    "workbench.colorTheme": "Dracula",
     "editor.multiCursorModifier": "ctrlCmd",
     "redhat.telemetry.enabled": false,
     "workbench.colorCustomizations": {},

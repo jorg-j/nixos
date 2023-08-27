@@ -6,7 +6,7 @@
       (vscode-with-extensions.override {
         vscodeExtensions = with vscode-extensions;
           [
-            sainnhe.edge
+            dracula-theme.theme-dracula
             ms-vscode-remote.remote-ssh
             ms-azuretools.vscode-docker
             redhat.vscode-yaml
