@@ -14,10 +14,7 @@
             ms-toolsai.jupyter
             esbenp.prettier-vscode
             ms-python.python
-            ms-python.pylint
             ms-python.vscode-pylance
-            ms-python.isort
-            ms-python.black-formatter
             davidanson.vscode-markdownlint
             bbenoist.nix
           ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
