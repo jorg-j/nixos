@@ -40,7 +40,7 @@ with lib.hm.gvariant;
     };
 
     "io/elementary/desktop/wingpanel/datetime" = {
-      clock-format = "24h";
+      clock-format = "12h";
     };
 
     "io/elementary/desktop/wingpanel/sound" = {
@@ -82,7 +82,7 @@ with lib.hm.gvariant;
       hide-mode = "window-dodge";
       icon-size = 48;
       pinned-only = false;
-      position = "left";
+      position = "bottom";
       theme = "Transparent";
     };
 
@@ -97,7 +97,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-format = "24h";
       color-scheme = "prefer-dark";
-      cursor-size = 32;
+      cursor-size = 24;
       cursor-theme = "elementary";
       document-font-name = "Work Sans 12";
       font-name = "Work Sans 12";
@@ -232,7 +232,7 @@ with lib.hm.gvariant;
   home.pointerCursor = {
     package = pkgs.pantheon.elementary-icon-theme;
     name = "elementary";
-    size = 32;
+    size = 24;
     gtk.enable = true;
     x11.enable = true;
   };
