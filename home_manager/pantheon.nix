@@ -154,6 +154,12 @@ with lib.hm.gvariant;
       name = "io.elementary.files -n ~/";
     };
 
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>t";
+      command = "kitty";
+      name = "Terminal";
+    };
+
     "org/gnome/settings-daemon/plugins/power" = {
       power-button-action = "interactive";
       sleep-inactive-ac-timeout = 0;
