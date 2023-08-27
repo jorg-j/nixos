@@ -32,6 +32,7 @@
       background_opacity 1
       dynamic_background_opacity yes
       dim_opacity 0.75
+      allow_remove_control yes
     '';
 
     keybindings = {
