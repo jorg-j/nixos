@@ -2,7 +2,7 @@
 {
   imports = [
     ./base.nix
-    ../modules/desktop/budgie.nix
+    ../modules/desktop/pantheon.nix
 
   ];
 
