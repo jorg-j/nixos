@@ -11,10 +11,13 @@
     # desktopManager.cinnamon.enable = true;
   };
 
+
   environment.systemPackages = with pkgs;
     [
       xournalpp
       gettext # needed for cinnamon
       caffeine-ng
     ];
+
+  programs.streamdeck-ui.enable = true;
 }
