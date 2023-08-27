@@ -38,6 +38,7 @@
     ".mnti3/mounter" = { source = "/etc/nixos/home_manager/files/mounter"; };
     ".mnti3/unmounter" = { source = "/etc/nixos/home_manager/files/unmounter"; };
     ".config/nixpkgs/config.nix" = { source = "/etc/nixos/home_manager/files/nixpkgs_config.nix"; };
+    ".config/code/User/settings.json" = { source = "/etc/nixos/home_manager/files/vscode.json"; };
   };
 
 }

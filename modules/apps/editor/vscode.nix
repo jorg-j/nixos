@@ -6,6 +6,7 @@
       (vscode-with-extensions.override {
         vscodeExtensions = with vscode-extensions;
           [
+            sainnhe.edge
             ms-vscode-remote.remote-ssh
             ms-azuretools.vscode-docker
             redhat.vscode-yaml
@@ -13,6 +14,10 @@
             ms-toolsai.jupyter
             esbenp.prettier-vscode
             ms-python.python
+            ms-python.pylint
+            ms-python.vscode-pylance
+            ms-python.isort
+            ms-python.black-formatter
             davidanson.vscode-markdownlint
             bbenoist.nix
           ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [

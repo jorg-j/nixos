@@ -1,0 +1,15 @@
+{
+    "workbench.colorTheme": "Edge Dark (Aura)",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "redhat.telemetry.enabled": false,
+    "workbench.colorCustomizations": {},
+    "git.confirmSync": false,
+    "[python]": {
+      "editor.formatOnType": true,
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  }
+  
