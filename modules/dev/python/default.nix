@@ -9,6 +9,7 @@
       python39Packages.black
       python39Packages.pytest
       python39Packages.isort
+      pylint
 
 
       poetry
