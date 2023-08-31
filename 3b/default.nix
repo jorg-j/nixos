@@ -8,6 +8,7 @@
     ./user.nix
     ./webhooks.nix
     ./mqtt.nix
+    ../modules/dev
   ];
 
   # === Package Management ===
