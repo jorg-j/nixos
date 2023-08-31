@@ -9,6 +9,5 @@
       python37Packages.black
       python37Packages.pytest
       python37Packages.isort
-      poetry
     ]; # Poetry
 }
