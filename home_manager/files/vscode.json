@@ -1,15 +1,25 @@
 {
-    "workbench.colorTheme": "Dracula",
-    "editor.multiCursorModifier": "ctrlCmd",
-    "redhat.telemetry.enabled": false,
-    "workbench.colorCustomizations": {},
-    "git.confirmSync": false,
-    "[python]": {
-      "editor.formatOnType": true,
-      "editor.defaultFormatter": "ms-python.black-formatter"
+  "workbench.colorTheme": "Dracula",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "redhat.telemetry.enabled": false,
+  "workbench.colorCustomizations": {
+    "[*Dark*]": {
+      "progressBar.background": "#0D9373",
+      "notificationsInfoIcon.foreground": "#0D9373",
+      "editor.selectionBackground": "#0D937333"
     },
-    "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "[*Light*]": {
+      "progressBar.background": "#0D9373",
+      "notificationsInfoIcon.foreground": "#0D9373",
+      "editor.selectionBackground": "#0D937333"
     }
+  },
+  "git.confirmSync": false,
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
-  
+}
