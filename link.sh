@@ -7,7 +7,7 @@
 
 printf "%s\n" "Select number for system:"
 
-select filetype in RaspberryPi_3B VM
+select filetype in RaspberryPi_3B VM 4B
 do
     echo "Selected: $filetype"
     break
@@ -34,6 +34,13 @@ case $filetype in
     VM)
         echo "Linking Virtual Machine"
         clone_link vm_conf
+    ;;
+
+    4B)
+        echo "Linking Raspberry Pi 4b"
+        sudo rm --recursive /etc/nixos
+        sudo git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos
+        sudo ln --symbolic --directory /etc/nixos/4b/default.nix /etc/nixos/configuration.nix
     ;;
 
     *)
