@@ -2,10 +2,9 @@
 
 {
   imports = [
-    ./aliases.nix
+    ../../sys/aliases.nix
     ./scripts.nix
     ./time_local.nix
-    ./keymap.nix
   ];
   # === Enable the OpenSSH Daemon ===
   services.openssh.enable = true;

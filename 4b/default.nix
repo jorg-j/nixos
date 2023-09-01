@@ -2,17 +2,17 @@
 
 let
   SSID = "Poop Emoji";
-  SSIDpassword = "1dfbc34490b8e2d7c426e97371edc8f1e0d995a5c50b39be059f0609dd0fd668";
+  SSIDpassword = "6726e644af73b1b641c8c1d74168ef8ae517280d34539f5c180afc22f38c4d91";
   interface = "wlan0";
   hostname = "nixpi";
-in {
+in
+{
 
   imports = [
     ./sys
     ./user.nix
-    # ./webhooks.nix
-    #./mqtt.nix
     ./python.nix
+    # ./desktop.nix
   ];
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
@@ -42,7 +42,7 @@ in {
 
 
   hardware.enableRedistributableFirmware = true;
-  system.stateVersion = "23.11";
+
 
   # Packages
   environment.systemPackages = with pkgs; [
@@ -60,25 +60,15 @@ in {
   # boot.cleanTmpDir = true;
   time.timeZone = "Australia/Melbourne";
 
+  # === Configure keymap in X11 ===
+  services.xserver = {
+    layout = "au";
+    xkbVariant = "";
+  };
 
   # === Config ssh ===
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
 
-
-  # === Setup Desktop Environment ===
-  # Enable X11 windowing system
-  # services.xserver.enable = true;
-  # services.xserver.videoDrivers = [ "modesetting" ];
-
-  # Enable Desktop Environment
-
-  # services.xserver.desktopManager.xfce.enable = true;
-
-
-  # Enable slim autologin
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.displayManager.lightdm.autoLogin.enable = true;
-  # services.xserver.displayManager.lightdm.autoLogin.user = "jack";
- 
+  system.stateVersion = "23.11";
 }

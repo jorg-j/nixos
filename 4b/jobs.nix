@@ -17,9 +17,9 @@ in
     script = ''
       MYIP=$(${pkgs.unixtools.ifconfig}/bin/ifconfig | grep -oP '(?<=inet\s)(192.168.1.\d+)')
       curl \
-        -H "Title: 3b" \
+        -H "Title: 4b" \
         -H "Priority: default" \
-        -d "3b online: $MYIP" \
+        -d "4b online: $MYIP" \
         ntfy.sh/${ntfy_channel}
     '';
   };

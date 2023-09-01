@@ -3,12 +3,12 @@
 {
   environment.systemPackages = with pkgs;
     [
-      python37Full # Python 3.7
-      python37Packages.setuptools
-      python37Packages.pip
-      python37Packages.virtualenv
-      python37Packages.black
-      python37Packages.pytest
-      python37Packages.isort
+      python39Full # Python 3.9
+      python39Packages.setuptools
+      python39Packages.pip
+      python39Packages.virtualenv
+      python39Packages.black
+      python39Packages.pytest
+      python39Packages.isort
     ]; # Poetry
 }
