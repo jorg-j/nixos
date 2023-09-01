@@ -11,7 +11,7 @@ in
   imports = [
     ./sys
     ./user.nix
-    ./python.nix
+    # ./python.nix
     # ./desktop.nix
   ];
   boot = {
@@ -68,7 +68,7 @@ in
 
   # === Config ssh ===
   services.openssh.enable = true;
-  services.openssh.permitRootLogin = "yes";
+  services.openssh.settings.permitRootLogin = "yes";
 
   system.stateVersion = "23.11";
 }
