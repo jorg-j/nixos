@@ -1,16 +1,11 @@
 { config, pkgs, lib, ... }:
 
-let
-  SSID = "Poop Emoji";
-  SSIDpassword = "6726e644af73b1b641c8c1d74168ef8ae517280d34539f5c180afc22f38c4d91";
-  interface = "wlan0";
-  hostname = "nixpi";
-in
 {
 
   imports = [
     ./sys
     ./user.nix
+    ../wifi.nix
     # ./python.nix
     # ./desktop.nix
   ];
@@ -31,14 +26,14 @@ in
     };
   };
 
-  networking = {
-    hostName = hostname;
-    wireless = {
-      enable = true;
-      networks."${SSID}".pskRaw = SSIDpassword;
-      interfaces = [ interface ];
-    };
-  };
+  # networking = {
+  #   hostName = hostname;
+  #   wireless = {
+  #     enable = true;
+  #     networks."${SSID}".psk = SSIDpassword;
+  #     interfaces = [ interface ];
+  #   };
+  # };
 
 
   hardware.enableRedistributableFirmware = true;
