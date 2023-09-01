@@ -67,8 +67,10 @@ in
   };
 
   # === Config ssh ===
-  services.openssh.enable = true;
-  services.openssh.settings.permitRootLogin = "yes";
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "yes";
+  };
 
   system.stateVersion = "23.11";
 }
