@@ -6,8 +6,34 @@
     enable = true;
     package = pkgs.nextcloud27;
     hostName = "0.0.0.0";
-    config.adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
-    config.extraTrustedDomains = [ "192.168.1.*" ];
+    config = {
+      adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
+      extraTrustedDomains = [ "192.168.1.*" ];
+      dbtype = "pgsql";
+      dbuser = "nextcloud";
+      dbhost = "/run/postgresql";
+      dbname = "nextcloud";
+    };
+    phpOptions = {
+      upload_max_filesize = "2G";
+      post_max_size = "2G";
+    };
+    extraApps = with config.services.nextcloud.package.packages.apps; {
+      inherit news contacts calendar tasks;
+    };
+    extraAppsEnable = true;
+
+  };
+
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "nextcloud" ];
+    ensureUsers = [
+      {
+        name = "nextcloud";
+        ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+      }
+    ];
   };
 
   networking.firewall = {
