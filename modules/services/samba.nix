@@ -19,27 +19,27 @@
   # networking.firewall.enable = true;
   # networking.firewall.allowPing = true;
   # services.samba.openFirewall = true;
-  networking.firewall.enable = true;
-  networking.firewall.allowPing = true;
-  networking.firewall.allowedTCPPorts = [ 445 139 5357 ];
-  networking.firewall.allowedUDPPorts = [ 137 138 3702 ];
+  networking.firewall.enable = false;
+  # networking.firewall.allowPing = true;
+  # networking.firewall.allowedTCPPorts = [ 445 139 5357 ];
+  # networking.firewall.allowedUDPPorts = [ 137 138 3702 ];
 
   services.samba = {
     enable = true;
-    securityType = "user";
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = smbnix
-      netbios name = smbnix
-      security = user 
-      #use sendfile = yes
-      #max protocol = smb2
-      # note: localhost is the ipv6 localhost ::1
-      hosts allow = 192.168.1. 127.0.0.1 localhost
-      hosts deny = 0.0.0.0/0
-      guest account = nobody
-      map to guest = bad user
-    '';
+    # securityType = "user";
+    # extraConfig = ''
+    #   workgroup = WORKGROUP
+    #   server string = smbnix
+    #   netbios name = smbnix
+    #   security = user 
+    #   #use sendfile = yes
+    #   #max protocol = smb2
+    #   # note: localhost is the ipv6 localhost ::1
+    #   hosts allow = 192.168.1. 127.0.0.1 localhost
+    #   hosts deny = 0.0.0.0/0
+    #   guest account = nobody
+    #   map to guest = bad user
+    # '';
     shares = {
       public = {
         path = "/home/samba/Public";
