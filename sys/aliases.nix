@@ -80,6 +80,10 @@
     flash_keyboard = "wget https://oryx.zsa.io/3ya9r/latest/binary -O binary.bin && wally-cli binary.bin && rm binary.bin";
     flash_keyboard1 = "wget https://oryx.zsa.io/oq5mG/latest/binary -O binary.bin && wally-cli binary.bin && rm binary.bin";
 
+    # Setup python nix shell
     pydev = "cp /etc/nixos/modules/dev/python/py_shell.nix ./shell.nix";
+
+    # sync obsidian
+    obsync = "cd /home/jack/Documents/10-19_Books_Documentation/13_Obsidian_Vaults && bash sync.sh";
   };
 }
