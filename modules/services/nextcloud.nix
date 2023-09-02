@@ -18,23 +18,20 @@
       upload_max_filesize = "2G";
       post_max_size = "2G";
     };
-    extraApps = with config.services.nextcloud.package.packages.apps; {
-      inherit news contacts calendar tasks;
-    };
-    extraAppsEnable = true;
+    configureRedis = true;
 
   };
 
-  services.postgresql = {
-    enable = true;
-    ensureDatabases = [ "nextcloud" ];
-    ensureUsers = [
-      {
-        name = "nextcloud";
-        ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
-      }
-    ];
-  };
+  #   services.postgresql = {
+  #     enable = true;
+  #     ensureDatabases = [ "nextcloud" ];
+  #     ensureUsers = [
+  #       {
+  #         name = "nextcloud";
+  #         ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+  #       }
+  #     ];
+  #   };
 
   networking.firewall = {
     enable = true;
