@@ -1,5 +1,18 @@
 { config, pkgs, ... }:
 {
+
+  # Create Samba User
+  users.users.samba = {
+    isNormalUser = true;
+    home = "/home/samba";
+    extraGroups = [ "samba" ];
+    # password = "";
+    hashedPassword = "$6$MAri.IIplRr.ipPQ$F4iKBI4WTv3Bie2zsUO2g7UabOKJFNk8Dnf1rrqkcE7jc/0Crn.TXaoywOjVMCiJAj1khrGAlmDC2baNt3exq1";
+  };
+  users.users.jack = {
+    extraGroups = [ "samba" ];
+  };
+
   services.samba-wsdd.enable = true; # make shares visible for windows 10 clients
   networking.firewall.allowedTCPPorts = [
     5357 # wsdd
@@ -8,9 +21,9 @@
     3702 # wsdd
   ];
 
-  networking.firewall.enable = true;
-  networking.firewall.allowPing = true;
-  services.samba.openFirewall = true;
+  # networking.firewall.enable = true;
+  # networking.firewall.allowPing = true;
+  # services.samba.openFirewall = true;
 
   services.samba = {
     enable = true;
@@ -30,24 +43,15 @@
     '';
     shares = {
       public = {
-        path = "/home/jack/Public";
+        path = "/home/samba/Public";
         browseable = "yes";
         "read only" = "no";
         "guest ok" = "yes";
-        "create mask" = "0644";
+        "writable" = "yes";
+        "create mask" = "0765";
         "directory mask" = "0755";
-        "force user" = "username";
-        "force group" = "groupname";
-      };
-      private = {
-        path = "/home/jack/Private";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "username";
-        "force group" = "groupname";
+        "force user" = "samba";
+        "force group" = "samba";
       };
     };
   };
