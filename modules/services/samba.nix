@@ -24,6 +24,10 @@
   # networking.firewall.enable = true;
   # networking.firewall.allowPing = true;
   # services.samba.openFirewall = true;
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
+  networking.firewall.allowedTCPPorts = [ 445 139 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
 
   services.samba = {
     enable = true;
