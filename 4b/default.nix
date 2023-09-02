@@ -5,8 +5,8 @@
   imports = [
     ./sys
     ./user.nix
-    ../wifi.nix
-    # ./python.nix
+    # ../wifi.nix
+    ./python.nix
     # ./desktop.nix
   ];
   boot = {
