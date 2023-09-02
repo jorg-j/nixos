@@ -5,7 +5,7 @@
   imports = [
     ./sys
     ./user.nix
-    # ../wifi.nix
+    ../wifi.nix
     ./python.nix
     # ./desktop.nix
   ];
