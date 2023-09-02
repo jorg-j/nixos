@@ -13,6 +13,7 @@
       ../hardware-configuration.nix
       ../profiles/desktop.nix
       ../packages/flatpak.nix
+      ../modules/services/nextcloud.nix
       ../nmodules
     ];
 
