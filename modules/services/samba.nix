@@ -14,20 +14,15 @@
   };
 
   services.samba-wsdd.enable = true; # make shares visible for windows 10 clients
-  networking.firewall.allowedTCPPorts = [
-    5357 # wsdd
-  ];
-  networking.firewall.allowedUDPPorts = [
-    3702 # wsdd
-  ];
+
 
   # networking.firewall.enable = true;
   # networking.firewall.allowPing = true;
   # services.samba.openFirewall = true;
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
-  networking.firewall.allowedTCPPorts = [ 445 139 ];
-  networking.firewall.allowedUDPPorts = [ 137 138 ];
+  networking.firewall.allowedTCPPorts = [ 445 139 5357 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 3702 ];
 
   services.samba = {
     enable = true;
