@@ -5,5 +5,6 @@
       ./vim.nix
       ./neovim.nix
       ./vscode.nix
+      ./obsidian.nix
     ];
 }

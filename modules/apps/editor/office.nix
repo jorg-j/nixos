@@ -6,7 +6,7 @@
       [
         abiword
         gnumeric
-        obsidian
+        # obsidian
         todoist-electron
         # === libreoffice ===
         hunspell
