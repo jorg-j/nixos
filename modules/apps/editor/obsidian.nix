@@ -38,7 +38,7 @@ let
     mimeTypes = [ "x-scheme-handler/obsidian" ];
   };
 
-  linux = pkgs.stdenv.mkDerivation {
+  obsidianPkg = pkgs.stdenv.mkDerivation {
     name = pname;
     version = version;
     src = src;
