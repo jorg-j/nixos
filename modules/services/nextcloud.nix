@@ -9,10 +9,6 @@
     config = {
       adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
       extraTrustedDomains = [ "192.168.1.*" ];
-      dbtype = "pgsql";
-      dbuser = "nextcloud";
-      dbhost = "/run/postgresql";
-      dbname = "nextcloud";
     };
     phpOptions = {
       upload_max_filesize = "2G";
@@ -22,16 +18,6 @@
 
   };
 
-  #   services.postgresql = {
-  #     enable = true;
-  #     ensureDatabases = [ "nextcloud" ];
-  #     ensureUsers = [
-  #       {
-  #         name = "nextcloud";
-  #         ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
-  #       }
-  #     ];
-  #   };
 
   networking.firewall = {
     enable = true;
