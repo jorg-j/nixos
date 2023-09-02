@@ -42,12 +42,7 @@ in
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
 
-    virtualHosts = {
-      myhost = {
-        forceSSL = true;
-        enableACME = true;
-      };
-    };
+
   };
   #   services.nextcloud = {
   #     enable = true;
