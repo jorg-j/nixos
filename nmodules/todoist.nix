@@ -35,7 +35,6 @@ in
       # enable = true;
       description = "Todoist Load Service";
       serviceConfig.Type = "oneshot";
-      # serviceConfig.ExecStart = "${pkgs.python3}/bin/python3 /etc/nixos/nmodules/todoist_files/todoist_load.py";
 
       serviceConfig.ExecStart =
         let
@@ -45,7 +44,7 @@ in
             requests
           ]);
         in
-        "${python.interpreter} /etc/nixos/nmodules/todoist_files/todoist_load.py";
+        "${python.interpreter} ${/etc/nixos/nmodules/todoist_files/todoist_load.py}";
     };
   };
 
