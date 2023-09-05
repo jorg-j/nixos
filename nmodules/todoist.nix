@@ -24,7 +24,6 @@ in
     enable = mkEnableOption "Todoist Load Service";
   };
 
-
   config = mkIf cfg.enable {
 
     environment.systemPackages = [
@@ -36,8 +35,17 @@ in
       # enable = true;
       description = "Todoist Load Service";
       serviceConfig.Type = "oneshot";
-      serviceConfig.ExecStart = "${pkgs.python3}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
-      #serviceConfig.ExecStart = "${pkgs.todoist_load}/bin/python3 /etc/nixos/nmodules/todoist_files/test.py";
+      # serviceConfig.ExecStart = "${pkgs.python3}/bin/python3 /etc/nixos/nmodules/todoist_files/todoist_load.py";
+
+      serviceConfig.ExecStart =
+        let
+          python = pkgs.python3.withPackages (ps: with ps; [
+            todoist-api-python
+            loguru
+            requests
+          ]);
+        in
+        "${python.interpreter} /etc/nixos/nmodules/todoist_files/todoist_load.py";
     };
   };
 

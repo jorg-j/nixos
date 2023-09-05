@@ -22,10 +22,11 @@
   boot.loader.grub.useOSProber = true;
   boot.tmp.cleanOnBoot = true;
 
-  #services.hello = {
-  #  enable = true;
-  #  greeter = "Bob";
-  #}
+  # TODO todoist service needs to be updated to latest
+  services.todoist_load = {
+    enable = false;
+    #  greeter = "Bob";
+  };
 
   # enable capaldiSync
   services.capaldiSync = {
