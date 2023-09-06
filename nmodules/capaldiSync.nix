@@ -5,22 +5,24 @@ let
   cfg = config.services.capaldiSync;
 
   capaldisync = pkgs.writeScriptBin "capaldisync" ''
-    #!${pkgs.stdenv.shell}
+    #!${pkgs.bash}
     sync_files() {
         SYNCLOC=capaldi:/home/pi/Downloads/rdl/storage/
         FileSourceDir="/run/media/jack/Backup/WMM/rdlyeti/"
         CLEANUPLOC=/home/pi/Downloads/rdl/storage
-        ssh capaldi "cd /home/pi/Downloads/rdl && sudo chown -R pi:pi ./"
-        rsync --archive --verbose --remove-source-files $SYNCLOC $FileSourceDir
+        /run/current-system/sw/bin/ssh capaldi "cd /home/pi/Downloads/rdl && sudo chown -R pi:pi ./"
+        /run/current-system/sw/bin/rsync --archive --verbose --remove-source-files $SYNCLOC $FileSourceDir
     }
 
 
+
     ping_capaldi() {
+
         server_ip="192.168.1.105"
 
         ping_count=3  # Number of ping attempts
 
-        ping_result=$(ping -c "$ping_count" "$server_ip" 2>&1)
+        ping_result=$(/run/wrappers/bin/ping -c "$ping_count" "$server_ip" 2>&1)
 
         if [[ $? -ne 0 ]]; then
             echo "Server at $server_ip is not responding."
@@ -28,7 +30,7 @@ let
 
         else
             echo "Server at $server_ip is responding."
-            # sync_files
+            sync_files
         fi
     }
 
@@ -37,7 +39,7 @@ let
         drive_label="Backup"
 
         # Check if the drive is mounted
-        if grep -qs "/dev/sd.*$drive_label" /proc/mounts; then
+        if /run/current-system/sw/bin/grep -qs "/dev/sd.*$drive_label" /proc/mounts; then
             echo "Drive '$drive_label' is connected."
             ping_capaldi
         else
@@ -68,9 +70,12 @@ in
     systemd.services."capaldiSync" = {
       # enable = true;
       description = "Capaldi Sync Service";
+      script = ''
+        ${pkgs.bash}/bin/bash /run/current-system/sw/bin/capaldisync
+      '';
       serviceConfig = {
         Type = "simple";
-        ExecStart = "/run/current-system/sw/bin/capaldisync";
+        User = "jack";
       };
     };
 

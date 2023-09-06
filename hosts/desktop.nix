@@ -29,7 +29,7 @@
 
   # enable capaldiSync
   services.capaldiSync = {
-    enable = true;
+    enable = false;
   };
 
   # Enables closure file builds for arm
