@@ -1,3 +1,4 @@
+{ config, pkgs, vars, ... }:
 {
   imports =
     [
@@ -6,5 +7,11 @@
       ./neovim.nix
       ./vscode.nix
       ./obsidian.nix
+    ];
+  environment.systemPackages = with pkgs;
+    [
+
+      simplenote
+
     ];
 }

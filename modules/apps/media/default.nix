@@ -4,7 +4,9 @@
     [
       celluloid
       deluge
+      drawio
       imagemagick
+      lightburn
       simplescreenrecorder
       #labelImg
       okular

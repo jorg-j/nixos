@@ -61,14 +61,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs;
     [
-      sqlitebrowser
       megasync
-      drawio
-
       chromium
-
-      simplenote
-      lightburn
     ];
 
 
