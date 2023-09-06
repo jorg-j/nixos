@@ -2,7 +2,10 @@
 
 {
   imports = [
-    ./base.nix
+    ../home_manager
+    ../sys
+    ../modules
+    ../users/jack.nix
     ../modules/desktop/pantheon.nix
   ];
 

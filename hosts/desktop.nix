@@ -12,7 +12,6 @@
 
       ../hardware-configuration.nix
       ../profiles/desktop.nix
-      ../packages/flatpak.nix
       ../nmodules
     ];
 

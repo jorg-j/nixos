@@ -2,6 +2,9 @@
   environment.shellAliases = {
     config = "sudo vim /etc/nixos/configuration.nix";
     build = "sudo nixos-rebuild switch --keep-going";
+    flakebuild = "sudo nixos-rebuild --flake .#Desktop switch";
+    flakesurface = "sudo nixos-rebuild --flake .#Surface switch";
+
     bootbuild = "sudo nixos-rebuild boot --keep-going";
     sync = "cd /etc/nixos && sudo git stash && sudo git pull --rebase";
     rollback = "sudo nixos-rebuild switch --rollback";

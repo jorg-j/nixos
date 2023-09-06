@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./base.nix
+    ../home_manager
+    ../packages/flatpak.nix
+    ../sys
+    ../modules
+    ../users/jack.nix
     ../modules/desktop/pantheon.nix
   ];
 
@@ -10,8 +14,11 @@
       xournalpp
       gettext # needed for cinnamon
       caffeine-ng
-       # needed for cinnamon
     ];
 
+  # Enable Streamdeck UI
   programs.streamdeck-ui.enable = true;
+
+
+
 }
