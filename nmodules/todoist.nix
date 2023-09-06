@@ -19,7 +19,6 @@ let
 
 in
 {
-  # Declare what settings a user of this "hello.nix" module CAN SET.
   options.services.todoist_load = {
     enable = mkEnableOption "Todoist Load Service";
   };

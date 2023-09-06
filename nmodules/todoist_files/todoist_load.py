@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 
+import json
 import os
 import sys
-from loguru import logger
 from glob import glob
-import json
 
+from loguru import logger
 from todoist_api_python.api import TodoistAPI
-
 
 logger.remove(0)
 logger.add(sys.stderr, level="INFO")
@@ -18,7 +17,7 @@ def reader(file):
     """
     The function reads a file, removes newlines, splits the data by commas, and returns the resulting
     list.
-    
+
     :param file: The parameter "file" is a string that represents the name or path of the file that we
     want to read
     :return: The function `reader` takes a file name as input, reads the contents of the file, removes
@@ -34,7 +33,7 @@ def get_projects(api):
     """
     This function retrieves a list of projects from an API and creates a dictionary with project names
     as keys and project IDs as values.
-    
+
     :param api: The `api` parameter is likely an object or instance of a class that provides methods for
     interacting with an API (Application Programming Interface). The `get_projects()` method is likely a
     method provided by this API that retrieves a list of projects
@@ -58,7 +57,7 @@ def add_task(file, projects, api, inbox):
     """
     The function adds a task to a project or inbox using data from a file, and logs any errors or
     successes.
-    
+
     :param file: The file parameter is the path to the file containing the task information to be added
     :param projects: The `projects` parameter is a dictionary that maps project names to their
     corresponding project IDs in the task management system. If a project name is not found in the
@@ -88,7 +87,12 @@ def add_task(file, projects, api, inbox):
 
     try:
         task = api.add_task(
-            task, project_id=project_id, due_string=due, due_lang="en", labels=labels, priority=priority
+            task,
+            project_id=project_id,
+            due_string=due,
+            due_lang="en",
+            labels=labels,
+            priority=priority,
         )
         logger.info(task)
     except Exception as error:
@@ -113,6 +117,7 @@ def run():
         logger.info("Complete")
     else:
         logger.info("No tasks to add. Exiting...")
+
 
 if __name__ == "__main__":
     run()

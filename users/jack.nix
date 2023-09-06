@@ -1,41 +1,27 @@
-args@{ config, pkgs, lib, ... }:
-let
-  user = "jack";
+{ config, pkgs, lib, ... }:
 
-in
 {
-  imports = [
-    (import ./shared.nix (args // { user = user; }))
-
-  ];
-
   users.users.jack = {
     isNormalUser = true;
-    extraGroups = [ "docker" "syncthing" ];
-    shell =
-      if config.networking.hostName == "tenant" then
-        pkgs.bash
-      else
-        pkgs.zsh;
+    uid = 1000;
+    description = "Jack";
+    home = "/home/jack";
+    extraGroups = [
+      "docker"
+      "syncthing"
+      "wheel"
+      "networkmanager"
+      "vboxusers"
+      "dialout"
+    ];
+
+    createHome = true;
+    # password = "";
+    hashedPassword = "$6$MAri.IIplRr.ipPQ$F4iKBI4WTv3Bie2zsUO2g7UabOKJFNk8Dnf1rrqkcE7jc/0Crn.TXaoywOjVMCiJAj1khrGAlmDC2baNt3exq1";
+    shell = pkgs.zsh;
   };
 
   # Activate gpg
   programs.gnupg.agent.enable = true;
 
-  # home-manager.users.jack = {
-  #   programs.home-manager.enable = true;
-  #   home.stateVersion = "22.11";
-
-  #   programs.ssh = {
-  #     enable = true;
-  #     matchBlocks = {
-  #       "hurt" = {
-  #         port = "120";
-  #         hostname = "192.168.1.122";
-  #         user = "admin";
-  #         identityFile = "~/.ssh/hurt";
-  #       };
-  #     };
-  #   };
-  # };
 }

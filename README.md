@@ -1,42 +1,35 @@
 # NixOS
 
-# Initial Install
+## Initial Install
 
-After install run.
+After install of base OS run.
 
-`sudo nano /etc/nixos/configuration.nix`
-
-add git to the packages list
-
-exit.
-
-`sudo nixos-rebuild switch --keep-going`
-
+`sudo nix-env --install git`
 
 OR
 
-`sudo nix-env --install git`
-`sudo nixos-rebuild switch --keep-going`
+`sudo nix-env -f '<nixpkgs>' -iA git`
 
-reboot the system
+### Clone the repo into /etc/nixos
+`git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos`
+
+### Link the Config of choice
+`ln -sF /etc/nixos/hosts/<config>.nix /etc/nixos/configuration.nix`
+
+`sudo nixos-rebuild boot --keep-going`
+
+Reboot the system
 
 then after login run
 `fpak` to install flatpaks
 `xfce_config` to setup XFCE theming
 
-#
 
-To run manually
-```
-git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos
-ln -sF /etc/nixos/hosts/<config>.nix /etc/nixos/configuration.nix
-```
-
-OR
+## For RPI or VM
 
 `curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh`
 
-# If you've not installed yet
+### If you've not installed yet
 `nixos-install`
 
 # If you've already installed, but are switching to this config
@@ -64,7 +57,6 @@ Run the below to create a supplicant file for the wifi
 
 Run this to standup the wifi
 `sudo wpa_supplicant -B -i wlan0 -c wpa_supplicant.conf &`
-
 
 
 Copy the Config
@@ -105,8 +97,6 @@ hdmi_drive=2
 ## XFCE
 
 If using XFCE after build run the `xfce_config` command to update the theme
-
-
 
 
 ## Steps after install

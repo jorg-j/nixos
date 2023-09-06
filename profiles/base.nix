@@ -5,6 +5,6 @@
     ../home_manager
     ../sys
     ../modules
-    ../modules/users/jack.nix
+    ../users/jack.nix
   ];
 }

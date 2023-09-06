@@ -5,10 +5,9 @@ let
 in
 
 {
-
+  
   environment.systemPackages = with pkgs; [
     todoist_load
   ];
-
 
 }
