@@ -5,7 +5,7 @@
     # flakebuild = "sudo nixos-rebuild --flake .#Desktop switch";
 
     localtest = "sudo nixos-rebuild test -I nixos-config=./hosts/desktop.nix";
-    localvm = "sudo nixos-rebuild build-vm --fast -I nixos-config=./hosts/desktop.nix -I nixpkgs=.";
+    localvm = "rm jack.qcow2; sudo nixos-rebuild build-vm --fast -I nixos-config=./hosts/desktop.nix && ./result/bin/run-jack-vm";
 
     bootbuild = "sudo nixos-rebuild boot --keep-going";
     sync = "cd /etc/nixos && sudo git stash && sudo git pull --rebase";
