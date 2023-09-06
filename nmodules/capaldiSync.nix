@@ -14,8 +14,6 @@ let
         /run/current-system/sw/bin/rsync --archive --verbose --remove-source-files $SYNCLOC $FileSourceDir
     }
 
-
-
     ping_capaldi() {
 
         server_ip="192.168.1.105"
@@ -68,7 +66,6 @@ in
     ];
 
     systemd.services."capaldiSync" = {
-      # enable = true;
       description = "Capaldi Sync Service";
       script = ''
         ${pkgs.bash}/bin/bash /run/current-system/sw/bin/capaldisync

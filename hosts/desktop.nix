@@ -64,9 +64,7 @@
       sqlitebrowser
       megasync
       drawio
-      podman
-      podman-desktop
-      podman-compose
+
       chromium
 
       simplenote

@@ -8,6 +8,7 @@
     home = "/home/jack";
     extraGroups = [
       "docker"
+      "podman"
       "syncthing"
       "wheel"
       "networkmanager"

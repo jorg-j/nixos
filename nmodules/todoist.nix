@@ -25,6 +25,20 @@ in
 
   config = mkIf cfg.enable {
 
+    users.users.todoistHost = {
+      isNormalUser = true;
+      description = "todoist host user";
+      home = "/home/todoist";
+      extraGroups = [
+        "todoist"
+      ];
+
+      createHome = true;
+      # password = "";
+      shell = pkgs.bash;
+    };
+
+
     environment.systemPackages = [
       todoistload
       (pkgs.python3.withPackages my-python-packages)
