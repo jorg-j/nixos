@@ -21,6 +21,7 @@
       xfce.xfce4-whiskermenu-plugin
     ];
   };
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 }
 

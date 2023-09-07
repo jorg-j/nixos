@@ -6,7 +6,8 @@
     ../sys
     ../modules
     ../users/jack.nix
-    ../modules/desktop/pantheon.nix
+    # ../modules/desktop/pantheon.nix
+    ../modules/desktop/xfce.nix
   ];
 
   environment.systemPackages = with pkgs;

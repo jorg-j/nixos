@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-notifyd" version="1.0">
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value="balena-etcher"/>
+      <value type="string" value="Firefox"/>
+      <value type="string" value="io.snapcraft.SessionAgent"/>
+      <value type="string" value="MEGAsync"/>
+      <value type="string" value="nm-applet"/>
+      <value type="string" value="notify-send"/>
+      <value type="string" value="org.gnome.baobab"/>
+      <value type="string" value="org.xfce.Thunar"/>
+      <value type="string" value="pop-system-updater"/>
+      <value type="string" value="Todoist"/>
+      <value type="string" value="todoist_Todoist"/>
+      <value type="string" value="vorta"/>
+      <value type="string" value="Xfce volume control"/>
+      <value type="string" value="xfce4-settings-helper"/>
+    </property>
+  </property>
+</channel>

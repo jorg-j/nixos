@@ -31,14 +31,11 @@
 
   home.file = {
     ".ssh/config" = { source = "/etc/nixos/home_manager/files/ssh_config"; };
-    ".unison/tenant.prf" = { source = "/etc/nixos/home_manager/files/tenant.prf"; };
-    ".unison/Surface.prf" = { source = "/etc/nixos/home_manager/files/surface.prf"; };
-    ".config/i3/config" = { source = "/etc/nixos/home_manager/files/i3_config"; };
-    ".config/i3status/config" = { source = "/etc/nixos/home_manager/files/i3status.conf"; };
-    ".mnti3/mounter" = { source = "/etc/nixos/home_manager/files/mounter"; };
-    ".mnti3/unmounter" = { source = "/etc/nixos/home_manager/files/unmounter"; };
+
     ".config/nixpkgs/config.nix" = { source = "/etc/nixos/home_manager/files/nixpkgs_config.nix"; };
     ".config/Code/User/settings.json" = { source = "/etc/nixos/home_manager/files/vscode.json"; };
   };
+
+
 
 }

@@ -3,6 +3,7 @@
 {
   imports = [
     <home-manager/nixos>
+    ./modules
   ];
 
   home-manager = {
@@ -10,5 +11,9 @@
     useUserPackages = true;
     users.jack = import ./home.nix;
   };
+
+  homemanager.i3.enable = false;
+  homemanager.unison.enable = true;
+  homemanager.xfce.enable = true;
 
 }
