@@ -8,9 +8,9 @@
   imports =
     [
       # Include the results of the hardware scan.
-      <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+      # <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-      ../hardware-configuration.nix
+      # ../hardware-configuration.nix
       ../profiles/desktop.nix
       ../nmodules
     ];

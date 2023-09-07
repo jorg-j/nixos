@@ -2,12 +2,12 @@
   description = "My flake configuration";
 
   inputs = {
-    home-manager.url = "github:nix-community/home-manager/master";
-    flake-utils.url = "github:numtide/flake-utils";
+    #home-manager.url = "github:nix-community/home-manager/master";
+    #flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
-    nur.url = "github:nix-community/nur";
+    #nur.url = "github:nix-community/nur";
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    #nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   };
 
@@ -19,7 +19,7 @@
     in
     {
       nixosConfigurations = {
-        Desktop = lib.nixosSystem {
+        Desktop = nixpkgs.lib.nixosSystem {
           inherit system;
 
           modules = [
@@ -28,4 +28,5 @@
           ];
         };
       };
-    }
+    };
+}
