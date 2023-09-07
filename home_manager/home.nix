@@ -33,7 +33,7 @@
     ".ssh/config" = { source = "/etc/nixos/home_manager/files/ssh_config"; };
 
     ".config/nixpkgs/config.nix" = { source = "/etc/nixos/home_manager/files/nixpkgs_config.nix"; };
-    ".config/Code/User/settings.json" = { source = "/etc/nixos/home_manager/files/vscode.json"; };
+    # ".config/Code/User/settings.json" = { source = "/etc/nixos/home_manager/files/vscode.json"; };
   };
 
 
