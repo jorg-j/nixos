@@ -14,6 +14,6 @@
 
   homemanager.i3.enable = false;
   homemanager.unison.enable = true;
-  homemanager.xfce.enable = true;
+  homemanager.xfce.enable = false;
 
 }
