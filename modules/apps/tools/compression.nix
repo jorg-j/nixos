@@ -9,5 +9,6 @@
     zstd
     unrar
     atool
+    archiver
   ];
 }
