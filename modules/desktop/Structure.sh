@@ -148,6 +148,7 @@ treemake() {
                 treemake $code_path "Mac_Automation"
                 treemake $code_path "Photogrammetry"
                 treemake $code_path "POCs"
+                treemake $code_path "Keyboards"
                 treemake $code_path "Personal_Project_Code"
                 } 
         code
