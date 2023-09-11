@@ -21,5 +21,5 @@
   programs.streamdeck-ui.enable = true;
 
 
-
+  services.blueman.enable = true;
 }
