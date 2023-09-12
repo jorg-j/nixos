@@ -2,7 +2,6 @@
 {
   imports = [
     ./pantheon.nix
-
   ];
 
   home.username = "jack";
@@ -17,9 +16,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "docker-compose" "docker" "git" ];
-      # theme = "afowler";
       theme = "agnoster";
-      # theme = "dst";
     };
     initExtra = ''
       bindkey '^f' autosuggest-accept
