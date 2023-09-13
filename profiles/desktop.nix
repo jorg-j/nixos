@@ -6,9 +6,10 @@
     ../sys
     ../modules
     ../users/jack.nix
-    # ../modules/desktop/pantheon.nix
-    ../modules/desktop/xfce.nix
   ];
+
+  # enable xfce desktop
+  our.roles.xfce.enable = true;
 
   environment.systemPackages = with pkgs;
     [

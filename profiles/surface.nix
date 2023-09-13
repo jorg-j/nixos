@@ -6,9 +6,10 @@
     ../sys
     ../modules
     ../users/jack.nix
-    ../modules/desktop/pantheon.nix
   ];
 
+  # enable budgie desktop
+  our.roles.budgie.enable = true;
 
   environment.systemPackages = with pkgs;
     [

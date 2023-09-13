@@ -4,7 +4,7 @@ with lib;
 
 let
 
-cfg = config.our.roles.budgie;
+  cfg = config.our.roles.budgie;
 
 in
 
@@ -14,9 +14,9 @@ in
   };
 
   config = mkIf cfg.enable {
-  services.xserver.enable = true;
-  services.xserver.desktopManager.budgie.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
+    services.xserver.enable = true;
+    services.xserver.desktopManager.budgie.enable = true;
+    services.xserver.displayManager.lightdm.enable = true;
 
   };
 

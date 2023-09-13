@@ -1,27 +1,44 @@
 { config, pkgs, lib, ... }:
 
+with lib;
+
+let
+
+  cfg = config.our.roles.xfce;
+
+in
+
 {
-  # Enable XFCE
 
   imports =
     [
       ./xfce_theme.nix
     ];
 
-  services.xserver = {
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
-    displayManager.defaultSession = "xfce";
+
+  options.our.roles.xfce = {
+    enable = mkEnableOption "xfce";
   };
 
-  environment = {
-    systemPackages = with pkgs; [
-      xfce.xfce4-whiskermenu-plugin
-    ];
+
+  config = mkIf cfg.enable {
+
+
+    services.xserver = {
+      desktopManager = {
+        xterm.enable = false;
+        xfce.enable = true;
+      };
+      displayManager.defaultSession = "xfce";
+    };
+
+    environment = {
+      systemPackages = with pkgs; [
+        xfce.xfce4-whiskermenu-plugin
+      ];
+    };
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   };
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 }
-
