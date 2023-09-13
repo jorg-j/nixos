@@ -25,6 +25,9 @@
 
     format = "nixpkgs-fmt";
 
+    stable = "git tag -d stable; git tag -d origin stable; git tag stable";
+    pushtags = "git push --tags";
+
     s = "sudo";
     ss = "sudo systemctl";
 
