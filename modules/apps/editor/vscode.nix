@@ -15,7 +15,6 @@
             esbenp.prettier-vscode
             ms-python.python
             ms-python.vscode-pylance
-            ms-vscode-remote.remote-containers
             davidanson.vscode-markdownlint
             bbenoist.nix
           ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
