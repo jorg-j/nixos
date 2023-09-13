@@ -1,13 +1,20 @@
 { config, pkgs, lib, ... }:
 
+
+
+with lib;
+let
+cfg = config.out.roles.gnome;
+in
 {
 
-  # imports =
-  # [ 
-  #   ./gnome_extensions.nix
-  # ];
+options.our.roles.gnome={
+enable = mkEnableOption "enable gnome";
 
-  # Enable the X11 windowing system.
+};
+
+config = mkIf cfg.enable {
+    # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
@@ -17,6 +24,14 @@
     gnome-keyring.enable = true;
     gnome-online-accounts.enable = true;
   };
+};
+
+  # imports =
+  # [ 
+  #   ./gnome_extensions.nix
+  # ];
+
+
 
 
 }
