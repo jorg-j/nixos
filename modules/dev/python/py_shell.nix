@@ -1,37 +1,25 @@
-with import <nixpkgs> { };
+{ nixpkgs ? import <nixpkgs> { } }:
 
-let
-  pythonPackages = python3Packages;
-in
-pkgs.mkShell rec {
-  name = "impurePythonEnv";
-  venvDir = "./.venv";
-  buildInputs = [
-    pythonPackages.python
-    pythonPackages.venvShellHook
-    pythonPackages.requests
-
-    # In this particular example, in order to compile any binary extensions they may
-    # require, the Python modules listed in the hypothetical requirements.txt need
-    # the following packages to be installed locally:
-    taglib
-    openssl
-    git
-    libxml2
-    libxslt
-    libzip
-    zlib
+nixpkgs.mkShell {
+  nativeBuildInputs = with nixpkgs; [
+    pkgs.poetry
+    pkgs.python310
+    pkgs.python310Packages.pip
+    pkgs.python310Packages.virtualenv
+    pkgs.python310Packages.setuptools
+    pkgs.python310Packages.black
+    pkgs.python310Packages.pytest
+    pkgs.python310Packages.isort
+    pylint
+    mypy
   ];
 
-  # Run this command, only after creating the virtual environment
-  postVenvCreation = ''
-    unset SOURCE_DATE_EPOCH
-    pip install -r requirements.txt
-  '';
 
-  # Now we can execute any commands within the virtual environment.
-  postShellHook = ''
-    # allow pip to install wheels
-    unset SOURCE_DATE_EPOCH
+  # Prevent numpy from shitting itself
+  LD_LIBRARY_PATH = "${nixpkgs.stdenv.cc.cc.lib}/lib";
+
+  shellHook = ''
+    poetry install
+
   '';
 }

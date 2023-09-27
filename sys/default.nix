@@ -42,7 +42,6 @@
         gocryptfs
         just
         libnotify
-        unison
         ntfs3g
         exfat
         gvfs
