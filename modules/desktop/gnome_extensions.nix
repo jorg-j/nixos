@@ -19,6 +19,7 @@
         "dash-to-panel@jderose9.github.com"
         "sound-output-device-chooser@kgshank.net"
         "space-bar@luchrioh"
+
       ];
     };
   };
