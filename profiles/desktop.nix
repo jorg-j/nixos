@@ -9,8 +9,8 @@
   ];
 
   # enable xfce desktop
-  # our.roles.xfce.enable = true;
-  our.roles.gnome.enable = true;
+  our.roles.xfce.enable = true;
+  # our.roles.gnome.enable = true;
 
   environment.systemPackages = with pkgs;
     [
