@@ -57,6 +57,7 @@
     [
       megasync
       chromium
+      cura
     ];
 
 
