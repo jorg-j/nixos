@@ -10,6 +10,7 @@
     [
       caffeine-ng
       lightburn
+      cura
     ];
 
 }
