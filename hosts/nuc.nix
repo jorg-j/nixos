@@ -58,6 +58,7 @@
       megasync
       chromium
       cura
+      distrobox
     ];
 
 
