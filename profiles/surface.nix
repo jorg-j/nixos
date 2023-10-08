@@ -8,8 +8,8 @@
     ../users/jack.nix
   ];
 
-  # enable budgie desktop
-  our.roles.budgie.enable = true;
+  # enable gnome desktop
+  our.roles.gnome.enable = true;
 
   environment.systemPackages = with pkgs;
     [
