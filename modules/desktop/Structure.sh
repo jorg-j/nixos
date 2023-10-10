@@ -110,6 +110,7 @@ treemake() {
         mkdir -p 10-19_Books_Documentation/14_Xournal_Notes/14.02_Recording
 
         mkdir -p 10-19_Books_Documentation/15_Documentation/15.01_Manuals
+        mkdir -p 10-19_Books_Documentation/15_Documentation/16.01_Supernote
         }
 10_19
 
