@@ -110,7 +110,7 @@ treemake() {
         mkdir -p 10-19_Books_Documentation/14_Xournal_Notes/14.02_Recording
 
         mkdir -p 10-19_Books_Documentation/15_Documentation/15.01_Manuals
-        mkdir -p 10-19_Books_Documentation/16_Supernote
+        mkdir -p 10-19_Books_Documentation/16_Supernote/
         }
 10_19
 
@@ -178,6 +178,7 @@ treemake() {
 
         mkdir -p 20-29_Programming_Software/28_Repos/28.01_jorgj
         mkdir -p 20-29_Programming_Software/28_Repos/28.02_VSCode_Snippets
+        mkdir -p 20-29_Programming_Software/28_Repos/28.03_Devianart
 
         mkdir -p 20-29_Programming_Software/29_Helpful_Scripts/29.01_Locating
         mkdir -p 20-29_Programming_Software/29_Helpful_Scripts/29.02_Encryption
@@ -206,6 +207,7 @@ treemake() {
         mkdir -p 30-39_House/32_Family/32.04_Leanne_Mark_Teri
         mkdir -p 30-39_House/32_Family/32.05_Tash_Family
         mkdir -p 30-39_House/32_Family/32.06_Pop
+        mkdir -p 30-39_House/32_Family/32.07_Medical
 
         mkdir -p 30-39_House/33_Finances/33.01_Budget
         mkdir -p 30-39_House/33_Finances/33.02_Equifax
