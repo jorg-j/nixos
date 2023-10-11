@@ -12,8 +12,39 @@ high_level() {
         }
 high_level
 
+check_dir_exist() {
+    # Directory containing sub-directories to check
+    parent_dir="$1"
+
+    # String to check for in directory names
+    string_to_match="$2"
+
+    # Check if any directory in the parent directory contains the specified string
+    for dir in "$parent_dir"/*/; do
+        dir_name=$(basename "$dir")
+        if [[ "$dir_name" == *"$string_to_match"* ]]; then
+            echo "Found directory with '$string_to_match' in its name: $dir_name"
+            if [[ "$dir_name" != "$2_$3" ]]; then
+                echo "clash"
+                echo "$dir_name exists, $2_$3 is required"
+                
+                trimmed=$(echo $dir_name | cut -d"_" -f 2)
+                
+
+                mv "$1/$dir_name" "$1/99_$trimmed"
+                echo "Moving to $1/99_$trimmed"
+
+                # core_name="${original_string#99_}"
+                # exit 1
+
+            fi
+        fi
+    done
+}
+
 treemake() {
         printf -v pos "%02d" $counter
+        check_dir_exist $1 "$index1.$pos" $2
         mkdir -p $1/"$index1.$pos"_$2
         #echo $1/"$index1.$pos"_$2
         counter=$((counter+1))
