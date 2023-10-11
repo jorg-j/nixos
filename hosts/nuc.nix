@@ -15,7 +15,7 @@
       ../nmodules
     ];
 
-  services.x2goserver.enable = true;
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
