@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ./pantheon.nix
-  ];
+  # imports = [
+  #   ./pantheon.nix
+  # ];
 
   home.username = "jack";
   home.homeDirectory = "/home/jack";
