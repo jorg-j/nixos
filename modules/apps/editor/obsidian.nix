@@ -20,7 +20,7 @@ let
   filename = "obsidian-${version}.tar.gz";
   src = pkgs.fetchurl {
     url = "https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/${filename}";
-    sha256 = "";
+    sha256 = "sha256-PBKLGs3MZyarSMiWnjqY7d9bQrKu2uLAvLUufpHLxcw=";
   };
 
   icon = pkgs.fetchurl {
