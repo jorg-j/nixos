@@ -12,7 +12,6 @@
     [
 
       simplenote
-      fuse
       # obsidian
 
     ];

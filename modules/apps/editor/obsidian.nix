@@ -72,6 +72,6 @@ let
 
 in
 {
-  environment.systemPackages = [ obsidianPkg ];
+  environment.systemPackages = [ obsidianPkg fuse ];
 
 }
