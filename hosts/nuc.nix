@@ -13,6 +13,7 @@
       ../hardware-configuration.nix
       ../profiles/desktop.nix
       ../nmodules
+      ../modules/networking.nix # enable tailscale
     ];
 
 
