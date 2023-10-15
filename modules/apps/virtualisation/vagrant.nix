@@ -4,6 +4,6 @@
   environment.systemPackages = with pkgs;
     [
       vagrant
-      ansible-core
+      ansible_2_14
     ];
 }
