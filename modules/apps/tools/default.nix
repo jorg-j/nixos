@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./3d.nix
       ./backup.nix
       ./base.nix
       ./compression.nix
