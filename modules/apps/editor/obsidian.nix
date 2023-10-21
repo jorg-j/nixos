@@ -7,7 +7,7 @@
 
 let
   pname = "obsidian";
-  version = "1.4.16";
+  version = "1.4.5";
   appname = "Obsidian";
   meta = with lib; {
     description = "A powerful knowledge base that works on top of a local folder of plain text Markdown files";
@@ -20,7 +20,7 @@ let
   filename = "obsidian-${version}.tar.gz";
   src = pkgs.fetchurl {
     url = "https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/${filename}";
-    sha256 = "sha256-PBKLGs3MZyarSMiWnjqY7d9bQrKu2uLAvLUufpHLxcw=";
+    sha256 = "sha256-Y/RlT+3xBbF9tjCbRQnQ+j8ogzLMfsQPnOdiCVj+NK0=";
   };
 
   icon = pkgs.fetchurl {
