@@ -4,7 +4,7 @@
     build = "sudo nixos-rebuild switch --keep-going";
     # flakebuild = "sudo nixos-rebuild --flake .#Desktop switch";
 
-    localtest = "sudo nixos-rebuild test -I nixos-config=./hosts/desktop.nix";
+    localtest = "sudo nixos-rebuild test -I nixos-config=./hosts/nuc.nix";
     localvm = "rm desktop.qcow2; sudo nixos-rebuild build-vm --fast -I nixos-config=./hosts/desktop.nix && ./result/bin/run-desktop-vm";
 
     bootbuild = "sudo nixos-rebuild boot --keep-going";

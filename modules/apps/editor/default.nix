@@ -14,6 +14,7 @@
       simplenote
       fuse
       logseq
+      stdenv.cc.cc.lib
       # obsidian
 
     ];
