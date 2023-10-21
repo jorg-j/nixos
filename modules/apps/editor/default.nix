@@ -2,6 +2,7 @@
 {
   imports =
     [
+      ./logseq.nix
       ./office.nix
       ./vim.nix
       ./neovim.nix
