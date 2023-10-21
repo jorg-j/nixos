@@ -13,6 +13,7 @@
 
       simplenote
       fuse
+      logseq
       # obsidian
 
     ];
