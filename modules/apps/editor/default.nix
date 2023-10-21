@@ -2,7 +2,7 @@
 {
   imports =
     [
-      ./logseq.nix
+      # ./logseq.nix
       ./office.nix
       ./vim.nix
       ./neovim.nix
@@ -15,7 +15,6 @@
       simplenote
       fuse
 
-      stdenv.cc.cc.lib
       # obsidian
 
     ];
