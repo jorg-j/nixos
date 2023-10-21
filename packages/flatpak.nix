@@ -10,6 +10,7 @@ let
     flatpak install flathub com.valvesoftware.Steam -y
     flatpak install flathub org.telegram.desktop -y
     flatpak install com.github.tenderowl.frog -y
+    flatpak install md.obsidian.Obsidian -y
   '';
 
 in

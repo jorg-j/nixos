@@ -7,7 +7,7 @@
       ./vim.nix
       ./neovim.nix
       ./vscode.nix
-      ./obsidian.nix
+      # ./obsidian.nix # disabled in favor of flatpak
     ];
   environment.systemPackages = with pkgs;
     [
