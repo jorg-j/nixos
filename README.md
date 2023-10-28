@@ -11,7 +11,7 @@ OR
 `sudo nix-env -f '<nixpkgs>' -iA git`
 
 ### Clone the repo into /etc/nixos
-`git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos`
+`git clone https://github.com/jorg-j/nixos.git /etc/nixos`
 
 ### Link the Config of choice
 `ln -sF /etc/nixos/hosts/<config>.nix /etc/nixos/configuration.nix`
@@ -27,7 +27,7 @@ then after login run
 
 ## For RPI or VM
 
-`curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/link.sh | tee link.sh`
+`curl -L https://raw.githubusercontent.com/jorg-j/nixos/main/link.sh | tee link.sh`
 
 ### If you've not installed yet
 `nixos-install`

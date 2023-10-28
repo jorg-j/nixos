@@ -10,7 +10,7 @@
       # Include the results of the hardware scan.
       # <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-      ../hardware-configuration.nix
+      ./hardware/nuc-hardware-configuration.nix
       ../profiles/desktop.nix
       ../nmodules
       ../modules/networking.nix # enable tailscale
@@ -26,7 +26,6 @@
   # TODO todoist service needs to be updated to latest
   services.todoist_load = {
     enable = false;
-    #  greeter = "Bob";
   };
 
   # Enables closure file builds for arm
@@ -65,13 +64,7 @@
     ];
 
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # No Touchy
 
   nix.gc = {
     automatic = true;

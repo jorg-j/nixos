@@ -1,7 +1,7 @@
 # used for initial setup of machine
 
 # In Order to run link.sh
-# curl -L https://gitlab.com/jorgensen-j/nixos/-/raw/main/setup.sh > setup.sh
+# curl -L https://raw.githubusercontent.com/jorg-j/nixos/main/setup.sh > setup.sh
 
 # Have the user confirm certain items before continuing
 # Helps to prevent stupid
@@ -33,7 +33,7 @@ sudo rm --recursive /etc/nixos
 
 # Clone the git repo, confirm with the user this has occured
 # Then move the hardware-configuration.nix file back to /etc/nixos
-sudo git clone https://gitlab.com/jorgensen-j/nixos.git /etc/nixos
+sudo git clone https://github.com/jorg-j/nixos.git /etc/nixos
 check_user_input "repo is cloned"
 sudo cp hardware-configuration.nix /etc/nixos/
 check_user_input "hardware-config has been copied"
