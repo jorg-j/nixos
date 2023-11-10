@@ -1,36 +1,23 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
-
-
-with lib;
 let
-  cfg = config.our.roles.cosmic;
+  unstable = import
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master)
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
+
 in
+
 {
-
-  options.our.roles.cosmic = {
-    enable = mkEnableOption "enable cosmic";
-
-  };
-
-  config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      pop-desktop-widget
-      pop-control-center
-      pop-launcher
-      pop-shell-shortcuts
-    ];
-
-    services.xserver = {
-      enable = true;
-      displayManager.gdm.enable = true;
-      displayManager.gdm.wayland = true;
-      desktopManager.gnome.enable = true;
-    };
-
-    gnome.core-utilities.enable = true;
-
-  };
-
+  environment.systemPackages = with pkgs; [
+    unstable.rustc
+    unstable.just
+    unstable.cosmic-icons
+    unstable.cosmic-settings
+    unstable.cosmic-greeter
+    unstable.cosmic-launcher
+  ];
 
 }
+
+# https://nixos.wiki/wiki/COSMIC

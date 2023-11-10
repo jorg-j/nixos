@@ -5,7 +5,7 @@
     # flakebuild = "sudo nixos-rebuild --flake .#Desktop switch";
 
     localtest = "sudo nixos-rebuild test -I nixos-config=./hosts/nuc.nix";
-    localvm = "rm desktop.qcow2; sudo nixos-rebuild build-vm --fast -I nixos-config=./hosts/nuc.nix && ./result/bin/run-nuc-vm";
+    localvm = "rm nuc.qcow2; sudo nixos-rebuild build-vm --fast -I nixos-config=./hosts/nuc.nix && ./result/bin/run-nuc-vm";
 
     bootbuild = "sudo nixos-rebuild boot --keep-going";
     sync = "cd /etc/nixos && sudo git stash && sudo git pull --rebase";
