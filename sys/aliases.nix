@@ -47,7 +47,7 @@
     gau = "git add -u";
 
     gco = "git checkout";
-    gc = "git commit --message";
+    gc = "git commit -m";
     gca = "git commit --all --message";
 
     gs = "git status --short";
