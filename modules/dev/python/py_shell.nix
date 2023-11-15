@@ -10,6 +10,8 @@ nixpkgs.mkShell {
     pkgs.python310Packages.black
     pkgs.python310Packages.pytest
     pkgs.python310Packages.isort
+    pkgs.python310Packages.ipython
+    pkgs.python310Packages.jupyter
     pylint
     mypy
   ];
@@ -20,6 +22,6 @@ nixpkgs.mkShell {
 
   shellHook = ''
     poetry install
-
+    echo "To run a jupyter notebook run `jupyter notebook`"
   '';
 }
