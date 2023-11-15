@@ -13,8 +13,8 @@
             :set number relativenumber
 
             " folding
-            nnoremap <space> za
-            :set foldmethod=indent
+            " nnoremap <space> za
+            " :set foldmethod=indent
 
 
             " generate backups dir and set backups to on
