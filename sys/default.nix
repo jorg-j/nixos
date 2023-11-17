@@ -3,6 +3,7 @@
 {
   imports = [
     ./aliases.nix
+    ./env_vars.nix
     ./insecure_packages.nix
     ./scripts.nix
     ./time_local.nix
