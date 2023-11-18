@@ -59,6 +59,8 @@
 
     fd = "fd --hidden --exclude .git";
 
+    hg = "history | grep";
+
     grab-display = "export DISPLAY = ':0.0'";
 
     hd-wipe-user-packages = "nix-env -e '*'";
