@@ -14,5 +14,5 @@
   services.sonarr.enable = true;
   services.sonarr.user = "jack";
   services.prowlarr.enable = true;
-  services.prowlarr.user = "jack";
+
 }
