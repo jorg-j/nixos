@@ -47,6 +47,7 @@
         gvfs
         polkit_gnome
         nixpkgs-fmt
+        sshpass
       ];
   };
 }
