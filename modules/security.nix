@@ -19,6 +19,11 @@
     firejail.enable = true;
   };
 
+  environment.systemPackages = [
+    pkgs.opensnitch
+    pkgs.opensnitch-ui
+  ];
+
   home-manager.users.jack.home.packages = with pkgs; [
     # Secure
     bitwarden # Password Manager
