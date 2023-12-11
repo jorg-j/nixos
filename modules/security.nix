@@ -23,6 +23,7 @@
     pkgs.opensnitch
     pkgs.opensnitch-ui
   ];
+  services.opensnitch.enable = true;
 
   home-manager.users.jack.home.packages = with pkgs; [
     # Secure
