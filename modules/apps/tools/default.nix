@@ -6,6 +6,7 @@
       ./3d.nix
       ./backup.nix
       ./base.nix
+      ./cmix.nix
       ./compression.nix
       ./http.nix
       ./json.nix
