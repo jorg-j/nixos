@@ -18,5 +18,7 @@
     libossp_uuid
     # dig
     wally-cli
+
+    czkawka # Deduplication
   ];
 }
