@@ -2,7 +2,7 @@
 
 
 let
-  pythonEnv = python2.withPackages (ps: [ ps.pyGtkGlade ]);
+  pythonEnv = pkgs.python2.withPackages (ps: [ ps.pyGtkGlade ]);
   fslint = pkgs.stdenv.mkDerivation rec {
     pname = "fslint";
     version = "2.46";
