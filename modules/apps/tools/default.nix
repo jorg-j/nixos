@@ -8,6 +8,7 @@
       ./base.nix
       ./cmix.nix
       ./compression.nix
+      ./fslint.nix
       ./http.nix
       ./json.nix
       ./media.nix
