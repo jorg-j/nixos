@@ -16,7 +16,7 @@ let
 
     buildInputs = [
       pythonEnv
-      makeWrapper
+      pkgs.makeWrapper
     ];
 
     prePatch = ''
