@@ -248,6 +248,7 @@ treemake() {
 
         mkdir -p 30-39_House/33_Finances/33.01_Budget
         mkdir -p 30-39_House/33_Finances/33.02_Equifax
+        mkdir -p 30-39_House/33_Finances/33.03_Tax
 
         mkdir -p 30-39_House/34_Assets_and_Equipment/34.01_SamsungFrame
         mkdir -p 30-39_House/34_Assets_and_Equipment/34.02_Macbook
