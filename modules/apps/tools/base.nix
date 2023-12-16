@@ -20,5 +20,7 @@
     wally-cli
 
     czkawka # Deduplication
+
+    zpaq
   ];
 }

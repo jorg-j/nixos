@@ -98,6 +98,8 @@ treemake() {
                 treemake $books "TOR"
                 treemake $books "Big_Data"
                 treemake $books "Series"
+                treemake $books "Coding"
+                treemake $books "Mac"
                 mkdir -p $books"/10.99_Other"
                 }
         process_books
@@ -123,6 +125,8 @@ treemake() {
                 treemake $books "Management"
                 treemake $books "Cooking"
                 treemake $books "Cleaning"
+                treemake $books "Woodwork"
+                treemake $books "Fitness"
                 }
         process_non_programming_books
 
