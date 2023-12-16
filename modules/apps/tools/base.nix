@@ -22,5 +22,6 @@
     czkawka # Deduplication
 
     zpaq
+    peazip
   ];
 }
