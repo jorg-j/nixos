@@ -165,6 +165,7 @@ treemake() {
                 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.11_Distrobox
                 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.12_Concourse_CI
                 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.13_Homer_Dashboard
+                mkdir -p 20-29_Programming_Software/20_Infrastructure/20.14_The_Frame
                 mkdir -p 20-29_Programming_Software/20_Infrastructure/20.99_Docker_Storage
                 }
         programming_software
@@ -252,6 +253,7 @@ treemake() {
 
         mkdir -p 30-39_House/34_Assets_and_Equipment/34.01_SamsungFrame
         mkdir -p 30-39_House/34_Assets_and_Equipment/34.02_Macbook
+        mkdir -p 30-39_House/34_Assets_and_Equipment/34.03_Motorcycle
         mkdir -p 30-39_House/35_Events_Trips/35.01_Gorillaz
         }
 30_39
@@ -360,6 +362,8 @@ pictures() {
         mkdir -p 10-19_Family/12_Dogs
         mkdir -p 10-19_Family/13_Dad
         mkdir -p 10-19_Family/14_Mum_Mark_Teri
+        mkdir -p 10-19_Family/15_Tash_Extended
+        mkdir -p 10-19_Family/16_Friends
 
         # 20-29_Holidays_Trips
         mkdir -p 20-29_Holidays_Trips/20_Japan/20.01_2019
