@@ -11,7 +11,7 @@
     atool
     archiver
     zpaq # compression
-    peazip
+
 
   ];
 }
