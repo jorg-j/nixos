@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs;
     [
       pkgs.gnumake
+      pkgs.go-task
       pkgs.sqlitebrowser
       pkgs.nixos-generators
       pkgs.fly # concourse-ci

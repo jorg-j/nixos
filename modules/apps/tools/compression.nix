@@ -10,5 +10,8 @@
     unrar
     atool
     archiver
+    zpaq # compression
+    peazip
+
   ];
 }

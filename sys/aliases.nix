@@ -2,6 +2,7 @@
   environment.shellAliases = {
     config = "sudo vim /etc/nixos/configuration.nix";
     build = "sudo nixos-rebuild switch --keep-going";
+    check = "nix-instantiate '<nixpkgs/nixos>' -A system";
     # flakebuild = "sudo nixos-rebuild --flake .#Desktop switch";
 
     localtest = "sudo nixos-rebuild test -I nixos-config=./hosts/nuc.nix";
