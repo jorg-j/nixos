@@ -1,0 +1,40 @@
+version: '3'
+
+tasks:
+  vm:
+    cmds:
+      - task: vmclean
+      - task: vmcreate
+      - ./result/bin/run-nuc-vm
+
+  vmclean:
+    cmds:
+      - cmd: rm nuc.qcow2
+        ignore_error: true
+
+
+  vmcreate:
+    cmds:
+      - sudo nixos-rebuild build-vm --fast -I nixos-config=./hosts/nuc.nix
+
+
+  localtest:
+    cmds:
+      - sudo nixos-rebuild test -I nixos-config=./hosts/nuc.nix
+
+  localbuild:
+    cmds:
+      - sudo nixos-rebuild switch -I nixos-config=./hosts/nuc.nix
+
+  # iso:
+  #   cmds:
+  #    - task: vmclean
+  #    - task: vmcreate
+  #    - nix-build '<nixpkgs/nixos>' -A config.system.build.isoImage -I nixos-config=iso.nix
+
+
+# mkdir -p /media/downloads/shows && \
+# mkdir -p /media/downloads/movies && \
+# mkdir -p /media/downloads/processing && \
+# mkdir -p /media/downloads/unsorted && \
+# chown -R plex:plex /media/downloads

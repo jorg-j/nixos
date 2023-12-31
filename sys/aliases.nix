@@ -51,7 +51,7 @@
     gc = "git commit -m";
     gca = "git commit --all --message";
 
-    gs = "git status --short";
+    # gs = "git status --short";
     gd = "git diff";
     gdc = "git diff --cached";
     gfr = "git pull --rebase";

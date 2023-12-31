@@ -15,6 +15,7 @@
       ../nmodules
       ../modules/networking.nix # enable tailscale
       # ../modules/movies
+      # ../plex.nix
     ];
 
 
