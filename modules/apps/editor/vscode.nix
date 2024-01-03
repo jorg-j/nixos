@@ -37,7 +37,7 @@
               name = "vscode-extension-for-zowe"; # COBOL
               publisher = "Zowe";
               version = "2.13.0";
-              sha256 = "6mvo2i/JzLHdUTlvfj2JOIj312Ux7SY+XQ/4lAdwrQI=";
+              sha256 = "/EntCDFiSIuEQfTMdPGCs6eFlmvxv+aVw+RBDl2as+c=";
             }
           ];
       }
