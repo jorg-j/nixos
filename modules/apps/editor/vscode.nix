@@ -18,7 +18,7 @@
             davidanson.vscode-markdownlint
             bbenoist.nix
 
-            # zowe.vscode-extension-for-zowe # COBOL
+
 
           ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
@@ -28,10 +28,16 @@
               sha256 = "2kV8shVxd56nvdORwPqoZ881IR8wQ19iHkNI9FUkoj8=";
             }
             {
-              name = "zopeneditor";
+              name = "zopeneditor"; # COBOL
               publisher = "IBM";
               version = "3.3.3";
-              sha256 = "2kV8shVxd56nvdORwPqoZ881IR8wQ19iHkNI9FUkoj8=";
+              sha256 = "6mvo2i/JzLHdUTlvfj2JOIj312Ux7SY+XQ/4lAdwrQI=";
+            }
+            {
+              name = "vscode-extension-for-zowe"; # COBOL
+              publisher = "Zowe";
+              version = "2.13.0";
+              sha256 = "6mvo2i/JzLHdUTlvfj2JOIj312Ux7SY+XQ/4lAdwrQI=";
             }
           ];
       }
