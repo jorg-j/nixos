@@ -15,6 +15,7 @@
     rar
     par2cmdline
     p7zip
+    sharutils
 
 
   ];
