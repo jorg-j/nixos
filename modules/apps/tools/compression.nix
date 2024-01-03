@@ -13,6 +13,7 @@
     zpaq # compression
 
     rar
+    par2cmdline
 
 
   ];
