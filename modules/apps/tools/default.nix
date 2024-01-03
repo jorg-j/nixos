@@ -14,6 +14,5 @@
       ./network.nix
       ./raspberry.nix
       ./search.nix
-      ./freearc.nix
     ];
 }
