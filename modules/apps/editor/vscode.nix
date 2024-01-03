@@ -17,14 +17,20 @@
             ms-python.vscode-pylance
             davidanson.vscode-markdownlint
             bbenoist.nix
-            IBM.zopeneditor # COBOL
-            zowe.vscode-extension-for-zowe # COBOL
+
+            # zowe.vscode-extension-for-zowe # COBOL
 
           ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
               name = "document";
               publisher = "mintlify";
               version = "2.2.1";
+              sha256 = "2kV8shVxd56nvdORwPqoZ881IR8wQ19iHkNI9FUkoj8=";
+            }
+            {
+              name = "zopeneditor";
+              publisher = "IBM";
+              version = "3.3.3";
               sha256 = "2kV8shVxd56nvdORwPqoZ881IR8wQ19iHkNI9FUkoj8=";
             }
           ];
