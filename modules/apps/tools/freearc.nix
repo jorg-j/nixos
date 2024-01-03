@@ -25,7 +25,7 @@ let
     version = version;
     src = src;
     nativeBuildInputs = [ pkgs.clang pkgs.bzip2 ];
-    unpackPhase = "bzip2 -d $src";
+    unpackPhase = "tar -xjvf $src";
     buildPhase = ''
       cd FreeArc-0.50-linux-i386-alpha-2008-06-22
       make
