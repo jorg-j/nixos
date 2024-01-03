@@ -15,8 +15,8 @@ let
 
   filename = "FreeArc-0.50-linux-i386-alpha-2008-06-22.tar.bz2";
   src = pkgs.fetchurl {
-    url = "/etc/nixos/modules/apps/tools/FreeArc-0.50-linux-i386-alpha-2008-06-22.tar.bz2";
-    sha256 = "sha256-x/8aPku0bRa0cIoLLEqGn3TOggTe49IN1tMTtsItpD4=";
+    url = "https://github.com/jorg-j/nixos/blob/main/modules/apps/tools/FreeArc-0.50-linux-i386-alpha-2008-06-22.tar.bz2";
+    sha256 = "sha256-3nOwjZXa3AtuCpwiILCQ/SCduuxSlIg03dya1Y82+ro=";
   };
 
 
