@@ -17,6 +17,9 @@
             ms-python.vscode-pylance
             davidanson.vscode-markdownlint
             bbenoist.nix
+            ibm.zopeneditor # COBOL
+            zowe.vscode-extension-for-zowe # COBOL
+
           ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
               name = "document";
