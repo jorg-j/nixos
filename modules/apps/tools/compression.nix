@@ -12,6 +12,8 @@
     archiver
     zpaq # compression
 
+    rar
+
 
   ];
 }
