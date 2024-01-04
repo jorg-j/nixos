@@ -15,6 +15,9 @@
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
 
+    notify = "curl -H 'Title: Nuc notify' -d 'Notification' ntfy.sh/jorg_1512";
+
+
 
     closure_build = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1";
     closure_deploy = "cd /etc/nixos/closure_files && sudo ./result/bin/switch-to-configuration switch";
