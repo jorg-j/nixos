@@ -20,7 +20,7 @@ in
       }
 
     notif() {
-      curl -H "Title: Nuc notify" -d "${1}" ntfy.sh/jorg_1512
+      curl -H "Title: Nuc notify" -d "$1" ntfy.sh/jorg_1512
       }
   '';
 }
