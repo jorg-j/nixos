@@ -15,7 +15,7 @@
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
 
-    notify = "curl -H 'Title: Nuc notify' -d '$1' ntfy.sh/jorg_1512";
+
 
 
 
