@@ -22,6 +22,7 @@
   environment.systemPackages = [
     pkgs.opensnitch
     pkgs.opensnitch-ui
+    pkgs.veracrypt
   ];
   services.opensnitch.enable = true;
 
