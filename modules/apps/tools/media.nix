@@ -5,7 +5,7 @@
     ffmpeg-full
     ffmpegthumbnailer
     imagemagickBig
-    upscayl
+
     # kdenlive
   ];
 }
