@@ -15,5 +15,6 @@
     skim
     fzy
     hstr
+    rename
   ];
 }
