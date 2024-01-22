@@ -294,6 +294,9 @@ treemake() {
         mkdir -p 50-59_Work/53_Accounting/53.01_Tax_Pre2023
         mkdir -p 50-59_Work/53_Accounting/53.02_Tax_2023
 
+        mkdir -p 50-59_Work/54_Innovation/54.01_Materials
+        mkdir -p 50-59_Work/54_Innovation/54.02_Ideas
+
 
         mkdir -p 50-59_Work/59_Archives/59.01_Kao
         mkdir -p 50-59_Work/59_Archives/59.02_Kogan
