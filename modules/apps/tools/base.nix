@@ -22,6 +22,8 @@
 
     czkawka # Deduplication
 
+    yad # yet another dialog box
+
 
   ];
 }
