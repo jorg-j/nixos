@@ -11,6 +11,7 @@
       xterm
       xfce.xfce4-terminal
       xdotool
+      tmux
     ];
   };
 }
