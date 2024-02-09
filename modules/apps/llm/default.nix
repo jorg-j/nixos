@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs;
-    [
-      ollama.nix
-    ];
+  imports = [
+    ./ollama.nix
+
+  ];
 
 
 }
