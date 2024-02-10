@@ -9,7 +9,6 @@
     ./keymap.nix
     ./sound.nix
     ./power_manage.nix
-    ./command_script
   ];
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

@@ -98,5 +98,7 @@
 
     # sync obsidian
     obsync = "cd /home/jack/Documents/10-19_Books_Documentation/13_Obsidian_Vaults && bash sync.sh";
-  };
-}
+
+    command = "bash /etc/nixos/sys/command_script/commands.sh"
+      };
+  }
