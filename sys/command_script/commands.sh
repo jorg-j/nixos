@@ -1,15 +1,9 @@
-#!/usr/bin/env bash
-#!/run/current-system/sw/bin/bash
-
-
 
 # Function to execute a command in sudo mode
 execute_command() {
     echo -e "\033[1;33mExecuting command: sudo $1\033[0m"
     sudo $1
 }
-
-
 
 
 # Function to display the menu options
