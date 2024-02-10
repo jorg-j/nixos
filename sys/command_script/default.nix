@@ -6,13 +6,15 @@ in
 
 
 {
-  environment.systemPackages = [
-    pkgs.writeScriptBin
+
+  command = pkgs.writeScriptBin
     "command"
     ''
       ${scriptContent}
-    ''
-  ];
+    '';
 
+  environment.systemPackages = [
+    command
+  ];
 
 }
