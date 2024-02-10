@@ -2,17 +2,15 @@
 
 let
   scriptContent = builtins.readFile ./commands.sh;
-in
-
-
-{
-
   command = pkgs.writeScriptBin
     "command"
     ''
       ${scriptContent}
     '';
+in
 
+
+{
   environment.systemPackages = [
     command
   ];
