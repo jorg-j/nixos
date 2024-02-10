@@ -35,6 +35,7 @@ in
   environment.systemPackages = [
     structure
     estructure
+    nixpush
     binls
   ];
 
