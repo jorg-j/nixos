@@ -223,6 +223,8 @@ treemake() {
         mkdir -p 20-29_Programming_Software/29_Helpful_Scripts/29.03_File_Transfer
         mkdir -p 20-29_Programming_Software/29_Helpful_Scripts/29.04_Compression
         mkdir -p 20-29_Programming_Software/29_Helpful_Scripts/29.05_File_Deduplication
+        mkdir -p 20-29_Programming_Software/29_Helpful_Scripts/29.06_Awk
+
         }
 20_29
 
