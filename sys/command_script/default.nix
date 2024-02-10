@@ -4,6 +4,15 @@ let
   scriptContent = pkgs.readFile ./commands.sh;
 in
 
-pkgs.writeScriptBin "command" ''
-  ${scriptContent}
-''
+
+{
+  environment.systemPackages = [
+    pkgs.writeScriptBin
+    "command"
+    ''
+      ${scriptContent}
+    ''
+  ];
+
+
+}

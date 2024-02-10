@@ -28,7 +28,7 @@ let
     echo "structure - run structure setup"
     echo ",edit_structure - edit the structure file"
     echo ",nixpush - add and push the current changes to the repo"
-    echo ",nixcode - open nix repo in vscode
+    echo ",nixcode - open nix repo in vscode"
   '';
 
 in
