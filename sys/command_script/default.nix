@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  scriptContent = pkgs.readFile ./commands.sh;
+  scriptContent = builtins.readFile ./commands.sh;
 in
 
 
