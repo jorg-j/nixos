@@ -28,6 +28,7 @@ let
     echo "structure - run structure setup"
     echo ",edit_structure - edit the structure file"
     echo ",nixpush - add and push the current changes to the repo"
+    echo ",nixcode - open nix repo in vscode
   '';
 
 in
@@ -46,6 +47,11 @@ in
 
     notify() {
       curl -H "Title: Nuc notify" -d "$1" ntfy.sh/jorg_1512
+      }
+
+    ,nixcode() {
+      cd /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos
+      code .
       }
   '';
 }
