@@ -25,7 +25,7 @@ display_menu() {
     echo -e "\033[1;32m14.   nix-store optimise\033[0m                      Optimize the Nix store (alternative command)"
     echo -e "\033[1;32m15.   nix-store --optimise --all\033[0m              Optimize the Nix store (alternative command)"
     echo -e "\033[1;32m16.   nix-store --gc --print-dead\033[0m             Print the paths to be deleted during garbage collection"
-    echo -e "\033[1;32m17.   Delete old generations\033[0m                   Delete old generations of the active profile"
+    echo -e "\033[1;32m17.   Delete old generations\033[0m                  Delete old generations of the active profile"
     echo -e "\033[1;32m 0.   Exit\033[0m                                    Exit the script"
 }
 
