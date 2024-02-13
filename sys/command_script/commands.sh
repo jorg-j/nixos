@@ -54,8 +54,6 @@ delete_old_generations() {
     fi
 }
 
-
-
 # Clear the screen on the first run
 clear
 
