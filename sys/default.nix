@@ -49,6 +49,8 @@
         nixpkgs-fmt
         sshpass
         xbindkeys
+        newt
+        dialog
       ];
   };
 }
