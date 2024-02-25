@@ -11,7 +11,7 @@
       python39Packages.pytest
       python39Packages.isort
       pylint
-
+      geany
 
       poetry
     ]; # Poetry
