@@ -79,6 +79,6 @@
 
   # Enable random binaries to run
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = [];
+  programs.nix-ld.libraries = [ ];
 
 }
