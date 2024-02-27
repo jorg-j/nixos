@@ -10,8 +10,6 @@
       python39Packages.black
       python39Packages.pytest
       python39Packages.isort
-      python39Packages.jupyter
-      python39Packages.ipython
       pylint
       geany
 
