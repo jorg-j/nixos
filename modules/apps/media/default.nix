@@ -10,8 +10,6 @@
       simplescreenrecorder
       #labelImg
       okular
-
-      yuzu-mainline # switch emulation
     ];
 
   services.udev.packages = [ pkgs.libu2f-host ];
