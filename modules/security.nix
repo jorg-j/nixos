@@ -10,7 +10,7 @@
     };
 
     # Enable the AppArmor Mandatory Access Control system
-    apparmor.enable = true;
+    # apparmor.enable = true;
   };
 
   programs = {
