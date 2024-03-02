@@ -15,7 +15,7 @@
       simplenote
       fuse
 
-      arduino-ide
+      arduino
 
       # obsidian
 
