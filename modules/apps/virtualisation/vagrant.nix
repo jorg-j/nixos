@@ -5,7 +5,7 @@
     [
       vagrant
       ansible
-      python310Packages.ansible-core
+      python311Packages.ansible-core
 
     ];
 }
