@@ -20,11 +20,11 @@
   };
 
   environment.systemPackages = [
-    pkgs.opensnitch
-    pkgs.opensnitch-ui
+    #pkgs.opensnitch
+    #pkgs.opensnitch-ui
     pkgs.veracrypt
   ];
-  services.opensnitch.enable = true;
+  #services.opensnitch.enable = true;
 
   home-manager.users.jack.home.packages = with pkgs; [
     # Secure
