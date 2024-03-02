@@ -2,8 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # Replacement for 'ls' written in Rust
-    exa
+
 
     fd
     findutils
