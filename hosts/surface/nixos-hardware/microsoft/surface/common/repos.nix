@@ -1,4 +1,4 @@
-{ fetchFromGitHub }: {
+{fetchFromGitHub}: {
   linux-surface = fetchFromGitHub {
     owner = "linux-surface";
     repo = "linux-surface";
@@ -7,11 +7,10 @@
   };
 
   # This is the owner and repo for the pre-patched kernel from the "linux-surface" project:
-  linux-surface-kernel =
-    { rev
-    , sha256
-    ,
-    }:
+  linux-surface-kernel = {
+    rev,
+    sha256,
+  }:
     fetchFromGitHub {
       owner = "linux-surface";
       repo = "kernel";

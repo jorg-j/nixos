@@ -1,22 +1,22 @@
-{ config
-, pkgs
-, callPackage
-, ...
+{
+  config,
+  pkgs,
+  callPackage,
+  ...
 }:
 with lib; let
   cfg = config.our.roles.i3;
-in
-{
+in {
   options.our.roles.i3 = {
     enable = mkEnableOption "i3";
   };
 
   config = mkIf cfg.enable {
     # Activate for non gtk desktop environments
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
     programs.dconf.enable = true;
 
-    environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
+    environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
     services.xserver = {
       enable = true;
 

@@ -1,11 +1,10 @@
-{ lib
-, config
-, ...
-}:
-let
-  cfg = config.homemanager.xfce;
-in
 {
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.homemanager.xfce;
+in {
   options.homemanager.xfce = {
     enable = lib.mkEnableOption "Configure xfce using HomeManager";
   };

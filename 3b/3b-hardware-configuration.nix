@@ -1,9 +1,10 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
-  imports = [ ];
+  imports = [];
 
   # === Configure Boot for RPi 3 ===
   boot.loader.grub.enable = false;
@@ -22,7 +23,7 @@
   # === Firmware Modifications ===
   # Prevent Wifi from roasting
   hardware.enableRedistributableFirmware = false;
-  hardware.firmware = [ pkgs.raspberrypiWirelessFirmware ];
+  hardware.firmware = [pkgs.raspberrypiWirelessFirmware];
 
   # === Increase Swap to prevent crashing ===
   swapDevices = [

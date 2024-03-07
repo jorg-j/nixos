@@ -1,7 +1,8 @@
-{ lib
-, pkgs
-, config
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  ...
 }:
 with lib; let
   cfg = config.services.capaldiSync;
@@ -50,8 +51,7 @@ with lib; let
 
     check_drive
   '';
-in
-{
+in {
   # Declare what settings a user of this "hello.nix" module CAN SET.
   options.services.capaldiSync = {
     enable = mkEnableOption "capaldi Sync Service";
@@ -77,8 +77,8 @@ in
 
     systemd.timers.capaldiSyncTimer = {
       description = "Run Capaldi Sync every 60 minutes";
-      wantedBy = [ "multi-user.target" ];
-      partOf = [ "unionSync.service" ];
+      wantedBy = ["multi-user.target"];
+      partOf = ["unionSync.service"];
 
       timerConfig = {
         unit = "capaldiSync.service";

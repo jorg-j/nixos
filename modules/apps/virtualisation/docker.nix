@@ -1,7 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }: {
   environment.systemPackages = with pkgs; [
     docker-compose
@@ -10,7 +11,7 @@
     docker = {
       autoPrune = {
         dates = "daily";
-        flags = [ "--all" "--volumes" ];
+        flags = ["--all" "--volumes"];
       };
       enable = true;
       extraOptions = ''

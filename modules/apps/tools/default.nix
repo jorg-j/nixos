@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   imports = [
     ./3d.nix
     ./backup.nix

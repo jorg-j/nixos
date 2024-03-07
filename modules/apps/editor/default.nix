@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, vars
-, ...
+{
+  config,
+  pkgs,
+  vars,
+  ...
 }: {
   imports = [
     # ./logseq.nix

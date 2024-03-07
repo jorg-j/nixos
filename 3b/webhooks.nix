@@ -1,13 +1,14 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   environment.systemPackages = [
     pkgs.webhook
   ];
 
-  networking.firewall.allowedTCPPorts = [ 9000 ];
+  networking.firewall.allowedTCPPorts = [9000];
 
   users.users.webhook = {
     isNormalUser = true;
@@ -16,11 +17,11 @@
   systemd.services.webhooks = {
     enable = true;
     description = "Starts the Webhook Receiver";
-    after = [ "network-online.target" ];
-    wantedBy = [ "network-online.target" ];
+    after = ["network-online.target"];
+    wantedBy = ["network-online.target"];
 
     # This path has to be here so systemd can see the packages
-    path = with pkgs; [ config.nix.package.out git ];
+    path = with pkgs; [config.nix.package.out git];
     serviceConfig.User = "webhook";
     serviceConfig.ExecStart = "${pkgs.webhook}/bin/webhook -hooks /etc/webhook.conf -verbose";
   };

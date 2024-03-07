@@ -1,6 +1,7 @@
-{ inputs
-, pkgs
-, ...
+{
+  inputs,
+  pkgs,
+  ...
 }: {
   environment.systemPackages = with pkgs; [
     gnupg
@@ -17,7 +18,7 @@
       delta.enable = true;
     };
 
-    home.packages = with pkgs; [ delta ];
+    home.packages = with pkgs; [delta];
 
     # home.file = {
     #   ".gitconfig" = { source = "${inputs.git-config}/gitconfig"; };

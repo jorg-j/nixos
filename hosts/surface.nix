@@ -1,7 +1,8 @@
 # Surface is pretty much a brick at the moment
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     ./surface

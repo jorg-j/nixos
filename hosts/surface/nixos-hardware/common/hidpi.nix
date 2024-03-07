@@ -1,8 +1,8 @@
-{ lib
-, pkgs
-, ...
-}:
-let
+{
+  lib,
+  pkgs,
+  ...
+}: let
   # This option is removed from NixOS 23.05 and up
   nixosVersion = lib.versions.majorMinor lib.version;
   config =
@@ -16,4 +16,4 @@ let
       console.earlySetup = lib.mkDefault true;
     };
 in
-config
+  config

@@ -1,4 +1,4 @@
-{ nixpkgs ? import <nixpkgs> { } }:
+{nixpkgs ? import <nixpkgs> {}}:
 nixpkgs.mkShell {
   nativeBuildInputs = with nixpkgs; [
     pkgs.poetry

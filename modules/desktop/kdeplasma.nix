@@ -1,12 +1,12 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.our.roles.plasma;
-in
-{
+in {
   options.our.roles.plasma = {
     enable = mkEnableOption "plasma";
   };

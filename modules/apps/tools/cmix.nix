@@ -1,9 +1,9 @@
-{ config
-, lib
-, pkgs
-, ...
-}:
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   pname = "cmix";
   version = "20";
   appname = "cmix";
@@ -12,7 +12,7 @@ let
     homepage = "http://www.byronknoll.com/cmix.html";
     downloadPage = "http://www.byronknoll.com/cmix.html";
     # license = licenses.obsidian;
-    maintainers = with maintainers; [ ];
+    maintainers = with maintainers; [];
   };
 
   filename = "cmix-v${version}.zip";
@@ -25,7 +25,7 @@ let
     name = pname;
     version = version;
     src = src;
-    nativeBuildInputs = [ pkgs.clang pkgs.unzip ];
+    nativeBuildInputs = [pkgs.clang pkgs.unzip];
     unpackPhase = "unzip $src";
     buildPhase = ''
       cd cmix
@@ -37,7 +37,6 @@ let
 
     '';
   };
-in
-{
-  environment.systemPackages = [ cmix ];
+in {
+  environment.systemPackages = [cmix];
 }

@@ -1,5 +1,5 @@
 {
-  imports = [ ../. ];
+  imports = [../.];
 
   # Enables RC6, RC6p and RC6pp.
   # Last two are only available on Sandy Bridge CPUs (circa 2011).

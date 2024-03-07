@@ -1,11 +1,10 @@
-{ lib
-, config
-, ...
-}:
-let
-  cfg = config.homemanager.unison;
-in
 {
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.homemanager.unison;
+in {
   options.homemanager.unison = {
     enable = lib.mkEnableOption "Configure unison using HomeManager";
   };
@@ -13,8 +12,8 @@ in
   config = lib.mkIf cfg.enable {
     home-manager.users.jack = {
       home.file = {
-        ".unison/tenant.prf" = { source = "/etc/nixos/home_manager/files/tenant.prf"; };
-        ".unison/Surface.prf" = { source = "/etc/nixos/home_manager/files/surface.prf"; };
+        ".unison/tenant.prf" = {source = "/etc/nixos/home_manager/files/tenant.prf";};
+        ".unison/Surface.prf" = {source = "/etc/nixos/home_manager/files/surface.prf";};
       };
     };
   };

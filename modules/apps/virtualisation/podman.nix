@@ -1,7 +1,8 @@
-{ pkgs
-, lib
-, config
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  ...
 }: {
   environment.systemPackages = with pkgs; [
     podman
@@ -15,7 +16,7 @@
       #   dockerSocket.enable = true; # Enable if not using docker
       autoPrune = {
         dates = "daily";
-        flags = [ "--all" "--volumes" ];
+        flags = ["--all" "--volumes"];
       };
       # Create a `docker` alias for podman, to use it as a drop-in replacement
       #   dockerCompat = true;

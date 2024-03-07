@@ -1,11 +1,10 @@
-{ lib, ... }:
+{lib, ...}:
 # This module is intended to support the Surface Go range of devices.
 # The current version of this targets the Go 1, and other versions of the device may need further
 # config changes to work well.
 let
   inherit (lib) mkDefault;
-in
-{
+in {
   imports = [
     ../common
     ./firmware/ath10k

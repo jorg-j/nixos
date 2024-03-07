@@ -1,8 +1,9 @@
-{ config
-, lib
-, ...
+{
+  config,
+  lib,
+  ...
 }: {
-  imports = [ ../. ];
+  imports = [../.];
 
   # Gnome 40 introduced a new way of managing power, without tlp.
   # However, these 2 services clash when enabled simultaneously.

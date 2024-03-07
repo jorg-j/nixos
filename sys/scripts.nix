@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   structure = pkgs.writeScriptBin "structure" ''
     #!${pkgs.stdenv.shell}
     sudo chmod +x /etc/nixos/modules/desktop/Structure.sh
@@ -30,8 +29,7 @@ let
     echo ",nixcode - open nix repo in vscode"
     echo "git_clean_untracked_safely - clean untracked files safely"
   '';
-in
-{
+in {
   environment.systemPackages = [
     structure
     estructure

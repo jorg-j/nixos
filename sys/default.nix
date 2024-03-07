@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     ./aliases.nix
@@ -21,7 +22,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable Flakes and nix-command
-  nix.settings.experimental-features = [ "flakes" "nix-command" ];
+  nix.settings.experimental-features = ["flakes" "nix-command"];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -30,7 +31,7 @@
   networking.networkmanager.enable = true;
 
   # Set Trusted Users
-  nix.settings.trusted-users = [ "jack" "root" "@wheel" ];
+  nix.settings.trusted-users = ["jack" "root" "@wheel"];
 
   systemd.user.extraConfig = ''
     DefaultEnvironment="PATH=/run/current-system/sw/bin"

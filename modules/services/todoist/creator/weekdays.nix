@@ -1,20 +1,19 @@
-args @ { lib
-, pkgs
-, config
-, ...
-}:
-let
+args @ {
+  lib,
+  pkgs,
+  config,
+  ...
+}: let
   script = "/etc/nixos/modules/services/todoist/scripts/weekdays.sh";
   serviceName = "todoistCreatorWeekdays";
   calendar = "Mon..Fri 3:55:00";
-in
-{
+in {
   imports = [
     (import ./todoist_sysd.nix (args
       // {
-      script = script;
-      serviceName = serviceName;
-      calendar = calendar;
-    }))
+        script = script;
+        serviceName = serviceName;
+        calendar = calendar;
+      }))
   ];
 }

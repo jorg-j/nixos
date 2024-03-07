@@ -1,13 +1,14 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   services.mosquitto = {
     enable = true;
     listeners = [
       {
-        acl = [ "pattern readwrite #" ];
+        acl = ["pattern readwrite #"];
         omitPasswordAuth = true;
         settings.allow_anonymous = true;
       }
@@ -16,6 +17,6 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 1883 ];
+    allowedTCPPorts = [1883];
   };
 }

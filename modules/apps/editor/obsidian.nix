@@ -1,7 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 # When updating go to the download url on line
 # Download the tar and run the below command to get the hash, will likely need opensll in a nix-shell first
@@ -16,7 +17,7 @@ let
     homepage = "https://obsidian.md";
     downloadPage = "https://github.com/obsidianmd/obsidian-releases/releases";
     license = licenses.obsidian;
-    maintainers = with maintainers; [ ];
+    maintainers = with maintainers; [];
   };
 
   filename = "obsidian-${version}.tar.gz";
@@ -36,15 +37,15 @@ let
     comment = "Knowledge base";
     icon = "obsidian";
     exec = "obsidian %u";
-    categories = [ "Office" ];
-    mimeTypes = [ "x-scheme-handler/obsidian" ];
+    categories = ["Office"];
+    mimeTypes = ["x-scheme-handler/obsidian"];
   };
 
   obsidianPkg = pkgs.stdenv.mkDerivation {
     name = pname;
     version = version;
     src = src;
-    nativeBuildInputs = [ pkgs.makeWrapper pkgs.graphicsmagick ];
+    nativeBuildInputs = [pkgs.makeWrapper pkgs.graphicsmagick];
     installPhase = ''
       runHook preInstall
       mkdir -p $out/bin
@@ -71,7 +72,6 @@ let
     '';
   };
   # };
-in
-{
-  environment.systemPackages = [ obsidianPkg ];
+in {
+  environment.systemPackages = [obsidianPkg];
 }

@@ -1,7 +1,8 @@
-{ inputs
-, pkgs
-, lib
-, ...
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
 }: {
   home-manager.users.jack.programs.kitty = {
     enable = true;

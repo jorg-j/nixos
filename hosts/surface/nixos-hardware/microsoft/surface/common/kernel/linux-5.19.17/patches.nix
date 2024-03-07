@@ -1,7 +1,7 @@
-{ kernel
-, patchDir
-, version
-,
+{
+  kernel,
+  patchDir,
+  version,
 }: [
   {
     name = "microsoft-surface-patches-linux-${version}";

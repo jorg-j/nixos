@@ -1,8 +1,6 @@
-{ lib, ... }:
-let
+{lib, ...}: let
   inherit (lib) mkDefault;
-in
-{
+in {
   imports = [
     ./kernel
     ./ipts
@@ -12,7 +10,7 @@ in
   microsoft-surface.kernelVersion = mkDefault "6.1.18";
 
   # Seems to be required to properly enable S0ix "Modern Standby":
-  boot.kernelParams = mkDefault [ "mem_sleep_default=deep" ];
+  boot.kernelParams = mkDefault ["mem_sleep_default=deep"];
 
   # NOTE: Check the README before enabling TLP:
   services.tlp.enable = mkDefault false;

@@ -1,12 +1,12 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.our.roles.budgie;
-in
-{
+in {
   options.our.roles.budgie = {
     enable = mkEnableOption "budgie";
   };

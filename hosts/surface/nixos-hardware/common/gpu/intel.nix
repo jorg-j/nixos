@@ -1,5 +1,5 @@
 {
-  imports = [ ./intel ];
+  imports = [./intel];
 
   warnings = [
     ''

@@ -1,6 +1,7 @@
-{ pkgs
-, lib
-, ...
+{
+  pkgs,
+  lib,
+  ...
 }: {
   # Enable a low-level configuration system and settings
   # management tool. Its main purpose is to provide a back end
@@ -13,7 +14,7 @@
     # Packages whose D-Bus configuration files should be included
     # in the configuration of the D-Bus system-wide or
     # session-wide message bus
-    dbus.packages = with pkgs; [ dconf ];
+    dbus.packages = with pkgs; [dconf];
 
     # Provides geolocation services, that is, it lets
     # applications find the user's geographical position.
@@ -48,7 +49,7 @@
 
     dconf.settings = {
       "org/gnome/nautilus/icon-view" = {
-        captions = [ "size" "date_modified" "none" ];
+        captions = ["size" "date_modified" "none"];
       };
 
       "org/gnome/desktop/wm/preferences" = {
@@ -72,7 +73,7 @@
           "starred"
           "detailed_type"
         ];
-        default-visible-columns = [ "name" "size" "date_modified" "starred" ];
+        default-visible-columns = ["name" "size" "date_modified" "starred"];
       };
 
       "org/gnome/nautilus/preferences" = {
@@ -84,9 +85,9 @@
         thumbnail-limit = 10;
       };
 
-      "org/gnome/desktop/interface" = { cursor-theme = "default"; };
+      "org/gnome/desktop/interface" = {cursor-theme = "default";};
 
-      "org/gnome/evince/default" = { inverted-colors = true; };
+      "org/gnome/evince/default" = {inverted-colors = true;};
 
       "org/gnome/maps" = {
         night-mode = true;

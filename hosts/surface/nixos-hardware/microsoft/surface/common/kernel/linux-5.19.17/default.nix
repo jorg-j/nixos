@@ -1,13 +1,13 @@
-{ config
-, lib
-, pkgs
-, ...
-}:
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   inherit (lib) mkIf mkOption types;
   inherit (pkgs) fetchurl;
 
-  inherit (pkgs.callPackage ../linux-package.nix { }) linuxPackage repos;
+  inherit (pkgs.callPackage ../linux-package.nix {}) linuxPackage repos;
 
   cfg = config.microsoft-surface;
 
@@ -26,10 +26,9 @@ let
       sha256 = "sha256-yTuzhKl60fCk8Y5ELOApEkJyL3gCPspliyI0RUHwlIk=";
     };
   };
-in
-{
+in {
   options.microsoft-surface.kernelVersion = mkOption {
-    type = types.enum [ "5.19.17" ];
+    type = types.enum ["5.19.17"];
   };
 
   config = mkIf (cfg.kernelVersion == "5.19.17") {

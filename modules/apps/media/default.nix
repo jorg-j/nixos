@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   environment.systemPackages = with pkgs; [
     celluloid
@@ -13,5 +14,5 @@
     okular
   ];
 
-  services.udev.packages = [ pkgs.libu2f-host ];
+  services.udev.packages = [pkgs.libu2f-host];
 }

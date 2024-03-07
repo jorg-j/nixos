@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     python37Full # Python 3.7
     python37Packages.setuptools

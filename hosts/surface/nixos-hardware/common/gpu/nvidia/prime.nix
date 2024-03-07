@@ -1,6 +1,7 @@
-{ lib
-, pkgs
-, ...
+{
+  lib,
+  pkgs,
+  ...
 }:
 # This creates a new 'nvidia-offload' program that runs the application passed to it on the GPU
 # As per https://nixos.wiki/wiki/Nvidia
@@ -12,11 +13,10 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec "$@"
   '';
-in
-{
-  imports = [ ./. ];
+in {
+  imports = [./.];
 
-  environment.systemPackages = [ nvidia-offload ];
+  environment.systemPackages = [nvidia-offload];
 
   hardware.nvidia.prime = {
     offload.enable = lib.mkOverride 990 true;

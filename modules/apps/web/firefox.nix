@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   environment.sessionVariables = {
     MOZ_USE_XINPUT2 = "1";
@@ -11,7 +12,7 @@
   home-manager.users.jack = {
     programs.browserpass = {
       enable = true;
-      browsers = [ "firefox" ];
+      browsers = ["firefox"];
     };
 
     programs.firefox = {

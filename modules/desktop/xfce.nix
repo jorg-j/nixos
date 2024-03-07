@@ -1,12 +1,12 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib; let
   cfg = config.our.roles.xfce;
-in
-{
+in {
   imports = [
     ./xfce_theme.nix
   ];
@@ -29,6 +29,6 @@ in
         xfce.xfce4-whiskermenu-plugin
       ];
     };
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 }

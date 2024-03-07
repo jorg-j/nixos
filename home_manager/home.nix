@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # imports = [
   #   ./pantheon.nix
@@ -17,7 +18,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "docker-compose" "docker" "git" ];
+      plugins = ["docker-compose" "docker" "git"];
       theme = "agnoster";
     };
     initExtra = ''
@@ -29,9 +30,9 @@
   };
 
   home.file = {
-    ".ssh/config" = { source = "/etc/nixos/home_manager/files/ssh_config"; };
+    ".ssh/config" = {source = "/etc/nixos/home_manager/files/ssh_config";};
 
-    ".config/nixpkgs/config.nix" = { source = "/etc/nixos/home_manager/files/nixpkgs_config.nix"; };
+    ".config/nixpkgs/config.nix" = {source = "/etc/nixos/home_manager/files/nixpkgs_config.nix";};
     # ".config/Code/User/settings.json" = { source = "/etc/nixos/home_manager/files/vscode.json"; };
   };
 }

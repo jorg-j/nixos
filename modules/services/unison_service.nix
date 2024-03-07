@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   systemd.services."unisonSync" = {
     # enable = true;
@@ -14,8 +15,8 @@
 
   systemd.timers.unisonSyncTimer = {
     description = "Run Unison Sync every 30 minutes";
-    wantedBy = [ "multi-user.target" ];
-    partOf = [ "unionSync.service" ];
+    wantedBy = ["multi-user.target"];
+    partOf = ["unionSync.service"];
 
     timerConfig = {
       unit = "unisonSync.service";

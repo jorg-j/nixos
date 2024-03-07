@@ -1,7 +1,8 @@
-{ lib
-, pkgs
-, config
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  ...
 }:
 with lib; let
   cfg = config.services.todoist_load;
@@ -17,8 +18,7 @@ with lib; let
       loguru
       requests
     ];
-in
-{
+in {
   options.services.todoist_load = {
     enable = mkEnableOption "Todoist Load Service";
   };
@@ -47,16 +47,14 @@ in
       description = "Todoist Load Service";
       serviceConfig.Type = "oneshot";
 
-      serviceConfig.ExecStart =
-        let
-          python = pkgs.python3.withPackages (ps:
-            with ps; [
-              todoist-api-python
-              loguru
-              requests
-            ]);
-        in
-        "${python.interpreter} ${/etc/nixos/nmodules/todoist_files/todoist_load.py}";
+      serviceConfig.ExecStart = let
+        python = pkgs.python3.withPackages (ps:
+          with ps; [
+            todoist-api-python
+            loguru
+            requests
+          ]);
+      in "${python.interpreter} ${/etc/nixos/nmodules/todoist_files/todoist_load.py}";
     };
   };
 

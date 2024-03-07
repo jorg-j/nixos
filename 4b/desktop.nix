@@ -1,11 +1,12 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # === Setup Desktop Environment ===
   # Enable X11 windowing system
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "modesetting" ];
+  services.xserver.videoDrivers = ["modesetting"];
 
   # Enable Desktop Environment
 

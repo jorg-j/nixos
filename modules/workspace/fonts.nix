@@ -1,7 +1,8 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }: {
   fonts = {
     fontconfig = {
@@ -9,9 +10,9 @@
 
       # System-wide default fonts
       defaultFonts = {
-        monospace = [ "JetBrains Mono" "12" ];
-        sansSerif = [ "JetBrains Mono" ];
-        serif = [ "JetBrains Mono" ];
+        monospace = ["JetBrains Mono" "12"];
+        sansSerif = ["JetBrains Mono"];
+        serif = ["JetBrains Mono"];
       };
     };
 

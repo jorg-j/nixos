@@ -1,14 +1,13 @@
-{ config
-, lib
-, pkgs
-, ...
-}:
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   inherit (lib) mkDefault mkEnableOption mkIf mkMerge;
 
   cfg = config.microsoft-surface.surface-control;
-in
-{
+in {
   options.microsoft-surface.surface-control = {
     enable = mkEnableOption "Enable 'surface-control' for Microsoft Surface";
   };
@@ -19,9 +18,9 @@ in
     }
 
     (mkIf cfg.enable {
-      environment.systemPackages = with pkgs; [ surface-control ];
-      services.udev.packages = with pkgs; [ surface-control ];
-      users.groups.surface-control = { };
+      environment.systemPackages = with pkgs; [surface-control];
+      services.udev.packages = with pkgs; [surface-control];
+      users.groups.surface-control = {};
     })
   ];
 }

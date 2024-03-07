@@ -1,12 +1,10 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   scriptContent = builtins.readFile ./commands.sh;
   command = pkgs.writeScriptBin ",command" ''
     #!${pkgs.stdenv.shell}
     ${scriptContent}
   '';
-in
-{
+in {
   environment.systemPackages = [
     command
   ];

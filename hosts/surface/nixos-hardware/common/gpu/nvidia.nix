@@ -1,5 +1,5 @@
 {
-  imports = [ ./nvidia/prime.nix ];
+  imports = [./nvidia/prime.nix];
 
   warnings = [
     ''

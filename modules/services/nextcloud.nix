@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   services.nextcloud = {
     enable = true;
@@ -9,7 +10,7 @@
     hostName = "0.0.0.0";
     config = {
       adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
-      extraTrustedDomains = [ "192.168.1.*" ];
+      extraTrustedDomains = ["192.168.1.*"];
     };
     phpOptions = {
       upload_max_filesize = "2G";
@@ -20,7 +21,7 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 80 443 ];
+    allowedTCPPorts = [80 443];
   };
 
   services.nginx = {

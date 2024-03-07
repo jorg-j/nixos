@@ -1,10 +1,11 @@
-{ lib
-, pkgs
-, config
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  ...
 }:
 with lib; let
-  todoist_load = pkgs.callPackage ./derivation.nix { };
+  todoist_load = pkgs.callPackage ./derivation.nix {};
 
   my-python-packages = ps:
     with ps; [
@@ -12,8 +13,7 @@ with lib; let
       requests
       todoist-api-python
     ];
-in
-{
+in {
   imports = [
     ./creator/weekdays.nix
     ./creator/weekly.nix
@@ -37,7 +37,7 @@ in
 
   systemd.timers.todoist_load_runnerTimer = {
     description = "Run Todoist Load Runner Every Day";
-    wantedBy = [ "timers.target" ];
+    wantedBy = ["timers.target"];
     timerConfig = {
       Unit = "todoist_load_runner.service";
       OnCalendar = "*-*-* 4:00:00";

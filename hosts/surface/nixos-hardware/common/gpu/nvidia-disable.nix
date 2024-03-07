@@ -1,5 +1,5 @@
 {
-  imports = [ ./nvidia/disable.nix ];
+  imports = [./nvidia/disable.nix];
 
   warnings = [
     ''

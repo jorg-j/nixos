@@ -1,15 +1,14 @@
-{ config
-, pkgs
-, ...
-}:
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   xfce_config = pkgs.writeScriptBin "xfce_config" ''
     #!${pkgs.stdenv.shell}
     mkdir -p ~/.config
     tar -xvzf /etc/nixos/modules/desktop/xfce.tar.gz -C ~/.config
   '';
-in
-{
+in {
   environment.systemPackages = [
     xfce_config
   ];

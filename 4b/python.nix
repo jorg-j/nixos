@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     python311Full # Python 3.9
     python311Packages.setuptools

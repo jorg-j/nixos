@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   imports = [
     ./sys
@@ -12,7 +13,7 @@
   ];
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
-    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+    initrd.availableKernelModules = ["xhci_pci" "usbhid" "usb_storage"];
     loader = {
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
@@ -23,7 +24,7 @@
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
-      options = [ "noatime" ];
+      options = ["noatime"];
     };
   };
 
