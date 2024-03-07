@@ -41,4 +41,4 @@ git push --tags
 popd
 
 # Notify all OK!
-notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
+notify-send --transient "NixOS Rebuilt OK" --expire-time 10000 --app-name "NixOS Build"
