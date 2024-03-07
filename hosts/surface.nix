@@ -1,15 +1,14 @@
 # Surface is pretty much a brick at the moment
-
-{ config, pkgs, ... }:
-
-{
-  imports =
-    [
-      ./surface
-      ../profiles/surface.nix
-      ../packages/flatpak.nix
-      # ../modules/services/todoist
-    ];
+{ config
+, pkgs
+, ...
+}: {
+  imports = [
+    ./surface
+    ../profiles/surface.nix
+    ../packages/flatpak.nix
+    # ../modules/services/todoist
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -51,5 +50,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }

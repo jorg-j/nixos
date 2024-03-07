@@ -1,10 +1,12 @@
-{ config, lib, pkgs, ... }:
-
+{ config
+, lib
+, pkgs
+, ...
+}:
 let
   inherit (lib) mkDefault mkEnableOption mkIf mkMerge;
 
   cfg = config.microsoft-surface.ipts;
-
 in
 {
   options.microsoft-surface.ipts = {

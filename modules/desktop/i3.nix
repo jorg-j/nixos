@@ -1,13 +1,12 @@
-{ config, pkgs, callPackage, ... }:
-with lib;
-
-let
-
+{ config
+, pkgs
+, callPackage
+, ...
+}:
+with lib; let
   cfg = config.our.roles.i3;
-
 in
 {
-
   options.our.roles.i3 = {
     enable = mkEnableOption "i3";
   };
@@ -17,7 +16,7 @@ in
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     programs.dconf.enable = true;
 
-    environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+    environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
     services.xserver = {
       enable = true;
 
@@ -39,15 +38,11 @@ in
         ];
       };
     };
-    environment.systemPackages = with pkgs;
-      [
-        xfce.thunar
-        lxappearance
-        pcmanfm-qt
-        dunst # notifications
-
-
-      ];
-
+    environment.systemPackages = with pkgs; [
+      xfce.thunar
+      lxappearance
+      pcmanfm-qt
+      dunst # notifications
+    ];
   };
 }

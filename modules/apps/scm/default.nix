@@ -1,13 +1,13 @@
-{ inputs, pkgs, ... }:
-
-{
-  environment.systemPackages = with pkgs;
-    [
-      gnupg
-      sd
-      gitAndTools.delta
-      git
-    ];
+{ inputs
+, pkgs
+, ...
+}: {
+  environment.systemPackages = with pkgs; [
+    gnupg
+    sd
+    gitAndTools.delta
+    git
+  ];
 
   home-manager.users.jack = {
     programs.git = {

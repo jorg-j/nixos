@@ -1,29 +1,21 @@
-{ config, pkgs, lib, ... }:
-
-with lib;
-
-let
-
+{ config
+, pkgs
+, lib
+, ...
+}:
+with lib; let
   cfg = config.our.roles.xfce;
-
 in
-
 {
-
-  imports =
-    [
-      ./xfce_theme.nix
-    ];
-
+  imports = [
+    ./xfce_theme.nix
+  ];
 
   options.our.roles.xfce = {
     enable = mkEnableOption "xfce";
   };
 
-
   config = mkIf cfg.enable {
-
-
     services.xserver = {
       desktopManager = {
         xterm.enable = false;
@@ -38,7 +30,5 @@ in
       ];
     };
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
   };
-
 }

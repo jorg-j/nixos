@@ -1,6 +1,4 @@
-{ lib, ... }:
-
-{
+{ lib, ... }: {
   imports = [ ../../hdd ];
 
   # Hard disk protection if the laptop falls:

@@ -1,6 +1,8 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ config
+, lib
+, pkgs
+, ...
+}: {
   environment.systemPackages = with pkgs; [
     docker-compose
   ];
@@ -17,5 +19,4 @@
     };
     virtualbox.host.enable = true;
   };
-
 }

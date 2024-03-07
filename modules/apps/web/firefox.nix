@@ -1,6 +1,8 @@
-{ config, pkgs, lib, ... }:
-
-{
+{ config
+, pkgs
+, lib
+, ...
+}: {
   environment.sessionVariables = {
     MOZ_USE_XINPUT2 = "1";
     MOZ_DBUS_REMOTE = "1";

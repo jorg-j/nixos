@@ -1,6 +1,11 @@
-{ lib, pkgs, config, script, serviceName, calendar, ... }:
-
-{
+{ lib
+, pkgs
+, config
+, script
+, serviceName
+, calendar
+, ...
+}: {
   # === Setup Service ===
   systemd.services."${serviceName}" = {
     # enable = true;

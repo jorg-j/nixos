@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
-
-{
+{ config
+, pkgs
+, ...
+}: {
   systemd.services."unisonSync" = {
     # enable = true;
     description = "Unison Sync Service";

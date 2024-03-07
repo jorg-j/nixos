@@ -1,28 +1,22 @@
-{ inputs, config, lib, pkgs, ... }:
-
-with lib;
-
-let
-
+{ inputs
+, config
+, lib
+, pkgs
+, ...
+}:
+with lib; let
   cfg = config.our.roles.pantheon;
-
 in
-
 {
   imports = [
     ./qt-style.nix
   ];
-
-
 
   options.our.roles.pantheon = {
     enable = mkEnableOption "pantheon";
   };
 
   config = mkIf cfg.enable {
-
-
-
     # Exclude the elementary apps I don't use
     environment = {
       pantheon.excludePackages = with pkgs.pantheon; [

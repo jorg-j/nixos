@@ -1,7 +1,9 @@
-{ lib, pkgs, config, ... }:
-with lib;
-let
-
+{ lib
+, pkgs
+, config
+, ...
+}:
+with lib; let
   cfg = config.services.capaldiSync;
 
   capaldisync = pkgs.writeScriptBin "capaldisync" ''
@@ -48,7 +50,6 @@ let
 
     check_drive
   '';
-
 in
 {
   # Declare what settings a user of this "hello.nix" module CAN SET.
@@ -56,11 +57,9 @@ in
     enable = mkEnableOption "capaldi Sync Service";
   };
 
-
   # by setting "services.capaldiSync.enable = true;"
 
   config = mkIf cfg.enable {
-
     environment.systemPackages = [
       capaldisync
     ];

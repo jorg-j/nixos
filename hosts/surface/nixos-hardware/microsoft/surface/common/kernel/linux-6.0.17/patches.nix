@@ -2,9 +2,7 @@
 , patchDir
 , version
 ,
-}:
-
-[
+}: [
   {
     name = "microsoft-surface-patches-linux-${version}";
     patch = null;

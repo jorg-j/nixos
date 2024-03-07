@@ -1,5 +1,7 @@
-{ lib, pkgs, ... }:
-
+{ lib
+, pkgs
+, ...
+}:
 # This creates a new 'nvidia-offload' program that runs the application passed to it on the GPU
 # As per https://nixos.wiki/wiki/Nvidia
 let

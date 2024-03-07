@@ -1,12 +1,13 @@
-{ pkgs, lib, config, ... }:
-{
-
-  environment.systemPackages = with pkgs;
-    [
-      podman
-      podman-desktop
-      podman-compose
-    ];
+{ pkgs
+, lib
+, config
+, ...
+}: {
+  environment.systemPackages = with pkgs; [
+    podman
+    podman-desktop
+    podman-compose
+  ];
 
   virtualisation = {
     podman = {

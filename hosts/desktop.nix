@@ -1,19 +1,18 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+{ config
+, pkgs
+, ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    # <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-{ config, pkgs, ... }:
-
-{
-  imports =
-    [
-      # Include the results of the hardware scan.
-      # <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-
-      ./hardware/desktop-hardware-configuration.nix
-      ../profiles/desktop.nix
-      ../nmodules
-    ];
+    ./hardware/desktop-hardware-configuration.nix
+    ../profiles/desktop.nix
+    ../nmodules
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -59,12 +58,10 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs;
-    [
-      megasync
-      chromium
-    ];
-
+  environment.systemPackages = with pkgs; [
+    megasync
+    chromium
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -81,5 +78,4 @@
   };
 
   nix.settings.auto-optimise-store = true;
-
 }

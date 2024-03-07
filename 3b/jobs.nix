@@ -1,11 +1,10 @@
-{ config, pkgs, ... }:
-
+{ config
+, pkgs
+, ...
+}:
 let
-
   ntfy_channel = "jorg_1512";
-
 in
-
 {
   systemd.services.start_notify = {
     enable = true;
@@ -23,6 +22,4 @@ in
         ntfy.sh/${ntfy_channel}
     '';
   };
-
 }
-

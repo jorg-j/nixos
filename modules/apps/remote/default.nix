@@ -1,6 +1,5 @@
 {
-  imports =
-    [
-      ./vnc.nix
-    ];
+  imports = [
+    ./vnc.nix
+  ];
 }

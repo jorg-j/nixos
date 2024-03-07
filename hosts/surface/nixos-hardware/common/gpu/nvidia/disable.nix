@@ -1,6 +1,4 @@
-{ lib, ... }:
-
-{
+{ lib, ... }: {
   # This runs only intel/amdgpu igpus and nvidia dgpus do not drain power.
 
   ##### disable nvidia, very nice battery life.

@@ -1,13 +1,14 @@
-{ config, pkgs, ... }:
-
+{ config
+, pkgs
+, ...
+}:
 let
-  unstable = import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master)
-    # reuse the current configuration
-    { config = config.nixpkgs.config; };
-
+  unstable =
+    import
+      (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master)
+      # reuse the current configuration
+      { config = config.nixpkgs.config; };
 in
-
 {
   environment.systemPackages = with pkgs; [
     unstable.rustc
@@ -17,7 +18,6 @@ in
     unstable.cosmic-greeter
     unstable.cosmic-launcher
   ];
-
 }
-
 # https://nixos.wiki/wiki/COSMIC
+

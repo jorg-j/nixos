@@ -1,10 +1,8 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   environment = {
-    systemPackages = with pkgs;
-      [
-        htop
-        neofetch
-      ];
+    systemPackages = with pkgs; [
+      htop
+      neofetch
+    ];
   };
 }

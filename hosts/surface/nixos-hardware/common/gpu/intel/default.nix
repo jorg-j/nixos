@@ -1,6 +1,8 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ config
+, lib
+, pkgs
+, ...
+}: {
   boot.initrd.kernelModules = [ "i915" ];
 
   environment.variables = {
@@ -8,7 +10,11 @@
   };
 
   hardware.opengl.extraPackages = with pkgs; [
-    (if (lib.versionOlder (lib.versions.majorMinor lib.version) "23.11") then vaapiIntel else intel-vaapi-driver)
+    (
+      if (lib.versionOlder (lib.versions.majorMinor lib.version) "23.11")
+      then vaapiIntel
+      else intel-vaapi-driver
+    )
     libvdpau-va-gl
     intel-media-driver
   ];

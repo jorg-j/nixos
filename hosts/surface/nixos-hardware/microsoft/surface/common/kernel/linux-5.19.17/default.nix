@@ -1,5 +1,8 @@
-{ config, lib, pkgs, ... }:
-
+{ config
+, lib
+, pkgs
+, ...
+}:
 let
   inherit (lib) mkIf mkOption types;
   inherit (pkgs) fetchurl;
@@ -23,7 +26,6 @@ let
       sha256 = "sha256-yTuzhKl60fCk8Y5ELOApEkJyL3gCPspliyI0RUHwlIk=";
     };
   };
-
 in
 {
   options.microsoft-surface.kernelVersion = mkOption {

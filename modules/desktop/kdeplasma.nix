@@ -1,13 +1,11 @@
-{ config, pkgs, lib, ... }:
-
-with lib;
-
-let
-
+{ config
+, pkgs
+, lib
+, ...
+}:
+with lib; let
   cfg = config.our.roles.plasma;
-
 in
-
 {
   options.our.roles.plasma = {
     enable = mkEnableOption "plasma";
@@ -22,8 +20,4 @@ in
     services.xserver.desktopManager.plasma5.enable = true;
     # services.xserver.desktopManager.plasma6.enable = true;
   };
-
-
-
 }
-

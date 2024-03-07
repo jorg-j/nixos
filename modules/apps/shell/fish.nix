@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
-{
-
+{ config
+, pkgs
+, ...
+}: {
   environment.systemPackages = with pkgs; [
     fishPlugins.done
     fishPlugins.fzf-fish
@@ -12,5 +13,4 @@
   ];
 
   programs.fish.enable = true;
-
 }

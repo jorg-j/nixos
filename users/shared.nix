@@ -1,5 +1,8 @@
-{ lib, pkgs, user, ... }:
-{
+{ lib
+, pkgs
+, user
+, ...
+}: {
   users.users.${user} = {
     isNormalUser = true;
     home = "/home/${user}";

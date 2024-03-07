@@ -1,6 +1,8 @@
-{ config, lib, pkgs, ... }:
-
-
+{ config
+, lib
+, pkgs
+, ...
+}:
 let
   pname = "cmix";
   version = "20";
@@ -19,7 +21,6 @@ let
     sha256 = "sha256-x/8aPku0bRa0cIoLLEqGn3TOggTe49IN1tMTtsItpD4=";
   };
 
-
   cmix = pkgs.stdenv.mkDerivation {
     name = pname;
     version = version;
@@ -36,9 +37,7 @@ let
 
     '';
   };
-
 in
 {
   environment.systemPackages = [ cmix ];
-
 }

@@ -1,12 +1,11 @@
-{ config, lib, pkgs, ... }:
-
-{
-
-  imports =
-    [
-      ./vagrant.nix
-      ./docker.nix
-      ./podman.nix
-    ];
-
+{ config
+, lib
+, pkgs
+, ...
+}: {
+  imports = [
+    ./vagrant.nix
+    ./docker.nix
+    ./podman.nix
+  ];
 }

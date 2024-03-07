@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
-
-{
+{ config
+, pkgs
+, ...
+}: {
   imports = [
     ./aliases.nix
     ./scripts.nix
@@ -22,5 +23,4 @@
 
   # # Enable networking
   # networking.networkmanager.enable = true;
-
 }

@@ -1,10 +1,12 @@
-{ config, lib, pkgs, ... }:
-
+{ config
+, lib
+, pkgs
+, ...
+}:
 let
   inherit (lib) mkDefault mkEnableOption mkIf;
 
   cfg = config.hardware.microsoft-surface.firmware.surface-go-ath10k;
-
 in
 {
   options = {

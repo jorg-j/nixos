@@ -1,16 +1,14 @@
-{ config, pkgs, lib, ... }:
-
-
-
-with lib;
-let
+{ config
+, pkgs
+, lib
+, ...
+}:
+with lib; let
   cfg = config.our.roles.gnome;
 in
 {
-
   options.our.roles.gnome = {
     enable = mkEnableOption "enable gnome";
-
   };
 
   config = mkIf cfg.enable {
@@ -27,11 +25,7 @@ in
   };
 
   # imports =
-  # [ 
+  # [
   #   ./gnome_extensions.nix
   # ];
-
-
-
-
 }

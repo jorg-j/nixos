@@ -1,5 +1,12 @@
-{ config, pkgs, user, machine1_name, machine1_id, machine2_id, machine2_name, ... }:
-{
+{ config
+, pkgs
+, user
+, machine1_name
+, machine1_id
+, machine2_id
+, machine2_name
+, ...
+}: {
   # YQEWDFD-7X5FALF-JJ7IWYJ-IDON2X6-NOO4VMI-EFCHTHV-EVP2ZQK-RUR25A2
   services = {
     syncthing = {
@@ -24,7 +31,6 @@
           devices = [ "popos" "surface" ]; # Which devices to share the folder with
         };
       };
-
     };
   };
 

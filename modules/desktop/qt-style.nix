@@ -1,4 +1,7 @@
-{ lib, pkgs, ... }: {
+{ lib
+, pkgs
+, ...
+}: {
   environment = {
     systemPackages = with pkgs; [
       libsForQt5.qtstyleplugins # Qt5 style plugins

@@ -1,9 +1,11 @@
-{ config, lib, pkgs, ... }:
-
-{
-  environment.systemPackages = with pkgs;
-    [
-      (vscode-with-extensions.override {
+{ config
+, lib
+, pkgs
+, ...
+}: {
+  environment.systemPackages = with pkgs; [
+    (
+      vscode-with-extensions.override {
         vscodeExtensions = with vscode-extensions;
           [
             dracula-theme.theme-dracula
@@ -17,10 +19,8 @@
             ms-python.vscode-pylance
             davidanson.vscode-markdownlint
             bbenoist.nix
-
-
-
-          ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          ]
+          ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
               name = "document";
               publisher = "mintlify";
@@ -41,6 +41,6 @@
             # }
           ];
       }
-      )
-    ];
+    )
+  ];
 }

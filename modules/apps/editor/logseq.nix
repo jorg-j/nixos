@@ -1,14 +1,15 @@
-{ config, pkgs, vars, ... }:
+{ config
+, pkgs
+, vars
+, ...
+}:
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in
 {
-  environment.systemPackages = with pkgs;
-    [
+  environment.systemPackages = with pkgs; [
+    unstable.logseq
 
-      unstable.logseq
-
-      # obsidian
-
-    ];
+    # obsidian
+  ];
 }

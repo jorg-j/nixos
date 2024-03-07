@@ -1,6 +1,8 @@
-{ config, pkgs, lib, ... }:
-
-{
+{ config
+, pkgs
+, lib
+, ...
+}: {
   users.users.jack = {
     isNormalUser = true;
     uid = 1000;
@@ -20,5 +22,4 @@
 
   # Activate gpg
   programs.gnupg.agent.enable = true;
-
 }

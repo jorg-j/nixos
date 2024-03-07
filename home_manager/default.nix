@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }:
-
+{ config
+, lib
+, pkgs
+, ...
+}:
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
 in
-
-
 {
   imports = [
     (import "${home-manager}/nixos")
@@ -20,5 +21,4 @@ in
   homemanager.i3.enable = false;
   homemanager.unison.enable = true;
   homemanager.xfce.enable = false;
-
 }

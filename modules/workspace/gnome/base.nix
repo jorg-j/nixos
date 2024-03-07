@@ -1,6 +1,7 @@
-{ pkgs, lib, ... }:
-
-{
+{ pkgs
+, lib
+, ...
+}: {
   # Enable a low-level configuration system and settings
   # management tool. Its main purpose is to provide a back end
   # to GSettings on platforms that don't already have
@@ -124,4 +125,3 @@
   };
   #home.sessionVariables.GTK_THEME = "palenight";
 }
-

@@ -1,4 +1,7 @@
-{ lib, config, ... }:
+{ lib
+, config
+, ...
+}:
 let
   kver = config.boot.kernelPackages.kernel.version;
 in

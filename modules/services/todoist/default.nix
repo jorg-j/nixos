@@ -1,19 +1,19 @@
-{ lib, pkgs, config, ... }:
-
-with lib;
-
-let
+{ lib
+, pkgs
+, config
+, ...
+}:
+with lib; let
   todoist_load = pkgs.callPackage ./derivation.nix { };
 
-  my-python-packages = ps: with ps; [
-    loguru
-    requests
-    todoist-api-python
-  ];
-
+  my-python-packages = ps:
+    with ps; [
+      loguru
+      requests
+      todoist-api-python
+    ];
 in
 {
-
   imports = [
     ./creator/weekdays.nix
     ./creator/weekly.nix
@@ -43,6 +43,4 @@ in
       OnCalendar = "*-*-* 4:00:00";
     };
   };
-
 }
-

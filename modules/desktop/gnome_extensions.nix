@@ -1,10 +1,7 @@
-{ pkgs, ... }:
-
-{
-  environment.systemPackages = with pkgs;
-    [
-      dconf
-    ];
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    dconf
+  ];
 
   dconf.settings = {
     # ...
@@ -19,13 +16,9 @@
         "dash-to-panel@jderose9.github.com"
         "sound-output-device-chooser@kgshank.net"
         "space-bar@luchrioh"
-
       ];
     };
   };
-
-
-
 
   home.packages = with pkgs; [
     # ...

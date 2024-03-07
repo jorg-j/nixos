@@ -1,5 +1,8 @@
-{ config, pkgs, lib, ... }:
-{
+{ config
+, pkgs
+, lib
+, ...
+}: {
   # === Setup Users ===
   users.users = {
     root = { };

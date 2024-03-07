@@ -1,8 +1,9 @@
-{ lib, pkgs, config, ... }:
-
-with lib;
-let
-
+{ lib
+, pkgs
+, config
+, ...
+}:
+with lib; let
   cfg = config.services.todoist_load;
 
   todoistload = pkgs.writeScriptBin "todoistload" ''
@@ -10,13 +11,12 @@ let
 
   '';
 
-
-  my-python-packages = ps: with ps; [
-    todoist-api-python
-    loguru
-    requests
-  ];
-
+  my-python-packages = ps:
+    with ps; [
+      todoist-api-python
+      loguru
+      requests
+    ];
 in
 {
   options.services.todoist_load = {
@@ -24,7 +24,6 @@ in
   };
 
   config = mkIf cfg.enable {
-
     users.users.todoistHost = {
       isNormalUser = true;
       description = "todoist host user";
@@ -38,7 +37,6 @@ in
       shell = pkgs.bash;
     };
 
-
     environment.systemPackages = [
       todoistload
       (pkgs.python3.withPackages my-python-packages)
@@ -51,16 +49,16 @@ in
 
       serviceConfig.ExecStart =
         let
-          python = pkgs.python3.withPackages (ps: with ps; [
-            todoist-api-python
-            loguru
-            requests
-          ]);
+          python = pkgs.python3.withPackages (ps:
+            with ps; [
+              todoist-api-python
+              loguru
+              requests
+            ]);
         in
         "${python.interpreter} ${/etc/nixos/nmodules/todoist_files/todoist_load.py}";
     };
   };
-
 
   # systemd.timers.capaldiSyncTimer = {
   #     description = "Run Capaldi Sync every 60 minutes";
@@ -73,5 +71,4 @@ in
   #         onUnitActiveSec = "60min";
   #     };
   # };
-
 }

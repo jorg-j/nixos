@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-with lib.hm.gvariant;
-{
+{ config
+, lib
+, pkgs
+, ...
+}:
+with lib.hm.gvariant; {
   dconf.settings = {
     "com/github/stsdc/monitor/settings" = {
       background-state = true;
@@ -137,7 +140,6 @@ with lib.hm.gvariant;
       workspaces-only-on-primary = false;
       dynamic-workspaces = false;
     };
-
 
     "org/gnome/mutter/keybindings" = {
       toggle-tiled-left = [ "<Super>Left" ];

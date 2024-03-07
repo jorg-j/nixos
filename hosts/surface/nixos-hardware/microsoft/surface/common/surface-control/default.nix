@@ -1,11 +1,12 @@
-{ config, lib, pkgs, ... }:
-
-
+{ config
+, lib
+, pkgs
+, ...
+}:
 let
   inherit (lib) mkDefault mkEnableOption mkIf mkMerge;
 
   cfg = config.microsoft-surface.surface-control;
-
 in
 {
   options.microsoft-surface.surface-control = {

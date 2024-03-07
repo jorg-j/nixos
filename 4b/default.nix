@@ -1,7 +1,8 @@
-{ config, pkgs, lib, ... }:
-
-{
-
+{ config
+, pkgs
+, lib
+, ...
+}: {
   imports = [
     ./sys
     ./user.nix
@@ -35,9 +36,7 @@
   #   };
   # };
 
-
   hardware.enableRedistributableFirmware = true;
-
 
   # Packages
   environment.systemPackages = with pkgs; [

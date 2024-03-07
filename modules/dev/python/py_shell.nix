@@ -1,5 +1,4 @@
 { nixpkgs ? import <nixpkgs> { } }:
-
 nixpkgs.mkShell {
   nativeBuildInputs = with nixpkgs; [
     pkgs.poetry
@@ -15,7 +14,6 @@ nixpkgs.mkShell {
     pylint
     mypy
   ];
-
 
   # Prevent numpy from shitting itself
   LD_LIBRARY_PATH = "${nixpkgs.stdenv.cc.cc.lib}/lib";

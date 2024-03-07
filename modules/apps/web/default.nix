@@ -1,8 +1,5 @@
-{ pkgs, ... }:
-
-{
-  imports =
-    [
-      ./firefox.nix
-    ];
+{ pkgs, ... }: {
+  imports = [
+    ./firefox.nix
+  ];
 }

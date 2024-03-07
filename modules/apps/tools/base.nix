@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     libqalculate # Terminal Calculator
     gparted
@@ -24,7 +22,5 @@
     czkawka # Deduplication
 
     yad # yet another dialog box
-
-
   ];
 }

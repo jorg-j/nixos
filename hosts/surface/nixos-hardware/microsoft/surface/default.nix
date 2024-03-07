@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{ ... }: {
   assertions = [
     {
       assertion = false;

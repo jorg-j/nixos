@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 let
   structure = pkgs.writeScriptBin "structure" ''
     #!${pkgs.stdenv.shell}
@@ -31,7 +30,6 @@ let
     echo ",nixcode - open nix repo in vscode"
     echo "git_clean_untracked_safely - clean untracked files safely"
   '';
-
 in
 {
   environment.systemPackages = [
@@ -82,4 +80,3 @@ in
 
   '';
 }
-

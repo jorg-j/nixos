@@ -1,6 +1,8 @@
-{ pkgs, config, lib, ... }:
-
-{
+{ pkgs
+, config
+, lib
+, ...
+}: {
   fonts = {
     fontconfig = {
       enable = lib.mkForce true;
@@ -53,5 +55,4 @@
       symbola
     ];
   };
-
 }

@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
-
-{
+{ config
+, pkgs
+, ...
+}: {
   imports = [
     ./aliases.nix
     ./scripts.nix
@@ -16,5 +17,4 @@
 
   # === Allow unfree packages ===
   nixpkgs.config.allowUnfree = true;
-
 }

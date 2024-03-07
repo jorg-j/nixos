@@ -1,10 +1,11 @@
-{ self, config, lib, pkgs, ... }:
-
-{
-
+{ self
+, config
+, lib
+, pkgs
+, ...
+}: {
   environment.systemPackages = with pkgs; [
     jellyfin
     jellyfin-web
-
   ];
 }

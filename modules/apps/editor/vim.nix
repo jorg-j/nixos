@@ -1,20 +1,21 @@
-{ config, pkgs, vars, ... }:
-{
-  environment.systemPackages = with pkgs;
-    [
-      (
-        with import <nixpkgs> { };
-
-        vim_configurable.customize {
-          # Specifies the vim binary name
-          # E.g. set this to "my-vim" and you need to type "my-vim" to open this vim
-          # This allows to have multiple vim packages installed (e.g. with a different set of plugins)
-          name = "vim";
-          vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-            start = [ vim-nix ];
-            opt = [ ];
-          };
-          vimrcConfig.customRC = ''
+{ config
+, pkgs
+, vars
+, ...
+}: {
+  environment.systemPackages = with pkgs; [
+    (
+      with import <nixpkgs> { };
+      vim_configurable.customize {
+        # Specifies the vim binary name
+        # E.g. set this to "my-vim" and you need to type "my-vim" to open this vim
+        # This allows to have multiple vim packages installed (e.g. with a different set of plugins)
+        name = "vim";
+        vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
+          start = [ vim-nix ];
+          opt = [ ];
+        };
+        vimrcConfig.customRC = ''
 
             :set nocompatible
             :set number
@@ -37,7 +38,7 @@
 
             " Terminal
             nnoremap <F6> :wa \| vertical botright term ++kill=term<CR>
-            " \t terminal 
+            " \t terminal
             map <leader>t :vertical botright term ++kill=term<CR>
 
             " \s will refresh the vimrc file
@@ -72,8 +73,8 @@
             set hlsearch            " highlight matches
             colorscheme industry
             set backspace=indent,eol,start " backspace over everything in insert mode
-            '';
-        }
-      )
-    ];
+          '';
+      }
+    )
+  ];
 }

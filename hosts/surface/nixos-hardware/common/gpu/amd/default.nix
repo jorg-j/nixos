@@ -1,21 +1,30 @@
-{ config, lib, pkgs, ... }:
-
-{
-  options.hardware.amdgpu.loadInInitrd = lib.mkEnableOption
-    (lib.mdDoc
-      "loading `amdgpu` kernelModule at stage 1. (Add `amdgpu` to `boot.initrd.kernelModules`)"
-    ) // {
-    default = true;
-  };
-  options.hardware.amdgpu.amdvlk = lib.mkEnableOption (lib.mdDoc
-    "use amdvlk drivers instead mesa radv drivers"
+{ config
+, lib
+, pkgs
+, ...
+}: {
+  options.hardware.amdgpu.loadInInitrd =
+    lib.mkEnableOption
+      (
+        lib.mdDoc
+          "loading `amdgpu` kernelModule at stage 1. (Add `amdgpu` to `boot.initrd.kernelModules`)"
+      )
+    // {
+      default = true;
+    };
+  options.hardware.amdgpu.amdvlk = lib.mkEnableOption (
+    lib.mdDoc
+      "use amdvlk drivers instead mesa radv drivers"
   );
-  options.hardware.amdgpu.opencl = lib.mkEnableOption
-    (lib.mdDoc
-      "rocm opencl runtime (Install rocm-opencl-icd and rocm-opencl-runtime)"
-    ) // {
-    default = true;
-  };
+  options.hardware.amdgpu.opencl =
+    lib.mkEnableOption
+      (
+        lib.mdDoc
+          "rocm opencl runtime (Install rocm-opencl-icd and rocm-opencl-runtime)"
+      )
+    // {
+      default = true;
+    };
 
   config = lib.mkMerge [
     {
@@ -45,4 +54,4 @@
       ];
     })
   ];
-} 
+}

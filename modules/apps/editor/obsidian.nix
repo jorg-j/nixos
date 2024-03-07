@@ -1,10 +1,12 @@
-{ config, lib, pkgs, ... }:
-
-# When updating go to the download url on line 
+{ config
+, lib
+, pkgs
+, ...
+}:
+# When updating go to the download url on line
 # Download the tar and run the below command to get the hash, will likely need opensll in a nix-shell first
 # openssl dgst -sha256 -binary Downloads/obsidian-1.4.5.tar.gz | openssl base64 -A
 # nixos-rebuild -I nixos-config=$(pwd)/hosts/desktop.nix test
-
 let
   pname = "obsidian";
   version = "1.4.5";
@@ -69,9 +71,7 @@ let
     '';
   };
   # };
-
 in
 {
   environment.systemPackages = [ obsidianPkg ];
-
 }

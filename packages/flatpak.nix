@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
-
+{ config
+, pkgs
+, ...
+}:
 let
-
   fpak = pkgs.writeScriptBin "fpak" ''
     #!${pkgs.stdenv.shell}
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -12,9 +13,7 @@ let
     flatpak install com.github.tenderowl.frog -y
     flatpak install md.obsidian.Obsidian -y
   '';
-
 in
-
 {
   # Enable Flatpak
   services.flatpak.enable = true;
@@ -24,5 +23,4 @@ in
   environment.systemPackages = [
     fpak
   ];
-
 }

@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
-
-{
+{ config
+, pkgs
+, ...
+}: {
   imports = [
     ./aliases.nix
     ./insecure_packages.nix
@@ -36,21 +37,20 @@
   '';
 
   environment = {
-    systemPackages = with pkgs;
-      [
-        cryfs
-        gocryptfs
-        just
-        libnotify
-        ntfs3g
-        exfat
-        gvfs
-        polkit_gnome
-        nixpkgs-fmt
-        sshpass
-        xbindkeys
-        newt
-        dialog
-      ];
+    systemPackages = with pkgs; [
+      cryfs
+      gocryptfs
+      just
+      libnotify
+      ntfs3g
+      exfat
+      gvfs
+      polkit_gnome
+      nixpkgs-fmt
+      sshpass
+      xbindkeys
+      newt
+      dialog
+    ];
   };
 }

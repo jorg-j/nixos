@@ -1,5 +1,7 @@
-{ lib, config, ... }:
-
+{ lib
+, config
+, ...
+}:
 let
   cfg = config.homemanager.i3;
 in

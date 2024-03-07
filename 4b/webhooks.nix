@@ -1,6 +1,8 @@
-{ config, pkgs, lib, ... }:
-
-{
+{ config
+, pkgs
+, lib
+, ...
+}: {
   environment.systemPackages = [
     pkgs.webhook
   ];
@@ -40,9 +42,7 @@
         ${pkgs.curl}/bin/curl -H "Title: 3b" -H "Priority: default" -d "$1" ntfy.sh/jorg_1512
       '';
     })
-
   ];
-
 
   environment.etc."webhook.conf".text = ''
     [
@@ -68,5 +68,4 @@
         }
     ]
   '';
-
 }

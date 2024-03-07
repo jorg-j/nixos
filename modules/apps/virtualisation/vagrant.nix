@@ -1,11 +1,10 @@
-{ config, pkgs, ... }:
-
-{
-  environment.systemPackages = with pkgs;
-    [
-      vagrant
-      ansible
-      python311Packages.ansible-core
-
-    ];
+{ config
+, pkgs
+, ...
+}: {
+  environment.systemPackages = with pkgs; [
+    vagrant
+    ansible
+    python311Packages.ansible-core
+  ];
 }

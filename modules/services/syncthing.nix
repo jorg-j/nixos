@@ -1,5 +1,12 @@
-{ config, pkgs, user, machine1_name, machine1_id, machine2_id, machine2_name, ... }:
-{
+{ config
+, pkgs
+, user
+, machine1_name
+, machine1_id
+, machine2_id
+, machine2_name
+, ...
+}: {
   services = {
     syncthing = {
       enable = true;
@@ -23,7 +30,6 @@
           devices = [ "${machine1_name}" "${machine2_name}" ]; # Which devices to share the folder with
         };
       };
-
     };
   };
 

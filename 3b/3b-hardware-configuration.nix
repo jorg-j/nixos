@@ -1,9 +1,11 @@
-{ config, pkgs, lib, ... }:
-
-{
+{ config
+, pkgs
+, lib
+, ...
+}: {
   imports = [ ];
 
-  # === Configure Boot for RPi 3 ===  
+  # === Configure Boot for RPi 3 ===
   boot.loader.grub.enable = false;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.kernelParams = ["cma=256M"];
@@ -17,15 +19,18 @@
     gpu_mem=256
   '';
 
-
   # === Firmware Modifications ===
   # Prevent Wifi from roasting
   hardware.enableRedistributableFirmware = false;
   hardware.firmware = [ pkgs.raspberrypiWirelessFirmware ];
 
-
   # === Increase Swap to prevent crashing ===
-  swapDevices = [{ device = "/swapfile"; size = 1024; }];
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 1024;
+    }
+  ];
 
   # === Configure File System ===
   fileSystems = {
@@ -34,6 +39,4 @@
       fsType = "ext4";
     };
   };
-
-
 }

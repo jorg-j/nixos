@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     zlib
     zip
@@ -16,7 +14,5 @@
     par2cmdline
     p7zip
     sharutils
-
-
   ];
 }

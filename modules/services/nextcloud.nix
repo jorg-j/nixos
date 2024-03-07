@@ -1,7 +1,8 @@
-{ config, pkgs, lib, ... }:
-
-{
-
+{ config
+, pkgs
+, lib
+, ...
+}: {
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud27;
@@ -15,9 +16,7 @@
       post_max_size = "2G";
     };
     configureRedis = true;
-
   };
-
 
   networking.firewall = {
     enable = true;

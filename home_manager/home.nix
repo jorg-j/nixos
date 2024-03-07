@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
-{
+{ config
+, pkgs
+, ...
+}: {
   # imports = [
   #   ./pantheon.nix
   # ];
@@ -32,7 +34,4 @@
     ".config/nixpkgs/config.nix" = { source = "/etc/nixos/home_manager/files/nixpkgs_config.nix"; };
     # ".config/Code/User/settings.json" = { source = "/etc/nixos/home_manager/files/vscode.json"; };
   };
-
-
-
 }

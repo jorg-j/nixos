@@ -1,19 +1,19 @@
-{ config, pkgs, ... }:
-{
-  environment.systemPackages = with pkgs;
-    [
-      # system tools
-      file
-      tmux
+{ config
+, pkgs
+, ...
+}: {
+  environment.systemPackages = with pkgs; [
+    # system tools
+    file
+    tmux
 
-      # Screen Recording
-      kooha
+    # Screen Recording
+    kooha
 
-      # FileSys
-      fd
-      rsync
-    ];
+    # FileSys
+    fd
+    rsync
+  ];
 
   services.udev.packages = [ pkgs.libu2f-host ];
-
 }
