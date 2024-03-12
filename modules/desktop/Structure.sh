@@ -192,7 +192,7 @@ treemake() {
                 treemake $code_path "Photogrammetry"
                 treemake $code_path "POCs"
                 treemake $code_path "Keyboards"
-                treemake $code_path "Personal_Project_Code"
+                treemake $code_path "HyperScience_Utilities"
                 } 
         code
 
