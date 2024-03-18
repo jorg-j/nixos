@@ -13,7 +13,6 @@ in {
     home-manager.users.jack = {
       home.file = {
         ".unison/tenant.prf" = {source = "/etc/nixos/home_manager/files/tenant.prf";};
-        ".unison/Surface.prf" = {source = "/etc/nixos/home_manager/files/surface.prf";};
       };
     };
   };

@@ -44,7 +44,7 @@ sudo nix-channel --update
 
 
 printf "%s\n" "Select number for system:"
-select filetype in VM Surface Desktop
+select filetype in VM Desktop
 do
     echo "Selected: $filetype"
     break
@@ -57,10 +57,6 @@ case $filetype in
         sudo ln --symbolic --directory /etc/nixos/hosts/vm_conf.nix /etc/nixos/configuration.nix
     ;;
 
-    Surface)
-        echo "Linking Virtual Machine"
-        sudo ln --symbolic --directory /etc/nixos/hosts/surface.nix /etc/nixos/configuration.nix
-    ;;
 
     Desktop)
         echo "Linking Desktop"

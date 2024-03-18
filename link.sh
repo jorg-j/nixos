@@ -7,7 +7,7 @@
 
 printf "%s\n" "Select number for system:"
 
-select filetype in RaspberryPi_3B VM 4B
+select filetype in VM
 do
     echo "Selected: $filetype"
     break
@@ -27,23 +27,23 @@ clone_link() {
 
 
 case $filetype in
-    RaspberryPi_3B)
-        echo "Linking Raspberry Pi"
-        sudo rm --recursive /etc/nixos
-        clone_link rpi3
-    ;;
+    # RaspberryPi_3B)
+    #     echo "Linking Raspberry Pi"
+    #     sudo rm --recursive /etc/nixos
+    #     clone_link rpi3
+    # ;;
 
     VM)
         echo "Linking Virtual Machine"
         clone_link vm_conf
     ;;
 
-    4B)
-        echo "Linking Raspberry Pi 4b"
-        sudo rm --recursive /etc/nixos
-        sudo git clone https://github.com/jorg-j/nixos.git /etc/nixos
-        sudo ln --symbolic --directory /etc/nixos/4b/default.nix /etc/nixos/configuration.nix
-    ;;
+    # 4B)
+    #     echo "Linking Raspberry Pi 4b"
+    #     sudo rm --recursive /etc/nixos
+    #     sudo git clone https://github.com/jorg-j/nixos.git /etc/nixos
+    #     sudo ln --symbolic --directory /etc/nixos/4b/default.nix /etc/nixos/configuration.nix
+    # ;;
 
     *)
         echo "Invalid Selection"

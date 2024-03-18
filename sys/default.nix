@@ -10,7 +10,6 @@
     ./time_local.nix
     ./keymap.nix
     ./sound.nix
-    ./power_manage.nix
   ];
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

@@ -19,9 +19,6 @@
     closure_deploy = "cd /etc/nixos/closure_files && sudo ./result/bin/switch-to-configuration switch";
     closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";
 
-    build_surface = "nixos-rebuild --target-host jack@192.168.1.148 --use-remote-sudo switch -I nixos-config=/etc/nixos/hosts/surface.nix";
-    build_rpi3 = "nixos-rebuild --target-host jack@192.168.1.2 --use-remote-sudo switch -I nixos-config=/etc/nixos/hosts/rpi3.nix";
-
     format = "nixpkgs-fmt";
 
     stable = "git tag -d stable; git tag -d origin stable; git tag stable";
@@ -72,8 +69,8 @@
 
     # Surface Based Alias's
     # Here to fix surface /boot when /boot goes read only
-    surface-boot = "sudo umount /boot && sudo fsck /dev/nvme0n1p1 && sudo mount /dev/nvme0n1p1 /boot";
-    pen = "sudo systemctl restart iptsd.service";
+    # surface-boot = "sudo umount /boot && sudo fsck /dev/nvme0n1p1 && sudo mount /dev/nvme0n1p1 /boot";
+    # pen = "sudo systemctl restart iptsd.service";
 
     # Set monitors on desktop
     mon = "xrandr --output DP-2 --auto --right-of HDMI-1";
