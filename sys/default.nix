@@ -51,6 +51,7 @@
       xbindkeys
       newt
       dialog
+      qalculate-gtk
     ];
   };
 }

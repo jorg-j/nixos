@@ -12,6 +12,7 @@
   ];
 
   # enable xfce desktop
+  # our.roles.budgie.enable = true;
   # our.roles.xfce.enable = true;
   our.roles.plasma.enable = true;
   # our.roles.gnome.enable = true;
