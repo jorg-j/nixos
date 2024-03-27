@@ -16,6 +16,7 @@
     fuse
 
     arduino
+    logseq
 
     # obsidian
   ];

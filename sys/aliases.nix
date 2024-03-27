@@ -15,9 +15,9 @@
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
 
-    closure_build = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1";
-    closure_deploy = "cd /etc/nixos/closure_files && sudo ./result/bin/switch-to-configuration switch";
-    closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";
+    # closure_build = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1";
+    # closure_deploy = "cd /etc/nixos/closure_files && sudo ./result/bin/switch-to-configuration switch";
+    # closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";
 
     format = "nixpkgs-fmt";
 
@@ -58,6 +58,9 @@
 
     hg = "history | grep";
 
+    # Fix KDE screen issue
+    screen = "pushd /home/jack/.local/share > /dev/null && rm -r kscreen && popd > /dev/null";
+
     grab-display = "export DISPLAY = ':0.0'";
 
     hd-wipe-user-packages = "nix-env -e '*'";
@@ -90,7 +93,7 @@
     pydev = "cp /etc/nixos/modules/dev/python/py_shell.nix ./shell.nix";
 
     # sync obsidian
-    obsync = "cd /home/jack/Documents/10-19_Books_Documentation/13_Obsidian_Vaults && bash sync.sh";
+    obsync = "pushd /home/jack/Documents/10-19_Books_Documentation/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd /dev/null";
 
     n = "bash /etc/nixos/sys/command_script/commands.sh";
   };

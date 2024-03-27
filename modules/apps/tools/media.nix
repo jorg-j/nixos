@@ -4,6 +4,6 @@
     ffmpegthumbnailer
     imagemagickBig
 
-    # kdenlive
+    kdenlive
   ];
 }
