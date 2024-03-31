@@ -1,8 +1,8 @@
 {pkgs, ...}: let
   structure = pkgs.writeScriptBin "structure" ''
     #!${pkgs.stdenv.shell}
-    sudo chmod +x /etc/nixos/modules/desktop/Structure.sh
-    /etc/nixos/modules/desktop/Structure.sh
+    sudo chmod +x /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos/modules/desktop/Structure.sh
+    /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos/modules/desktop/Structure.sh
   '';
 
   estructure = pkgs.writeScriptBin ",edit_structure" ''
