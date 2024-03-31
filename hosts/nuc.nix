@@ -67,11 +67,11 @@
 
   nix.gc = {
     automatic = true;
-    dates = "weekly";
+    dates = "monthly";
     options = "--delete-older-than 30d";
   };
 
-  nix.settings.auto-optimise-store = true;
+  # nix.settings.auto-optimise-store = true;
 
   # Enable random binaries to run
   programs.nix-ld.enable = true;
