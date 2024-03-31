@@ -90,11 +90,11 @@
     flash_keyboard1 = "wget https://oryx.zsa.io/oq5mG/latest/binary -O binary.bin && wally-cli binary.bin && rm binary.bin";
 
     # Setup python nix shell
-    pydev = "cp /etc/nixos/modules/dev/python/py_shell.nix ./shell.nix";
+    pydev = "cp /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos/modules/dev/python/py_shell.nix ./shell.nix";
 
     # sync obsidian
-    obsync = "pushd /home/jack/Documents/10-19_Books_Documentation/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd /dev/null";
+    obsync = "pushd /home/jack/Documents/10-19_Books_Documentation/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd > /dev/null";
 
-    n = "bash /etc/nixos/sys/command_script/commands.sh";
+    n = "bash /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/commands.sh";
   };
 }
