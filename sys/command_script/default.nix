@@ -6,14 +6,12 @@
     ${scriptContent}
   '';
 
-
   bannerScriptContent = builtins.readFile ./banner.sh;
-  
+
   printbanner = pkgs.writeScriptBin "PrintBanner" ''
     #!${pkgs.stdenv.shell}
     ${bannerScriptContent}
   '';
-
 in {
   environment.systemPackages = [
     command
