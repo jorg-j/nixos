@@ -18,13 +18,12 @@
           };
           vimrcConfig.customRC = ''
 
-            :set nocompatible
             :set number
 
             " generate backups dir and set backups to on
             " silent !mkdir ~/.vim/backups > /dev/null 2>&1
-            set backup
-            set backupdir=/tmp      " save backup files (~) to /tmp
+            " set backup
+            " set backupdir=/tmp      " save backup files (~) to /tmp
 
             " Programming
             :set tabstop=4
@@ -32,18 +31,30 @@
             :set ignorecase
             :set smartcase
             :set mouse=a
-            autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
             :set autoindent
             syntax on
             syntax enable
+
+            " search
+            :set wildmode=list:longest,list:full
 
             " Terminal
             nnoremap <F6> :wa \| vertical botright term ++kill=term<CR>
             " \t terminal
             map <leader>t :vertical botright term ++kill=term<CR>
 
+            " python
+            autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
             " \s will refresh the vimrc file
             map <leader>s :source ~/.vimrc<CR>
+
+            " allow eaasier navigation between splits ctrl + h j k l
+            nnoremap <C-J> <C-W><C-J>
+            nnoremap <C-K> <C-W><C-K>
+            nnoremap <C-L> <C-W><C-L>
+            nnoremap <C-H> <C-W><C-H>
+            
 
 
             " Spelling
@@ -52,13 +63,6 @@
             iab iv I've
             iab dont don't
             iab im I'm
-
-
-            " Gherkin
-            iab gv GIVEN
-            iab tn THEN
-            iab wn WHEN
-            iab n and
 
 
             set softtabstop=4       " number of spaces in tab when editing

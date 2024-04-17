@@ -8,7 +8,7 @@
     # ./logseq.nix
     ./office.nix
     ./vim.nix
-    ./neovim.nix
+    # ./neovim.nix
     ./vscode.nix
     # ./obsidian.nix # disabled in favor of flatpak
   ];
