@@ -39,6 +39,7 @@
     ns = "notify-send";
 
     g = "git";
+    gs = "git status";
 
     ga = "git add";
     gau = "git add -u";

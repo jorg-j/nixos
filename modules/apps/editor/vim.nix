@@ -54,6 +54,13 @@
             nnoremap <C-K> <C-W><C-K>
             nnoremap <C-L> <C-W><C-L>
             nnoremap <C-H> <C-W><C-H>
+
+            " set the split to right and below
+            :set splitright
+            :set splitbelow
+
+            " buffer
+            nnoremap <leader>b :ls<CR>:b<Space>
             
 
 
