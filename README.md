@@ -102,3 +102,10 @@ If using XFCE after build run the `xfce_config` command to update the theme
 ## Steps after install
 
 - [] create ssh keys and share them with tenant, this will allow file sync to occur
+
+
+## Go Unstable
+
+`sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos`
+
+`nixos-rebuild switch --upgrade`
