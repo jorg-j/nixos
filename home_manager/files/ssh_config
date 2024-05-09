@@ -33,3 +33,7 @@ Host smith
 Host clara
     Hostname 192.168.1.152
     User pi
+
+Host hp
+    Hostname 192.168.1.149
+    User pi
