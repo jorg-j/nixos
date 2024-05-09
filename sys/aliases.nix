@@ -15,8 +15,8 @@
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
 
-    # closure_build = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1";
-    # closure_deploy = "cd /etc/nixos/closure_files && sudo ./result/bin/switch-to-configuration switch";
+    closure_build = "cd /etc/nixos/closures && sudo nix-build --attr system $1";
+    closure_deploy = "cd /etc/nixos/closures && sudo ./result/bin/switch-to-configuration switch";
     # closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";
 
     format = "nixpkgs-fmt";
