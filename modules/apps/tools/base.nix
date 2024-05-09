@@ -22,5 +22,7 @@
     czkawka # Deduplication
 
     yad # yet another dialog box
+
+    tmsu # tag my stuff utility
   ];
 }

@@ -61,6 +61,11 @@
 
             " buffer
             nnoremap <leader>b :ls<CR>:b<Space>
+            :set hidden
+
+
+            " autocomplete
+            inoremap ,, <C-x><C-n>
             
 
 
