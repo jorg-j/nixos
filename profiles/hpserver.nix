@@ -7,7 +7,8 @@
     ../home_manager
     ../packages/flatpak.nix
     ../sys
-    ../modules
+    ../modules/hp_server.nix
+
     ../users/jack.nix
   ];
 
