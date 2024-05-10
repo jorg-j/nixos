@@ -25,7 +25,7 @@
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
-  # our.roles.hpserver.enable = true;
+  our.roles.hpserver.enable = true;
 
   networking.hostName = "hpserver"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
