@@ -19,6 +19,6 @@
     # ./networking.nix
     ./workspace/fonts.nix
 
-    ./tools/cmix.nix
+    ./apps/tools/cmix.nix
   ];
 }
