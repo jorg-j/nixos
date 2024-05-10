@@ -30,4 +30,14 @@ services.nginx = {
 services.openssh.enable = true;
 
 systemd.services.gitlab-backup.environment.BACKUP = "dump";
+
+
+networking.firewall = {
+    enable = true;
+    allowPing = false;
+    allowedTCPPorts = [
+      22
+      5454
+    ];
+  };
 }
