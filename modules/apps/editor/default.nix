@@ -19,13 +19,13 @@
 
 
   environment.systemPackages = if config.networking.hostname == "nuc" then [
-    fuse
+    pkgs.fuse
 
-    arduino
-    logseq
+    pkgs.arduino
+    pkgs.logseq
   ]
   else [
-    fuse
+    pkgs.fuse
   ];
 
 }
