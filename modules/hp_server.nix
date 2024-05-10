@@ -15,6 +15,7 @@
     ./desktop
     ./dev
     ./security.nix
+    ./services/gitlab.nix
     # ./networking.nix
     ./workspace/fonts.nix
   ];
