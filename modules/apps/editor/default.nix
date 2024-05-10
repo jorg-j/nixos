@@ -2,8 +2,25 @@
 , pkgs
 , vars
 , ...
-}: {
+}:
+#  {
 
+#   imports = [
+#     ./vim.nix
+#   ];
+
+#   environment.systemPackages = [
+#     pkgs.fuse
+#   ];
+
+
+mkMerge [{
+  # main config options
+}
+(mkIf config.networking.hostName == "nuc" {
+  # ...
+})
+(mkIf config.networking.hostName != "nuc" {
   imports = [
     ./vim.nix
   ];
@@ -11,6 +28,8 @@
   environment.systemPackages = [
     pkgs.fuse
   ];
+})]
+
 
   # imports =
   #   if config.networking.hostName == "nuc" then [
@@ -36,4 +55,4 @@
   #     pkgs.fuse
   #   ];
 
-}
+# }
