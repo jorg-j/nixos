@@ -4,8 +4,23 @@
 , lib
 , ...
 }:
-#  {
 
+with lib; let
+  cfgHP = config.our.roles.hpserver;
+in {
+  options.our.roles.hpserver = {
+    enable = mkEnableOption "hpserver";
+  };
+
+  config = mkIf cfgHP.enable {
+    imports = [
+      ./vim.nix
+    ];
+
+    environment.systemPackages = [
+      pkgs.fuse
+    ];
+  };
 #   imports = [
 #     ./vim.nix
 #   ];
@@ -13,23 +28,6 @@
 #   environment.systemPackages = [
 #     pkgs.fuse
 #   ];
-
-
-lib.mkMerge [{
-  # main config options
-}
-(lib.mkIf config.networking.hostName == "nuc" {
-  # ...
-})
-(lib.mkIf config.networking.hostName != "nuc" {
-  imports = [
-    ./vim.nix
-  ];
-
-  environment.systemPackages = [
-    pkgs.fuse
-  ];
-})]
 
 
   # imports =
@@ -56,4 +54,4 @@ lib.mkMerge [{
   #     pkgs.fuse
   #   ];
 
-# }
+}
