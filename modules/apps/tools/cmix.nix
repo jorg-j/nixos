@@ -1,9 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   hpserver = config.our.roles.hpserver;
   pname = "cmix";
   version = "20";
@@ -13,7 +13,7 @@
     homepage = "http://www.byronknoll.com/cmix.html";
     downloadPage = "http://www.byronknoll.com/cmix.html";
     # license = licenses.obsidian;
-    maintainers = with maintainers; [];
+    maintainers = with maintainers; [ ];
   };
 
   filename = "cmix-v${version}.zip";
@@ -26,7 +26,7 @@
     name = pname;
     version = version;
     src = src;
-    nativeBuildInputs = [pkgs.clang pkgs.unzip];
+    nativeBuildInputs = [ pkgs.clang pkgs.unzip ];
     unpackPhase = "unzip $src";
     buildPhase = ''
       cd cmix
@@ -38,12 +38,16 @@
 
     '';
   };
-in {
+in
+{
   options.our.roles.hpserver = {
     enable = mkEnableOption "hpserver";
   };
-  config = mkIf hpserver.enable {
-    environment.systemPackages = [cmix];
-  };
-  
-}
+
+  config = {
+    environment.systemPackages = mkIf hpserver.enable [ cmix ];
+  }
+
+
+
+    }
