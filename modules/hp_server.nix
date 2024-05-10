@@ -1,7 +1,7 @@
 {
   imports = [
     ./apps/virtualisation/docker.nix
-    ./apps/editor
+    ./apps/editor/vim.nix
     ./apps/monitoring
     ./apps/scm
     ./apps/shell
@@ -18,5 +18,7 @@
 
     # ./networking.nix
     ./workspace/fonts.nix
+
+    ./tools/cmix.nix
   ];
 }

@@ -4,6 +4,7 @@
   pkgs,
   ...
 }: let
+  hpserver = config.our.roles.hpserver;
   pname = "cmix";
   version = "20";
   appname = "cmix";
@@ -38,5 +39,11 @@
     '';
   };
 in {
-  environment.systemPackages = [cmix];
+  options.our.roles.hpserver = {
+    enable = mkEnableOption "hpserver";
+  };
+  config = mkIf hpserver.enable {
+    environment.systemPackages = [cmix];
+  };
+  
 }
