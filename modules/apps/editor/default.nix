@@ -1,6 +1,7 @@
 { config
 , pkgs
 , vars
+, lib
 , ...
 }:
 #  {
