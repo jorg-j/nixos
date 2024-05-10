@@ -7,6 +7,7 @@
     ./compression.nix
     ./http.nix
     ./json.nix
+    ./lightburn.nix
     ./media.nix
     ./network.nix
     ./raspberry.nix
