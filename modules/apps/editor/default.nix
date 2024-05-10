@@ -17,7 +17,7 @@ in
 
 
 
-  environment.systemPackages = [
+  config.environment.systemPackages = [
     pkgs.fuse
   ];
   #   imports = [
