@@ -1,3 +1,9 @@
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
 services.gitlab = {
   enable = true;
   databasePasswordFile = pkgs.writeText "dbPassword" "zgvcyfwsxzcwr85l";
@@ -23,3 +29,4 @@ services.nginx = {
 services.openssh.enable = true;
 
 systemd.services.gitlab-backup.environment.BACKUP = "dump";
+}
