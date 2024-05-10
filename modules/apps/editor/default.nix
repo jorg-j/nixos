@@ -15,13 +15,13 @@
 #   ];
 
 
-mkMerge [{
+lib.mkMerge [{
   # main config options
 }
-(mkIf config.networking.hostName == "nuc" {
+(lib.mkIf config.networking.hostName == "nuc" {
   # ...
 })
-(mkIf config.networking.hostName != "nuc" {
+(lib.mkIf config.networking.hostName != "nuc" {
   imports = [
     ./vim.nix
   ];
