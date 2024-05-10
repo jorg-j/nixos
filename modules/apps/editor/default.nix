@@ -5,13 +5,13 @@
 , ...
 }:
 
-with lib; let
-  cfgHP = config.our.roles.hpserver;
-in
+# with lib; let
+#   cfgHP = config.our.roles.hpserver;
+# in
 {
-  options.our.roles.hpserver = {
-    enable = mkEnableOption "hpserver";
-  };
+  # options.our.roles.hpserver = {
+  #   enable = mkEnableOption "hpserver";
+  # };
 
   # imports = lib.mkIf cfgHp.enable [ ./vim.nix ];
 
