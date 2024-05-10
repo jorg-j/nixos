@@ -5,7 +5,7 @@
   ...
 }: {
 
-  imports = if config.networking.hostname == "nuc" then [
+  imports = if config.networking.hostName == "nuc" then [
     # ./logseq.nix
     ./office.nix
     ./vim.nix
@@ -18,7 +18,7 @@
   ];
 
 
-  environment.systemPackages = if config.networking.hostname == "nuc" then [
+  environment.systemPackages = if config.networking.hostName == "nuc" then [
     pkgs.fuse
 
     pkgs.arduino
