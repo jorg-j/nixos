@@ -7,27 +7,26 @@
 
 with lib; let
   cfgHP = config.our.roles.hpserver;
-in {
+in
+{
   options.our.roles.hpserver = {
     enable = mkEnableOption "hpserver";
   };
 
-  config = mkIf cfgHP.enable {
-    imports = [
-      ./vim.nix
-    ];
+  imports = lib.mkIf cfgHp.enable [ ./vim.nix ];
 
-    environment.systemPackages = [
-      pkgs.fuse
-    ];
-  };
-#   imports = [
-#     ./vim.nix
-#   ];
 
-#   environment.systemPackages = [
-#     pkgs.fuse
-#   ];
+
+  environment.systemPackages = [
+    pkgs.fuse
+  ];
+  #   imports = [
+  #     ./vim.nix
+  #   ];
+
+  #   environment.systemPackages = [
+  #     pkgs.fuse
+  #   ];
 
 
   # imports =
