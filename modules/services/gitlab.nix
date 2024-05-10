@@ -6,6 +6,7 @@
 }: {
 services.gitlab = {
   enable = true;
+  port = 5454;
   databasePasswordFile = pkgs.writeText "dbPassword" "zgvcyfwsxzcwr85l";
   initialRootPasswordFile = pkgs.writeText "rootPassword" "dakqdvp4ovhksxer";
   secrets = {
