@@ -5,30 +5,30 @@
 , ...
 }:
 
-with lib; let
-  cfgHP = config.our.roles.hpserver;
-in
+# with lib; let
+#   cfgHP = config.our.roles.hpserver;
+# in
 {
-  options.our.roles.hpserver = {
-    enable = mkEnableOption "hpserver";
-  };
+  # options.our.roles.hpserver = {
+  #   enable = mkEnableOption "hpserver";
+  # };
 
-  imports = lib.mkIf cfgHp.enable [ ./vim.nix ];
+  # imports = lib.mkIf cfgHp.enable [ ./vim.nix ];
 
-  config = mkIf cfgHp.enable {
-    environment.systemPackages = [
-      pkgs.fuse
-    ];
-  };
-
-
-  #   imports = [
-  #     ./vim.nix
-  #   ];
-
+  # config = mkIf cfgHp.enable {
   #   environment.systemPackages = [
   #     pkgs.fuse
   #   ];
+  # };
+
+
+    imports = [
+      ./vim.nix
+    ];
+
+    environment.systemPackages = [
+      pkgs.fuse
+    ];
 
 
   # imports =

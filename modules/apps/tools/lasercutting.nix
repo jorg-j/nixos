@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  environment.systemPackages = if config.networking.hostName == "nuc" then [
+  environment.systemPackages = [
     pkgs.lightburn
-  ]
-  else [];
+  ];
+  
   
 }
