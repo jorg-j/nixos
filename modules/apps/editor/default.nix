@@ -5,9 +5,7 @@
 , ...
 }:
 
-with lib; let
-  cfgHP = config.our.roles.hpserver;
-in
+
 {
   options.our.roles.hpserver = {
     enable = mkEnableOption "hpserver";
@@ -17,7 +15,7 @@ in
     ./vim.nix
   ];
 
-  config = mkIf cfgHp.enable {
+  config = mkIf options.our.roles.hpserver.enable {
     environment.systemPackages = [
       pkgs.fuse
     ];
