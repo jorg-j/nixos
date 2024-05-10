@@ -46,8 +46,8 @@ in
 
   config = {
     environment.systemPackages = mkIf hpserver.enable [ cmix ];
-  }
+  };
 
 
 
-    }
+}
