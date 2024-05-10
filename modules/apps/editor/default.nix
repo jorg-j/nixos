@@ -15,11 +15,13 @@ in
 
   imports = lib.mkIf cfgHp.enable [ ./vim.nix ];
 
+  config = mkIf cfgHp.enable {
+    environment.systemPackages = [
+      pkgs.fuse
+    ];
+  };
 
 
-  config.environment.systemPackages = [
-    pkgs.fuse
-  ];
   #   imports = [
   #     ./vim.nix
   #   ];
