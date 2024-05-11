@@ -15,7 +15,7 @@ in
         [
           openscad
         ]
-      else if cfg.HP.enable then
+      else if cfgHP.enable then
         [ ]
       else
         [ ];
