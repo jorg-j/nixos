@@ -29,5 +29,30 @@
 			"    ];",
 			"}"
 		]
+	},
+	"letnuc": {
+		"prefix": "letnuc",
+		"body": [
+			"with lib; let",
+			"",
+			"cfgNuc = config.our.roles.nuc;",
+			"",
+			"in {",
+			"",
+			"options.our.roles.nuc = {",
+			"	enable = mkEnableOption \"nuc\";",
+			"  };"
+		]
+	},
+	"ifnuc": {
+		"prefix": "ifnuc",
+		"body": [
+			"config = {"
+			"	environment.systemPackages ="
+			"	  if nuc.enable"
+			"	  then [ $1 ]"
+			"	  else [ ];"
+			"  };"
+		]
 	}
 }

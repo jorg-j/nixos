@@ -29,6 +29,8 @@
     enable = false;
   };
 
+  our.roles.nuc.enable = true;
+
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 

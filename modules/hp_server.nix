@@ -1,7 +1,7 @@
 {
   imports = [
     ./apps/virtualisation/docker.nix
-    ./apps/editor/vim.nix
+    ./apps/editor
     ./apps/monitoring
     ./apps/scm
     ./apps/shell
