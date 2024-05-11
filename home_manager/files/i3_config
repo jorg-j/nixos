@@ -142,6 +142,11 @@ assign [class="Thunar" instance="thunar"] $ws3
 assign [class="Code" instance="code"] $ws4
 assign [class="obsidian" instance="obsidian"] $ws5
 
+
+
+
+
+
 # Scratchpads
 bindsym $mod+t [instance="scratchpad_all"] scratchpad show; move position center
 
@@ -150,6 +155,16 @@ for_window [instance="scratchpad_all"] resize set 925 400
 for_window [instance="scratchpad_all"] move scratchpad
 for_window [instance="scratchpad_all"] border pixel 5
 exec_always --no-startup-id alacritty --class scratchpad_all
+
+
+bindsym $mod+n [instance="scratchpad_note"] scratchpad show; move position center
+
+for_window [instance="scratchpad_note"] floating enable
+for_window [instance="scratchpad_note"] resize set 925 400
+for_window [instance="scratchpad_note"] move scratchpad
+for_window [instance="scratchpad_note"] border pixel 5
+exec_always --no-startup-id alacritty --class scratchpad_note -e vim /home/jack/.notepad
+
 
 
 for_window [class="simplescreenrecorder" instance="SimpleScreenRecorder"] floating enable
