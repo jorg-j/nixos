@@ -11,6 +11,7 @@
     ./time_local.nix
     ./keymap.nix
     ./sound.nix
+    ./configopts.nix
   ];
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -56,6 +57,5 @@
     ];
   };
 
-  config.options.our.roles.nuc.enable = lib.mkEnableOption "nuc";
-  config.options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
+
 }
