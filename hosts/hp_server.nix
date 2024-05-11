@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -26,8 +27,8 @@
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   our.roles.hpserver.enable = true;
-  options.our.roles.hpserver.enable = mkEnableOption "hpserver";
-  
+  options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
+
   networking.hostName = "hpserver"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
