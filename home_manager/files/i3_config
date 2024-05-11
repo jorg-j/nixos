@@ -109,7 +109,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Set multiple monitors
-set $fm HDMI-1
+set $fm eDP-1
 set $sm DP-2
 
 workspace "1:Term" output $fm
