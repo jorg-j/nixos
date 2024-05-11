@@ -12,9 +12,9 @@ in
 {
   options.our.roles.nuc.enable = mkEnableOption "nuc";
   options.our.roles.hpserver.enable = mkEnableOption "hpserver";
-
+  imports = [./vim.nix];
   config = {
-    imports = [./vim.nix];
+    
     environment.systemPackages =
       if cfgNuc.enable then
         [
