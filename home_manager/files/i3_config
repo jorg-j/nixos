@@ -164,8 +164,8 @@ assign [class="Code" instance="code"] $ws4
 assign [class="obsidian" instance="obsidian"] $ws5
 
 # Scratchpads
-bindsym $mod+t [class="kitty"] scratchpad show; move position center
-exec_always --no-startup-id kitty --class kitty,kitty
+bindsym $mod+t [class="alacritty"] scratchpad show; move position center
+exec_always --no-startup-id alacritty
 
 for_window [class="simplescreenrecorder" instance="SimpleScreenRecorder"] floating enable
 
