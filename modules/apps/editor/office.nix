@@ -8,7 +8,7 @@ in
 {
   home-manager.users.jack = {
     home.packages = with pkgs;
-      if cfg.Nuc.enable then
+      if cfgNuc.enable then
 
         [
           abiword
