@@ -78,4 +78,4 @@ in
   #       pkgs.logseq
   #       ];
 
-}
+
