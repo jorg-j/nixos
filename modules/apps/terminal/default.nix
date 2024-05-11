@@ -1,8 +1,8 @@
 {pkgs, ...}: {
-  imports = [
-    ./alacritty.nix
-    ./kitty.nix
-  ];
+  # imports = [
+  #   ./alacritty.nix
+  #   ./kitty.nix
+  # ];
 
   environment = {
     systemPackages = with pkgs; [

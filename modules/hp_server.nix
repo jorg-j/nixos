@@ -1,16 +1,7 @@
 {
   imports = [
     ./apps/virtualisation
-    ./apps/editor
-    ./apps/monitoring
-    ./apps/scm
-    ./apps/shell
-    ./apps/tools/base.nix
-    ./apps/tools/compression.nix
-    ./apps/tools/network.nix
-    ./apps/tools/search.nix
-    ./apps/tools/http.nix
-    ./apps/web
+    ./apps
 
     ./desktop
     ./dev
