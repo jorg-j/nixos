@@ -10,36 +10,31 @@ let
   cfgHP = config.out.roles.hpserver;
 in
 {
-
   options.our.roles.nuc.enable = lib.mkEnableOption "nuc";
   options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
   
-
   config = lib.mkIf cfgNuc.enable {
+    imports = [
+      # ./logseq.nix
+      ./office.nix
+      ./vim.nix
+      # ./neovim.nix
+      ./vscode.nix
+    ];
+  } (lib.mkIf cfgHP.enable
     {
       imports = [
-        # ./logseq.nix
-        ./office.nix
         ./vim.nix
-        # ./neovim.nix
-        ./vscode.nix
       ];
-    } (lib.mkIf cfgHp.enable
-      {
-        imports = [
+    }
+    {
+      imports = [
+        ./vim.nix
+      ];
+    }
+  );
+}
 
-          ./vim.nix
-
-        ];
-      }
-      {
-        imports = [
-
-          ./vim.nix
-
-        ];
-
-      });
   # config = {
 
   #   imports = 
