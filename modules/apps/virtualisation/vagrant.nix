@@ -1,11 +1,27 @@
+{ pkgs
+, lib
+, config
+, ...
+}:
+
+with lib; let
+  cfgNuc = config.our.roles.nuc;
+  cfgHP = config.our.roles.hpserver;
+in
 {
-  config,
-  pkgs,
-  ...
-}: {
-  environment.systemPackages = with pkgs; [
-    vagrant
-    ansible
-    python311Packages.ansible-core
-  ];
+  config = {
+    environment.systemPackages = with pkgs;
+      if cfgNuc.enable then
+        [
+          vagrant
+          ansible
+          python311Packages.ansible-core
+        ]
+      else if cfg.HP.enable then
+        [ ]
+      else
+        [ ];
+
+  };
+
 }

@@ -1,7 +1,6 @@
 {
   imports = [
-    ./apps/virtualisation/docker.nix
-    ./apps/virtualisation/podman.nix
+    ./apps/virtualisation
     ./apps/editor
     ./apps/monitoring
     ./apps/scm

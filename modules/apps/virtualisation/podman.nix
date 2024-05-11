@@ -10,6 +10,8 @@ with lib; let
 in
 {
 
+# Podman is controlled via the nuc role. switched in hosts/nuc.nix and managed in sys/configopts.nix
+
   config = {
     environment.systemPackages = with pkgs;
       if cfgNuc.enable then
@@ -18,12 +20,10 @@ in
           podman-desktop
           podman-compose
         ]
-      else if cfgHP.enable then
+      else if cfgHP.enable then # HP is disabled at this time
         [ ]
       else
         [ ];
-
-
 
     virtualisation =
       if cfgNuc.enable then
@@ -46,7 +46,7 @@ in
             };
           };
         }
-      else if cfgHP.enable then
+      else if cfgHP.enable then # HP is disabled at this time
         { }
       else
         { };
