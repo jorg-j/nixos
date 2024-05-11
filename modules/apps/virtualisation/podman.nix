@@ -26,7 +26,7 @@ in
 
 
     virtualisation =
-      if cfg.Nuc.enable then
+      if cfgNuc.enable then
         {
           podman = {
             enable = true;
