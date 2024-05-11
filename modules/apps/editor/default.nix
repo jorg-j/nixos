@@ -11,7 +11,7 @@ with lib; let
 in
 {
 
-  imports = [ ./vim.nix ./office ];
+  imports = [ ./vim.nix ./office.nix ];
 
   config = {
 
