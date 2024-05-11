@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../home_manager/hmi3.nix
+    ../home_manager
     ../packages/flatpak.nix
     ../sys
     ../modules
@@ -18,5 +18,5 @@
   # our.roles.gnome.enable = true;
   # our.roles.lxqt.enable = true;
   our.roles.i3.enable = true;
-
+  homemanager.i3.enable = true;
 }
