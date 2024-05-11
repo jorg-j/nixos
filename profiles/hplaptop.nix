@@ -19,4 +19,12 @@
   # our.roles.lxqt.enable = true;
   our.roles.i3.enable = true;
   homemanager.i3.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    # === libreoffice ===
+    hunspell
+    hunspellDicts.en_US-large
+    libreoffice-fresh
+    abiword
+  ];
 }
