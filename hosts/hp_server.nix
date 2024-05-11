@@ -13,7 +13,7 @@
     ./hardware/hp-hardware-configuration.nix
     ../profiles/hpserver.nix
     ../nmodules
-    ../modules/networking.nix # enable tailscale
+    ../modules/networking.nix
   ];
 
   # Bootloader.

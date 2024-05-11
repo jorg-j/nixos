@@ -14,10 +14,8 @@
     ./hardware/nuc-hardware-configuration.nix
     ../profiles/desktop.nix
     ../nmodules
-    ../modules/networking.nix # enable tailscale
+    ../modules/networking.nix
 
-    # ../modules/movies
-    # ../plex.nix
   ];
 
   # Bootloader.
