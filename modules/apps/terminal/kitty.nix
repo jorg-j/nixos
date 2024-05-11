@@ -36,7 +36,7 @@
       dynamic_background_opacity yes
       dim_opacity 0.75
       allow_remote_control yes
-      confirm_os_window_close 0
+      confirm_os_window_close 2
     '';
 
     keybindings = {
