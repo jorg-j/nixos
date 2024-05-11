@@ -44,6 +44,8 @@ in {
       lxappearance
       pcmanfm-qt
       dunst # notifications
+      picom
+      nitrogen
     ];
   };
 }

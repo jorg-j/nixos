@@ -346,7 +346,8 @@ bar {
 
 bindsym $mod+Shift+p exec thunar
 
+exec_always picom -f
 
-# exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 
 # exec_always wal -i ~/Pictures/WP1.jpg

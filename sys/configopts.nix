@@ -11,5 +11,6 @@ with lib; let
 in
 {
       options.our.roles.nuc.enable = lib.mkEnableOption "nuc";
-  options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
+      options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
+      options.our.roles.hplaptop.enable = lib.mkEnableOption "hplaptop";
 }
