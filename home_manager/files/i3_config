@@ -146,7 +146,7 @@ assign [class="obsidian" instance="obsidian"] $ws5
 bindsym $mod+t [instance="scratchpad_all"] scratchpad show; move position center
 
 for_window [instance="scratchpad_all"] floating enable
-for_window [instance="scratchpad_all"] resize set 625 400
+for_window [instance="scratchpad_all"] resize set 925 400
 for_window [instance="scratchpad_all"] move scratchpad
 for_window [instance="scratchpad_all"] border pixel 5
 exec_always --no-startup-id alacritty --class scratchpad_all
