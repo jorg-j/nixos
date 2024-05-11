@@ -44,7 +44,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -155,11 +156,16 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# Set default desktops for applications
+# assign [class="kitty"] $ws1
 assign [class="firefox" instance="Navigator"] $ws2
 assign [class="Thunar" instance="thunar"] $ws3
 assign [class="Code" instance="code"] $ws4
 assign [class="obsidian" instance="obsidian"] $ws5
 
+# Scratchpads
+bindsym $mod+t [class="kitty"] scratchpad show; move postition center
+exec --no-startup-id kitty --class kitty,kitty
 
 for_window [class="simplescreenrecorder" instance="SimpleScreenRecorder"] floating enable
 
