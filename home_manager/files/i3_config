@@ -114,8 +114,8 @@ set $sm DP-2
 workspace "1:Term" output $fm
 workspace "2:Web" output $fm
 workspace "3:Files" output $fm
-workspace "4:VS" output $sm
-workspace "5:Obs" output $sm
+workspace "4:Code" output $sm
+workspace "5:Notes" output $sm
 workspace 6 output $sm
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -123,8 +123,8 @@ workspace 6 output $sm
 set $ws1 "1:Term"
 set $ws2 "2:Web"
 set $ws3 "3:Files"
-set $ws4 "4:VS"
-set $ws5 "5:Obs"
+set $ws4 "4:Code"
+set $ws5 "5:Notes"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
