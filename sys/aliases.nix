@@ -1,7 +1,7 @@
 {
   environment.shellAliases = {
     config = "sudo vim /etc/nixos/configuration.nix";
-    build = "sudo nixos-rebuild switch --keep-going";
+    build = "sudo nixos-rebuild switch --keep-going; notify-send 'Build Complete'";
     check = "nix-instantiate '<nixpkgs/nixos>' -A system";
     # flakebuild = "sudo nixos-rebuild --flake .#Desktop switch";
 
