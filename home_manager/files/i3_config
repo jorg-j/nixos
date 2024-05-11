@@ -165,7 +165,7 @@ assign [class="obsidian" instance="obsidian"] $ws5
 
 # Scratchpads
 bindsym $mod+t [class="kitty"] scratchpad show; move position center
-exec --no-startup-id kitty --class kitty,kitty
+exec_always --no-startup-id kitty --class kitty,kitty
 
 for_window [class="simplescreenrecorder" instance="SimpleScreenRecorder"] floating enable
 
