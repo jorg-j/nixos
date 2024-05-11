@@ -11,7 +11,7 @@
     ./time_local.nix
     ./keymap.nix
     ./sound.nix
-    ./confgopts.nix
+    ./configopts.nix
   ];
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -37,6 +37,9 @@
   systemd.user.extraConfig = ''
     DefaultEnvironment="PATH=/run/current-system/sw/bin"
   '';
+
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   environment = {
     systemPackages = with pkgs; [

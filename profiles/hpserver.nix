@@ -7,8 +7,7 @@
     ../home_manager
     ../packages/flatpak.nix
     ../sys
-    ../modules/hp_server.nix
-
+    ../modules
     ../users/jack.nix
   ];
 
@@ -19,13 +18,5 @@
   # our.roles.gnome.enable = true;
   our.roles.lxqt.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    xournalpp
-    gettext # needed for cinnamon
-    caffeine-ng
-  ];
 
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 }
