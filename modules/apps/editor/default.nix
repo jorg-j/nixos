@@ -6,8 +6,8 @@
 }:
 
 with lib; let
-  cfgNuc = config.out.roles.nuc;
-  cfgHP = config.out.roles.hpserver;
+  cfgNuc = config.our.roles.nuc;
+  cfgHP = config.our.roles.hpserver;
 in
 {
   options.our.roles.nuc.enable = mkEnableOption "nuc";
