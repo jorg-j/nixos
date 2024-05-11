@@ -14,28 +14,24 @@ in
   options.our.roles.hpserver.enable = mkEnableOption "hpserver";
 
   config = {
-    imports =
+    imports = [./vim.nix];
+    environment.systemPackages =
       if cfgNuc.enable then
         [
-          # ./logseq.nix
-          ./office.nix
-          ./vim.nix
-          # ./neovim.nix
-          ./vscode.nix
+          pkgs.fuse
+          pkgs.arduino
+          pkgs.logseq
         ]
       else if cfgHP.enable then
         [
-          ./vim.nix
+          pkgs.fuse
         ]
       else
         [
-          ./vim.nix
+          pkgs.fuse
         ];
 
-    environment.systemPackages = [
-      pkgs.fuse
 
-    ];
   };
 
     }
