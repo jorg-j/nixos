@@ -82,6 +82,8 @@
     # Check the content of an app i3
     xwin = "xprop | grep WM_CLASS";
 
+    configi3 = "cp /etc/nixos/home_manager/files/i3_config /home/jack/.config/i3/config && mkdir -p /home/jack/.config/i3status && cp /etc/nixos/home_manager/files/i3status.conf /home/jack/.config/i3status/config";
+
     # Mount drives i3
     # Note if removing also remove from home_manager home.nix
     mounter = "bash ~/.mnti3/mounter";

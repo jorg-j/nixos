@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../home_manager
+    ../home_manager/hmi3.nix
     ../packages/flatpak.nix
     ../sys
     ../modules
