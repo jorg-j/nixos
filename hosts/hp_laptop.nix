@@ -11,7 +11,7 @@
     # <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
     ./hardware/hp-laptop-hardware-configuration.nix
-    ../profiles/hpserver.nix
+    ../profiles/hplaptop.nix
     ../nmodules
     ../modules/networking.nix
   ];
