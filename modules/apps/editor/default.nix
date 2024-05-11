@@ -5,18 +5,17 @@
 , ...
 }:
 
-
+let
+  cfgNuc = config.out.roles.nuc;
+  cfgHP = config.out.roles.hpserver;
+in
 {
 
-  options.our.roles.nuc = {
-    enable = lib.mkEnableOption "nuc";
-  };
+  options.our.roles.nuc.enable = lib.mkEnableOption "nuc";
+  options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
+  
 
-  options.our.roles.hpserver = {
-    enable = lib.mkEnableOption "hpserver";
-  };
-
-  config = mkIf config.options.our.roles.nuc.enable
+  config = lib.mkIf cfgNuc.enable {
     {
       imports = [
         # ./logseq.nix
@@ -25,8 +24,7 @@
         # ./neovim.nix
         ./vscode.nix
       ];
-    }
-    (lib.mkIf config.our.roles.hpserver.enable
+    } (lib.mkIf cfgHp.enable
       {
         imports = [
 
@@ -71,6 +69,18 @@
   #     ];
   #   };
 
-
+  ## Default
+      # imports = [
+      #   # ./logseq.nix
+      #   ./office.nix
+      #   ./vim.nix
+      #   # ./neovim.nix
+      #   ./vscode.nix
+      # ];
+  #   environment.systemPackages = [ 
+  #       pkgs.fuse
+  #       pkgs.arduino
+  #       pkgs.logseq
+  #       ];
 
 }
