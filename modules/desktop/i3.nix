@@ -46,6 +46,7 @@ in {
       dunst # notifications
       picom
       nitrogen
+      nmtui
     ];
   };
 }
