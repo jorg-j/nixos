@@ -30,6 +30,7 @@
   };
 
   our.roles.nuc.enable = true;
+  options.our.roles.nuc.enable = mkEnableOption "nuc";
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];

@@ -10,8 +10,7 @@ with lib; let
   cfgHP = config.our.roles.hpserver;
 in
 {
-  options.our.roles.nuc.enable = mkEnableOption "nuc";
-  options.our.roles.hpserver.enable = mkEnableOption "hpserver";
+
   imports = [./vim.nix];
   config = {
     
