@@ -11,9 +11,10 @@ with lib; let
 in
 {
 
-  imports = [./vim.nix];
+  imports = [ ./vim.nix ./office ];
+
   config = {
-    
+
     environment.systemPackages =
       if cfgNuc.enable then
         [
@@ -33,7 +34,7 @@ in
 
   };
 
-    }
+}
 
 # config = {
 

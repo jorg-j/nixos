@@ -1,14 +1,29 @@
-{pkgs, ...}: {
+{ pkgs, lib, ... }:
+
+with lib; let
+
+  cfgNuc = config.our.roles.nuc;
+  cfgHP = config.our.roles.hpserver;
+in
+{
   home-manager.users.jack = {
-    home.packages = with pkgs; [
-      abiword
-      gnumeric
-      # obsidian
-      todoist-electron
-      # === libreoffice ===
-      hunspell
-      hunspellDicts.en_US-large
-      libreoffice-fresh
-    ];
+    home.packages = with pkgs;
+      if cfg.Nuc.enable then
+
+        [
+          abiword
+          gnumeric
+          # obsidian
+          todoist-electron
+          # === libreoffice ===
+          hunspell
+          hunspellDicts.en_US-large
+          libreoffice-fresh
+        ] else if cfgHP.enable then
+        [ abiword ]
+      else
+        [ abiword ];
+
+
   };
 }
