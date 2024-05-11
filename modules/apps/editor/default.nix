@@ -12,27 +12,25 @@ in
 {
   options.our.roles.nuc.enable = lib.mkEnableOption "nuc";
   options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
-  
-  config = lib.mkIf cfgNuc.enable {
-    imports = [
-      # ./logseq.nix
-      ./office.nix
-      ./vim.nix
-      # ./neovim.nix
-      ./vscode.nix
+    config = {
+    imports = lib.mkIf cfgNuc.enable [
+      {
+        imports = [
+          # ./logseq.nix
+          ./office.nix
+          ./vim.nix
+          # ./neovim.nix
+          ./vscode.nix
+        ];
+      }
+    ] [
+      lib.mkIf cfgHP.enable {
+        imports = [
+          ./vim.nix
+        ];
+      }
     ];
-  } (lib.mkIf cfgHP.enable
-    {
-      imports = [
-        ./vim.nix
-      ];
-    }
-    {
-      imports = [
-        ./vim.nix
-      ];
-    }
-  );
+  };
 }
 
   # config = {
