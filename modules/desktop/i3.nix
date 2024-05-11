@@ -15,20 +15,18 @@ in {
   config = mkIf cfg.enable {
     # Activate for non gtk desktop environments
     xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    xdg.portal.config.common.default = "*";
     programs.dconf.enable = true;
 
     environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
+    services.displayManager.defaultSession = "none+i3";
     services.xserver = {
       enable = true;
 
       desktopManager = {
         xterm.enable = false;
       };
-
-      displayManager = {
-        defaultSession = "none+i3";
-      };
-
+      
       windowManager.i3 = {
         enable = true;
         extraPackages = with pkgs; [
@@ -46,7 +44,6 @@ in {
       dunst # notifications
       picom
       nitrogen
-      nmtui
     ];
   };
 }
