@@ -40,9 +40,7 @@ with lib; let
   };
 in
 {
-  options.our.roles.hpserver = {
-    enable = mkEnableOption "hpserver";
-  };
+
 
   # Both of the below work
   config = {
