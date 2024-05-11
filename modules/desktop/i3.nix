@@ -2,6 +2,7 @@
   config,
   pkgs,
   callPackage,
+  lib,
   ...
 }:
 with lib; let
