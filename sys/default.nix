@@ -56,6 +56,6 @@
     ];
   };
 
-  options.our.roles.nuc.enable = lib.mkEnableOption "nuc";
-  options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
+  config.options.our.roles.nuc.enable = lib.mkEnableOption "nuc";
+  config.options.our.roles.hpserver.enable = lib.mkEnableOption "hpserver";
 }
