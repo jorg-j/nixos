@@ -19,7 +19,7 @@ options.our.roles.nuc = {
 config = {
 
   imports = 
-  if nuc.enable
+  if cfgNuc.enable
   then [
       # ./logseq.nix
       ./office.nix
@@ -34,7 +34,7 @@ config = {
 
 
   environment.systemPackages =
-    if nuc.enable
+    if cfgNuc.enable
     then [ 
       pkgs.fuse
       pkgs.arduino

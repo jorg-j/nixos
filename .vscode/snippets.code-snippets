@@ -49,7 +49,7 @@
 		"body": [
 			"config = {"
 			"	environment.systemPackages ="
-			"	  if nuc.enable"
+			"	  if cfgNuc.enable"
 			"	  then [ $1 ]"
 			"	  else [ ];"
 			"  };"
