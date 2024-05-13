@@ -28,7 +28,7 @@
   our.roles.hpserver.enable = true;
   our.roles.hplaptop.enable = true;
 
-  networking.hostName = "hpserver"; # Define your hostname.
+  networking.hostName = "hplaptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -49,23 +49,15 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-
-    chromium
-  ];
 
   system.stateVersion = "23.05"; # No Touchy
 
   nix.gc = {
     automatic = true;
     dates = "monthly";
-    options = "--delete-older-than 30d";
   };
 
   # nix.settings.auto-optimise-store = true;
-
-  # Desktop
-
 
   # Enable random binaries to run
   programs.nix-ld.enable = true;

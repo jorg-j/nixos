@@ -36,6 +36,12 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# start firefox
+bindsym $mod+b exec firefox
+
+# start thunar file manager
+bindsym $mod+p exec thunar
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -141,10 +147,6 @@ assign [class="firefox" instance="Navigator"] $ws2
 assign [class="Thunar" instance="thunar"] $ws3
 assign [class="Code" instance="code"] $ws4
 assign [class="obsidian" instance="obsidian"] $ws5
-
-
-
-
 
 
 # Scratchpads
@@ -341,9 +343,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-
-
 bindsym $mod+Shift+p exec thunar
 
 exec_always picom -f
