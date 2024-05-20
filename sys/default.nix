@@ -57,6 +57,10 @@
       newt
       dialog
       qalculate-gtk
+      shellcheck
+
+      guake
+
     ];
   };
 
