@@ -24,6 +24,8 @@
     yad # yet another dialog box
 
     tmsu # tag my stuff utility
+    
+    popsicle # usb flash
 
     caffeine-ng
   ];

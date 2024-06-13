@@ -62,6 +62,7 @@
   environment.systemPackages = with pkgs; [
     megasync
     chromium
+    yt-dlp
   ];
 
   # This value determines the NixOS release from which the default

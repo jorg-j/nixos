@@ -14,6 +14,7 @@ in
       if cfgNuc.enable then
         [
           openscad
+          blender
         ]
       else if cfgHP.enable then
         [ ]

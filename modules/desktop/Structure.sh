@@ -101,6 +101,7 @@ treemake() {
                 treemake $books "Coding"
                 treemake $books "Mac"
                 treemake $books "Awk_Grep_Sed"
+                treemake $books "GoLang"
                 mkdir -p $books"/10.99_Other"
                 }
         process_books

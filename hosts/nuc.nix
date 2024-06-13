@@ -61,6 +61,7 @@
   environment.systemPackages = with pkgs; [
     chromium
     distrobox
+    yt-dlp
   ];
 
   system.stateVersion = "23.05"; # No Touchy
