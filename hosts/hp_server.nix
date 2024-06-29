@@ -27,6 +27,7 @@
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   our.roles.hpserver.enable = true;
+  config.services.immichbackup.enable = true;
   
 
   networking.hostName = "hpserver"; # Define your hostname.
