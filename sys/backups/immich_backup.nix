@@ -27,7 +27,7 @@ in {
 
     environment.systemPackages = [
       immichbackup
-      gzip
+      
     ];
 
     systemd.services."immich_backup" = {
