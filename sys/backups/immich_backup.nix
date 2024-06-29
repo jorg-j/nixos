@@ -32,25 +32,28 @@ in {
     systemd.services."immich_backup" = {
       # enable = true;
       description = "Immich Backup Service";
-      serviceConfig.Type = "oneshot";
 
-      serviceConfig.ExecStart = immichbackup;
+      serviceConfig.ExecStart = "${immichbackup}";
+      wantedBy = [ "multi-user.target" ];
     };
 
 
   systemd.timers.immich_backupTimer = {
       description = "Immich Backup Service Daily";
-      wantedBy = [ "multi-user.target" ];
-      partOf = [ "immich_backup.service" ];
+      wantedBy = [ "timers.target" ];
 
       timerConfig = {
           unit = "immich_backup.service";
           # OnCalendar = "daily";
-          OnCalendar = "*-*-* 12:15:00";
+          OnCalendar = "*-*-* 12:23:00";
           Persistent = true;
           # onBootSec = "5min";
           # onUnitActiveSec = "60min";
       };
+
+      unitConfig = {
+        Unit = "immich_backup.service";
+      }
   };
   };
 }
