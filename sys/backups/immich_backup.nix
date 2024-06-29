@@ -47,13 +47,11 @@ in {
           # OnCalendar = "daily";
           OnCalendar = "*-*-* 12:23:00";
           Persistent = true;
-          # onBootSec = "5min";
-          # onUnitActiveSec = "60min";
       };
 
       unitConfig = {
         Unit = "immich_backup.service";
-      }
+      };
   };
   };
 }
