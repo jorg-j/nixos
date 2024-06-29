@@ -38,15 +38,16 @@ in {
     };
   };
 
-  # systemd.timers.capaldiSyncTimer = {
-  #     description = "Run Capaldi Sync every 60 minutes";
-  #     wantedBy = [ "multi-user.target" ];
-  #     partOf = [ "unionSync.service" ];
+  systemd.timers.immich_backupTimer = {
+      description = "Immich Backup Service Daily";
+      wantedBy = [ "multi-user.target" ];
+      partOf = [ "immich_backup.service" ];
 
-  #     timerConfig = {
-  #         unit = "capaldiSync.service";
-  #         onBootSec = "5min";
-  #         onUnitActiveSec = "60min";
-  #     };
-  # };
+      timerConfig = {
+          unit = "immich_backup.service";
+          OnCalendar = "daily";
+          # onBootSec = "5min";
+          # onUnitActiveSec = "60min";
+      };
+  };
 }
