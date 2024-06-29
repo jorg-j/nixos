@@ -46,7 +46,6 @@ in {
       immichbackup
       immichbackupremove
       pkgs.gzip
-      pkgs.tar
     ];
 
     systemd.services."immich_backup" = {
