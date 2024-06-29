@@ -65,7 +65,7 @@ in {
       wantedBy = [ "multi-user.target" ];
     };
 
-    systemd.timers.immich_backupTimer = {
+    systemd.timers.immich_backup_removeTimer = {
         description = "Immich Backup Remove Service Daily";
         wantedBy = [ "timers.target" ];
 
