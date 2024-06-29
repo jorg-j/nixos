@@ -10,7 +10,7 @@ with lib; let
   immichbackup = pkgs.writeScriptBin "immichbackup" ''
     #!${pkgs.stdenv.shell}
 
-    current=$(date +"%y_%m_%d)
+    current=$(date +%y_%m_%d)
     dest="/run/media/jack/ElementSE/immich_backups/$current.sql.gz"
 
     docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | gzip > $dest
