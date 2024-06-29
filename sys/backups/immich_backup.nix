@@ -21,7 +21,7 @@ with lib; let
     ${pkgs.docker}/bin/docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | ${pkgs.gzip}/bin/gzip > $sqlDest
 
     ${pkgs.curl}/bin/curl -H "Title: Immich Backup" -d "Started" ntfy.sh/jorg_1512
-    cd $dest && tar c $librarySrc
+    cd $dest && ${pkgs.gnutar}/bin/tar c $librarySrc
     ${pkgs.curl}/bin/curl -H "Title: Immich Backup" -d "Completed" ntfy.sh/jorg_1512
 
   '';
@@ -46,6 +46,7 @@ in {
       immichbackup
       immichbackupremove
       pkgs.gzip
+      pkgs.gnutar
     ];
 
     systemd.services."immich_backup" = {
