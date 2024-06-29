@@ -33,7 +33,7 @@ in {
       # enable = true;
       description = "Immich Backup Service";
 
-      serviceConfig.ExecStart = "${immichbackup}";
+      serviceConfig.ExecStart = "${immichbackup}/bin/immichbackup";
       wantedBy = [ "multi-user.target" ];
     };
 
@@ -45,7 +45,7 @@ in {
       timerConfig = {
           unit = "immich_backup.service";
           # OnCalendar = "daily";
-          OnCalendar = "*-*-* 12:25:00";
+          OnCalendar = "*-*-* 12:28:00";
           Persistent = true;
       };
 
