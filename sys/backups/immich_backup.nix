@@ -36,7 +36,7 @@ in {
 
       serviceConfig.ExecStart = immichbackup;
     };
-  };
+
 
   systemd.timers.immich_backupTimer = {
       description = "Immich Backup Service Daily";
@@ -49,5 +49,6 @@ in {
           # onBootSec = "5min";
           # onUnitActiveSec = "60min";
       };
+  };
   };
 }
