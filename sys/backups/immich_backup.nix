@@ -45,7 +45,7 @@ in {
       timerConfig = {
           unit = "immich_backup.service";
           # OnCalendar = "daily";
-          OnCalendar = "*-*-* 12:23:00";
+          OnCalendar = "*-*-* 12:25:00";
           Persistent = true;
       };
 
