@@ -14,7 +14,7 @@ with lib; let
     src="/home/jack/Docker/immich-app/"
     dest="/run/media/jack/ElementSE/immich_backups/"
 
-    librarySrc="$src/Library"
+    librarySrc="$src/library"
     sqlDest="$dest$current.sql.gz"
     archiveDest="$dest$current.tar"
 
