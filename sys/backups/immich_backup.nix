@@ -45,7 +45,9 @@ in {
 
       timerConfig = {
           unit = "immich_backup.service";
-          OnCalendar = "daily";
+          # OnCalendar = "daily";
+          OnCalendar = "12:11";
+          Persistent = true;
           # onBootSec = "5min";
           # onUnitActiveSec = "60min";
       };
