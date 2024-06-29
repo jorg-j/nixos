@@ -13,7 +13,7 @@ with lib; let
     current=$(date +%y_%m_%d)
     dest="/run/media/jack/ElementSE/immich_backups/$current.sql.gz"
 
-    docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | gzip > $dest
+    ${pkgs.docker}/bin/docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | ${pkgs.gzip}/bin/gzip > $dest
 
   '';
 
@@ -27,6 +27,7 @@ in {
 
     environment.systemPackages = [
       immichbackup
+      gzip
     ];
 
     systemd.services."immich_backup" = {
@@ -45,7 +46,7 @@ in {
       timerConfig = {
           unit = "immich_backup.service";
           # OnCalendar = "daily";
-          OnCalendar = "*-*-* 12:28:00";
+          OnCalendar = "*-*-* 12:31:00";
           Persistent = true;
       };
 
