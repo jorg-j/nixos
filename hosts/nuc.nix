@@ -16,6 +16,7 @@
     ../nmodules
     ../modules/networking.nix
 
+
   ];
 
   # Bootloader.
@@ -29,6 +30,8 @@
   };
 
   our.roles.nuc.enable = true;
+
+  
 
 
   # Enables closure file builds for arm
@@ -62,6 +65,9 @@
     chromium
     distrobox
     yt-dlp
+    exfat
+    exfatprogs
+    ntfs3g
   ];
 
   system.stateVersion = "23.05"; # No Touchy

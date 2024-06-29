@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./python
+    # ./python/duckypad
   ];
 
   environment.systemPackages = with pkgs; [

@@ -20,4 +20,5 @@ in {
   
   homemanager.unison.enable = true;
   homemanager.xfce.enable = false;
+
 }

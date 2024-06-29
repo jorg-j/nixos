@@ -13,7 +13,7 @@ in
     environment.systemPackages = with pkgs;
       if cfgNuc.enable then
         [
-    espanso
+    # espanso
         ]
       else if cfgHP.enable then
         [ ]

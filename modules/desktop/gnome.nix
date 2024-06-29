@@ -22,10 +22,12 @@ in {
       gnome-keyring.enable = true;
       gnome-online-accounts.enable = true;
     };
+
+    environment.systemPackages = with pkgs; [ gnomeExtensions.pop-shell ];
+
+    
+
   };
 
-  # imports =
-  # [
-  #   ./gnome_extensions.nix
-  # ];
+
 }

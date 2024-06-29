@@ -2,21 +2,33 @@
   config,
   pkgs,
   ...
-}: let
-  unstable =
-    import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master)
-    # reuse the current configuration
-    {config = config.nixpkgs.config;};
-in {
+}: 
+ {
   environment.systemPackages = with pkgs; [
-    unstable.rustc
-    unstable.just
-    unstable.cosmic-icons
-    unstable.cosmic-settings
-    unstable.cosmic-greeter
-    unstable.cosmic-launcher
+    cosmic-bg
+    cosmic-osd
+    cosmic-term
+
+    cosmic-comp
+    cosmic-tasks
+    cosmic-randr
+    cosmic-panel
+    cosmic-icons
+    cosmic-files
+    cosmic-session
+    cosmic-greeter
+    cosmic-applets
+    cosmic-settings
+    cosmic-launcher
+    cosmic-protocols
+    cosmic-screenshot
+    cosmic-applibrary
+    cosmic-design-demo
+    cosmic-notifications
+    cosmic-settings-daemon
+    cosmic-workspaces-epoch
   ];
 }
 # https://nixos.wiki/wiki/COSMIC
+
 

@@ -14,6 +14,7 @@
     ../profiles/hpserver.nix
     ../nmodules
     ../modules/networking.nix
+    ../sys/backups/immich_backup.nix
   ];
 
   # Bootloader.

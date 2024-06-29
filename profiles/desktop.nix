@@ -16,8 +16,10 @@
   # our.roles.xfce.enable = true;
   our.roles.plasma.enable = true;
   # our.roles.gnome.enable = true;
+  # our.roles.cinnamon.enable = true;
+  # our.roles.mate.enable = true;
 
-
+  
 
   # Enable Streamdeck UI
   programs.streamdeck-ui.enable = true;
