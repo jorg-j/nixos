@@ -11,8 +11,19 @@ with lib; let
     #!${pkgs.stdenv.shell}
 
     current=$(date +%Y_%m_%d)
-    dest="/run/media/jack/ElementSE/immich_backups/$current.sql.gz"
-    ${pkgs.docker}/bin/docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | ${pkgs.gzip}/bin/gzip > $dest
+    src="/home/jack/Docker/immich-app/"
+    dest="/run/media/jack/ElementSE/immich_backups/"
+
+    librarySrc="$src/Library"
+    sqlDest="$dest$current.sql.gz"
+    archiveDest="$dest$current.tar"
+
+    ${pkgs.docker}/bin/docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | ${pkgs.gzip}/bin/gzip > $sqlDest
+
+    ${pkgs.curl}/bin/curl -H "Title: Immich Backup" -d "Started" ntfy.sh/jorg_1512
+    cd $dest && ${pkgs.tar}/bin/tar c $librarySrc
+    ${pkgs.curl}/bin/curl -H "Title: Immich Backup" -d "Completed" ntfy.sh/jorg_1512
+
   '';
 
 
@@ -34,6 +45,7 @@ in {
     environment.systemPackages = [
       immichbackup
       immichbackupremove
+      pkgs.gzip
     ];
 
     systemd.services."immich_backup" = {
