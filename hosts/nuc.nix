@@ -30,6 +30,7 @@
   };
 
   our.roles.nuc.enable = true;
+  services.duckypad.enable = true;
 
   
 
