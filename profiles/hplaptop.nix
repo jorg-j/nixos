@@ -17,8 +17,8 @@
   # our.roles.plasma.enable = true;
   # our.roles.gnome.enable = true;
   # our.roles.lxqt.enable = true;
-  our.roles.i3.enable = true;
-  homemanager.i3.enable = true;
+  # our.roles.i3.enable = true;
+  # homemanager.i3.enable = true;
 
   environment.systemPackages = with pkgs; [
     # === libreoffice ===

@@ -27,6 +27,7 @@
 
   our.roles.hpserver.enable = true;
   our.roles.hplaptop.enable = true;
+  our.roles.lxqt.enable = true;
 
   networking.hostName = "hplaptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
