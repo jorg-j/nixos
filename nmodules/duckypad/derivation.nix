@@ -3,6 +3,7 @@
   python3Packages,
   pkgs
 }:
+# with import <nixpkgs> { };
 with pkgs.python3Packages;
 
 
@@ -17,7 +18,7 @@ buildPythonApplication rec {
   format = "other";
 
   buildInputs = [ pkgs.python311Full pkgs.python311Packages.pip pyautogui appdirs hidapi];
-  nativeBuildInputs = [ pkgs.imagemagick ];
+  nativeBuildInputs = [ pkgs.imagemagick pkgs.libicns ];
   propagatedNativeBuildInputs = [ pkgs.python311Full pkgs.python311Packages.pip python3Packages.pyautogui python3Packages.appdirs python3Packages.hidapi];
 
   propagatedBuildInputs = [
@@ -47,15 +48,13 @@ buildPythonApplication rec {
     sed -i 's/ENV_UI_SCALE else 1/ENV_UI_SCALE else 2/' $out/bin/duckypad_config.py
     
     install -m755 -D $out/bin/duckypad_config.py $out/bin/duckypad
-  '';
 
-  postInstall = ''
-    for i in 16 24 48 64 96 128 256 512; do
-      mkdir -p $out/share/icons/hicolor/''${i}x''${i}/apps
-      convert -background none -resize ''${i}x''${i} $src/icon.icns $out/share/icons/hicolor/''${i}x''${i}/apps/${name}.png
-    done
-
-
+    # Create .desktop file
+    mkdir -p $out/share/applications
+    mkdir -p $out/share/icons
+    
+    icns2png -x $out/bin/icon.icns
+    mv icon_1024x1024x32.png $out/share/icons/ducky_icon.png
 
     cat << EOF > $out/share/applications/duckypad.desktop
     [Desktop Entry]
@@ -64,10 +63,16 @@ buildPythonApplication rec {
     Comment=GUI for Duckypad keypad
     Exec=$out/bin/duckypad %U
     Type=Application
-    Icon=$out/bin/icon.icns
-    Categories=Utilities; 
+    Icon=$out/share/icons/ducky_icon.png
+    Categories=Utility; 
     MimeType=application/duckypad;
     EOF
+
+    chmod 755 $out/share/applications/duckypad.desktop
+  '';
+
+  postInstall = ''
+
   '';
 
   meta = with lib; {
