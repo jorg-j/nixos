@@ -60,7 +60,7 @@
     hg = "history | grep";
 
     # Fix KDE screen issue
-    screen = "pushd /home/jack/.local/share > /dev/null && rm -r kscreen && popd > /dev/null";
+    kscreen = "pushd /home/jack/.local/share > /dev/null && rm -r kscreen && popd > /dev/null";
 
     grab-display = "export DISPLAY = ':0.0'";
 
