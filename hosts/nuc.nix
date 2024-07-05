@@ -15,8 +15,6 @@
     ../profiles/desktop.nix
     ../nmodules
     ../modules/networking.nix
-
-
   ];
 
   # Bootloader.
@@ -30,10 +28,9 @@
   };
 
   our.roles.nuc.enable = true;
-  services.duckypad.enable = true;
-
+  our.roles.plasma.enable = true;
   
-
+  services.duckypad.enable = true;
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
