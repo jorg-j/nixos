@@ -66,7 +66,7 @@
 
             " autocomplete
             inoremap ,, <C-x><C-n>
-            
+
 
 
             " Spelling

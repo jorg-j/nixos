@@ -15,15 +15,12 @@
 in {
   config = {
     environment.systemPackages = with pkgs;
-      if cfgNuc.enable then
-        [
-    unstable.ollama
-        ]
-      else if cfgHP.enable then
-        [ ]
-      else
-        [ ];
-
+      if cfgNuc.enable
+      then [
+        unstable.ollama
+      ]
+      else if cfgHP.enable
+      then []
+      else [];
   };
-
 }

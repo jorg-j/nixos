@@ -19,9 +19,6 @@
   # our.roles.cinnamon.enable = true;
   # our.roles.mate.enable = true;
 
-  
-
   # Enable Streamdeck UI
   # programs.streamdeck-ui.enable = true;
-
 }

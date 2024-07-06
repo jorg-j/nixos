@@ -32,6 +32,8 @@
     enable = false;
   };
 
+  our.software.sqlite.enable = true;
+
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 

@@ -4,7 +4,6 @@
 {
   config,
   pkgs,
-
   ...
 }: {
   imports = [
@@ -29,8 +28,9 @@
 
   our.roles.nuc.enable = true;
   our.roles.plasma.enable = true;
-  
+
   services.duckypad.enable = true;
+  our.software.sqlite.enable = true;
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];

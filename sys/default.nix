@@ -60,9 +60,6 @@
       shellcheck
 
       guake
-
     ];
   };
-
-
 }

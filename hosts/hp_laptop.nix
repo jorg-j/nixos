@@ -21,13 +21,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.tmp.cleanOnBoot = true;
 
-
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   our.roles.hpserver.enable = true;
   our.roles.hplaptop.enable = true;
   our.roles.lxqt.enable = true;
+
+  our.software.sqlite.enable = true;
 
   networking.hostName = "hplaptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

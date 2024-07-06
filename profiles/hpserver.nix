@@ -17,6 +17,4 @@
   # our.roles.plasma.enable = true;
   # our.roles.gnome.enable = true;
   our.roles.lxqt.enable = true;
-
-
 }

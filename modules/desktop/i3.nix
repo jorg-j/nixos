@@ -26,7 +26,7 @@ in {
       desktopManager = {
         xterm.enable = false;
       };
-      
+
       windowManager.i3 = {
         enable = true;
         extraPackages = with pkgs; [

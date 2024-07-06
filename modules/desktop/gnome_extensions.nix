@@ -5,7 +5,6 @@
       settings."org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = with pkgs.gnomeExtensions; [
-                   
           pop-shell.system76.com
         ];
       };

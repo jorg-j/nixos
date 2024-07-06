@@ -17,8 +17,6 @@ in {
     users.jack = import ./home.nix;
   };
 
-  
   homemanager.unison.enable = true;
   homemanager.xfce.enable = false;
-
 }

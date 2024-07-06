@@ -1,26 +1,22 @@
-{ pkgs
-, lib
-, config
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  ...
 }:
-
 with lib; let
   cfgNuc = config.our.roles.nuc;
   cfgHP = config.our.roles.hpserver;
-in
-{
+in {
   config = {
     environment.systemPackages = with pkgs;
-      if cfgNuc.enable then
-        [
+      if cfgNuc.enable
+      then [
         vorta
         unison
-        ]
-      else if cfgHP.enable then
-        [ ]
-      else
-        [ ];
-
+      ]
+      else if cfgHP.enable
+      then []
+      else [];
   };
-
 }

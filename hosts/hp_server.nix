@@ -22,13 +22,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.tmp.cleanOnBoot = true;
 
-
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   our.roles.hpserver.enable = true;
   services.immichbackup.enable = true;
-  
+  our.software.sqlite.enable = true;
 
   networking.hostName = "hpserver"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -52,7 +51,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-
     chromium
   ];
 
@@ -67,7 +65,6 @@
   # nix.settings.auto-optimise-store = true;
 
   # Desktop
-
 
   # Enable random binaries to run
   programs.nix-ld.enable = true;

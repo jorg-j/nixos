@@ -23,11 +23,6 @@ in {
       gnome-online-accounts.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [ gnomeExtensions.pop-shell ];
-
-    
-
+    environment.systemPackages = with pkgs; [gnomeExtensions.pop-shell];
   };
-
-
 }

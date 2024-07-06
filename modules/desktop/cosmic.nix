@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}: 
- {
+}: {
   environment.systemPackages = with pkgs; [
     cosmic-bg
     cosmic-osd
@@ -30,5 +29,4 @@
   ];
 }
 # https://nixos.wiki/wiki/COSMIC
-
 
