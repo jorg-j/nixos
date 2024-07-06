@@ -1,11 +1,22 @@
 {
   config,
   pkgs,
+  vars,
+  lib,
   ...
-}: {
-  # make the tailscale command usable to users
-  environment.systemPackages = [pkgs.tailscale];
+}:
+with lib; let
+  cfg = config.our.software.tailscale;
+in {
+  options.our.software.tailscale = {
+    enable = mkEnableOption "tailscale";
+  };
 
-  # enable the tailscale service
-  services.tailscale.enable = true;
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      pkgs.tailscale
+    ];
+    # enable the tailscale service
+    services.tailscale.enable = true;
+  };
 }

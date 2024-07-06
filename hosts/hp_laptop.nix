@@ -29,6 +29,7 @@
   our.roles.lxqt.enable = true;
 
   our.software.sqlite.enable = true;
+  our.software.docker.enable = true;
 
   networking.hostName = "hplaptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

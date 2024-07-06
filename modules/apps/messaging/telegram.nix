@@ -6,15 +6,15 @@
   ...
 }:
 with lib; let
-  cfg = config.our.software.rpi;
+  cfg = config.our.software.telegram;
 in {
-  options.our.software.rpi = {
-    enable = mkEnableOption "rpi";
+  options.our.software.telegram = {
+    enable = mkEnableOption "telegram";
   };
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      pkgs.rpi-imager
+      pkgs.tdesktop
     ];
   };
 }

@@ -2,11 +2,20 @@
   config,
   pkgs,
   vars,
+  lib,
   ...
-}: let
-  unstable = import <nixos-unstable> {config = {allowUnfree = true;};};
+}:
+with lib; let
+  # unstable = import <nixos-unstable> {config = {allowUnfree = true;};};
+  cfg = config.our.software.logseq;
 in {
-  environment.systemPackages = with pkgs; [
-    unstable.logseq
-  ];
+  options.our.software.logseq = {
+    enable = mkEnableOption "logseq";
+  };
+
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      pkgs.logseq
+    ];
+  };
 }

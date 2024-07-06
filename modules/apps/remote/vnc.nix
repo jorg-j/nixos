@@ -1,10 +1,23 @@
-{pkgs, ...}: {
-  environment = {
-    systemPackages = with pkgs; [
-      x11vnc
+{
+  config,
+  pkgs,
+  vars,
+  lib,
+  ...
+}:
+with lib; let
+  cfg = config.our.software.vnc;
+in {
+  options.our.software.vnc = {
+    enable = mkEnableOption "vnc";
+  };
+
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      pkgs.x11vnc
       # realvnc-vnc-viewer # VNC viewer
-      tigervnc
-      xorg.xinit
+      pkgs.tigervnc
+      pkgs.xorg.xinit
     ];
   };
 }

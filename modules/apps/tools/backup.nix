@@ -1,22 +1,21 @@
 {
-  pkgs,
-  lib,
   config,
+  pkgs,
+  vars,
+  lib,
   ...
 }:
 with lib; let
-  cfgNuc = config.our.roles.nuc;
-  cfgHP = config.our.roles.hpserver;
+  cfg = config.our.software.backups;
 in {
-  config = {
-    environment.systemPackages = with pkgs;
-      if cfgNuc.enable
-      then [
-        vorta
-        unison
-      ]
-      else if cfgHP.enable
-      then []
-      else [];
+  options.our.software.backups = {
+    enable = mkEnableOption "backups";
+  };
+
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      pkgs.vorta
+      pkgs.unison
+    ];
   };
 }

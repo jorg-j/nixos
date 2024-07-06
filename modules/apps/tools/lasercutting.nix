@@ -1,21 +1,20 @@
 {
-  pkgs,
-  lib,
   config,
+  pkgs,
+  vars,
+  lib,
   ...
 }:
 with lib; let
-  cfgNuc = config.our.roles.nuc;
-  cfgHP = config.our.roles.hpserver;
+  cfg = config.our.software.lightburn;
 in {
-  config = {
-    environment.systemPackages = with pkgs;
-      if cfgNuc.enable
-      then [
-        lightburn
-      ]
-      else if cfgHP.enable
-      then []
-      else [];
+  options.our.software.lightburn = {
+    enable = mkEnableOption "lightburn";
+  };
+
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      pkgs.lightburn
+    ];
   };
 }

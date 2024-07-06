@@ -30,7 +30,15 @@
   our.roles.plasma.enable = true;
 
   services.duckypad.enable = true;
+  our.software.ansible.enable = true;
+  our.software.docker.enable = true;
+  our.software.vagrant.enable = true;
   our.software.sqlite.enable = true;
+  our.software.office.enable = true;
+  our.software.ollama.enable = true;
+  our.software.vnc.enable = true;
+  our.software.modeling.enable = true; # 3d
+  our.software.moonlander.enable = true;
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
@@ -49,9 +57,6 @@
 
   # For SSD's
   services.fstrim.enable = true;
-
-  # Enable ZSA Moonlander hardware flashing
-  hardware.keyboard.zsa.enable = true;
 
   # use the example session manager (no others are packaged yet so this is enabled by default,
   # no need to redefine it in your config for now)

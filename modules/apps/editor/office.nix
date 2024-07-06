@@ -1,37 +1,25 @@
 {
   config,
   pkgs,
+  vars,
   lib,
   ...
 }:
 with lib; let
-  cfgNuc = config.our.roles.nuc;
-  cfgHP = config.our.roles.hpserver;
-  cfgLaptop = config.our.roles.hplaptop;
+  cfg = config.our.software.office;
 in {
-  home-manager.users.jack = {
-    home.packages = with pkgs;
-      if cfgNuc.enable
-      then [
-        abiword
-        gnumeric
-        # obsidian
-        todoist-electron
-        # === libreoffice ===
-        hunspell
-        hunspellDicts.en_US-large
-        libreoffice-fresh
-      ]
-      else if cfgHP.enable
-      then [abiword]
-      else if cfgLaptop.enable
-      then [
-        # === libreoffice ===
-        hunspell
-        hunspellDicts.en_US-large
-        libreoffice-fresh
-        abiword
-      ]
-      else [abiword];
+  options.our.software.office = {
+    enable = mkEnableOption "office";
+  };
+
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      pkgs.abiword
+      pkgs.gnumeric
+      # === libreoffice ===
+      pkgs.hunspell
+      pkgs.hunspellDicts.en_US-large
+      pkgs.libreoffice-fresh
+    ];
   };
 }

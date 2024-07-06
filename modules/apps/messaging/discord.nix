@@ -6,15 +6,15 @@
   ...
 }:
 with lib; let
-  cfg = config.our.software.rpi;
+  cfg = config.our.software.discord;
 in {
-  options.our.software.rpi = {
-    enable = mkEnableOption "rpi";
+  options.our.software.discord = {
+    enable = mkEnableOption "discord";
   };
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      pkgs.rpi-imager
+      pkgs.discord
     ];
   };
 }

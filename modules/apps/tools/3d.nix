@@ -1,22 +1,21 @@
 {
-  pkgs,
-  lib,
   config,
+  pkgs,
+  vars,
+  lib,
   ...
 }:
 with lib; let
-  cfgNuc = config.our.roles.nuc;
-  cfgHP = config.our.roles.hpserver;
+  cfg = config.our.software.modeling;
 in {
-  config = {
-    environment.systemPackages = with pkgs;
-      if cfgNuc.enable
-      then [
-        openscad
-        blender
-      ]
-      else if cfgHP.enable
-      then []
-      else [];
+  options.our.software.modeling = {
+    enable = mkEnableOption "modeling";
+  };
+
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      pkgs.openscad
+      pkgs.blender
+    ];
   };
 }

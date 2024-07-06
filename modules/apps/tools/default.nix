@@ -7,8 +7,10 @@
     ./compression.nix
     ./http.nix
     ./json.nix
+    ./kdenlive.nix
     ./lasercutting.nix
     ./media.nix
+    ./moonlander.nix
     ./network.nix
     ./raspberry.nix
     ./search.nix
