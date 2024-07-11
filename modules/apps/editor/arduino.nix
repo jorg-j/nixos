@@ -14,7 +14,9 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      pkgs.arduino
+      pkgs.arduino-ide
+      pkgs.python3Packages.pyserial
+      # pkgs.python311Packages.esptool
     ];
   };
 }

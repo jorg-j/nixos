@@ -10,6 +10,7 @@
       xterm
       xfce.xfce4-terminal
       xdotool
+      ranger
       tmux
     ];
   };

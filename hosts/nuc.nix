@@ -30,6 +30,7 @@
   our.roles.plasma.enable = true;
 
   services.duckypad.enable = true;
+  our.software.backups.enable = true;
   our.software.ansible.enable = true;
   our.software.docker.enable = true;
   our.software.vagrant.enable = true;
@@ -39,6 +40,7 @@
   our.software.vnc.enable = true;
   our.software.modeling.enable = true; # 3d
   our.software.moonlander.enable = true;
+  our.software.arduino.enable = true;
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
@@ -71,6 +73,7 @@
     exfat
     exfatprogs
     ntfs3g
+    scantailor-advanced
   ];
 
   system.stateVersion = "23.05"; # No Touchy
