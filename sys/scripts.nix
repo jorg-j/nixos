@@ -39,7 +39,7 @@ in {
 
   environment.shellInit = ''
     cdj() {
-       pushd ~/Documents/*/*/*''${1}*
+       cd ~/Documents/*/*/*''${1}*
       }
 
     notify() {
