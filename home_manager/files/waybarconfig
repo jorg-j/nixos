@@ -1,0 +1,98 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    // "modules-right": ["cpu", "memory", "temperature", "backlight", "battery", "pulseaudio", "clock", "tray", "notification"],
+    "modules-right": ["cpu", "memory", "temperature", "network", "pulseaudio", "clock", "tray", "notification"],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{name}{icon}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+    "tray": {
+        "spacing": 10,
+        "icon-size": 30
+    },
+    "clock": {
+        "format": "{: %Y-%m-%d %a %H:%M}",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% ",
+        "tooltip": true
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        "format": "{percent}% {icon} ",
+        // "format-icons": ["", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "tooltip": false,
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+        "format-linked": "{ifname} (No IP)  ",
+        "format-disconnected": "Disconnected ⚠ ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "scroll-step": 10, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-muted": "{volume}%  {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "{volume}% ",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format‐icons": {
+             "notification": "<U+F0A2><span foreground=’red’><sup><U+F444></sup></span>",
+             "none": "<U+F0A2>",
+             "dnd‐notification": "<U+F1F7><span foreground=’red’><sup><U+F444></sup></span>",
+             "dnd‐none": "<U+F1F7>",
+             "inhibited‐notification": "<U+F0A2><span foreground=’red’><sup><U+F444></sup></span>",
+             "inhibited‐none": "<U+F0A2>",
+             "dnd‐inhibited‐notification": "<U+F1F7><span foreground=’red’><sup><U+F444></sup></span>",
+             "dnd‐inhibited‐none": "<U+F1F7>"
+        },
+        "return‐type": "json",
+        "exec‐if": "which swaync‐client",
+        "exec": "swaync‐client ‐swb",
+        "on‐click": "swaync‐client ‐t ‐sw",
+        "on‐click‐right": "swaync‐client ‐d ‐sw",
+        "escape": true
+    }
+}

@@ -99,5 +99,7 @@
     obsync = "pushd /home/jack/Documents/10-19_Books_Documentation/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd > /dev/null";
 
     n = "bash /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/commands.sh";
+
+    hyperconfig = "vim ~/.config/hypr/hyprland.conf"; # Hyperland Config
   };
 }

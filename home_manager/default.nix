@@ -19,4 +19,7 @@ in {
 
   homemanager.unison.enable = true;
   homemanager.xfce.enable = false;
+  # homemanager.enableNixpkgsReleaseCheck = false;
+
+
 }

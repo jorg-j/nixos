@@ -1,5 +1,5 @@
 
-set $mod Mod4
+set $mod Mod1
 
 # enable notifications
 exec_always --no-startup-id dunst
@@ -98,7 +98,7 @@ set $fm eDP-1
 set $sm DP-2
 
 workspace "1:Term" output $fm
-workspace "2:Web" output $fm
+workspace "2:Web" output $sm
 workspace "3:Files" output $fm
 workspace "4:Code" output $sm
 workspace "5:Notes" output $sm

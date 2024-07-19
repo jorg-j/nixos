@@ -5,6 +5,7 @@
     ./kdeplasma.nix
     ./lxqt.nix
     ./i3.nix
+    ./hyprland.nix
     ./cinnamon.nix
     ./mate.nix
     # ./pantheon.nix

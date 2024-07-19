@@ -21,4 +21,5 @@
 
   # Enable Streamdeck UI
   # programs.streamdeck-ui.enable = true;
+  # our.roles.homemanager.i3 = true;
 }

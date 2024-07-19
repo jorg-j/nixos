@@ -8,7 +8,7 @@
 in {
   imports = [
     (import "${home-manager}/nixos")
-    ./modules
+    # ./modules
   ];
 
   home-manager = {

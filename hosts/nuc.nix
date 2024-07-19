@@ -27,7 +27,9 @@
   };
 
   our.roles.nuc.enable = true;
-  our.roles.plasma.enable = true;
+  #our.roles.i3.enable = true;
+  our.roles.hyprland.enable = true;
+
 
   services.duckypad.enable = true;
   our.software.backups.enable = true;
@@ -73,6 +75,8 @@
     exfatprogs
     ntfs3g
     scantailor-advanced
+    wofi
+    pcmanfm-qt
   ];
 
   system.stateVersion = "23.05"; # No Touchy

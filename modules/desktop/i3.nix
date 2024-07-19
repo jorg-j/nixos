@@ -17,6 +17,7 @@ in {
     xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
     xdg.portal.config.common.default = "*";
     programs.dconf.enable = true;
+    
 
     environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
     services.displayManager.defaultSession = "none+i3";
@@ -44,6 +45,11 @@ in {
       dunst # notifications
       picom
       nitrogen
+      dolphin
+      gnome.nautilus
+      bashmount
     ];
+
+
   };
 }
