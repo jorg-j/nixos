@@ -34,6 +34,8 @@
     ".config/hypr/waybar/style.css" = {source = "/etc/nixos/home_manager/files/waybar.css";};            # Hyperland waycss
     ".config/hypr/swaync.json" = {source = "/etc/nixos/home_manager/files/swaync.json";};                # Hyperland sway
     ".config/hypr/wallpapers/wallpaper.png" = {source = "/etc/nixos/home_manager/files/wallpaper.png";}; # Hyperland wallp
+    ".config/hypr/hyprlock.conf" = {source = "/etc/nixos/home_manager/files/hyprlock.conf";};            # Hyperland lockscreen
+    ".config/hypr/hypridle.conf" = {source = "/etc/nixos/home_manager/files/hypridle.conf";};            # Hyperland lockscreen
     # ".config/Code/User/settings.json" = { source = "/etc/nixos/home_manager/files/vscode.json"; };
   };
 

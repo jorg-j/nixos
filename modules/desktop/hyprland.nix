@@ -34,8 +34,16 @@ in {
             pavucontrol            # audio control
             glib                   # used for gsettings
             swaybg                 # wallpaper manager
-            swaylock               # lockscreen
+            hyprlock               # lockscreen
+            hypridle               # lockscreen
           ];
+
+          security.pam.services.hyprlock = {
+                  text = ''
+                          auth include login
+                          '';
+
+          };
 
           fonts = {
                   packages = with pkgs; [
