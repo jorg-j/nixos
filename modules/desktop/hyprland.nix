@@ -26,7 +26,7 @@ in {
           services.gnome.gnome-keyring.enable = true;
 
           environment.systemPackages = with pkgs; [
-            xfce.thunar            # Filemanager
+            gnome.nautilus         # Filemanager
             networkmanagerapplet   # network manager
             bashmount              # mount dir
             waybar                 # status bar
@@ -34,6 +34,7 @@ in {
             pavucontrol            # audio control
             glib                   # used for gsettings
             swaybg                 # wallpaper manager
+            swaylock               # lockscreen
           ];
 
           fonts = {
@@ -42,15 +43,10 @@ in {
                           noto-fonts
                   ];
           };
-
-        #   gtk = {
-        #           enable = true;
-        #           theme = {
-        #                   name = "Materia-dark";
-        #                   package = pkgs.materia-theme;
-        #           };
-        #   };
-
-
+  xdg.portal = {
+    enable = true;
+    #extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
   };
 }
