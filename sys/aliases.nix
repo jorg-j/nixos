@@ -82,23 +82,16 @@
     # Check the content of an app i3
     xwin = "xprop | grep WM_CLASS";
 
-    configi3 = "cp /etc/nixos/home_manager/files/i3_config /home/jack/.config/i3/config && mkdir -p /home/jack/.config/i3status && cp /etc/nixos/home_manager/files/i3status.conf /home/jack/.config/i3status/config";
-
-    # Mount drives i3
-    # Note if removing also remove from home_manager home.nix
-    mounter = "bash ~/.mnti3/mounter";
-    unmounter = "bash ~/.mnti3/unmounter";
-
     flash_keyboard = "wget https://oryx.zsa.io/3ya9r/latest/binary -O binary.bin && wally-cli binary.bin && rm binary.bin";
     flash_keyboard1 = "wget https://oryx.zsa.io/oq5mG/latest/binary -O binary.bin && wally-cli binary.bin && rm binary.bin";
 
     # Setup python nix shell
-    pydev = "cp /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos/modules/dev/python/py_shell.nix ./shell.nix";
+    pydev = "cp /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/modules/dev/python/py_shell.nix ./shell.nix";
 
     # sync obsidian
-    obsync = "pushd /home/jack/Documents/10-19_Books_Documentation/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd > /dev/null";
+    obsync = "pushd /home/jack/Documents/10-19_Books/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd > /dev/null";
 
-    n = "bash /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/commands.sh";
+    n = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/commands.sh";
 
     hyperconfig = "vim ~/.config/hypr/hyprland.conf"; # Hyperland Config
   };
