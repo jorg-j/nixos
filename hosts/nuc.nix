@@ -28,7 +28,8 @@
 
   our.roles.nuc.enable = true;
   #our.roles.i3.enable = true;
-  our.roles.hyprland.enable = true;
+  #our.roles.hyprland.enable = true;
+  our.roles.plasma.enable = true;
 
 
   services.duckypad.enable = true;

@@ -29,6 +29,7 @@
   services.immichbackup.enable = true;
   our.software.sqlite.enable = true;
   our.software.docker.enable = true;
+  our.software.ansible.enable = true;
 
   networking.hostName = "hpserver"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

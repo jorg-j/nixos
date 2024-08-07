@@ -14,7 +14,8 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      pkgs.vorta
+            pkgs.vorta
+            pkgs.borgbackup
       pkgs.unison
     ];
   };
