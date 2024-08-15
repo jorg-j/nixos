@@ -36,10 +36,10 @@
   our.software.backups.enable = true;
   our.software.ansible.enable = true;
   our.software.docker.enable = true;
-  # our.software.vagrant.enable = true;
+  our.software.vagrant.enable = true;
   our.software.sqlite.enable = true;
   our.software.office.enable = true;
-  # our.software.ollama.enable = true;
+  our.software.ollama.enable = true;
   # our.software.vnc.enable = true;
   our.software.modeling.enable = true; # 3d
   # our.software.moonlander.enable = true;
