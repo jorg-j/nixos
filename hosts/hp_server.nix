@@ -26,7 +26,7 @@
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
   our.roles.hpserver.enable = true;
-  services.immichbackup.enable = true;
+  # services.immichbackup.enable = true;
   our.software.sqlite.enable = true;
   our.software.docker.enable = true;
   our.software.ansible.enable = true;
