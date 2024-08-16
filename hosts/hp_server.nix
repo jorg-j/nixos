@@ -17,8 +17,6 @@
     ../sys/backups/immich_backup.nix
   ];
 
-  services.rabbitmq.enable = true;
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
