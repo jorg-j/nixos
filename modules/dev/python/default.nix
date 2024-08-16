@@ -7,7 +7,7 @@
     python311Packages.black
     python311Packages.pytest
     python311Packages.isort
-    python311Packages.requests
+    python3Packages.requests
     pylint
     geany
 
