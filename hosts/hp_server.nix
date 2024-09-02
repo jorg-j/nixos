@@ -14,6 +14,7 @@
     ../profiles/hpserver.nix
     ../nmodules
     ../modules/networking.nix
+    ../modules/services/gitea.nix
   ];
 
   # Bootloader.
