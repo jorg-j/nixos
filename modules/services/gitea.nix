@@ -18,6 +18,7 @@
         # provide native execution on the host
         #"native:host"
         ];
+    settings = {insecure = true;};
     };
 
 }
