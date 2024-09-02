@@ -18,7 +18,10 @@
         # provide native execution on the host
         #"native:host"
         ];
-    settings = {insecure = true;};
+    settings = """
+    runner:
+        insecure: true
+    """;
     };
 
 }
