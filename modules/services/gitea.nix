@@ -5,6 +5,9 @@
   # Ensure Gitea runner is available as a system package
   environment.systemPackages = with pkgs; [ gitea-runner ];
 
+       users.users.gitea-runner.group = "gitea-runner";
+       users.groups.gitea-runner = {};
+
   # Define the systemd service
   systemd.services.gitea-runner = {
     description = "Gitea Runner Service";
