@@ -17,7 +17,7 @@
         "ubuntu-latest:docker://node:18-bullseye"
         # provide native execution on the host
         #"native:host"
-        ]
+        ];
     };
 
 }
