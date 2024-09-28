@@ -93,4 +93,12 @@
   # Enable random binaries to run
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
+
+  users.users.jack.packages = with pkgs; [ factorio ];
+  nixpkgs.config.packageOverrides = pkgs: {
+    factorio = pkgs.factorio.override {
+        username = "jorgo1";
+        token = "bced6717a2e2f161fa5fb1c3897bda";
+    };
+};
 }

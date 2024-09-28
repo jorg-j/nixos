@@ -43,6 +43,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      mc
       cryfs
       gocryptfs
       just

@@ -24,6 +24,8 @@
     stable = "git tag -d stable; git tag -d origin stable; git tag stable";
     pushtags = "git push --tags";
 
+    mc = "EDITOR=vim mc";
+
     s = "sudo";
     ss = "sudo systemctl";
 

@@ -53,7 +53,7 @@
       anonymousPro
       corefonts
       source-code-pro
-      symbola
+      
     ];
   };
 }

@@ -13,7 +13,7 @@
           x = 4;
           y = 4;
         };
-        decorations = "none";
+        decorations = "full";
       };
 
       shell.program = "${pkgs.zsh}/bin/zsh";
