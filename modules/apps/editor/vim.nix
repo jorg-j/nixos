@@ -63,9 +63,19 @@
             nnoremap <leader>b :ls<CR>:b<Space>
             :set hidden
 
+            " new tab
+            map <F10> <Esc>:tabnew<CR>
+
+
+
+            " File Explorer open file in new buffer
+            map <leader>e <Esc>:E ./<CR>
 
             " autocomplete
             inoremap ,, <C-x><C-n>
+
+            " duplicate line with edits
+            map <leader>d <Esc>:t.
 
 
 
