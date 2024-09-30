@@ -100,6 +100,26 @@
             set hlsearch            " highlight matches
             colorscheme industry
             set backspace=indent,eol,start " backspace over everything in insert mode
+
+
+" Rust
+
+" Hash Map
+iab rhashcreate = HashMap::new();<HOME>let mut
+iab rhashinsert v.insert( , );<ESC>:s/v/
+iab rhashget v.get();<ESC>:s/v/
+
+" Match
+iab rmatch match x { foo::baa => outcome }
+
+" String
+iab rstring String::from("");<LEFT><LEFT><Left>
+
+
+
+
+
+
           '';
         }
     )
