@@ -3,6 +3,8 @@
     rustc
     cargo
     rustfmt
+    gcc
+    pkg-config
 
 
   ];
