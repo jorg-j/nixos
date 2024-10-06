@@ -31,7 +31,7 @@
             :set ignorecase
             :set smartcase
             :set mouse=a
-            :set autoindent
+            " :set autoindent
             syntax on
             syntax enable
 
@@ -76,16 +76,6 @@
 
             " duplicate line with edits
             map <leader>d <Esc>:t.
-
-
-
-            " Spelling
-            iab tks thanks
-            iab teh the
-            iab iv I've
-            iab dont don't
-            iab im I'm
-
 
             set softtabstop=4       " number of spaces in tab when editing
 

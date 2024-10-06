@@ -25,5 +25,11 @@ in {
 
     services.displayManager.defaultSession = "plasmax11";
     programs.kdeconnect.enable = true;
+
+    environment = {
+        systemPackages = with pkgs; [
+            kde-gtk-config
+        ];
+    };
   };
 }

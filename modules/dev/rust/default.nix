@@ -5,6 +5,8 @@
     rustfmt
     gcc
     pkg-config
+    openssl
+    sqlite
 
 
   ];
