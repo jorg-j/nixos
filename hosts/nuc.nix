@@ -98,7 +98,7 @@
   nixpkgs.config.packageOverrides = pkgs: {
     factorio = pkgs.factorio.override {
         username = "jorgo1";
-        token = "bced6717a2e2f161fa5fb1c3897bda";
+        token = "";
     };
 };
 }
