@@ -1,5 +1,7 @@
 # NixOS
 
+This repo is a dumpster fire at the moment 
+
 ## Initial Install
 
 After install of base OS run.
