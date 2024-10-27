@@ -17,6 +17,7 @@ in {
             vscodeExtensions = with vscode-extensions;
               [
                 dracula-theme.theme-dracula
+                jdinhlife.gruvbox
                 ms-vscode-remote.remote-ssh
                 ms-azuretools.vscode-docker
                 redhat.vscode-yaml

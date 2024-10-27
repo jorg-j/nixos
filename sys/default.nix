@@ -59,6 +59,7 @@
       dialog
       qalculate-gtk
       shellcheck
+      feh
 
       guake
     ];

@@ -26,7 +26,11 @@ in {
 
       desktopManager = {
         xterm.enable = false;
-      };
+};
+
+      dpi = 200;
+      upscaleDefaultCursor = false;
+
 
       windowManager.i3 = {
         enable = true;
@@ -38,6 +42,18 @@ in {
         ];
       };
     };
+
+
+  environment.variables = {
+    GDK_SCALE = "1"; # default 1 I think
+    GDK_DPI_SCALE = "1"; # default 1 I think
+    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1"; # default 1 I think
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    XCURSOR_SIZE = "32"; # default 16 I think
+  };
+
+
+
     environment.systemPackages = with pkgs; [
       xfce.thunar
       lxappearance
@@ -48,6 +64,18 @@ in {
       dolphin
       gnome.nautilus
       bashmount
+      udiskie
+      feh
+      xautolock
+      font-awesome
+      gnome-system-monitor
+
+      # bumblebee-status, plugins need to be set as package overrides
+      # packages are located here: https://github.com/NixOS/nixpkgs/pull/254772/commits/51e20bb809fbe921095d90fb29bce74ec17dc684
+      (pkgs.bumblebee-status.override {
+      plugins = p: [p.cpu p.nic p.dunstctl];  
+      })
+      
     ];
 
 

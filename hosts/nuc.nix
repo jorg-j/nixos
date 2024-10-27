@@ -28,7 +28,7 @@
 
   our.roles.nuc.enable = true;
   #our.roles.i3.enable = true;
-  #our.roles.hyprland.enable = true;
+  our.roles.hyprland.enable = true;
   our.roles.plasma.enable = true;
 
 
@@ -42,7 +42,7 @@
   our.software.ollama.enable = true;
   # our.software.vnc.enable = true;
   our.software.modeling.enable = true; # 3d
-  # our.software.moonlander.enable = true;
+  our.software.moonlander.enable = true;
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];

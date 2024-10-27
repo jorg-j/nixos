@@ -1,6 +1,6 @@
 {
   environment.shellAliases = {
-    config = "sudo vim /etc/nixos/configuration.nix";
+    config = "cd ~/Documents/20-29_Technology/20_Infrastructure/20.03_NixOs/nixos";
     build = "sudo nixos-rebuild switch --keep-going; notify-send 'Build Complete'";
     check = "nix-instantiate '<nixpkgs/nixos>' -A system";
     # flakebuild = "sudo nixos-rebuild --flake .#Desktop switch";
@@ -96,5 +96,8 @@
     n = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/commands.sh";
 
     hyperconfig = "vim ~/.config/hypr/hyprland.conf"; # Hyperland Config
+    i3config = "vim ~/.config/i3/config"; # i3 config
+
+    hyprland_setup  = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/hyprland_setup.sh";
   };
 }

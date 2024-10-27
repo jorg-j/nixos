@@ -6,7 +6,7 @@
     "modules-right": ["cpu", "memory", "temperature", "network", "pulseaudio", "clock", "tray", "notification"],
     // Modules configuration
     "hyprland/workspaces": {
-        "format": "{name}{icon}",
+        "format": "{name}",
         "on-click": "activate",
         "sort-by-number": true
     },

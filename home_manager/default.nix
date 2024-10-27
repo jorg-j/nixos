@@ -21,5 +21,4 @@ in {
   homemanager.xfce.enable = false;
   # homemanager.enableNixpkgsReleaseCheck = false;
 
-
 }

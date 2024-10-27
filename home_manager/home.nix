@@ -30,8 +30,8 @@
   home.file = {
     ".ssh/config" = {source = "/etc/nixos/home_manager/files/ssh_config";};                              # ssh config
     ".config/nixpkgs/config.nix" = {source = "/etc/nixos/home_manager/files/nixpkgs_config.nix";};       # nixpkgs config
-    ".config/hypr/waybar/config" = {source = "/etc/nixos/home_manager/files/waybarconfig";};             # Hyperland wayconf
-    ".config/hypr/waybar/style.css" = {source = "/etc/nixos/home_manager/files/waybar.css";};            # Hyperland waycss
+    #".config/hypr/waybar/config" = {source = "/etc/nixos/home_manager/files/waybarconfig";};             # Hyperland wayconf
+    #".config/hypr/waybar/style.css" = {source = "/etc/nixos/home_manager/files/waybar.css";};            # Hyperland waycss
     ".config/hypr/swaync.json" = {source = "/etc/nixos/home_manager/files/swaync.json";};                # Hyperland sway
     ".config/hypr/wallpapers/wallpaper.png" = {source = "/etc/nixos/home_manager/files/wallpaper.png";}; # Hyperland wallp
     ".config/hypr/hyprlock.conf" = {source = "/etc/nixos/home_manager/files/hyprlock.conf";};            # Hyperland lockscreen
