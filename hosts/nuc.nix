@@ -14,6 +14,7 @@
     ../profiles/desktop.nix
     ../nmodules
     ../modules/networking.nix
+    ../factorio.nix  
   ];
 
   # Bootloader.
@@ -36,7 +37,7 @@
   our.software.backups.enable = true;
   our.software.ansible.enable = true;
   our.software.docker.enable = true;
-  our.software.vagrant.enable = true;
+  #our.software.vagrant.enable = true;
   our.software.sqlite.enable = true;
   our.software.office.enable = true;
   our.software.ollama.enable = true;
@@ -78,6 +79,7 @@
     scantailor-advanced
     wofi
     pcmanfm-qt
+    planner 
   ];
 
   system.stateVersion = "23.05"; # No Touchy
@@ -94,11 +96,4 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
 
-  users.users.jack.packages = with pkgs; [ factorio ];
-  nixpkgs.config.packageOverrides = pkgs: {
-    factorio = pkgs.factorio.override {
-        username = "jorgo1";
-        token = "";
-    };
-};
 }
