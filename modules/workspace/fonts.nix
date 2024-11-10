@@ -53,7 +53,6 @@
       anonymousPro
       corefonts
       source-code-pro
-      
     ];
   };
 }

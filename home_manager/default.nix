@@ -17,8 +17,7 @@ in {
     users.jack = import ./home.nix;
   };
 
-  homemanager.unison.enable = true;
+  homemanager.unison.enable = false;
   homemanager.xfce.enable = false;
   # homemanager.enableNixpkgsReleaseCheck = false;
-
 }

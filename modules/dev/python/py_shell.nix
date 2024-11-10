@@ -1,25 +1,28 @@
-{nixpkgs ? import <nixpkgs> {}}:
-nixpkgs.mkShell {
-  nativeBuildInputs = with nixpkgs; [
+{pkgs ? import <nixpkgs> {}}:
+pkgs.mkShell rec {
+  buildInputs = [
     pkgs.poetry
-    pkgs.python310
-    pkgs.python310Packages.pip
-    pkgs.python310Packages.virtualenv
-    pkgs.python310Packages.setuptools
-    pkgs.python310Packages.black
-    pkgs.python310Packages.pytest
-    pkgs.python310Packages.isort
-    pkgs.python310Packages.ipython
-    pkgs.python310Packages.jupyter
-    pylint
-    mypy
+    pkgs.python311
+    pkgs.python311Packages.pip
+    pkgs.python311Packages.virtualenv
+    pkgs.python311Packages.setuptools
+    pkgs.python311Packages.black
+    pkgs.python311Packages.pytest
+    pkgs.python311Packages.isort
+    pkgs.python311Packages.numpy
+    pkgs.python311Packages.loguru
+    pkgs.python311Packages.pip-tools
+    pkgs.cmake
   ];
 
   # Prevent numpy from shitting itself
-  LD_LIBRARY_PATH = "${nixpkgs.stdenv.cc.cc.lib}/lib";
+  LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 
   shellHook = ''
-    poetry install
-    echo "To run a jupyter notebook run `jupyter notebook`"
+    export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib"
+    export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath buildInputs}:$LD_LIBRARY_PATH"
+    export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib.outPath}/lib:$LD_LIBRARY_PATH"
+  
   '';
 }
+

@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-
     python311Full # Python 3.11
     python311Packages.pip
     python311Packages.virtualenv

@@ -23,5 +23,6 @@
     # nixops
 
     pkgs.alejandra
+
   ];
 }

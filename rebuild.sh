@@ -13,7 +13,7 @@
 set -e
 
 # cd to your config dir
-pushd /home/jack/Documents/20-29_Programming_Software/20_Infrastructure/20.03_NixOS/nixos/
+pushd /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/
 
 
 

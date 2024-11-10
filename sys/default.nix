@@ -61,7 +61,6 @@
       shellcheck
       feh
 
-      guake
     ];
   };
 }

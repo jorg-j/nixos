@@ -14,7 +14,7 @@
     ../profiles/desktop.nix
     ../nmodules
     ../modules/networking.nix
-    ../factorio.nix  
+    ../factorio.nix
   ];
 
   # Bootloader.
@@ -22,16 +22,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.tmp.cleanOnBoot = true;
 
-  # TODO todoist service needs to be updated to latest
-  services.todoist_load = {
-    enable = false;
-  };
-
   our.roles.nuc.enable = true;
-  #our.roles.i3.enable = true;
-  our.roles.hyprland.enable = true;
+  # our.roles.i3.enable = true;
+  # our.roles.hyprland.enable = true;
   our.roles.plasma.enable = true;
-
 
   services.duckypad.enable = true;
   our.software.backups.enable = true;
@@ -76,10 +70,8 @@
     exfat
     exfatprogs
     ntfs3g
-    scantailor-advanced
-    wofi
+    # scantailor-advanced # Post Processor for scanner files
     pcmanfm-qt
-    planner 
   ];
 
   system.stateVersion = "23.05"; # No Touchy
@@ -95,5 +87,4 @@
   # Enable random binaries to run
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
-
 }

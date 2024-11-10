@@ -7,10 +7,5 @@
     pkg-config
     openssl
     sqlite
-
-
   ];
-
-
-
 }

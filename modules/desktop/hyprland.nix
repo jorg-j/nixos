@@ -26,18 +26,18 @@ in {
     services.gnome.gnome-keyring.enable = true;
 
     environment.systemPackages = with pkgs; [
-      gnome.nautilus         # Filemanager
-      networkmanagerapplet   # network manager
-      bashmount              # mount dir
-      waybar                 # status bar
+      gnome.nautilus # Filemanager
+      networkmanagerapplet # network manager
+      bashmount # mount dir
+      waybar # status bar
       swaynotificationcenter # notifications
-      pavucontrol            # audio control
-      glib                   # used for gsettings
-      swaybg                 # wallpaper manager
-      hyprlock               # lockscreen
-      hypridle               # lockscreen
-      hyprshot               # screenshot
-      obs-studio             # screen recording
+      pavucontrol # audio control
+      glib # used for gsettings
+      swaybg # wallpaper manager
+      hyprlock # lockscreen
+      hypridle # lockscreen
+      hyprshot # screenshot
+      obs-studio # screen recording
     ];
 
     # Allow hyprlock to access passwords

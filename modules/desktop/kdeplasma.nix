@@ -27,9 +27,9 @@ in {
     programs.kdeconnect.enable = true;
 
     environment = {
-        systemPackages = with pkgs; [
-            kde-gtk-config
-        ];
+      systemPackages = with pkgs; [
+        kde-gtk-config
+      ];
     };
   };
 }

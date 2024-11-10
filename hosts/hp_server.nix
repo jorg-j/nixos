@@ -65,11 +65,9 @@
     options = "--delete-older-than 30d";
   };
 
-
   nixpkgs.config.permittedInsecurePackages = [
     "python3.11-django-3.1.14" # archivebox
   ];
-
 
   # nix.settings.auto-optimise-store = true;
 

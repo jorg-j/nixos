@@ -17,7 +17,6 @@ in {
     xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
     xdg.portal.config.common.default = "*";
     programs.dconf.enable = true;
-    
 
     environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
     services.displayManager.defaultSession = "none+i3";
@@ -26,11 +25,10 @@ in {
 
       desktopManager = {
         xterm.enable = false;
-};
+      };
 
       dpi = 200;
       upscaleDefaultCursor = false;
-
 
       windowManager.i3 = {
         enable = true;
@@ -43,16 +41,13 @@ in {
       };
     };
 
-
-  environment.variables = {
-    GDK_SCALE = "1"; # default 1 I think
-    GDK_DPI_SCALE = "1"; # default 1 I think
-    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1"; # default 1 I think
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    XCURSOR_SIZE = "32"; # default 16 I think
-  };
-
-
+    environment.variables = {
+      GDK_SCALE = "1"; # default 1 I think
+      GDK_DPI_SCALE = "1"; # default 1 I think
+      _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1"; # default 1 I think
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+      XCURSOR_SIZE = "32"; # default 16 I think
+    };
 
     environment.systemPackages = with pkgs; [
       xfce.thunar
@@ -73,11 +68,8 @@ in {
       # bumblebee-status, plugins need to be set as package overrides
       # packages are located here: https://github.com/NixOS/nixpkgs/pull/254772/commits/51e20bb809fbe921095d90fb29bce74ec17dc684
       (pkgs.bumblebee-status.override {
-      plugins = p: [p.cpu p.nic p.dunstctl];  
+        plugins = p: [p.cpu p.nic p.dunstctl];
       })
-      
     ];
-
-
   };
 }

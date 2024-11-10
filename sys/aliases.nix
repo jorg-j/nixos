@@ -98,6 +98,6 @@
     hyperconfig = "vim ~/.config/hypr/hyprland.conf"; # Hyperland Config
     i3config = "vim ~/.config/i3/config"; # i3 config
 
-    hyprland_setup  = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/hyprland_setup.sh";
+    hyprland_setup = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/hyprland_setup.sh";
   };
 }

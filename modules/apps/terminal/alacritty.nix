@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }: {
   home-manager.users.jack.programs.alacritty = {
     enable = true;
@@ -27,8 +28,6 @@
           foreground = "#ebdbb2";
         };
         normal = {
-
-
           black = "#282828";
           red = "#cc241d";
           green = "#98971a";
