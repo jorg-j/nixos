@@ -99,5 +99,8 @@
     i3config = "vim ~/.config/i3/config"; # i3 config
 
     hyprland_setup = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/hyprland_setup.sh";
+
+    # Plasma Restart Desktop
+    plasmakill = "killall plasmashell && kstart5 plasmashell";
   };
 }

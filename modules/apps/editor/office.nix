@@ -20,6 +20,7 @@ in {
       pkgs.hunspell
       pkgs.hunspellDicts.en_US-large
       pkgs.libreoffice-fresh
+      pkgs.projectlibre
     ];
   };
 }

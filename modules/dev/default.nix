@@ -6,7 +6,7 @@
 }: {
   imports = [
     ./python
-    ./rust
+    # ./rust
     ./sqlite.nix
   ];
 

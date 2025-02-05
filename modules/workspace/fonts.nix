@@ -30,7 +30,7 @@
       jetbrains-mono
       hasklig
       hack-font
-      nerdfonts
+      #nerdfonts
 
       material-design-icons
       material-icons
