@@ -7,6 +7,7 @@
     # system tools
     file
     tmux
+    htop
 
     # Screen Recording
     kooha

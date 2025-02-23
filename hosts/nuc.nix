@@ -27,7 +27,7 @@
   # our.roles.hyprland.enable = true;
   our.roles.plasma.enable = true;
 
-  services.duckypad.enable = true;
+  services.duckypadpro.enable = true;
   our.software.backups.enable = true;
   our.software.ansible.enable = true;
   our.software.docker.enable = true;
@@ -72,6 +72,7 @@
     ntfs3g
     # scantailor-advanced # Post Processor for scanner files
     pcmanfm-qt
+    blender
   ];
 
   system.stateVersion = "23.05"; # No Touchy

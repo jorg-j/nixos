@@ -2,6 +2,7 @@
   imports = [
     ./hello.nix
     ./capaldiSync.nix
-    ./duckypad
+    # ./duckypad
+    ./duckypadpro
   ];
 }
