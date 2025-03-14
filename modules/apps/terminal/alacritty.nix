@@ -16,11 +16,12 @@
         decorations = "full";
       };
 
-      shell.program = "${pkgs.zsh}/bin/zsh";
+      terminal.shell.program = "${pkgs.zsh}/bin/zsh";
 
       cursor.style = "Underline";
 
-      live_config_reload = true;
+      # live_config_reload = true;
+      general.live_config_reload = true;
       colors = {
         primary = {
           background = "#282828";

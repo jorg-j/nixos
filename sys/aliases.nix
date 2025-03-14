@@ -101,6 +101,9 @@
     hyprland_setup = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/hyprland_setup.sh";
 
     # Plasma Restart Desktop
-    plasmakill = "killall plasmashell && kstart5 plasmashell";
+    plasmakill = "pkill plasmashell && sleep 3 && kstart plasmashell";
+
+    # duckypad
+    ducky = "sudo DUCKYPAD_UI_SCALE=2 ducypad";
   };
 }

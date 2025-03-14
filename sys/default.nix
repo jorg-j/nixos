@@ -61,6 +61,9 @@
       shellcheck
       cheese
       feh
+      killall
+      detox
+      htop
 
     ];
   };

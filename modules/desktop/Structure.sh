@@ -129,6 +129,7 @@ treemake() {
                 treemake $books "Cleaning"
                 treemake $books "Woodwork"
                 treemake $books "Fitness"
+                treemake $books "Novels"
                 }
         process_non_programming_books
 

@@ -11,8 +11,12 @@
     # <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
     ./hardware/desktop-hardware-configuration.nix
-    ../profiles/desktop.nix
-    ../nmodules
+    ../modules/networking.nix
+    ../users/jack.nix
+    ../modules/dev
+    ../modules/security.nix
+    ../modules/apps/editor/vim.nix
+    ../sys
   ];
 
   # Bootloader.
@@ -21,16 +25,7 @@
   boot.loader.grub.useOSProber = true;
   boot.tmp.cleanOnBoot = true;
 
-  # TODO todoist service needs to be updated to latest
-  services.todoist_load = {
-    enable = false;
-    #  greeter = "Bob";
-  };
-
-  # enable capaldiSync
-  services.capaldiSync = {
-    enable = false;
-  };
+   our.software.docker.enable = true;
 
   our.software.sqlite.enable = true;
 
@@ -62,7 +57,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    megasync
     chromium
     yt-dlp
   ];

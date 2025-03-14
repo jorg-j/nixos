@@ -6,6 +6,7 @@
     ./cmix.nix
     ./compression.nix
     ./http.nix
+    ./hydrus.nix
     ./json.nix
     ./kdenlive.nix
     ./lasercutting.nix
