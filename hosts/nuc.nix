@@ -74,6 +74,7 @@
     # scantailor-advanced # Post Processor for scanner files
     pcmanfm-qt
     blender
+    viu
   ];
 
   system.stateVersion = "23.05"; # No Touchy

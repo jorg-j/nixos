@@ -8,6 +8,7 @@
     python311Packages.pytest
     python311Packages.isort
     python3Packages.requests
+    python3Packages.uv
     pylint
     geany
 

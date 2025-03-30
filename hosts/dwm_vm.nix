@@ -8,54 +8,23 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    # <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-    ./hardware/desktop-hardware-configuration.nix
-    ../modules/dev
-    ../modules/security.nix
-    ../modules/apps/editor/vim.nix
-    ../sys
+    ../modules/hardware/vm-hardware-configuration.nix
+
+
   ];
-
+  services.xserver.windowManager.dwm.enable = true;
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
+  boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
   boot.tmp.cleanOnBoot = true;
-
-
-  users.users.jack = {
-      isNormalUser = true;
-      uid = 1000;
-      description = "Jack";
-      home = "/home/jack";
-      extraGroups = [
-        "docker"
-        "podman"
-        "syncthing"
-        "wheel"
-        "networkmanager"
-        "vboxusers"
-        "dialout"
-      ];
-
-      createHome = true;
-      # password = "";
-      hashedPassword = "$6$MAri.IIplRr.ipPQ$F4iKBI4WTv3Bie2zsUO2g7UabOKJFNk8Dnf1rrqkcE7jc/0Crn.TXaoywOjVMCiJAj1khrGAlmDC2baNt3exq1";
-      shell = pkgs.zsh;
-    };
-
-  # Activate gpg
-  programs.gnupg.agent.enable = true;
-
-  our.software.docker.enable = true;
-
-  our.software.sqlite.enable = true;
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
-  networking.hostName = "desktop"; # Define your hostname.
+  networking.hostName = "nixosvm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -68,32 +37,29 @@
   services.autorandr.enable = true;
 
   # For SSD's
-  services.fstrim.enable = true;
+  # services.fstrim.enable = true;
 
-  # Enable ZSA Moonlander hardware flashing
-  hardware.keyboard.zsa.enable = true;
+  # Configure keymap in X11
+  services.xserver = {
+    layout = "au";
+    xkbVariant = "";
+  };
 
   # use the example session manager (no others are packaged yet so this is enabled by default,
   # no need to redefine it in your config for now)
   #media-session.enable = true;
 
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    chromium
-    yt-dlp
-    mc
-    pkgs.gnumake
-
-    python311Full # Python 3.11
-    python311Packages.pip
-    python311Packages.virtualenv
-    python311Packages.setuptools
-    python311Packages.black
-    python311Packages.pytest
-    python311Packages.isort
-    python3Packages.requests
-
+      dwm          # Window manager
+    dmenu        # Application launcher
+    alacritty    # Terminal
+    firefox      # Browser
+    xorg.xrandr  # Screen utilities
   ];
 
   # This value determines the NixOS release from which the default
@@ -102,7 +68,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "22.05"; # Did you read the comment?
 
   nix.gc = {
     automatic = true;
@@ -110,5 +76,32 @@
     options = "--delete-older-than 7d";
   };
 
-  nix.settings.auto-optimise-store = true;
+  virtualisation.virtualbox.guest.enable = true;
+
+
+
+
+    users.users.jack = {
+    isNormalUser = true;
+    uid = 1000;
+    description = "Jack";
+    home = "/home/jack";
+    extraGroups = [
+      "docker"
+      "podman"
+      "syncthing"
+      "wheel"
+      "networkmanager"
+      "vboxusers"
+      "dialout"
+    ];
+
+    createHome = true;
+    # password = "";
+    hashedPassword = "$6$MAri.IIplRr.ipPQ$F4iKBI4WTv3Bie2zsUO2g7UabOKJFNk8Dnf1rrqkcE7jc/0Crn.TXaoywOjVMCiJAj1khrGAlmDC2baNt3exq1";
+    shell = pkgs.bash;
+  };
+
+  # Activate gpg
+  programs.gnupg.agent.enable = true;
 }
