@@ -11,6 +11,9 @@
     viAlias = true;
     vimAlias = true;
     configure = {
+      packages.myVimPackage = with pkgs.vimPlugins; {
+start = [ fzf-vim gruvbox];
+      };
       customRC = ''
         :set number
 
@@ -78,6 +81,7 @@
         set incsearch           " search as characters are entered
         set hlsearch            " highlight matches
         colorscheme industry
+        colorscheme gruvbox
       '';
     };
   };

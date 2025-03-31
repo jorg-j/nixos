@@ -7,6 +7,9 @@
   home.homeDirectory = "/home/jack";
   home.stateVersion = "23.05";
 
+  programs.fzf.enable = true;
+  programs.bash.enable = true;
+
   # Set ZSH with theme and plugins available
   programs.zsh = {
     enable = true;
@@ -20,6 +23,7 @@
     };
     initExtra = ''
       bindkey '^f' autosuggest-accept
+      export FZF_COMPLETION_TRIGGER="``"  
     '';
     envExtra = ''
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'

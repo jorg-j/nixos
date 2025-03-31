@@ -9,8 +9,6 @@
     tmux
     htop
 
-    # Screen Recording
-    kooha
 
     # FileSys
     fd

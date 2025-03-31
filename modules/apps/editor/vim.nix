@@ -13,7 +13,7 @@
           # This allows to have multiple vim packages installed (e.g. with a different set of plugins)
           name = "vim";
           vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-            start = [vim-nix];
+                  start = [ vim-nix fzfWrapper fzf fzf-vim gruvbox ];
             opt = [];
           };
           vimrcConfig.customRC = ''
@@ -89,6 +89,7 @@
                         set incsearch           " search as characters are entered
                         set hlsearch            " highlight matches
                         colorscheme industry
+                        colorscheme gruvbox
                         set backspace=indent,eol,start " backspace over everything in insert mode
 
 
@@ -104,11 +105,6 @@
 
             " String
             iab rstring String::from("");<LEFT><LEFT><Left>
-
-
-
-
-
 
           '';
         }
