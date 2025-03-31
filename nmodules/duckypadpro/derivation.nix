@@ -7,7 +7,7 @@
 with pkgs.python3Packages;
   buildPythonApplication rec {
     name = "duckypadpro";
-    version = "2.0.1";
+    version = "2.1.0";
     src = pkgs.fetchzip {
       url = "https://github.com/dekuNukem/duckyPad-Pro/releases/download/2.1.0/duckypad_config_2.1.0_source.zip";
       sha256 = "sha256-AOd0yLE+hJrLINtt+ZbkBwRFFqzsCGFQdwJNzpVmF60=";

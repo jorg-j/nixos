@@ -13,7 +13,7 @@
           # This allows to have multiple vim packages installed (e.g. with a different set of plugins)
           name = "vim";
           vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-                  start = [ vim-nix fzfWrapper fzf fzf-vim gruvbox ];
+            start = [vim-nix fzfWrapper fzf fzf-vim gruvbox];
             opt = [];
           };
           vimrcConfig.customRC = ''

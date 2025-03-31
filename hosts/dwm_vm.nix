@@ -11,8 +11,6 @@
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
     ../modules/hardware/vm-hardware-configuration.nix
-
-
   ];
   services.xserver.windowManager.dwm.enable = true;
   # Bootloader.
@@ -55,11 +53,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-      dwm          # Window manager
-    dmenu        # Application launcher
-    alacritty    # Terminal
-    firefox      # Browser
-    xorg.xrandr  # Screen utilities
+    dwm # Window manager
+    dmenu # Application launcher
+    alacritty # Terminal
+    firefox # Browser
+    xorg.xrandr # Screen utilities
   ];
 
   # This value determines the NixOS release from which the default
@@ -78,10 +76,7 @@
 
   virtualisation.virtualbox.guest.enable = true;
 
-
-
-
-    users.users.jack = {
+  users.users.jack = {
     isNormalUser = true;
     uid = 1000;
     description = "Jack";

@@ -9,7 +9,6 @@
     tmux
     htop
 
-
     # FileSys
     fd
     rsync

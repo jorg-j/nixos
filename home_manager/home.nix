@@ -23,7 +23,7 @@
     };
     initExtra = ''
       bindkey '^f' autosuggest-accept
-      export FZF_COMPLETION_TRIGGER="``"  
+      export FZF_COMPLETION_TRIGGER="``"
     '';
     envExtra = ''
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'

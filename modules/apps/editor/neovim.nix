@@ -12,7 +12,7 @@
     vimAlias = true;
     configure = {
       packages.myVimPackage = with pkgs.vimPlugins; {
-start = [ fzf-vim gruvbox];
+        start = [fzf-vim gruvbox];
       };
       customRC = ''
         :set number

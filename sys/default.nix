@@ -64,7 +64,6 @@
       killall
       detox
       htop
-
     ];
   };
 }
