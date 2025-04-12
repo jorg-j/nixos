@@ -28,7 +28,7 @@ in {
 
     environment = {
       systemPackages = with pkgs; [
-        kde-gtk-config
+        kdePackages.kde-gtk-config
       ];
     };
   };

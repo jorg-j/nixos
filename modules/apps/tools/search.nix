@@ -11,5 +11,10 @@
     fzy
     hstr
     rename
+
+    mlocate
+    plocate
   ];
+  services.locate.enable = true;
+  services.locate.package = pkgs.mlocate;
 }

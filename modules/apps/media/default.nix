@@ -20,7 +20,7 @@ in {
         imagemagick
         lightburn
         simplescreenrecorder
-        okular
+        kdePackages.okular
       ]
       else if cfgHP.enable
       then [celluloid simplescreenrecorder]

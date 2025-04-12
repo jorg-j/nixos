@@ -104,6 +104,6 @@
     plasmakill = "pkill plasmashell && sleep 3 && kstart plasmashell";
 
     # duckypad
-    ducky = "sudo DUCKYPAD_UI_SCALE=2 ducypad";
+    ducky = "sudo DUCKYPAD_UI_SCALE=2 duckypad";
   };
 }
