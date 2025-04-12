@@ -14,6 +14,7 @@
     ../profiles/hpserver.nix
     ../nmodules
     ../modules/networking.nix
+    ../sys/insecure_packages.nix
     # ../modules/services/gitea.nix
   ];
 
