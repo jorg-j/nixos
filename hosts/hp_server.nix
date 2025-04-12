@@ -79,9 +79,6 @@
   programs.nix-ld.libraries = [];
 
 
-              nixpkgs.config.permittedInsecurePackages = [
-                "archiver-3.5.1"
-              ];
 
   # The below is todoist autotools - This should be moved into its own file at some point
 
