@@ -81,8 +81,7 @@
 
   # The below is todoist autotools - This should be moved into its own file at some point
 
-  virtualisation.docker.enable = true;
-  environment.systemPackages = [ pkgs.docker-compose ];
+
   systemd.services.todoistautotools-docker-compose = {
     serviceConfig = {
       Type = "oneshot";
