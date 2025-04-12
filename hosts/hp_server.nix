@@ -76,4 +76,36 @@
   # Enable random binaries to run
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
+
+
+
+  # The below is todoist autotools - This should be moved into its own file at some point
+
+  virtualisation.docker.enable = true;
+  environment.systemPackages = [ pkgs.docker-compose ];
+  systemd.services.todoistautotools-docker-compose = {
+    serviceConfig = {
+      Type = "oneshot";
+      WorkingDirectory = "/home/jack/Docker/Todoist_Autotools";
+    };
+    script = ''
+    ${pkgs.docker-compose}/bin/docker-compose -f docker-compose.yml up --detach
+    '';
+  };
+
+  systemd.timers.todoistautotools-docker-compose = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = [
+        # Weekdays 8am-6pm every 15 minutes
+        "Mon-Fri 08:00-18:00/0:15"
+        # Off-hours schedule (weekdays outside 8-6 and weekends)
+        "Mon-Fri 00:00-08:00/3:00"
+        "Mon-Fri 18:00-24:00/3:00"
+        "Sat,Sun 00/3:00"
+      ];
+      Persistent = true;
+      Unit = "todoistautotools-docker-compose.service";
+    };
+  };
 }
