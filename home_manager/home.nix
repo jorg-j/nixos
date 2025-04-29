@@ -21,7 +21,7 @@
       plugins = ["docker-compose" "docker" "git"];
       theme = "agnoster";
     };
-    initExtra = ''
+    initContent = ''
       bindkey '^f' autosuggest-accept
       export FZF_COMPLETION_TRIGGER="``"
     '';
@@ -55,38 +55,38 @@
     };
   };
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "orchis-theme";
-      package = pkgs.orchis-theme;
-    };
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
-    cursorTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "orchis-theme";
+  #     package = pkgs.orchis-theme;
+  #   };
+  #   iconTheme = {
+  #     name = "Adwaita";
+  #     package = pkgs.adwaita-icon-theme;
+  #   };
+  #   cursorTheme = {
+  #     name = "Adwaita";
+  #     package = pkgs.adwaita-icon-theme;
+  #   };
 
-    gtk2 = {
-      configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-      extraConfig = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
+  #   gtk2 = {
+  #     configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+  #     extraConfig = ''
+  #       gtk-application-prefer-dark-theme=1
+  #     '';
+  #   };
 
-    gtk3 = {
-      extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
-      };
-    };
+  #   gtk3 = {
+  #     extraConfig = {
+  #       gtk-application-prefer-dark-theme = 1;
+  #     };
+  #   };
 
-    gtk4 = {
-      extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
-      };
-    };
-  };
+  #   gtk4 = {
+  #     extraConfig = {
+  #       gtk-application-prefer-dark-theme = 1;
+  #     };
+  #   };
+  # };
 }
