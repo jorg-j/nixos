@@ -4,6 +4,20 @@
   vars,
   ...
 }: {
+
+  environment.systemPackages = with pkgs; [
+    neovim           # Neovim itself
+    ripgrep          # For Telescope live_grep
+    fd               # For Telescope file finder
+    tree-sitter      # Treesitter CLI
+    glow             # Markdown preview (for glow.nvim)
+    zk               # Zettelkasten CLI (if available)
+    gcc
+    # nodejs           # Optional: Needed for some plugins
+  ];
+  fonts.packages = with pkgs; [ nerd-fonts._0xproto ];
+
+
   environment.variables.EDITOR = "nvim";
   programs.neovim = {
     enable = true;
