@@ -43,7 +43,8 @@
 
   environment = {
     systemPackages = with pkgs; [
-      mc
+      mc            # midnight commander
+      xdg-utils     # midnight commander
       cryfs
       gocryptfs
       just
