@@ -61,8 +61,15 @@
 
     hg = "history | grep";
 
+    # KDE
+
     # Fix KDE screen issue
     kscreen = "pushd /home/jack/.local/share > /dev/null && rm -r kscreen && popd > /dev/null";
+
+    # Plasma Restart Desktop
+    plasmakill = "pkill plasmashell && sleep 3 && kstart plasmashell";
+
+    # ---
 
     grab-display = "export DISPLAY = ':0.0'";
 
@@ -100,10 +107,10 @@
 
     hyprland_setup = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/hyprland_setup.sh";
 
-    # Plasma Restart Desktop
-    plasmakill = "pkill plasmashell && sleep 3 && kstart plasmashell";
-
     # duckypad
     ducky = "sudo DUCKYPAD_UI_SCALE=2 duckypad";
+
+    # Home Manager Service Journal
+    homej = "journalctl -u home-manager-jack.service --since today";
   };
 }
