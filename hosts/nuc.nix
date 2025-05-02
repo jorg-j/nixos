@@ -14,6 +14,7 @@
     ../profiles/desktop.nix
     ../nmodules
     ../modules/networking.nix
+    ../sys/command_script
     ../factorio.nix
   ];
 

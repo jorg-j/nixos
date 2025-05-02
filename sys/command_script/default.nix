@@ -6,6 +6,14 @@
     ${scriptContent}
   '';
 
+
+  helpScriptContent = builtins.readFile ./help.sh;
+
+  helpCommand = pkgs.writeScriptBin ",help" ''
+    #!${pkgs.stdenv.shell}
+    ${scriptContent}
+  '';
+
   bannerScriptContent = builtins.readFile ./banner.sh;
 
   printbanner = pkgs.writeScriptBin "PrintBanner" ''
@@ -22,6 +30,7 @@
 in {
   environment.systemPackages = [
     command
+    # helpCommand
     printbanner
     hyprland_setup
   ];
