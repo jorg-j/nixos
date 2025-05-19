@@ -1,11 +1,11 @@
-{
-  lib,
-  python3Packages,
-  pkgs,
-}:
-# with import <nixpkgs> { };
-with pkgs.python3Packages;
-  buildPythonApplication rec {
+# {
+#   lib,
+#   python3Packages,
+#   pkgs,
+# }:
+with import <nixpkgs> { };
+# with pkgs.python3Packages;
+  pkgs.python3Packages.buildPythonApplication rec {
     name = "duckypadpro";
     version = "2.1.0";
     src = pkgs.fetchzip {
@@ -15,7 +15,7 @@ with pkgs.python3Packages;
     };
     format = "other";
 
-    buildInputs = [pkgs.python3Full pkgs.python3Packages.pip pyautogui appdirs hidapi];
+    buildInputs = [pkgs.python3Full pkgs.python3Packages.pip pkgs.python3Packages.pyautogui pkgs.python3Packages.appdirs pkgs.python3Packages.hidapi];
     nativeBuildInputs = [pkgs.imagemagick pkgs.libicns];
     propagatedNativeBuildInputs = [pkgs.python3Full pkgs.python3Packages.pip python3Packages.pyautogui python3Packages.appdirs python3Packages.hidapi];
 
@@ -46,7 +46,7 @@ with pkgs.python3Packages;
       cp -r $src/* $out/bin/
 
       sed -i '1 i\#!/usr/bin/env python3' $out/bin/duckypad_config.py
-      sed -i 's/ENV_UI_SCALE else 1/ENV_UI_SCALE else 2/' $out/bin/duckypad_config.py
+      sed -i 's|DUCKYPAD_UI_SCALE", default=1))|DUCKYPAD_UI_SCALE", default=2))|' $out/bin/duckypad_config.py
 
       install -m755 -D $out/bin/duckypad_config.py $out/bin/duckypad
 
