@@ -26,7 +26,8 @@ in {
     services.gnome.gnome-keyring.enable = true;
 
     environment.systemPackages = with pkgs; [
-      gnome.nautilus # Filemanager
+      nautilus # Filemanager
+      wofi # menu
       networkmanagerapplet # network manager
       bashmount # mount dir
       waybar # status bar

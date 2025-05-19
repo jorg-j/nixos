@@ -15,7 +15,7 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       pkgs.openscad
-      pkgs.blender
+      # pkgs.blender
     ];
   };
 }

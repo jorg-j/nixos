@@ -25,8 +25,9 @@
 
   our.roles.nuc.enable = true;
   # our.roles.i3.enable = true;
-  # our.roles.hyprland.enable = true;
+  our.roles.hyprland.enable = true;
   our.roles.plasma.enable = true;
+  our.roles.cosmic.enable = true;
 
   services.duckypadpro.enable = true;
   our.software.backups.enable = true;
@@ -73,9 +74,8 @@
     exfatprogs
     ntfs3g
     # scantailor-advanced # Post Processor for scanner files
-    pcmanfm-qt
-    blender
-    viu
+
+    viu # Terminal Image Viewer
   ];
 
   system.stateVersion = "23.05"; # No Touchy
@@ -91,4 +91,6 @@
   # Enable random binaries to run
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
+
+  security.protectKernelImage = false;
 }

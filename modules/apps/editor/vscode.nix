@@ -21,7 +21,7 @@ in {
                 ms-vscode-remote.remote-ssh
                 ms-azuretools.vscode-docker
                 redhat.vscode-yaml
-                eamodio.gitlens
+                # eamodio.gitlens
                 ms-toolsai.jupyter
                 esbenp.prettier-vscode
                 ms-python.python

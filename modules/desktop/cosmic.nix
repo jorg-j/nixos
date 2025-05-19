@@ -1,32 +1,24 @@
 {
   config,
   pkgs,
+  lib,
   ...
-}: {
-  environment.systemPackages = with pkgs; [
-    cosmic-bg
-    cosmic-osd
-    cosmic-term
+}:
+with lib; let
+  cfg = config.our.roles.cosmic;
+in {
+  options.our.roles.cosmic = {
+    enable = mkEnableOption "cosmic";
+  };
 
-    cosmic-comp
-    cosmic-tasks
-    cosmic-randr
-    cosmic-panel
-    cosmic-icons
-    cosmic-files
-    cosmic-session
-    cosmic-greeter
-    cosmic-applets
-    cosmic-settings
-    cosmic-launcher
-    cosmic-protocols
-    cosmic-screenshot
-    cosmic-applibrary
-    cosmic-design-demo
-    cosmic-notifications
-    cosmic-settings-daemon
-    cosmic-workspaces-epoch
-  ];
+  config = mkIf cfg.enable {
+    # Enable the X11 windowing system.
+    services.xserver.enable = true;
+
+    services.desktopManager.cosmic.enable = true;
+    services.displayManager.sddm.enable = true;
+
+    services.displayManager.defaultSession = "plasmax11";
+
+  };
 }
-# https://nixos.wiki/wiki/COSMIC
-
