@@ -1,17 +1,17 @@
-# {
-#   lib,
-#   python3Packages,
-#   pkgs,
-# }:
-with import <nixpkgs> { };
+{
+  lib,
+  python3Packages,
+  pkgs,
+}:
+# with import <nixpkgs> { };
 # with pkgs.python3Packages;
   pkgs.python3Packages.buildPythonApplication rec {
     name = "duckypadpro";
-    version = "2.1.0";
+    version = "3.1.0";
     src = pkgs.fetchzip {
-      url = "https://github.com/dekuNukem/duckyPad-Pro/releases/download/2.1.0/duckypad_config_2.1.0_source.zip";
-      sha256 = "sha256-AOd0yLE+hJrLINtt+ZbkBwRFFqzsCGFQdwJNzpVmF60=";
-      stripRoot = false;
+      url = "https://github.com/duckyPad/duckyPad-Configurator/archive/refs/tags/3.1.0.zip";
+      sha256 = "sha256-ZKyfWj2XrUDVbuXiOs+/324q6OBcmQKbxfc8KN+SCBw=";
+      stripRoot = true;
     };
     format = "other";
 
@@ -43,7 +43,7 @@ with import <nixpkgs> { };
       mkdir -p $out/bin
 
       # copy src to bin
-      cp -r $src/* $out/bin/
+      cp -r $src/duckyPad-Configurator-3.1.0/src/* $out/bin/
 
       sed -i '1 i\#!/usr/bin/env python3' $out/bin/duckypad_config.py
       sed -i 's|DUCKYPAD_UI_SCALE", default=1))|DUCKYPAD_UI_SCALE", default=2))|' $out/bin/duckypad_config.py
