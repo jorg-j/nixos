@@ -12,7 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     pkgs.gnumake
-    pkgs.go-task
+    # pkgs.go-task
 
     pkgs.nixos-generators
     pkgs.fly # concourse-ci
