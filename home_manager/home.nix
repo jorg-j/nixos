@@ -39,7 +39,7 @@
     # ".config/hypr/wallpapers/wallpaper.png" = {source = "/etc/nixos/home_manager/files/wallpaper.png";}; # Hyperland wallp
     # ".config/hypr/hyprlock.conf" = {source = "/etc/nixos/home_manager/files/hyprlock.conf";}; # Hyperland lockscreen
     # ".config/hypr/hypridle.conf" = {source = "/etc/nixos/home_manager/files/hypridle.conf";}; # Hyperland lockscreen
-    ".local/share/plasma/desktoptheme/GruvboxPlasma" = {source = "/etc/nixos/home_manager/kde_theme/GruvboxPlasma";}; # KDE Gruvbox theme
+    # ".local/share/plasma/desktoptheme/GruvboxPlasma" = {source = "/etc/nixos/home_manager/kde_theme/GruvboxPlasma";}; # KDE Gruvbox theme
   };
 
   home.packages = with pkgs; [
