@@ -33,7 +33,7 @@
   our.software.backups.enable = true;
   our.software.ansible.enable = true;
   our.software.docker.enable = true;
-  our.software.hydrus.enable = true;
+  #our.software.hydrus.enable = true;
   #our.software.vagrant.enable = true;
   our.software.sqlite.enable = true;
   our.software.office.enable = true;
