@@ -27,7 +27,7 @@
   # our.roles.i3.enable = true;
   our.roles.hyprland.enable = true;
   our.roles.plasma.enable = true;
-  our.roles.cosmic.enable = true;
+  # our.roles.cosmic.enable = false;
 
   services.duckypadpro.enable = true;
   our.software.backups.enable = true;
@@ -76,6 +76,8 @@
     # scantailor-advanced # Post Processor for scanner files
 
     viu # Terminal Image Viewer
+
+    taskwarrior2 # task warrior
   ];
 
   system.stateVersion = "23.05"; # No Touchy
