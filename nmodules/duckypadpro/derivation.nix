@@ -10,7 +10,7 @@
     version = "3.1.0";
     src = pkgs.fetchzip {
       url = "https://github.com/duckyPad/duckyPad-Configurator/archive/refs/tags/3.1.0.zip";
-      sha256 = "sha256-ZKyfWj2XrUDVbuXiOs+/324q6OBcmQKbxfc8KN+SCBw=";
+      sha256 = "sha256-vdNv7M+75gdXgnesnRb7KtgIvVEjuoFjlx9RHHBO7RE=";
       stripRoot = true;
     };
     format = "other";
@@ -43,7 +43,8 @@
       mkdir -p $out/bin
 
       # copy src to bin
-      cp -r $src/duckyPad-Configurator-3.1.0/src/* $out/bin/
+      ls $src/src/
+      cp -r $src/src/* $out/bin/
 
       sed -i '1 i\#!/usr/bin/env python3' $out/bin/duckypad_config.py
       sed -i 's|DUCKYPAD_UI_SCALE", default=1))|DUCKYPAD_UI_SCALE", default=2))|' $out/bin/duckypad_config.py
