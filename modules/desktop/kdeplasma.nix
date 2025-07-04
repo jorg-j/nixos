@@ -5,6 +5,7 @@
   ...
 }:
 with lib; let
+  # enables toggle from host file
   cfg = config.our.roles.plasma;
 in {
   options.our.roles.plasma = {
@@ -19,7 +20,7 @@ in {
     # services.xserver.displayManager.sddm.enable = true;
     # services.xserver.desktopManager.plasma5.enable = true;
 
-    # Plasna 6
+    # Plasma 6
     services.desktopManager.plasma6.enable = true;
     services.displayManager.sddm.enable = true;
 
