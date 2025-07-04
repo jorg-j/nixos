@@ -8,7 +8,7 @@
     ./hyprland.nix
     ./cinnamon.nix
     ./mate.nix
-    ./cosmic.nix
+    # ./cosmic.nix
     # ./pantheon.nix
 
     ./xfce.nix
