@@ -62,7 +62,7 @@
       Encoding=UTF-8
       Name=duckypadpro
       Comment=GUI for Duckypad keypad
-      Exec=$out/bin/duckypad %U
+      Exec=sudo $out/bin/duckypad %U
       Type=Application
       Categories=Utility;
       MimeType=application/duckypadpro;
