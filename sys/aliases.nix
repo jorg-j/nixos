@@ -119,6 +119,6 @@
 
     stash = "cd /run/media/jack/Backup/WMM/Categories/User && docker-compose up";
 
-    rmsu = "~/Documents/RMSU/target/release/rmsu_base";
+    rmsu = "~/Documents/RMSU/target/release/rmsu";
   };
 }

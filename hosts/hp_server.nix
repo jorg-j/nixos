@@ -68,6 +68,7 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "python3.11-django-3.1.14" # archivebox
+    "archiver-3.5.1"
   ];
 
   # nix.settings.auto-optimise-store = true;
