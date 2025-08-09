@@ -68,6 +68,7 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "python3.11-django-3.1.14" # archivebox
+    "python3.12-django-3.1.14"
     "archiver-3.5.1"
   ];
 
