@@ -124,7 +124,7 @@
     ${pkgs.nix}/bin/nix-shell /home/jack/Docker/eink_dash/utils/shell.nix --run "python /home/jack/Docker/eink_dash/utils/ptv_handler.py"
     '';
     serviceConfig.User = "jack";
-    serviceConfig.Group = "jack";
+    serviceConfig.Group = "users";
     environment = {PYTHONPATH = "/home/jack/Docker/eink_dash/utils";};
     serviceConfig.ProtectSystem = "strict";
     serviceConfig.PrivateTmp = true;
