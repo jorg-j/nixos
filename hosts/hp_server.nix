@@ -147,4 +147,6 @@
       Unit = "ptv_update.service";
     };
   };
+  # Note to Future me: you can use the following command to check the timer syntax is being parsed correctly
+  # systemd-analyze calendar --iterations=5 "Mon,Fri 6,7:0/5:00"
 }
