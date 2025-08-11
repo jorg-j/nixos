@@ -100,11 +100,15 @@
     timerConfig = {
       OnCalendar = [
         # Weekdays 8am-6pm every 15 minutes
-        "Mon-Fri 08:00-18:00/0:15"
+        # "Mon-Fri 08:00-18:00/0:15"
+	"Mon..Fri *-*-* 08:00:00..18:00:00/15min"
         # Off-hours schedule (weekdays outside 8-6 and weekends)
         "Mon-Fri 00:00-08:00/3:00"
         "Mon-Fri 18:00-24:00/3:00"
-        "Sat,Sun 00/3:00"
+	"Mon..Fri *-*-* 00:00:00,03:00:00,06:00:00,07:45:00"
+	"Mon..Fri *-*-* 18:30:00,21:00:00,23:00:00"
+        # "Sat,Sun 00/3:00"
+	"Sat..Sun *-*-* 01:00:00..23:00:00/50min"
       ];
       Persistent = true;
       Unit = "todoistautotools-docker-compose.service";
