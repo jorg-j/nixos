@@ -138,13 +138,13 @@
     timerConfig = {
       OnCalendar = [
         # Weekdays 6am-8:30am every 5 minutes
-	"Mon...Fri *-*-* 6-8:*/5:00"
+	"Mon...Fri *-*-* 06:00:00..08:30:00/5min"
         # Weekdays 4pm-7pm every 15 minutes
+	"Mon...Fri *-*-* 16:00:00..17:00:00/15min"
         # "Mon-Fri 16:00-19:00/0:15"
 	#"Mon..Fri *-*-* 16:00:00..19:00:00/15min"
       ];
       Persistent = true;
-      AccuracySec = "1m"; # Allow a minute delay
       Unit = "ptv_update.service";
     };
   };
