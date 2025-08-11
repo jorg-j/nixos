@@ -110,4 +110,36 @@
       Unit = "todoistautotools-docker-compose.service";
     };
   };
+
+
+  systemd.services.ptv_update = {
+    serviceConfig = {
+      Type = "oneshot";
+      WorkingDirectory = "/home/jack/Docker/eink_dash/utils";
+    };
+    script = ''
+    ${pkgs.nix}/bin/nix-shell /home/jack/Docker/eink_dash/utils/shell.nix
+    '';
+    serviceConfig.User = "jack";
+    serviceConfig.Group = "jack";
+    environment = {PYTHONPATH = "/home/jack/Docker/eink_dash/utils";};
+    serviceConfig.ProtectSystem = "strict";
+    serviceConfig.PrivateTmp = true;
+  };
+
+
+  systemd.timers.ptv_update = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = [
+        # Weekdays 6am-8:30am every 5 minutes
+        "Mon-Fri 06:00-08:30/0:05"
+        # Weekdays 4pm-7pm every 15 minutes
+        "Mon-Fri 16:00-19:00/0:15"
+      ];
+      Persistent = true;
+      AccuracySec = "1m"; # Allow a minute delay
+      Unit = "ptv_update.service";
+    };
+  };
 }
