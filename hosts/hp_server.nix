@@ -134,7 +134,6 @@
 
   systemd.timers.ptv_update = {
     wantedBy = [ "timers.target" ];
-    partOf = [ "ptv_update" ];
     timerConfig = {
       OnCalendar = [
         # Weekdays 6am-8:30am every 5 minutes
