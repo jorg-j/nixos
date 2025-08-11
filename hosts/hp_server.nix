@@ -121,7 +121,7 @@
       WorkingDirectory = "/home/jack/Docker/eink_dash/utils";
     };
     script = ''
-    ${pkgs.nix}/bin/nix-shell /home/jack/Docker/eink_dash/utils/shell.nix
+    ${pkgs.nix}/bin/nix-shell /home/jack/Docker/eink_dash/utils/shell.nix --run "python /home/jack/Docker/eink_dash/utils/ptv_handler.py"
     '';
     serviceConfig.User = "jack";
     serviceConfig.Group = "jack";
@@ -136,8 +136,9 @@
     timerConfig = {
       OnCalendar = [
         # Weekdays 6am-8:30am every 5 minutes
-	"*-*-* 08:17:00"
+	"Mon,Fri 6,7:0/5:00"
         # Weekdays 4pm-7pm every 15 minutes
+	"Mon,Fri 16,17,18:0/15:00"
 	#"Mon...Fri *-*-* 16:00:00..19:00:00/15min"
         # "Mon-Fri 16:00-19:00/0:15"
 	#"Mon..Fri *-*-* 16:00:00..19:00:00/15min"
