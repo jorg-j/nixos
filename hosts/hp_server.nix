@@ -101,13 +101,12 @@
     timerConfig = {
       OnCalendar = [
         # Weekdays 8am-6pm every 15 minutes
-        # "Mon-Fri 08:00-18:00/0:15"
+	"Mon...Fri *-*-* 00:00:00,03:00:00,06:00:00,07:45:00"
 	#"Mon..Fri *-*-* 08:00:00..18:00:00/15min"
         # Off-hours schedule (weekdays outside 8-6 and weekends)
+	"Mon...Fri *-*-* 18:30:00,21:00:00,23:00:00"
         #"Mon-Fri 00:00-08:00/3:00"
         #"Mon-Fri 18:00-24:00/3:00"
-	"Mon...Fri *-*-* 00:00:00,03:00:00,06:00:00,07:45:00"
-	"Mon...Fri *-*-* 18:30:00,21:00:00,23:00:00"
         # "Sat,Sun 00/3:00"
 	"Sat...Sun *-*-* 01:00:00..23:00:00/50min"
       ];
@@ -135,13 +134,14 @@
 
   systemd.timers.ptv_update = {
     wantedBy = [ "timers.target" ];
+    partOf = [ "ptv_update" ];
     timerConfig = {
       OnCalendar = [
         # Weekdays 6am-8:30am every 5 minutes
-	"Mon..Fri *-*-* 06:00:00..08:30:00/5min"
+	"Mon...Fri *-*-* 6-8:*/5:00"
         # Weekdays 4pm-7pm every 15 minutes
         # "Mon-Fri 16:00-19:00/0:15"
-	"Mon..Fri *-*-* 16:00:00..19:00:00/15min"
+	#"Mon..Fri *-*-* 16:00:00..19:00:00/15min"
       ];
       Persistent = true;
       AccuracySec = "1m"; # Allow a minute delay
