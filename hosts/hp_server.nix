@@ -97,7 +97,6 @@
 
   systemd.timers.todoistautotools-docker-compose = {
     wantedBy = [ "timers.target" ];
-    partOf = [ "todoistautotools-docker-compose" ];
     timerConfig = {
       OnCalendar = [
         # Weekdays 8am-6pm every 15 minutes
