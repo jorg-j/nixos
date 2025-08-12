@@ -114,15 +114,41 @@
     };
   };
 
+let
+  # Absolute path to your project directory
+  projectDir = "/home/jack/Docker/eink_dash/utils";
 
+  # Create a wrapper script that handles the virtual environment
+  runScript = pkgs.writeShellScriptBin "run-ptv-handler" ''
+    set -e
+    cd ${projectDir}
+    
+    # Setup virtual environment if missing
+    if [ ! -d "venv" ]; then
+      ${pkgs.python3}/bin/python -m venv venv
+    fi
+
+    # Activate virtual environment
+    source venv/bin/activate
+
+    # Install dependencies if requirements.txt exists
+    if [ -f "requirements.txt" ]; then
+      pip install -r requirements.txt
+    fi
+
+    # Run the script
+    python ptv_handler.py
+  '';
+in {
   systemd.services.ptv_update = {
     serviceConfig = {
       Type = "oneshot";
       WorkingDirectory = "/home/jack/Docker/eink_dash/utils";
+      Environment = [
+        "LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib"
+      ];
     };
-    script = ''
-    ${pkgs.nix}/bin/nix-shell /home/jack/Docker/eink_dash/utils/shell.nix --run "python /home/jack/Docker/eink_dash/utils/ptv_handler.py"
-    '';
+    script = "${runScript}/bin/run-ptv-handler";
     serviceConfig.User = "jack";
     serviceConfig.Group = "users";
     environment = {PYTHONPATH = "/home/jack/Docker/eink_dash/utils";};
