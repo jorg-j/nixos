@@ -50,9 +50,11 @@ in {
     timerConfig = {
       OnCalendar = [
         # Weekdays 6am-8:30am every 5 minutes
-	"Mon..Fri 6,7:0/5:00"
+	"Mon..Fri 6,7:03/5:00"
         # Weekdays 4pm-7pm every 15 minutes
-	"Mon..Fri 16,17,18:0/15:00"
+	"Mon..Fri 16,17,18:03/15:00"
+	"Mon..Fri 8..15:03/30:00"
+	"Sat,Sun 8..20:01/30:00"
 	#"Mon..Fri *-*-* 16:00:00..19:00:00/15min"
       ];
       Persistent = true;
