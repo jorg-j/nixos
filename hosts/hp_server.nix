@@ -16,6 +16,7 @@
     ../nmodules/e_ink.nix
     ../modules/networking.nix
     ../sys/insecure_packages.nix
+    ../modules/services/wireguard.nix
     # ../modules/services/gitea.nix
   ];
 

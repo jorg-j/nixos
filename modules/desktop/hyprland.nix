@@ -27,6 +27,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       nautilus # Filemanager
+      pcmanfm # Filemanager
       wofi # menu
       networkmanagerapplet # network manager
       bashmount # mount dir
@@ -39,6 +40,8 @@ in {
       hypridle # lockscreen
       hyprshot # screenshot
       obs-studio # screen recording
+
+      hyprland-autoname-workspaces # Autonaming for workspaces
     ];
 
     # Allow hyprlock to access passwords
@@ -57,7 +60,7 @@ in {
     xdg.portal = {
       enable = true;
       #extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
-      extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+      extraPortals = [pkgs.xdg-desktop-portal-hyprland pkgs.kdePackages.xdg-desktop-portal-kde];
     };
   };
 }

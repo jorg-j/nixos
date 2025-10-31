@@ -19,7 +19,7 @@ in {
     virtualisation = {
       docker = {
         autoPrune = {
-          dates = "daily";
+          dates = "monthly";
           flags = ["--all" "--volumes"];
         };
         enable = true;

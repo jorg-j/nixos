@@ -32,5 +32,8 @@
     popsicle # usb flash
 
     caffeine-ng
+
+    ferdium
+    screenkey
   ];
 }

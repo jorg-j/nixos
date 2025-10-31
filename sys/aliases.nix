@@ -120,5 +120,8 @@
     stash = "cd /run/media/jack/Backup/WMM/Categories/User && docker-compose up";
 
     rmsu = "~/Documents/RMSU/target/release/rmsu";
+
+    lz = "eza --icons";
+    cat = "bat -pP"; 
   };
 }

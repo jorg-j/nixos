@@ -9,9 +9,25 @@
     python312Packages.isort
     python312Packages.requests
     python312Packages.uv
+    python312Packages.opencv4
     pylint
     geany
 
     poetry
-  ]; # Poetry
+
+    # Qt5 and dependencies
+    qt5.qtbase
+    qt5.qttools
+
+    # OpenGL libraries
+    libGL
+    libglvnd
+    mesa
+    
+    # GLib and related libraries
+    glib
+    glibc
+
+
+  ]; 
 }

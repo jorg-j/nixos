@@ -42,6 +42,8 @@
   our.software.modeling.enable = true; # 3d
   our.software.moonlander.enable = true;
 
+  security.pam.services.kdewallet.enable = true;
+
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 

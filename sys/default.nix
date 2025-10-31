@@ -45,6 +45,7 @@
     systemPackages = with pkgs; [
       mc            # midnight commander
       xdg-utils     # midnight commander
+      eza
       cryfs
       gocryptfs
       just
