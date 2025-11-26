@@ -58,6 +58,7 @@
   environment.systemPackages = with pkgs; [
     chromium
     archivebox
+    ngrok
   ];
 
   system.stateVersion = "23.05"; # No Touchy
