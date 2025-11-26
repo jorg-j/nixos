@@ -121,9 +121,6 @@
   # systemd-analyze calendar --iterations=5 "Mon,Fri 6,7:0/5:00"
 
 
-  { config, pkgs, ... }:
-
-{
   environment.systemPackages = with pkgs; [ ngrok ];
 
   # Enable user services
@@ -162,5 +159,5 @@
       fi
     '';
   };
-}
+
 }
