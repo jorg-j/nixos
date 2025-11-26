@@ -16,6 +16,7 @@
     ../nmodules/e_ink.nix
     ../modules/networking.nix
     ../sys/insecure_packages.nix
+    ../modules/services.ngrok.nix
     # ../modules/services/wireguard.nix
     # ../modules/services/gitea.nix
   ];
@@ -58,7 +59,6 @@
   environment.systemPackages = with pkgs; [
     chromium
     archivebox
-    ngrok
   ];
 
   system.stateVersion = "23.05"; # No Touchy
@@ -121,43 +121,11 @@
   # systemd-analyze calendar --iterations=5 "Mon,Fri 6,7:0/5:00"
 
 
-  environment.systemPackages = with pkgs; [ ngrok ];
-
-  # Enable user services
-  systemd.user.services.ngrok = {
-    description = "ngrok tunnel service";
-    after = [ "network.target" ];
-    wantedBy = [ "default.target" ];
-    
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.ngrok}/bin/ngrok start --all";
-      ExecReload = "/bin/kill -HUP $MAINPID";
-      Restart = "always";
-      RestartSec = 3;
-    };
-
-    # Set environment variables
-    environment = {
-      NGROK_CONFIG = "%h/.config/ngrok/ngrok.yml";
-    };
-
-    # Create config directory as part of service setup
-    path = [ pkgs.ngrok ];
-    preStart = ''
-      mkdir -p ~/.config/ngrok
-      if [ ! -f ~/.config/ngrok/ngrok.yml ]; then
-        cat > ~/.config/ngrok/ngrok.yml << 'EOF'
-    version: "3"
-    agent:
-        authtoken: 3623BfaDjMDk3d1D0cyr9y9DIe4_5SiHJQ4jppuTntqFav72U
-    tunnels:
-      n8n:
-        addr: 5678
-        proto: http
-    EOF
-      fi
-    '';
-  };
-
 }
+
+
+
+
+
+
+
