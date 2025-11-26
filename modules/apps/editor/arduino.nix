@@ -16,7 +16,7 @@ in {
     environment.systemPackages = with pkgs; [
       pkgs.arduino-ide
       pkgs.python3Packages.pyserial
-      # pkgs.python311Packages.esptool
+      # pkgs.python3Packages.esptool
     ];
   };
 }

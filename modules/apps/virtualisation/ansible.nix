@@ -15,7 +15,7 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       ansible
-      python311Packages.ansible-core
+      python3Packages.ansible-core
     ];
   };
 }
