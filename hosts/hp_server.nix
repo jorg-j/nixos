@@ -16,7 +16,7 @@
     ../nmodules/e_ink.nix
     ../modules/networking.nix
     ../sys/insecure_packages.nix
-    ../modules/services.ngrok.nix
+    ../modules/services/ngrok.nix
     # ../modules/services/wireguard.nix
     # ../modules/services/gitea.nix
   ];
@@ -83,11 +83,7 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
 
-
-
   # The below is todoist autotools - This should be moved into its own file at some point
-
-
   systemd.services.todoistautotools-docker-compose = {
     serviceConfig = {
       Type = "oneshot";
