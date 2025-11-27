@@ -18,7 +18,7 @@
     
     # Optional: Set auth token via environment
     environment = {
-      NGROK_AUTHTOKEN = "3623BfaDjMDk3d1D0cyr9y9DIe4_5SiHJQ4jppuTntqFav72U";
+      NGROK_AUTHTOKEN = "";
     };
   };
 
