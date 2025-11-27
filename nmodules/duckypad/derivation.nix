@@ -15,9 +15,9 @@ with pkgs.python3Packages;
     };
     format = "other";
 
-    buildInputs = [pkgs.python3Full pkgs.python3Packages.pip pyautogui appdirs hidapi];
+    buildInputs = [pkgs.python3 pkgs.python3Packages.pip pyautogui appdirs hidapi];
     nativeBuildInputs = [pkgs.imagemagick pkgs.libicns];
-    propagatedNativeBuildInputs = [pkgs.python3Full pkgs.python3Packages.pip python3Packages.pyautogui python3Packages.appdirs python3Packages.hidapi];
+    propagatedNativeBuildInputs = [pkgs.python3 pkgs.python3Packages.pip python3Packages.pyautogui python3Packages.appdirs python3Packages.hidapi];
 
     propagatedBuildInputs = [
       (pkgs.python3.withPackages (pythonPackages:

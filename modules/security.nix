@@ -25,7 +25,7 @@
 
   home-manager.users.jack.home.packages = with pkgs; [
     # Secure
-    bitwarden # Password Manager
+    bitwarden-desktop # Password Manager
     bitwarden-cli # Password Manager
   ];
 }

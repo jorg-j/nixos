@@ -1,15 +1,15 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    python312Full # Python 3.11
-    python312Packages.pip
-    python312Packages.virtualenv
-    python312Packages.setuptools
-    python312Packages.black
-    python312Packages.pytest
-    python312Packages.isort
-    python312Packages.requests
-    python312Packages.uv
-    python312Packages.opencv4
+    python3 # Python 3.11
+    python3Packages.pip
+    python3Packages.virtualenv
+    python3Packages.setuptools
+    python3Packages.black
+    python3Packages.pytest
+    python3Packages.isort
+    python3Packages.requests
+    python3Packages.uv
+    python3Packages.opencv4
     pylint
     geany
 

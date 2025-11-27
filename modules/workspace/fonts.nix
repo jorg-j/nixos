@@ -44,7 +44,7 @@
       fira-code-symbols
 
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
 
       roboto
       roboto-mono

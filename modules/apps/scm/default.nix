@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     gnupg
     sd
-    gitAndTools.delta
     git
   ];
 
