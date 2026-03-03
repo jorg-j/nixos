@@ -86,6 +86,7 @@ services.gitea-actions-runner = {
         "ubuntu-latest:docker://node:16-bullseye"
         "ubuntu-22.04:docker://node:16-bullseye"
         "nix:host"  # run jobs directly on the host
+	"docker"
       ];
     };
   };
