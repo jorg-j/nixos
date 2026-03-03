@@ -16,7 +16,7 @@
     ../nmodules/e_ink.nix
     ../modules/networking.nix
     ../sys/insecure_packages.nix
-    ../modules/services/ngrok.nix
+    # ../modules/services/ngrok.nix
     # ../modules/services/wireguard.nix
     # ../modules/services/gitea.nix
   ];
@@ -115,6 +115,31 @@
 
   # Note to Future me: you can use the following command to check the timer syntax is being parsed correctly
   # systemd-analyze calendar --iterations=5 "Mon,Fri 6,7:0/5:00"
+
+users.users.gitea-runner = {
+    extraGroups = [ "docker" ];
+};
+
+services.gitea-actions-runner = {
+  package = pkgs.forgejo-runner;  # optional, defaults to act_runner
+  instances = {
+    "my-runner" = {
+      enable = true;
+      url = "http://192.168.1.122:3100/";
+      tokenFile = "/home/jack/forgejo-runner-token";  # path to a file containing the token
+      labels = [
+        "ubuntu-latest:docker://node:16-bullseye"
+        "ubuntu-22.04:docker://node:16-bullseye"
+        "nix:host"  # run jobs directly on the host
+	"docker"
+      ];
+  settings = {
+      runner.fetch_timeout = "30s";
+      container.network = "bridge";
+  };
+    };
+  };
+;
 
 
 }
