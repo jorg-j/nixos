@@ -10,11 +10,11 @@
   ];
 
   home-manager.users.jack = {
+    programs.delta.enable = true;
+    programs.delta.enableGitIntegration = true;
     programs.git = {
       enable = true;
 
-      # Enable delta syntax highlighter
-      delta.enable = true;
     };
 
     home.packages = with pkgs; [delta];

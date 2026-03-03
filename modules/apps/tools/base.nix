@@ -8,7 +8,6 @@
     libqalculate # Terminal Calculator
     gparted
 
-    archiver
     binutils
     coreutils
     pciutils

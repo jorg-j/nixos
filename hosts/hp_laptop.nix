@@ -67,6 +67,31 @@
   programs.nix-ld.libraries = [];
 
 
+users.users.gitea-runner = {
+    extraGroups = [ "docker" ];
+};
+
+services.gitea-actions-runner = {
+  package = pkgs.forgejo-runner;  # optional, defaults to act_runner
+  settings = {
+      runner.fetch_timeout = "30s";
+      container.network = "bridge";
+  };
+  instances = {
+    "my-runner" = {
+      enable = true;
+      url = "http://192.168.1.122:3100/";
+      tokenFile = "/home/jack/forgejo-runner-token";  # path to a file containing the token
+      labels = [
+        "ubuntu-latest:docker://node:16-bullseye"
+        "ubuntu-22.04:docker://node:16-bullseye"
+        "nix:host"  # run jobs directly on the host
+      ];
+    };
+  };
+;
+
+
   }
 
 

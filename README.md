@@ -111,3 +111,16 @@ If using XFCE after build run the `xfce_config` command to update the theme
 `sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos`
 
 `nixos-rebuild switch --upgrade`
+
+
+
+# Helpful Commands which were alias's but now have been moved out because they should be alias's
+
+## Build a local VM image and run it
+`rm nuc.qcow2; sudo nixos-rebuild build-vm --fast -I nixos-config=./hosts/nuc.nix && ./result/bin/run-nuc-vm`
+
+
+
+    closure_build = "cd /etc/nixos/closures && sudo nix-build --attr system $1";
+    closure_deploy = "cd /etc/nixos/closures && sudo ./result/bin/switch-to-configuration switch";
+    # closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";

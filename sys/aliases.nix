@@ -15,14 +15,10 @@
     autoclean = "sudo nix-env --delete-generations old";
     restart = "sudo restart -h now";
 
-    closure_build = "cd /etc/nixos/closures && sudo nix-build --attr system $1";
-    closure_deploy = "cd /etc/nixos/closures && sudo ./result/bin/switch-to-configuration switch";
-    # closure_full = "cd /etc/nixos/closure_files && sudo nix-build --attr system $1 && sudo ./result/bin/switch-to-configuration switch";
-
     format = "nixpkgs-fmt";
 
-    stable = "git tag -d stable; git tag -d origin stable; git tag stable";
-    pushtags = "git push --tags";
+    git_tag_stable = "git tag -d stable; git tag -d origin stable; git tag stable";
+    git_tag_push = "git push --tags";
 
     mc = "EDITOR=vim mc";
 
@@ -85,9 +81,6 @@
     # surface-boot = "sudo umount /boot && sudo fsck /dev/nvme0n1p1 && sudo mount /dev/nvme0n1p1 /boot";
     # pen = "sudo systemctl restart iptsd.service";
 
-    # Set monitors on desktop
-    mon = "xrandr --output DP-2 --auto --right-of HDMI-1";
-
     # Check the content of an app i3
     xwin = "xprop | grep WM_CLASS";
 
@@ -98,14 +91,14 @@
     pydev = "cp /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/modules/dev/python/py_shell.nix ./shell.nix";
 
     # sync obsidian
-    obsync = "pushd /home/jack/Documents/10-19_Books/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd > /dev/null";
-    twsync = "pushd ~/.task > /dev/null && bash sync.sh && popd > /dev/null";
-    sa = "obsync && twsync";
-
+    # obsync = "pushd /home/jack/Documents/10-19_Books/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd > /dev/null";
+    # twsync = "pushd ~/.task > /dev/null && bash sync.sh && popd > /dev/null";
+    # sa = "obsync && twsync";
+    
     n = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/commands.sh";
 
-    hyperconfig = "vim ~/.config/hypr/hyprland.conf"; # Hyperland Config
-    i3config = "vim ~/.config/i3/config"; # i3 config
+    hyperconfig = "nvim ~/.config/hypr/hyprland.conf"; # Hyperland Config
+    i3config = "nvim ~/.config/i3/config"; # i3 config
 
     hyprland_setup = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/hyprland_setup.sh";
 

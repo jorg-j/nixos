@@ -16,6 +16,7 @@ in {
     environment.systemPackages = with pkgs; [
       pkgs.vorta
       pkgs.borgbackup
+      pkgs.borgmatic
       # pkgs.unison
     ];
   };

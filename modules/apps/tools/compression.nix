@@ -7,7 +7,7 @@
     zstd
     unrar
     atool
-    archiver
+    # archiver
     zpaq # compression
 
     rar

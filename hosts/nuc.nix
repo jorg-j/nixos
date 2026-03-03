@@ -14,6 +14,7 @@
     ../profiles/desktop.nix
     ../nmodules
     ../modules/networking.nix
+    ../modules/services/yubi.nix
     ../sys/command_script
     ../factorio.nix
   ];
@@ -80,6 +81,8 @@
     viu # Terminal Image Viewer
 
     taskwarrior2 # task warrior
+    googleearth-pro
+
   ];
 
   system.stateVersion = "23.05"; # No Touchy
@@ -97,4 +100,6 @@
   programs.nix-ld.libraries = [];
 
   security.protectKernelImage = false;
+
+  
 }
