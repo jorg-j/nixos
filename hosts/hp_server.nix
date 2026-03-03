@@ -126,7 +126,7 @@
   services.gitea-actions-runner = {
     package = pkgs.forgejo-runner; # optional, defaults to act_runner
     instances = {
-      "my-runner" = {
+      "runner" = {
         name = "hp_server_runner";
         enable = true;
         url = "http://192.168.1.122:3100/";
