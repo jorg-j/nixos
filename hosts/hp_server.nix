@@ -58,7 +58,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     chromium
-    archivebox
+    # archivebox
   ];
 
   system.stateVersion = "23.05"; # No Touchy
