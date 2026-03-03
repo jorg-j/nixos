@@ -4,41 +4,39 @@
 #  pkgs,
 #}:
 #with import <nixpkgs> { };
-{pkgs ? import <nixpkgs> {} }:
-let
-    src = pkgs.fetchFromGitHub {
-      owner = "jorg-j";
-      repo = "RMSU";
-      rev = "v0.0.1";
-      sha256 = "sha256-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=";
-      #stripRoot = true;
-    };
-    format = "other";
+{pkgs ? import <nixpkgs> {}}: let
+  src = pkgs.fetchFromGitHub {
+    owner = "jorg-j";
+    repo = "RMSU";
+    rev = "v0.0.1";
+    sha256 = "sha256-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=";
+    #stripRoot = true;
+  };
+  format = "other";
 
-    #buildInputs = [pkgs.python3Full pkgs.python3Packages.pip pkgs.python3Packages.pyautogui pkgs.python3Packages.appdirs pkgs.python3Packages.hidapi];
-    #nativeBuildInputs = [pkgs.imagemagick pkgs.libicns];
-    #propagatedNativeBuildInputs = [pkgs.python3Full pkgs.python3Packages.pip python3Packages.pyautogui python3Packages.appdirs python3Packages.hidapi];
+  #buildInputs = [pkgs.python3Full pkgs.python3Packages.pip pkgs.python3Packages.pyautogui pkgs.python3Packages.appdirs pkgs.python3Packages.hidapi];
+  #nativeBuildInputs = [pkgs.imagemagick pkgs.libicns];
+  #propagatedNativeBuildInputs = [pkgs.python3Full pkgs.python3Packages.pip python3Packages.pyautogui python3Packages.appdirs python3Packages.hidapi];
 
-    #propagatedBuildInputs = [
-    #  (pkgs.python3.withPackages (pythonPackages:
-    #    with pythonPackages; [
-    #      pyautogui
-    #      appdirs
-    #      hidapi
-    #      platformdirs
-    #      psutil
-    #    ]))
-    #];
-      # Step 2: Load crate2nix-generated Cargo.nix from the fetched source
+  #propagatedBuildInputs = [
+  #  (pkgs.python3.withPackages (pythonPackages:
+  #    with pythonPackages; [
+  #      pyautogui
+  #      appdirs
+  #      hidapi
+  #      platformdirs
+  #      psutil
+  #    ]))
+  #];
+  # Step 2: Load crate2nix-generated Cargo.nix from the fetched source
   rustPkgs = import "${src}/Cargo.nix" {
     inherit pkgs;
-    defaultCrateName = "rmsu";  # From Cargo.toml
-    root = src;                            # Point crate2nix to actual root
+    defaultCrateName = "rmsu"; # From Cargo.toml
+    root = src; # Point crate2nix to actual root
   };
 in
-
-# Step 3: Build using crate2nix
-rustPkgs.rootCrate.build
+  # Step 3: Build using crate2nix
+  rustPkgs.rootCrate.build
 #    installPhase = ''
 #      # Create udev dir
 #      mkdir -p $out/etc/udev/rules.d
@@ -80,15 +78,13 @@ rustPkgs.rootCrate.build
 #
 #      chmod 755 $out/share/applications/duckypadpro.desktop
 #    '';
+#  postInstall = ''
+# '';
+#meta = with pkgs.lib; {
+#  description = "RMSU File Tagging";
+#  homepage = "https://github.com/jorg-j/RMSU";
+#  license = licenses.mit;
+#  maintainers = with maintainers; [];
+#};
+#}
 
-  #  postInstall = ''
-
-   # '';
-
-    #meta = with pkgs.lib; {
-    #  description = "RMSU File Tagging";
-    #  homepage = "https://github.com/jorg-j/RMSU";
-    #  license = licenses.mit;
-    #  maintainers = with maintainers; [];
-    #};
-  #}

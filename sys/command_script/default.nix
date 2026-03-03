@@ -6,7 +6,6 @@
     ${scriptContent}
   '';
 
-
   helpScriptContent = builtins.readFile ./help.sh;
 
   helpCommand = pkgs.writeScriptBin ",help" ''

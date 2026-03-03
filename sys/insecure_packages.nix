@@ -1,6 +1,6 @@
 {
   nixpkgs.config.permittedInsecurePackages = [
-  "googleearth-pro-7.3.6.10201"
+    "googleearth-pro-7.3.6.10201"
     "python-2.7.18.6" # For nixops to work
     "python2.7-certifi-2021.10.8" # For nixops to work
     "python2.7-pyjwt-1.7.1" # For nixops to work

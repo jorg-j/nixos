@@ -94,7 +94,7 @@
     # obsync = "pushd /home/jack/Documents/10-19_Books/13_Obsidian_Vaults > /dev/null && bash sync.sh && popd > /dev/null";
     # twsync = "pushd ~/.task > /dev/null && bash sync.sh && popd > /dev/null";
     # sa = "obsync && twsync";
-    
+
     n = "bash /home/jack/Documents/20-29_Technology/20_Infrastructure/20.03_NixOS/nixos/sys/command_script/commands.sh";
 
     hyperconfig = "nvim ~/.config/hypr/hyprland.conf"; # Hyperland Config
@@ -115,6 +115,6 @@
     rmsu = "~/Documents/RMSU/target/release/rmsu";
 
     lz = "eza --icons";
-    cat = "bat -pP"; 
+    cat = "bat -pP";
   };
 }

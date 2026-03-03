@@ -82,7 +82,6 @@
 
     taskwarrior2 # task warrior
     googleearth-pro
-
   ];
 
   system.stateVersion = "23.05"; # No Touchy
@@ -100,6 +99,4 @@
   programs.nix-ld.libraries = [];
 
   security.protectKernelImage = false;
-
-  
 }

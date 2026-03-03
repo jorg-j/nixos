@@ -31,8 +31,8 @@ in {
       systemPackages = with pkgs; [
         kdePackages.kde-gtk-config
         kdePackages.yakuake
-	kdePackages.kgpg
-	cosmic-files
+        kdePackages.kgpg
+        cosmic-files
       ];
     };
   };

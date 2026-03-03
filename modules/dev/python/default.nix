@@ -23,11 +23,9 @@
     libGL
     libglvnd
     mesa
-    
+
     # GLib and related libraries
     glib
     glibc
-
-
-  ]; 
+  ];
 }
