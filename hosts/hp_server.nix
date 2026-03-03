@@ -117,9 +117,12 @@
   # systemd-analyze calendar --iterations=5 "Mon,Fri 6,7:0/5:00"
 
   users.users.gitea-runner = {
+    isSystemUser = true;
+    group = "gitea-runner";
     extraGroups = ["docker"];
   };
 
+  users.groups.gitea-runner = {};
   services.gitea-actions-runner = {
     package = pkgs.forgejo-runner; # optional, defaults to act_runner
     instances = {
