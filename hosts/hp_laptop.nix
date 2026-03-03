@@ -73,10 +73,6 @@ users.users.gitea-runner = {
 
 services.gitea-actions-runner = {
   package = pkgs.forgejo-runner;  # optional, defaults to act_runner
-  settings = {
-      runner.fetch_timeout = "30s";
-      container.network = "bridge";
-  };
   instances = {
     "my-runner" = {
       enable = true;
@@ -88,6 +84,10 @@ services.gitea-actions-runner = {
         "nix:host"  # run jobs directly on the host
 	"docker"
       ];
+  settings = {
+      runner.fetch_timeout = "30s";
+      container.network = "bridge";
+  };
     };
   };
 ;
