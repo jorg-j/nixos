@@ -127,6 +127,7 @@
     package = pkgs.forgejo-runner; # optional, defaults to act_runner
     instances = {
       "my-runner" = {
+        name = "hp_server_runner";
         enable = true;
         url = "http://192.168.1.122:3100/";
         tokenFile = "/home/jack/forgejo-runner-token"; # path to a file containing the token
