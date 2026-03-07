@@ -15,6 +15,5 @@
     ./network.nix
     ./raspberry.nix
     ./search.nix
-    ./text_expander.nix
   ];
 }
