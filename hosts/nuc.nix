@@ -80,6 +80,7 @@
 
     viu # Terminal Image Viewer
 
+    claude-code
     taskwarrior2 # task warrior
     googleearth-pro
   ];
@@ -99,4 +100,6 @@
   programs.nix-ld.libraries = [];
 
   security.protectKernelImage = false;
+
+
 }
