@@ -17,6 +17,8 @@
       "networkmanager"
       "vboxusers"
       "dialout"
+      "video"
+      "render"
     ];
 
     createHome = true;

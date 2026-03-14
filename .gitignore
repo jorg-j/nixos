@@ -5,3 +5,4 @@ hardware-configuration.nix
 
 boilerplate
 *.mkv
+.aider*
