@@ -135,6 +135,8 @@ services.rsyncd = {
         "auth users" = "nasbackup";
         "secrets file" = "/etc/rsyncd.secrets";
         exclude = "*/cache/ *.tmp *.lock";
+	uid = "jack";
+	gid = "users";
       };
     };
   };
