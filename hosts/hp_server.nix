@@ -117,27 +117,28 @@
   # Note to Future me: you can use the following command to check the timer syntax is being parsed correctly
   # systemd-analyze calendar --iterations=5 "Mon,Fri 6,7:0/5:00"
 
-# --- Rsync daemon for NAS backup pull ---
-  services.rsyncd = {
+ 
+services.rsyncd = {
     enable = true;
     settings = {
-      global = {
+      globalSection = {
         "use chroot" = "no";
         "max connections" = "2";
         "log file" = "/var/log/rsyncd.log";
         "hosts allow" = "192.168.1.0/24";
         "hosts deny" = "*";
       };
-      docker-backup = {
+      sections."docker-backup" = {
         path = "/home/jack/";
         comment = "HP Server Docker data for NAS backup";
         "read only" = "yes";
         "auth users" = "nasbackup";
         "secrets file" = "/etc/rsyncd.secrets";
-        "exclude" = "*/cache/ *.tmp *.lock";
+        exclude = "*/cache/ *.tmp *.lock";
       };
     };
   };
+
 
   # Open the rsync daemon port on the firewall (LAN only)
   networking.firewall.allowedTCPPorts = [ 873 ];
