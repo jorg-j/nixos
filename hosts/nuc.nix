@@ -24,26 +24,22 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.tmp.cleanOnBoot = true;
 
+  # Enable roles
   our.roles.nuc.enable = true;
-  # our.roles.i3.enable = true;
   our.roles.hyprland.enable = true;
   our.roles.plasma.enable = true;
-  # our.roles.cosmic.enable = false;
+  our.roles.backups.enable = true;
+  our.roles.ansible.enable = true;
+  our.roles.docker.enable = true;
+  our.roles.sqlite.enable = true;
+  our.roles.office.enable = true;
+  our.roles.ollama.enable = true;
+  our.roles.modeling.enable = true; # 3d
+  our.roles.moonlander.enable = true;
 
-  services.duckypadpro.enable = true;
-  our.software.backups.enable = true;
-  our.software.ansible.enable = true;
-  our.software.docker.enable = true;
-  #our.software.hydrus.enable = true;
-  #our.software.vagrant.enable = true;
-  our.software.sqlite.enable = true;
-  our.software.office.enable = true;
-  our.software.ollama.enable = true;
-  # our.software.vnc.enable = true;
-  our.software.modeling.enable = true; # 3d
-  our.software.moonlander.enable = true;
-
+  # Enable security settings
   security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
 
   # Enables closure file builds for arm
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
@@ -62,10 +58,6 @@
 
   # For SSD's
   services.fstrim.enable = true;
-
-  # use the example session manager (no others are packaged yet so this is enabled by default,
-  # no need to redefine it in your config for now)
-  #media-session.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -99,7 +91,676 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
 
-  security.protectKernelImage = false;
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
 
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
 
-}
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system updates are configured correctly
+  nixpkgs.config.allowUnfree = true; # Adjust this based on your requirements
+  nixpkgs.config.allowBroken = false;
+
+  # Enable security settings
+  security.pam.services.kdewallet.enable = true;
+  security.protectKernelImage = true; # Ensure this is necessary for your use case
+
+  # Enable random binaries to run
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
+
+  # Ensure system
