@@ -41,6 +41,8 @@ in {
       hyprshot # screenshot
       obs-studio # screen recording
 
+      udiskie
+
       hyprland-autoname-workspaces # Autonaming for workspaces
     ];
 

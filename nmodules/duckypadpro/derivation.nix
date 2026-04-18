@@ -15,9 +15,9 @@ pkgs.python3Packages.buildPythonApplication rec {
   };
   format = "other";
 
-  buildInputs = [pkgs.python3 pkgs.python3Packages.pip pkgs.python3Packages.pyautogui pkgs.python3Packages.appdirs pkgs.python3Packages.hidapi];
-  nativeBuildInputs = [pkgs.imagemagick pkgs.libicns];
-  propagatedNativeBuildInputs = [pkgs.python3 pkgs.python3Packages.pip python3Packages.pyautogui python3Packages.appdirs python3Packages.hidapi];
+  buildInputs = [pkgs.python3 pkgs.python3Packages.pip pkgs.python3Packages.pyautogui pkgs.python3Packages.appdirs pkgs.python3Packages.hidapi pkgs.python3Packages.tkinter];
+  nativeBuildInputs = [pkgs.imagemagick pkgs.libicns pkgs.makeWrapper];
+  propagatedNativeBuildInputs = [pkgs.python3 pkgs.python3Packages.pip python3Packages.pyautogui python3Packages.appdirs python3Packages.hidapi python3Packages.platformdirs python3Packages.psutil python3Packages.tkinter];
 
   propagatedBuildInputs = [
     (pkgs.python3.withPackages (pythonPackages:
@@ -36,9 +36,8 @@ pkgs.python3Packages.buildPythonApplication rec {
 
     # Add the udev rule
     cat << EOF > $out/etc/udev/rules.d/20-duckyPad.rules
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="d11c", TAG+="uaccess", TAG+="udev-acl"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="d11d", TAG+="uaccess", TAG+="udev-acl"
     EOF
-
     # create bin
     mkdir -p $out/bin
 
@@ -63,7 +62,7 @@ pkgs.python3Packages.buildPythonApplication rec {
     Encoding=UTF-8
     Name=duckypadpro
     Comment=GUI for Duckypad keypad
-    Exec=sudo $out/bin/duckypad %U
+    Exec=$out/bin/duckypad %U
     Type=Application
     Categories=Utility;
     MimeType=application/duckypadpro;
@@ -74,6 +73,10 @@ pkgs.python3Packages.buildPythonApplication rec {
 
   postInstall = ''
 
+  '';
+
+  postFixup = ''
+    wrapProgram $out/bin/duckypad --set GDK_BACKEND x11 --set QT_QPA_PLATFORM xcb
   '';
 
   meta = with lib; {
