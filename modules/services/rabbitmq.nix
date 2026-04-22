@@ -4,9 +4,14 @@
   ...
 }: {
 
+
   services.rabbitmq = {
     enable = true;
-    managementPlugin.enable = true; # optional, for the UI on :15672
+    listenAddress = "0.0.0.0";
+    managementPlugin = {
+      enable = true;
+      port = 15672;
+    };
   };
 
 }
