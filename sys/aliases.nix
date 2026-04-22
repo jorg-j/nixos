@@ -116,5 +116,7 @@
 
     lz = "eza --icons";
     cat = "bat -pP";
+
+    neofetch = "echo 'neofetch is dead, fastfetch is new'; fastfetch";
   };
 }

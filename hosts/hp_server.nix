@@ -17,6 +17,7 @@
     ../modules/networking.nix
     ../sys/insecure_packages.nix
     ../modules/services/forgejo.nix
+    ../modules/services/rabbitmq.nix
     # ../modules/services/ngrok.nix
     # ../modules/services/wireguard.nix
     # ../modules/services/gitea.nix
