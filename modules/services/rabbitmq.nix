@@ -13,5 +13,5 @@
       port = 15672;
     };
   };
-
+  networking.firewall.allowedTCPPorts = [ 5672 15672 ];
 }
