@@ -37,3 +37,7 @@ Host clara
 Host hp
     Hostname 192.168.1.149
     User jack
+
+Host 192.168.1.122
+    IdentityFile /home/jack/.ssh/forejo_pull
+    StrictHostKeyChecking no
